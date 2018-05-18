@@ -13,3 +13,6 @@ stories
 src
 node_modules
 .storybook
+__snapshots__
+*.specs.js
+.gitkeep

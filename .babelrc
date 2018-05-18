@@ -20,5 +20,22 @@
 		"transform-class-properties",
         "styled-components",
         "external-helpers"
-	]
+	],
+    "env": {
+		"test": {
+            "presets": [
+        		["env", {
+        			"targets": {
+        				"browsers": [
+        					"Edge >= 14",
+        					"ff >= 54",
+        					"Chrome >= 58"
+        				]
+        			},
+        			"useBuiltIns": true
+        		}],
+        		"react"
+        	]
+		}
+	}
 }
