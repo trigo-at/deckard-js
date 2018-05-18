@@ -19,7 +19,7 @@
         "lint": "eslint .",
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook",
-        "prepublish": "rm -rf ./dist && yarn build"
+        "prepare": "rm -rf ./dist && yarn build"
     },
     "lint-staged": {
         "*.{js,jsx}": [

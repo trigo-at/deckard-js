@@ -16,3 +16,5 @@ node_modules
 __snapshots__
 *.specs.js
 .gitkeep
+coverage
+jest.setup.js
