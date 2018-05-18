@@ -1,0 +1,72 @@
+{
+  "name": "@trigo/herbertcss",
+  "version": "1.0.0-0",
+  "description": "React Project Template",
+  "main": "dist/herbertcss.cjs.js",
+  "module": "dist/herbertcss.esm.js",
+  "repository": "git@github.com:trigo-at/herbertcss.git",
+  "author": "trigo GmbH <office@trigo.at>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=9.0.0"
+  },
+  "scripts": {
+    "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
+    "precommit": "lint-staged",
+    "prettify": "prettier --write 'src/**/*.{js,jsx}'",
+    "build": "rollup -c",
+    "lint": "eslint .",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "prettier --write",
+      "eslint .",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-styled-components": "^1.5.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-regenerator": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-runtime": "^6.26.0",
+    "cross-env": "^5.1.5",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-react-trigo": "^5.5.5",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "file-loader": "^1.1.11",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.1.0",
+    "prettier": "^1.12.1",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "rollup": "^0.59.1",
+    "rollup-plugin-babel": "^3.0.4",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "styled-components": "^3.2.6",
+    "styled-system": "^2.2.5",
+    "@storybook/react": "^3.4.4",
+    "@storybook/addon-actions": "^3.4.4",
+    "@storybook/addon-links": "^3.4.4",
+    "@storybook/addons": "^3.4.4"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "styled-components": "^3.2.6",
+    "styled-system": "^2.2.5"
+  },
+  "dependencies": {}
+}

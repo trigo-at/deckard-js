@@ -1,0 +1,7 @@
+.nyc_output/
+.stoybook/
+coverage/
+deploy/
+dist/
+node_modules/
+storybook-static/

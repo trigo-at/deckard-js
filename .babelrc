@@ -1,0 +1,24 @@
+{
+	"presets": [
+		["env", {
+			"targets": {
+				"browsers": [
+					"Edge >= 14",
+					"ff >= 54",
+					"Chrome >= 58"
+				]
+			},
+			"useBuiltIns": true,
+            "modules": false
+		}],
+		"react"
+	],
+	"plugins": [
+		"transform-regenerator",
+		["transform-object-rest-spread", { "useBuiltIns": true }],
+		["transform-runtime", { "polyfill": false }],
+		"transform-class-properties",
+        "styled-components",
+        "external-helpers"
+	]
+}
