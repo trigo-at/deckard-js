@@ -9,12 +9,12 @@
 dev-env.sh
 Dockerfile
 rollup.config.js
-stories
 src
 node_modules
 .storybook
 __snapshots__
-*.specs.js
+*.specs.jsx
+*.stories.jsx
 .gitkeep
 coverage
 jest.setup.js
