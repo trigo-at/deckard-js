@@ -35,7 +35,7 @@
         "@storybook/react": "^3.4.5",
         "babel-cli": "^6.26.0",
         "babel-core": "^6.26.3",
-        "babel-jest": "^22.4.3",
+        "babel-jest": "^22.4.4",
         "babel-loader": "^7.1.4",
         "babel-plugin-external-helpers": "^6.22.0",
         "babel-plugin-styled-components": "^1.5.1",
@@ -47,22 +47,22 @@
         "babel-preset-env": "^1.7.0",
         "babel-preset-react": "^6.24.1",
         "babel-runtime": "^6.26.0",
-        "cross-env": "^5.1.5",
+        "cross-env": "^5.1.6",
         "eslint-config-prettier": "^2.9.0",
         "eslint-config-react-trigo": "^5.5.5",
         "eslint-loader": "^2.0.0",
         "eslint-plugin-prettier": "^2.6.0",
         "file-loader": "^1.1.11",
         "husky": "^0.14.3",
-        "jest": "^22.4.3",
+        "jest": "^22.4.4",
         "jest-styled-components": "^5.0.1",
-        "lint-staged": "^7.1.0",
+        "lint-staged": "^7.1.2",
         "prettier": "^1.12.1",
         "prop-types": "^15.6.1",
         "react": "^16.3.2",
         "react-dom": "^16.3.2",
         "react-test-renderer": "^16.3.2",
-        "rollup": "^0.59.1",
+        "rollup": "^0.59.2",
         "rollup-plugin-babel": "^3.0.4",
         "rollup-plugin-node-resolve": "^3.3.0",
         "styled-components": "^3.2.6",
@@ -84,7 +84,8 @@
             "/node_modules/"
         ],
         "collectCoverageFrom": [
-            "src/**/*.{js,jsx}"
+            "src/**/*.{js,jsx}",
+            "!src/**/?(*.)(stories).js?(x)"
         ]
     }
 }

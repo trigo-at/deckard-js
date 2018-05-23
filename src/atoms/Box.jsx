@@ -7,6 +7,7 @@ import {
     flex,
     order,
     alignSelf,
+    textAlign,
 } from 'styled-system';
 import theme from '../theme';
 
@@ -15,6 +16,7 @@ const Box = styled.div`
     ${width}
     ${space}
     ${fontSize}
+    ${textAlign}
     ${color}
     ${flex}
     ${order}
@@ -31,6 +33,7 @@ Box.propTypes = {
     ...width.propTypes,
     ...space.propTypes,
     ...fontSize.propTypes,
+    ...textAlign.propTypes,
     ...color.propTypes,
     ...flex.propTypes,
     ...order.propTypes,
