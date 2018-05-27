@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card matches snapshot 1`] = `
+.c1 {
+  box-sizing: border-box;
+}
+
+.c0 {
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+  border: 1px solid #b8c2cc;
+  border-radius: 1px;
+}
+
+<div
+  className="c0 c1"
+>
+  <span>
+    Card
+  </span>
+  <span>
+    Card
+  </span>
+  <span>
+    Card
+  </span>
+</div>
+`;
