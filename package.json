@@ -16,6 +16,7 @@
         "prettify": "prettier --write 'src/**/*.{js,jsx}'",
         "test": "NODE_ENV=test jest --coverage --setupTestFrameworkScriptFile=./jest.setup.js",
         "build": "rollup -c",
+        "watch": "rollup -c -w",
         "lint": "eslint .",
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook -o ./docs -s ./assets",

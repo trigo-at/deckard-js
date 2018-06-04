@@ -5,3 +5,6 @@ deploy/
 dist/
 node_modules/
 storybook-static/
+docs/
+__snapshots__
+.snap

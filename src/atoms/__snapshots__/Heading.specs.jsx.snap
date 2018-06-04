@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Heading matches snapshot 1`] = `
+.c0 {
+  font-size: 24px;
+  margin: 0px;
+}
+
+<h3
+  className="c0"
+  fontSize={4}
+>
+  trigo
+</h3>
+`;
