@@ -1,6 +1,6 @@
 {
     "name": "@trigo/herbertcss",
-    "version": "1.0.1-1",
+    "version": "1.0.1",
     "description": "Components to support the trigo design system",
     "main": "dist/herbertcss.cjs.js",
     "module": "dist/herbertcss.esm.js",
