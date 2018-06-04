@@ -30,23 +30,40 @@ const radius = '2px';
 // colors
 
 // const trigoFontBlue = '#172537';
+const yellowLight = '#f9d541';
 const yellow = '#f7ca10';
+const yellowDark = '#cda707';
+const greenLight = '#99ca68';
 const green = '#7fbd42';
-const lightBlue = '#63c2db';
+const greenDark = '#669735';
+const blueLight = '#63c2db';
 const blue = '#3ab2d2';
-const darkBlue = '#2894b1';
+const blueDark = '#2894b1';
+const redLight = '#f7103f';
+const red = '#cd072f';
+const redDark = '#9c0524';
 const grey = '#b8c2cc';
 const borderGrey = '#b8c2cc';
 
 const colors = {
+    // trigo yellow
+    yellowLight,
     yellow,
+    yellowDark,
+
+    // trigo green
+    greenLight,
     green,
+    greenDark,
 
     // blue
-    lightBlue,
+    blueLight,
     blue,
-    darkBlue,
+    blueDark,
 
+    redLight,
+    red,
+    redDark,
     grey,
     borderGrey,
 };

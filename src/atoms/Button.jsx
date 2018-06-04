@@ -52,7 +52,7 @@ const Button = styled.button`
 
   &:hover {
     background-color: ${props =>
-        props.disabled ? null : props.theme.colors.darkBlue};
+        props.disabled ? null : props.theme.colors.blueDark};
   }
 
   ${fullWidth} ${size} ${space};
