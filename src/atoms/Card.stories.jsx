@@ -1,135 +1,136 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
-import Box from './Box';
+import {withInfo} from '@storybook/addon-info';
 import Card from './Card';
 
 storiesOf('Card', module)
-    .add('Box Shadows with default border', () => (
-        <Box>
+    .add(
+        'Card component',
+        withInfo({
+            inline: true,
+            text: 'Box extension to control box-shadow.',
+        })(() => (
+            <div>
+                <Card my={4} p={3} width={256} color="black" bg="white">
+                    Default Shadow
+                </Card>
+                <Card
+                    boxShadowSize="md"
+                    my={4}
+                    p={3}
+                    width={256}
+                    color="black"
+                    bg="white">
+                    Medium Shadow
+                </Card>
+                <Card
+                    boxShadowSize="lg"
+                    my={4}
+                    p={3}
+                    width={256}
+                    color="black"
+                    bg="white">
+                    Large Shadow
+                </Card>
+                <Card
+                    boxShadowSize="inner"
+                    my={4}
+                    p={3}
+                    width={256}
+                    color="black"
+                    bg="white">
+                    Inner Shadow
+                </Card>
+            </div>
+        ))
+    )
+    .add('Box Shadows with custom borders', () => (
+        <div>
             <Card
-                m={4}
-                p={4}
-                width={1 / 2}
-                color="text"
+                my={4}
+                p={3}
+                width={256}
+                color="black"
                 bg="white"
-                borderWidth={1}>
+                borderWidth={2}
+                borderColor="accent">
                 Default Shadow
             </Card>
             <Card
                 boxShadowSize="md"
-                m={4}
-                p={4}
-                width={1 / 2}
-                color="text"
-                bg="white"
-                borderWidth={1}>
+                my={4}
+                p={3}
+                width={256}
+                color="black"
+                bg="orange.1"
+                borderWidth={2}
+                borderColor="warning">
                 Medium Shadow
             </Card>
             <Card
                 boxShadowSize="lg"
-                m={4}
-                p={4}
-                width={1 / 2}
-                color="text"
-                bg="white"
-                borderWidth={1}>
+                my={4}
+                p={3}
+                width={256}
+                color="black"
+                bg="teal.0"
+                borderWidth={2}
+                borderColor="success">
                 Large Shadow
             </Card>
             <Card
                 boxShadowSize="inner"
-                m={4}
-                p={4}
-                width={1 / 2}
-                color="text"
-                bg="white"
-                borderWidth={1}>
+                my={4}
+                p={3}
+                width={256}
+                color="black"
+                bg="red.1"
+                borderWidth={2}
+                borderColor="error">
                 Inner Shadow
             </Card>
-        </Box>
-    ))
-    .add('Box Shadows with focused 2px border', () => (
-        <Box>
-            <Card
-                m={4}
-                p={4}
-                width={1 / 2}
-                color="text"
-                bg="white"
-                borderWidth={2}>
-                Default Shadow
-            </Card>
-            <Card
-                boxShadowSize="md"
-                m={4}
-                p={4}
-                width={1 / 2}
-                color="text"
-                bg="white"
-                borderWidth={2}>
-                Medium Shadow
-            </Card>
-            <Card
-                boxShadowSize="lg"
-                m={4}
-                p={4}
-                width={1 / 2}
-                color="text"
-                bg="white"
-                borderWidth={2}>
-                Large Shadow
-            </Card>
-            <Card
-                boxShadowSize="inner"
-                m={4}
-                p={4}
-                width={1 / 2}
-                color="text"
-                bg="white"
-                borderWidth={2}>
-                Inner Shadow
-            </Card>
-        </Box>
+        </div>
     ))
     .add('Box Shadows with varying border radii', () => (
-        <Box>
+        <div>
             <Card
-                m={4}
-                p={4}
-                width={1 / 2}
+                my={4}
+                p={3}
+                width={256}
                 color="black"
                 bg="white"
                 borderRadius={0}>
-                Default Shadow - 0px
+                Default Shadow
             </Card>
             <Card
                 boxShadowSize="md"
-                m={4}
-                p={4}
-                width={1 / 2}
+                my={4}
+                p={3}
+                width={256}
                 color="black"
                 bg="white"
-                borderRadius={10}>
-                Medium Shadow - 10px
+                borderRadius={8}>
+                Medium Shadow
             </Card>
             <Card
                 boxShadowSize="lg"
-                m={4}
-                p={4}
-                width={1 / 2}
+                my={4}
+                p={3}
+                width={256}
                 color="black"
                 bg="white"
-                borderRadius={20}>
-                Large Shadow - 20px
+                borderRadius={24}>
+                Large Shadow
             </Card>
             <Card
                 boxShadowSize="inner"
-                m={4}
-                p={4}
-                width={1 / 2}
+                my={4}
+                p={3}
+                width={256}
                 color="black"
                 bg="white"
-                borderRadius="30px">
-                Inner Shadow - 30px
+                borderRadius="2rem">
+                Inner Shadow
             </Card>
-        </Box>
+        </div>
     ));
