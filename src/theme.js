@@ -13,9 +13,16 @@ export const boxShadows = {
 
 // colors
 
+// const trigoFontBlue = '#172537';
+const yellow = '#f7ca10';
+const green = '#7fbd42';
+const blue = '#3ab2d2';
 const borderGrey = '#b8c2cc';
 
 const colors = {
+    yellow,
+    green,
+    blue,
     borderGrey,
 };
 
