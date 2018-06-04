@@ -19,8 +19,8 @@ To contribute code to the Design System, first you'll need to set it up for loca
 ### Clone the repo:
 
 ```sh
-git clone https://github.com/trigo-at/herbertcss
-cd herbertcss
+git clone git@github.com:trigo-at/design-system.git
+cd design-system
 ```
 
 ### Install dependencies:
@@ -115,7 +115,7 @@ Generally follow these rules for creating a PR:
 
 
 [semver]: http://semver.org
-[issue]: https://github.com/trigo-at/herbertcss/issues/new
+[issue]: https://github.com/trigo-at/design-system/issues/new
 [github-flow]: https://guides.github.com/introduction/flow/
 [jest]: https://facebook.github.io/jest/
 [snapshots]: https://facebook.github.io/jest/docs/en/snapshot-testing.html#content

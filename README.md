@@ -4,13 +4,13 @@
 [https://herbertcss.netlify.com/](https://herbertcss.netlify.com/)
 
 ```sh
-npm install herbertcss
+npm install @trigo/design-system
 ```
 
 ## Contributing
 
 If you'd like to contribute to the design system, we'd love to have your help.
-If you work at trigo, please join the #herbertcss Slack channel and let us know what you'd like to work on.
+If you work at trigo, please join the #design-system Slack channel and let us know what you'd like to work on.
 
 For all contributors, please be sure to read the [Contributing](Contributing.md) doc.
 
@@ -43,7 +43,6 @@ We hope to accomplish these goals by:
 -   Serving as the standard for trigo's visual language
 -   Providing easy-to-use and extensible components for anyone to consume
 
-[site]: https://herbertcss.netlify.com/
-[storybook]: https://herbertcss.netlify.com/storybook/
+[site]: https://trigo-at..github.io/
 
 [MIT License](LICENSE.md)

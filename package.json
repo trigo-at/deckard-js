@@ -1,10 +1,10 @@
 {
-    "name": "@trigo/herbertcss",
+    "name": "@trigo/design-system",
     "version": "0.0.1",
-    "description": "Components to support the trigo design system",
-    "main": "dist/herbertcss.cjs.js",
-    "module": "dist/herbertcss.esm.js",
-    "repository": "git@github.com:trigo-at/herbertcss.git",
+    "description": "trigo design system",
+    "main": "dist/designsystem.cjs.js",
+    "module": "dist/designsystem.esm.js",
+    "repository": "git@github.com:trigo-at/design-system.git",
     "author": "trigo GmbH <office@trigo.at>",
     "license": "MIT",
     "engines": {
@@ -18,11 +18,11 @@
         "build": "rollup -c",
         "lint": "eslint .",
         "storybook": "start-storybook -p 6006",
-        "build-storybook": "build-storybook",
+        "build-storybook": "build-storybook -o ./docs",
         "prepare": "rm -rf ./dist && yarn build"
     },
     "lint-staged": {
-        "*.{js,jsx}": [
+        "src/**/*.{js,jsx}": [
             "prettier --write",
             "eslint .",
             "git add"
