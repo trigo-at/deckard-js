@@ -42,11 +42,11 @@ const blueDark = '#2894b1';
 const redLight = '#f7103f';
 const red = '#cd072f';
 const redDark = '#9c0524';
-const grayLight = '#d6dbe1';
-const gray = '#b8c2cc';
-const grayDark = '#9aa9b7';
+const grayLight = '#f6f8fa';
+const gray = '#687B8E';
+const grayDark = '#364049';
 
-const borderGray = '#b8c2cc';
+const borderGray = '#d1d6db';
 
 const colors = {
     // trigo yellow
@@ -77,6 +77,7 @@ const colors = {
     borderGray,
 
     white: '#fff',
+    text: '#001833',
 };
 
 const theme = {
