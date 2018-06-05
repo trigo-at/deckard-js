@@ -2,7 +2,7 @@ const breakpoints = ['40em', '52em', '64em'];
 
 const space = [0, 4, 8, 16, 32, 64, 128, 256, 512];
 
-const fontSizes = ['1rem', 14, 16, 20, 24, 32, 48];
+const fontSizes = [12, 14, 16, 20, 24, 32, 48];
 export const regular = 400;
 export const bold = 700;
 const fontWeights = {
@@ -42,8 +42,11 @@ const blueDark = '#2894b1';
 const redLight = '#f7103f';
 const red = '#cd072f';
 const redDark = '#9c0524';
-const grey = '#b8c2cc';
-const borderGrey = '#b8c2cc';
+const grayLight = '#d6dbe1';
+const gray = '#b8c2cc';
+const grayDark = '#9aa9b7';
+
+const borderGray = '#b8c2cc';
 
 const colors = {
     // trigo yellow
@@ -61,11 +64,19 @@ const colors = {
     blue,
     blueDark,
 
+    // error
     redLight,
     red,
     redDark,
-    grey,
-    borderGrey,
+
+    // gray
+    grayLight,
+    gray,
+    grayDark,
+
+    borderGray,
+
+    white: '#fff',
 };
 
 const theme = {

@@ -11,7 +11,7 @@ storiesOf('Box', module)
                 'A low-level layout component for setting width, margin, padding, and color',
             inline: true,
         })(() => (
-            <Box border="grey" p={3}>
+            <Box border="gray" p={3}>
                 Hello
             </Box>
         ))

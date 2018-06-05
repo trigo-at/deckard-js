@@ -37,7 +37,7 @@ const Button = styled.button`
   text-align: center;
   text-decoration: none;
   font-family: inherit;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.5;
   cursor: pointer;
   border-radius: ${props => props.theme.radius};
@@ -47,7 +47,7 @@ const Button = styled.button`
   border-style: solid;
 
   &:disabled {
-    opacity: 0.25;
+    opacity: 0.4;
   }
 
   &:hover {
