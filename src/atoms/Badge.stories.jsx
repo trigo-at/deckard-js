@@ -9,11 +9,11 @@ storiesOf('Badge', module)
         withInfo({
             inline: true,
             text: 'Use the <Badge /> component to render a primitive badge.',
-        })(() => <Badge bg="grayLight">badge</Badge>)
+        })(() => <Badge bg="lightGray">badge</Badge>)
     )
     .add('All colors', () => (
         <div>
             <Badge bg="gray">gray</Badge>
-            <Badge bg="grayLight">grayLight</Badge>
+            <Badge bg="lightGray">lightGray</Badge>
         </div>
     ));

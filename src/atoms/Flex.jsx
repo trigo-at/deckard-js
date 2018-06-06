@@ -1,15 +1,11 @@
-import {
-    flexWrap,
-    flexDirection,
-    alignItems,
-    justifyContent,
-} from 'styled-system';
-import styled from 'styled-components';
+import {flexDirection, alignItems, justifyContent} from 'styled-system';
 import Box from './Box';
 
-const Flex = styled(Box)`
+const wrap = props => (props.wrap ? {flexWrap: 'wrap'} : null);
+
+const Flex = Box.extend`
     display: flex;
-    ${flexWrap}
+    ${wrap}
     ${flexDirection}
     ${alignItems}
     ${justifyContent}
@@ -19,7 +15,6 @@ const Flex = styled(Box)`
 Flex.displayName = 'Flex';
 
 Flex.propTypes = {
-    ...flexWrap.propTypes,
     ...flexDirection.propTypes,
     ...alignItems.propTypes,
     ...justifyContent.propTypes,

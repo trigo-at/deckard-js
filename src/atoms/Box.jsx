@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import {
     space,
@@ -11,7 +12,27 @@ import {
 } from 'styled-system';
 import theme from '../theme';
 
-const Box = styled.div`
+const blacklistedProps = [
+    'wrap',
+    'alignItems',
+    'borderColor',
+    'borderRadius',
+    'borderWidth',
+    'boxShadowSize',
+    'textAlign',
+];
+
+const omit = props =>
+    Object.entries(props)
+        .filter(([key]) => !blacklistedProps.includes(key))
+        .reduce((obj, [key, val]) => Object.assign(obj, {[key]: val}), {});
+
+const Base = props => {
+    const next = omit(props);
+    return <div {...next} />;
+};
+
+const Box = styled(Base)`
     box-sizing: border-box;
     ${width}
     ${space}

@@ -9,17 +9,17 @@ storiesOf('Button', module)
         withInfo({
             inline: true,
             text: 'Use the <Button /> components to render a primitive button.',
-        })(() => <Button size="large">Button</Button>)
+        })(() => <Button size="lg">Button</Button>)
     )
     .add('sizes', () => (
         <div>
-            <Button size="large" mr={2}>
+            <Button size="lg" mr={2}>
                 Large
             </Button>
-            <Button size="medium" mr={2}>
+            <Button size="md" mr={2}>
                 Medium
             </Button>
-            <Button size="small" mr={2}>
+            <Button size="sm" mr={2}>
                 Small
             </Button>
         </div>

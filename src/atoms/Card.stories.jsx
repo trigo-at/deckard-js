@@ -62,7 +62,7 @@ storiesOf('Card', module)
                 p={3}
                 width={256}
                 color="black"
-                bg="orange.1"
+                bg="negative"
                 borderWidth={2}
                 borderColor="warning">
                 Medium Shadow
@@ -73,7 +73,7 @@ storiesOf('Card', module)
                 p={3}
                 width={256}
                 color="black"
-                bg="teal.0"
+                bg="positive"
                 borderWidth={2}
                 borderColor="success">
                 Large Shadow
@@ -84,7 +84,7 @@ storiesOf('Card', module)
                 p={3}
                 width={256}
                 color="black"
-                bg="red.1"
+                bg="warning"
                 borderWidth={2}
                 borderColor="error">
                 Inner Shadow

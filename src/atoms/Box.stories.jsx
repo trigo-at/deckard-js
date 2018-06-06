@@ -19,27 +19,27 @@ storiesOf('Box', module)
     .add('Padding', () => <Box p={3}>Hello</Box>)
     .add('Margin', () => <Box m={3}>Hello</Box>)
     .add('Color', () => (
-        <Box p={3} color="yellow">
+        <Box p={3} color="brandYellow">
             Hello
         </Box>
     ))
     .add('Background Color', () => (
-        <Box p={3} color="white" bg="yellow">
+        <Box p={3} color="white" bg="brandYellow">
             Hello
         </Box>
     ))
     .add('Width', () => (
-        <Box p={3} width={1 / 2} color="white" bg="green">
+        <Box p={3} width={1 / 2} color="white" bg="brandYellow">
             Half Width
         </Box>
     ))
     .add('Pixel Width', () => (
-        <Box p={3} width={256} color="white" bg="blue">
+        <Box p={3} width={256} color="white" bg="brandBlue">
             256px width
         </Box>
     ))
     .add('VW Width', () => (
-        <Box p={3} width="50vw" color="white" bg="yellow">
+        <Box p={3} width="50vw" color="white" bg="brandYellow">
             50vw width
         </Box>
     ))

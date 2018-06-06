@@ -13,9 +13,13 @@ injectGlobal`
 `;
 
 export const Base = styled.div`
-    font-family: ${props => props.theme.fontContent};
-    line-height: 1.5;
-    letter-spacing: 0;
+    * {
+        font-family: ${props => props.theme.fonts.content};
+        color: ${props => props.theme.colors.black};
+        line-height: 1.5;
+        letter-spacing: 0;
+        box-sizing: border-box;
+    }
 
     h1,
     h2,
@@ -23,12 +27,8 @@ export const Base = styled.div`
     h4,
     h5,
     h6 {
-        font-family: ${props => props.theme.fontHeading};
+        font-family: ${props => props.theme.fonts.heading};
         letter-spacing: 0.05em;
-    }
-
-    * {
-        box-sizing: border-box;
     }
 `;
 

@@ -49,8 +49,8 @@ storiesOf('Text', module)
     ))
     .add('color', () => (
         <div>
-            <Text color="yellow">Hello yellow</Text>
-            <Text color="green">Hello green</Text>
-            <Text color="blue">Hello blue</Text>
+            <Text color="brandYellow">Hello yellow</Text>
+            <Text color="brandGreen">Hello green</Text>
+            <Text color="brandBlue">Hello blue</Text>
         </div>
     ));

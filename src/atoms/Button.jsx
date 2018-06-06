@@ -5,17 +5,17 @@ import theme from '../theme';
 
 const size = props => {
     switch (props.size) {
-        case 'small':
+        case 'sm':
             return {
                 fontSize: `${props.theme.fontSizes[0]}px`,
                 padding: '7px 12px',
             };
-        case 'medium':
+        case 'md':
             return {
                 fontSize: `${props.theme.fontSizes[1]}px`,
                 padding: '9.5px 18px',
             };
-        case 'large':
+        case 'lg':
             return {
                 fontSize: `${props.theme.fontSizes[2]}px`,
                 padding: '12px 22px',
@@ -36,12 +36,12 @@ const Button = styled.button`
   vertical-align: middle;
   text-align: center;
   text-decoration: none;
-  font-family: inherit;
+  font-family: ${props => props.theme.fonts.heading};
   font-weight: 700;
   line-height: 1.5;
   cursor: pointer;
   border-radius: ${props => props.theme.radius};
-  background-color: ${props => props.theme.colors.blue};
+  background-color: ${props => props.theme.colors.primary};
   color: ${props => props.theme.colors.white};
   border-width: 0;
   border-style: solid;
@@ -52,7 +52,7 @@ const Button = styled.button`
 
   &:hover {
     background-color: ${props =>
-        props.disabled ? null : props.theme.colors.blueDark};
+        props.disabled ? null : props.theme.colors.darkPrimary};
   }
 
   ${fullWidth} ${size} ${space};

@@ -9,9 +9,9 @@ const type = props => {
             backgroundColor: props.theme.colors.gray,
             color: props.theme.colors.white,
         },
-        grayLight: {
-            backgroundColor: props.theme.colors.grayLight,
-            color: props.theme.colors.text,
+        lightGray: {
+            backgroundColor: props.theme.colors.lightGray,
+            color: props.theme.colors.black,
         },
     };
     return badgeColors[props.bg];

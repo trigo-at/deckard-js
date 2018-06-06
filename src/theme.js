@@ -28,56 +28,27 @@ const radii = [0, 2, 6];
 const radius = '2px';
 
 // colors
-
-// const trigoFontBlue = '#172537';
-const yellowLight = '#f9d541';
-const yellow = '#f7ca10';
-const yellowDark = '#cda707';
-const greenLight = '#99ca68';
-const green = '#7fbd42';
-const greenDark = '#669735';
-const blueLight = '#63c2db';
-const blue = '#3ab2d2';
-const blueDark = '#2894b1';
-const redLight = '#f7103f';
-const red = '#cd072f';
-const redDark = '#9c0524';
-const grayLight = '#f6f8fa';
-const gray = '#687B8E';
-const grayDark = '#364049';
-
-const borderGray = '#d1d6db';
+const TRIGO_YELLOW = '#F7CA10';
+const TRIGO_GREEN = '#7FBD42';
+const TRIGO_BLUE = '#3AB2D2';
 
 const colors = {
-    // trigo yellow
-    yellowLight,
-    yellow,
-    yellowDark,
-
-    // trigo green
-    greenLight,
-    green,
-    greenDark,
-
-    // blue
-    blueLight,
-    blue,
-    blueDark,
-
-    // error
-    redLight,
-    red,
-    redDark,
-
-    // gray
-    grayLight,
-    gray,
-    grayDark,
-
-    borderGray,
-
-    white: '#fff',
-    text: '#001833',
+    brandBlue: TRIGO_BLUE,
+    brandGreen: TRIGO_GREEN,
+    brandYellow: TRIGO_YELLOW,
+    primary: '#2D8EFF',
+    darkPrimary: '#0B7CFF',
+    secondary: '#DCEEFF',
+    black: '#000A12',
+    white: '#FFFFFF',
+    negative: '#FF4949',
+    positive: '#13CE66',
+    warning: '#FFCC3D',
+    active: '#2D8EFF',
+    darkGray: '#1F2D3D',
+    gray: '#778F9B',
+    lightGray: '#B8C1CB',
+    snow: '#DDE2E8',
 };
 
 const theme = {
@@ -87,8 +58,10 @@ const theme = {
     fontWeights,
     regular,
     bold,
-    fontContent,
-    fontHeading,
+    fonts: {
+        content: fontContent,
+        heading: fontHeading,
+    },
     letterSpacings,
     boxShadows,
     colors,

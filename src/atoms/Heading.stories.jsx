@@ -34,7 +34,7 @@ storiesOf('Heading', module)
             <Heading align="center" medium fontSize={5} color="warning">
                 Heading Center
             </Heading>
-            <Heading align="right" regular fontSize={4} color="error">
+            <Heading align="right" regular fontSize={4} color="negative">
                 Heading Right
             </Heading>
         </section>

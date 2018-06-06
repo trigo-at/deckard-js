@@ -6,6 +6,9 @@ import theme from '../theme';
 
 const boxShadow = props => {
     const boxShadows = {
+        sm: {
+            'box-shadow': props.theme.boxShadows.default,
+        },
         md: {
             'box-shadow': props.theme.boxShadows.md,
         },
@@ -26,7 +29,7 @@ const boxShadow = props => {
 const boxBorder = props => {
     return {
         border: `${props.borderWidth}px solid ${
-            props.theme.colors[props.borderColor]
+            props.theme.colors[props.snow]
         }`,
     };
 };
@@ -36,7 +39,7 @@ const Card = styled(Box)`
 `;
 
 Card.propTypes = {
-    boxShadowSize: PropTypes.oneOf(['md', 'lg', 'inner']),
+    boxShadowSize: PropTypes.oneOf(['sm', 'md', 'lg', 'inner']),
     borderColor: PropTypes.string,
     ...propTypes.borderRadius,
     borderWidth: PropTypes.oneOf([1, 2]),
