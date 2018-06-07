@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {
     space,
     width,
+    height,
     fontSize,
     color,
     flex,
@@ -11,30 +12,17 @@ import {
     textAlign,
 } from 'styled-system';
 import theme from '../theme';
-
-const blacklistedProps = [
-    'wrap',
-    'alignItems',
-    'borderColor',
-    'borderRadius',
-    'borderWidth',
-    'boxShadowSize',
-    'textAlign',
-];
-
-const omit = props =>
-    Object.entries(props)
-        .filter(([key]) => !blacklistedProps.includes(key))
-        .reduce((obj, [key, val]) => Object.assign(obj, {[key]: val}), {});
+import cleanElement from '../utils/cleanElement';
 
 const Base = props => {
-    const next = omit(props);
+    const next = cleanElement(props);
     return <div {...next} />;
 };
 
 const Box = styled(Base)`
     box-sizing: border-box;
     ${width}
+    ${height}
     ${space}
     ${fontSize}
     ${textAlign}
@@ -57,6 +45,7 @@ Box.defaultProps = {
 
 Box.propTypes = {
     ...width.propTypes,
+    ...height.propTypes,
     ...space.propTypes,
     ...fontSize.propTypes,
     ...textAlign.propTypes,

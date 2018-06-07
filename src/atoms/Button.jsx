@@ -1,7 +1,14 @@
+import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import {space} from 'styled-system';
 import theme from '../theme';
+import cleanElement from '../utils/cleanElement';
+
+const Base = props => {
+    const next = cleanElement(props);
+    return <button {...next} />;
+};
 
 const size = props => {
     switch (props.size) {
@@ -30,7 +37,7 @@ const size = props => {
 
 const fullWidth = props => (props.fullWidth ? {width: '100%'} : null);
 
-const Button = styled.button`
+const Button = styled(Base)`
   -webkit-font-smoothing: antialiased;
   display: inline-block;
   vertical-align: middle;
@@ -45,14 +52,18 @@ const Button = styled.button`
   color: ${props => props.theme.colors.white};
   border-width: 0;
   border-style: solid;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
 
   &:disabled {
-    opacity: 0.4;
+      background-color: ${props => props.theme.colors.snow};
+      color: ${props => props.theme.colors.darkGray};
+      opacity: 0.5;
   }
 
   &:hover {
     background-color: ${props =>
         props.disabled ? null : props.theme.colors.darkPrimary};
+
   }
 
   ${fullWidth} ${size} ${space};
@@ -66,7 +77,7 @@ const numberStringOrArray = PropTypes.oneOfType([
 
 Button.propTypes = {
     /** Size */
-    size: PropTypes.oneOf(['small', 'medium', 'large']),
+    size: PropTypes.oneOf(['sm', 'md', 'lg']),
     fullWidth: PropTypes.bool,
     /** Margin */
     m: numberStringOrArray,
