@@ -15,7 +15,6 @@ injectGlobal`
 export const Base = styled.div`
     * {
         font-family: ${props => props.theme.fonts.content};
-        color: ${props => props.theme.colors.black};
         line-height: 1.5;
         letter-spacing: 0;
         box-sizing: border-box;

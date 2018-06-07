@@ -11,6 +11,8 @@ const blacklistedProps = [
     'justify',
     'align',
     'width',
+    'size',
+    'color',
 ];
 
 const cleanElement = props =>
