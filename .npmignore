@@ -20,3 +20,5 @@ coverage
 jest.setup.js
 docs
 assets
+icons
+scripts/
