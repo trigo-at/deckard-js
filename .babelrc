@@ -14,9 +14,7 @@
 		"react"
 	],
 	"plugins": [
-		"transform-regenerator",
 		["transform-object-rest-spread", { "useBuiltIns": true }],
-		["transform-runtime", { "polyfill": false }],
 		"transform-class-properties",
         "styled-components",
         "external-helpers"
