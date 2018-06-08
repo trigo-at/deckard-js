@@ -4,19 +4,23 @@ import {space, color, propTypes} from 'styled-system';
 import {oneOf, oneOfType, string, number} from 'prop-types';
 import icons from '../icons.json';
 import theme from '../theme';
+import cleanElement from '../utils/cleanElement';
 
 const Base = ({name, size, ...props}) => {
     const icon = icons[name];
     if (!icon) return false;
 
+    const next = cleanElement(props);
+
     return (
         <svg
-            {...props}
+            {...next}
             viewBox={icon.viewBox}
             width={size}
             height={size}
             fill="currentcolor">
-            <path d={icon.path} />
+            {icon.path && <path d={icon.path} />}
+            {icon.polygon && <polygon points={icon.polygon} />}
         </svg>
     );
 };
