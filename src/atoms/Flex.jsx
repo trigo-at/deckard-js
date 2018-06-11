@@ -1,3 +1,4 @@
+import React from 'react';
 import {
     flexDirection,
     alignItems,
@@ -8,11 +9,17 @@ import {
     height,
 } from 'styled-system';
 import styled from 'styled-components';
+import cleanElement from '../utils/cleanElement';
 // import Box from './Box';
 
 const wrap = props => (props.wrap ? {flexWrap: 'wrap'} : null);
 
-const Flex = styled.div`
+const Base = props => {
+    const next = cleanElement(props);
+    return <div {...next} />;
+};
+
+const Flex = styled(Base)`
     display: flex;
     ${space} ${width} ${color} ${alignItems} ${justifyContent} ${wrap} ${flexDirection} ${height};
 
