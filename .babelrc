@@ -16,8 +16,7 @@
 	"plugins": [
 		["transform-object-rest-spread", { "useBuiltIns": true }],
 		"transform-class-properties",
-        "styled-components",
-        "external-helpers"
+        "styled-components"
 	],
     "env": {
 		"test": {

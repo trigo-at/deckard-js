@@ -52,6 +52,8 @@ const colors = {
     snow: '#DDE2E8',
 };
 
+const maxContainerWidth = '1280px';
+
 const theme = {
     breakpoints,
     space,
@@ -68,6 +70,7 @@ const theme = {
     colors,
     radii,
     radius,
+    maxContainerWidth,
 };
 
 export default theme;

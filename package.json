@@ -31,12 +31,12 @@
         ]
     },
     "devDependencies": {
-        "@storybook/addon-actions": "^3.4.6",
-        "@storybook/addon-info": "^3.4.6",
-        "@storybook/addon-links": "^3.4.6",
-        "@storybook/addon-options": "^3.4.6",
-        "@storybook/addons": "^3.4.6",
-        "@storybook/react": "^3.4.6",
+        "@storybook/addon-actions": "^3.4.7",
+        "@storybook/addon-info": "^3.4.7",
+        "@storybook/addon-links": "^3.4.7",
+        "@storybook/addon-options": "^3.4.7",
+        "@storybook/addons": "^3.4.7",
+        "@storybook/react": "^3.4.7",
         "babel-cli": "^6.26.0",
         "babel-core": "^6.26.3",
         "babel-jest": "^23.0.1",
@@ -65,12 +65,12 @@
         "react": "^16.4.0",
         "react-dom": "^16.4.0",
         "react-test-renderer": "^16.4.0",
-        "rollup": "^0.60.1",
+        "rollup": "^0.60.2",
         "rollup-plugin-babel": "^3.0.4",
         "rollup-plugin-json": "^3.0.0",
         "rollup-plugin-node-resolve": "^3.3.0",
         "styled-components": "^3.3.2",
-        "styled-system": "^2.2.5",
+        "styled-system": "^2.2.7",
         "svgi": "^1.1.0"
     },
     "peerDependencies": {
