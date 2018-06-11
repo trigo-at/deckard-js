@@ -8,14 +8,8 @@ storiesOf('Text', module)
         'Typography component',
         withInfo({
             inline: true,
-            text:
-                'A low-level component for setting font-size, typographic styles, margin, and color',
-        })(() => (
-            <Text>
-                De carne animata corpora quaeritis. Summus sit​​, morbo vel
-                maleficia?
-            </Text>
-        ))
+            text: 'A low-level component for setting font-size, typographic styles, margin, and color',
+        })(() => <Text>De carne animata corpora quaeritis. Summus sit​​, morbo vel maleficia?</Text>)
     )
     .add('fontSize', () => (
         <div>

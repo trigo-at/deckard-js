@@ -21,20 +21,14 @@ const CheckBoxWrapper = Box.extend`
     position: relative;
     vertical-align: middle;
     cursor: pointer;
-    color: ${props =>
-        props.disabled
-            ? props.theme.colors.borderGray
-            : props.theme.colors.gray};
+    color: ${props => (props.disabled ? props.theme.colors.borderGray : props.theme.colors.gray)};
     svg[data-name='checked'] {
         display: none;
     }
     > input:checked {
         & ~ svg[data-name='checked'] {
             display: inline-block;
-            color: ${props =>
-                props.disabled
-                    ? props.theme.colors.borderGray
-                    : props.theme.colors.blue};
+            color: ${props => (props.disabled ? props.theme.colors.borderGray : props.theme.colors.blue)};
         }
         & ~ svg[data-name='empty'] {
             display: none;

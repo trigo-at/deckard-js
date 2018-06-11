@@ -1,8 +1,5 @@
 import React from 'react';
-import styled, {
-    ThemeProvider as StyledThemeProvider,
-    injectGlobal,
-} from 'styled-components';
+import styled, {ThemeProvider as StyledThemeProvider, injectGlobal} from 'styled-components';
 import theme from './theme';
 
 // eslint-disable-next-line

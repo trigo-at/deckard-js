@@ -132,11 +132,7 @@ FormField.propTypes = {
                     break;
                 default:
                     // eslint-disable-next-line
-                    return new Error(
-                        `'${
-                            child.type
-                        }' is not a valid child for '${componentName}'`
-                    );
+                    return new Error(`'${child.type}' is not a valid child for '${componentName}'`);
             }
         });
 
@@ -146,19 +142,12 @@ FormField.propTypes = {
             );
         }
         if (labelCount > 1) {
-            return new Error(
-                `Exactly 0 or 1 'Label' children should be supplied to '${componentName}'`
-            );
+            return new Error(`Exactly 0 or 1 'Label' children should be supplied to '${componentName}'`);
         }
         if (iconCount > 2) {
-            return new Error(
-                `Up to 2 'Icon' children are supported by '${componentName}'`
-            );
+            return new Error(`Up to 2 'Icon' children are supported by '${componentName}'`);
         }
-        if (
-            iconCount === 2 &&
-            (firstIconPosition > position || secondIconPosition < position)
-        ) {
+        if (iconCount === 2 && (firstIconPosition > position || secondIconPosition < position)) {
             return new Error(
                 `If 2 'Icons' are provided, the 'Field' component must be positioned between them as children of '${componentName}'`
             );

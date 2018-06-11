@@ -1,16 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {
-    space,
-    width,
-    height,
-    fontSize,
-    color,
-    flex,
-    order,
-    alignSelf,
-    textAlign,
-} from 'styled-system';
+import {space, width, height, fontSize, color, flex, order, alignSelf, textAlign} from 'styled-system';
 import theme from '../theme';
 import cleanElement from '../utils/cleanElement';
 

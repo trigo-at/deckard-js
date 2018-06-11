@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-    flexDirection,
-    alignItems,
-    justifyContent,
-    space,
-    width,
-    color,
-    height,
-} from 'styled-system';
+import {flexDirection, alignItems, justifyContent, space, width, color, height} from 'styled-system';
 import styled from 'styled-components';
 import cleanElement from '../utils/cleanElement';
 // import Box from './Box';

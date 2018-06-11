@@ -7,8 +7,7 @@ storiesOf('Box', module)
     .add(
         'Layout component',
         withInfo({
-            text:
-                'A low-level layout component for setting width, margin, padding, and color',
+            text: 'A low-level layout component for setting width, margin, padding, and color',
             inline: true,
         })(() => (
             <Box border="gray" p={3}>

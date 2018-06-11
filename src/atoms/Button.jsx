@@ -61,19 +61,14 @@ const Button = styled(Base)`
   }
 
   &:hover {
-    background-color: ${props =>
-        props.disabled ? null : props.theme.colors.darkPrimary};
+    background-color: ${props => (props.disabled ? null : props.theme.colors.darkPrimary)};
 
   }
 
   ${fullWidth} ${size} ${space};
 `;
 
-const numberStringOrArray = PropTypes.oneOfType([
-    PropTypes.number,
-    PropTypes.string,
-    PropTypes.array,
-]);
+const numberStringOrArray = PropTypes.oneOfType([PropTypes.number, PropTypes.string, PropTypes.array]);
 
 Button.propTypes = {
     /** Size */

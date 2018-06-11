@@ -40,12 +40,7 @@ SelectBase.defaultProps = {
 const Select = styled(props => (
     <Flex align="center">
         <SelectBase {...props} />
-        <ClickableIcon
-            legacy={false}
-            ml={-32}
-            name="cheveronDown"
-            color="gray"
-        />
+        <ClickableIcon legacy={false} ml={-32} name="cheveronDown" color="gray" />
     </Flex>
 ))``;
 

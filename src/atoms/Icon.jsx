@@ -13,12 +13,7 @@ const Base = ({name, size, ...props}) => {
     const next = cleanElement(props);
 
     return (
-        <svg
-            {...next}
-            viewBox={icon.viewBox}
-            width={size}
-            height={size}
-            fill="currentcolor">
+        <svg {...next} viewBox={icon.viewBox} width={size} height={size} fill="currentcolor">
             {icon.path && <path d={icon.path} />}
             {icon.polygon && <polygon points={icon.polygon} />}
         </svg>

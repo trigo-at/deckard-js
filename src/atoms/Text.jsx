@@ -10,11 +10,9 @@ export const caps = props =>
           }
         : null;
 
-export const regular = props =>
-    props.regular ? {fontWeight: props.theme.regular} : null;
+export const regular = props => (props.regular ? {fontWeight: props.theme.regular} : null);
 
-export const bold = props =>
-    props.bold ? {fontWeight: props.theme.bold} : null;
+export const bold = props => (props.bold ? {fontWeight: props.theme.bold} : null);
 
 export const italic = props => (props.italic ? {fontStyle: 'italic'} : null);
 
@@ -31,18 +29,10 @@ const Text = styled.div`
 
 Text.displayName = 'Text';
 
-const numberStringOrArray = PropTypes.oneOfType([
-    PropTypes.number,
-    PropTypes.string,
-    PropTypes.array,
-]);
+const numberStringOrArray = PropTypes.oneOfType([PropTypes.number, PropTypes.string, PropTypes.array]);
 
 Text.propTypes = {
-    fontSize: PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-        PropTypes.array,
-    ]),
+    fontSize: PropTypes.oneOfType([PropTypes.number, PropTypes.string, PropTypes.array]),
     align: PropTypes.oneOf(['left', 'center', 'right', 'justify']),
     caps: PropTypes.bool,
     regular: PropTypes.bool,

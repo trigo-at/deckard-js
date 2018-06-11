@@ -69,8 +69,7 @@ const parseSVG = svg => {
     };
 };
 
-const getData = icons =>
-    icons.map(icon => Object.assign({}, icon, parseSVG(icon.svg)));
+const getData = icons => icons.map(icon => Object.assign({}, icon, parseSVG(icon.svg)));
 
 const build = () => {
     const icons = readIcons(newSrc);

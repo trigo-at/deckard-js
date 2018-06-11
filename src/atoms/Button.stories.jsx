@@ -9,8 +9,7 @@ storiesOf('Button', module)
         'Button component',
         withInfo({
             inline: true,
-            text:
-                'Use the <Button /> or <OutlineButton /> components to render a primitive button.',
+            text: 'Use the <Button /> or <OutlineButton /> components to render a primitive button.',
         })(() => <Button size="lg">Button</Button>)
     )
     .add('color', () => (

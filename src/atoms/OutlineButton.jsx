@@ -7,10 +7,8 @@ const OutlineButton = styled(Button)`
     box-shadow: inset 0 0 0 2px ${props => props.theme.colors.primary};
     background-color: transparent;
     &:hover {
-        color: ${props =>
-            props.disabled ? null : props.theme.colors.darkPrimary};
-        box-shadow: inset 0 0 0 2px
-            ${props => (props.disabled ? null : props.theme.colors.darkPrimary)};
+        color: ${props => (props.disabled ? null : props.theme.colors.darkPrimary)};
+        box-shadow: inset 0 0 0 2px ${props => (props.disabled ? null : props.theme.colors.darkPrimary)};
         background-color: transparent;
     }
 `;

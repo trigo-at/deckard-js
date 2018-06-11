@@ -9,13 +9,7 @@ import Heading from './Heading';
 const ColorBox = ({name, hex, ...props}) => (
     <Flex flexDirection="column" p={3} m={2}>
         <Card boxShadowSize="md" mb={1}>
-            <Flex
-                width="250px"
-                height="100px"
-                alignItems="center"
-                justify="center"
-                {...props}
-            />
+            <Flex width="250px" height="100px" alignItems="center" justify="center" {...props} />
         </Card>
         <Heading>{name}</Heading>
         <Text>{hex}</Text>
@@ -38,18 +32,10 @@ storiesOf('Welcome', module).add('Colors', () => (
             <ColorBox bg="brandYellow" name="Brand Yellow" hex="#F7CA10">
                 brandYellow
             </ColorBox>
-            <ColorBox
-                bg="brandBlue"
-                color="white"
-                name="Brand Blue"
-                hex="#3AB2D2">
+            <ColorBox bg="brandBlue" color="white" name="Brand Blue" hex="#3AB2D2">
                 brandBlue
             </ColorBox>
-            <ColorBox
-                bg="brandGreen"
-                color="white"
-                name="Brand Green"
-                hex="#7FBD42">
+            <ColorBox bg="brandGreen" color="white" name="Brand Green" hex="#7FBD42">
                 brandGreen
             </ColorBox>
         </Flex>
@@ -57,11 +43,7 @@ storiesOf('Welcome', module).add('Colors', () => (
             <ColorBox bg="primary" color="white" name="Primary" hex="#2D8EFF">
                 primary
             </ColorBox>
-            <ColorBox
-                bg="darkPrimary"
-                color="white"
-                name="Primary (Dark)"
-                hex="#0073F9">
+            <ColorBox bg="darkPrimary" color="white" name="Primary (Dark)" hex="#0073F9">
                 darkPrimary
             </ColorBox>
             <ColorBox bg="secondary" name="Secondary" hex="#DCEEFF">
@@ -94,11 +76,7 @@ storiesOf('Welcome', module).add('Colors', () => (
             </ColorBox>
         </Flex>
         <Flex>
-            <ColorBox
-                bg="darkGray"
-                color="white"
-                name="Gray (Dark)"
-                hex="#1F2D3D">
+            <ColorBox bg="darkGray" color="white" name="Gray (Dark)" hex="#1F2D3D">
                 darkGray
             </ColorBox>
             <ColorBox bg="gray" color="white" name="Gray" hex="#778F9B">

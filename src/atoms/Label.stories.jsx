@@ -10,8 +10,7 @@ storiesOf('Label', module)
         'Label component',
         withInfo({
             inline: true,
-            text:
-                'Simple styled label component that supports a number of the styled-system props.',
+            text: 'Simple styled label component that supports a number of the styled-system props.',
         })(() => <Label m={3}>Label Component</Label>)
     )
     .add('Using fontSize', () => (

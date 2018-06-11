@@ -40,10 +40,7 @@ const Banner = ({children, showIcon, header, text, onClose, ...props}) => {
     const icon = props.iconName || bannerColor.icon;
 
     return (
-        <Box
-            {...props}
-            bg={bannerColor.backgroundColor || props.bg}
-            color={bannerColor.color || props.color}>
+        <Box {...props} bg={bannerColor.backgroundColor || props.bg} color={bannerColor.color || props.color}>
             <Flex justify="space-between" align="center">
                 {!!icon && !!showIcon && <Icon name={icon} mr={2} size={24} />}
                 <Box w={1}>
@@ -53,16 +50,7 @@ const Banner = ({children, showIcon, header, text, onClose, ...props}) => {
                         {children}
                     </Text>
                 </Box>
-                {!!onClose && (
-                    <IconButton
-                        name="close"
-                        onClick={onClose}
-                        ml={2}
-                        size={24}
-                        title="close"
-                        mt="-2px"
-                    />
-                )}
+                {!!onClose && <IconButton name="close" onClick={onClose} ml={2} size={24} title="close" mt="-2px" />}
             </Flex>
         </Box>
     );

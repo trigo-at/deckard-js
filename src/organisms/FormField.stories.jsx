@@ -37,10 +37,7 @@ storiesOf('FormField', module)
                             Placeholder with Chevron
                         </Text>
                         <FormField>
-                            <Input
-                                id="form-field-1"
-                                placeholder="Placeholder"
-                            />
+                            <Input id="form-field-1" placeholder="Placeholder" />
                             <Icon name="cheveronDown" size="12" />
                         </FormField>
                     </Box>
@@ -50,10 +47,7 @@ storiesOf('FormField', module)
                         </Text>
                         <FormField>
                             <Icon name="search" color="blue" size="18" />
-                            <Input
-                                id="form-field-3"
-                                placeholder="Placeholder with Icon"
-                            />
+                            <Input id="form-field-3" placeholder="Placeholder with Icon" />
                         </FormField>
                     </Box>
                 </Flex>
@@ -73,10 +67,7 @@ storiesOf('FormField', module)
                         </Text>
                         <FormField>
                             <Icon name="user" color="brandBlue" size="18" />
-                            <Input
-                                id="form-field-1"
-                                value="Plain text with Icon"
-                            />
+                            <Input id="form-field-1" value="Plain text with Icon" />
                             <Icon name="cheveronDown" size="12" />
                         </FormField>
                     </Box>
@@ -98,10 +89,7 @@ storiesOf('FormField', module)
                         <FormField color="brandBlue">
                             <Icon name="user" color="brandBlue" size="18" />
                             <Label>Label</Label>
-                            <Input
-                                id="form-field-3"
-                                value="Typing text with Icon"
-                            />
+                            <Input id="form-field-3" value="Typing text with Icon" />
                             <Icon name="cheveronDown" size="12" />
                         </FormField>
                     </Box>
@@ -114,11 +102,7 @@ storiesOf('FormField', module)
                         <FormField color="negative">
                             <Label>Email address</Label>
                             <Input id="form-field-3" value="olvier@examp" />
-                            <Icon
-                                name="exclamationOutline"
-                                color="negative"
-                                size="20"
-                            />
+                            <Icon name="exclamationOutline" color="negative" size="20" />
                         </FormField>
                     </Box>
                     <Box width={1 / 2} pl={3}>
@@ -127,15 +111,8 @@ storiesOf('FormField', module)
                         </Text>
                         <FormField color="positive">
                             <Label>Email address</Label>
-                            <Input
-                                id="form-field-3"
-                                value="olvier@example.com"
-                            />
-                            <Icon
-                                name="checkmarkOutline"
-                                color="positive"
-                                size="20"
-                            />
+                            <Input id="form-field-3" value="olvier@example.com" />
+                            <Icon name="checkmarkOutline" color="positive" size="20" />
                         </FormField>
                     </Box>
                 </Flex>
@@ -146,10 +123,7 @@ storiesOf('FormField', module)
                         </Text>
                         <FormField alwaysShowLabel>
                             <Label>Pick-up Location</Label>
-                            <Input
-                                id="form-field-3"
-                                placeholder="Same as pick-up"
-                            />
+                            <Input id="form-field-3" placeholder="Same as pick-up" />
                         </FormField>
                     </Box>
                     <Box width={1 / 2} pl={3}>
@@ -158,10 +132,7 @@ storiesOf('FormField', module)
                         </Text>
                         <FormField>
                             <Label>Pick-up Location</Label>
-                            <Input
-                                id="form-field-3"
-                                placeholder="Same as pick-up"
-                            />
+                            <Input id="form-field-3" placeholder="Same as pick-up" />
                         </FormField>
                     </Box>
                 </Flex>
@@ -170,83 +141,60 @@ storiesOf('FormField', module)
     )
     .add(
         'State Flow',
-        withInfo(
-            'This example demonstrates how the input will behave as the user interacts with it step by step'
-        )(() => (
-            <Flex width={900}>
-                <Box width={1 / 3} pl={3}>
-                    <Text bold pt={4} pb={2}>
-                        No User Interaction
-                    </Text>
-                    <FormField>
-                        <Label>Drop-off Location</Label>
-                        <Icon name="search" color="brandBlue" size="18" />
-                        <Input
-                            id="drop-off"
-                            placeholder="Enter a drop-off location"
-                        />
-                    </FormField>
-                </Box>
-                <Box width={1 / 3} pl={3}>
-                    <Text bold pt={4} pb={2}>
-                        User Clicks in Box
-                    </Text>
-                    <FormField>
-                        <Label>Drop-off Location</Label>
-                        <Icon name="search" color="brandBlue" size="18" />
-                        <Input
-                            id="drop-off"
-                            color="brandBlue"
-                            placeholder="Enter a drop-off location"
-                        />
-                    </FormField>
-                </Box>
-                <Box width={1 / 3} pl={3}>
-                    <Text bold pt={4} pb={2}>
-                        User Types a Value
-                    </Text>
-                    <FormField>
-                        <Label>Drop-off Location</Label>
-                        <Icon name="search" color="brandBlue" size="18" />
-                        <Input
-                            id="drop-off"
-                            color="brandBlue"
-                            placeholder="Enter a drop-off location"
-                        />
-                    </FormField>
-                </Box>
-            </Flex>
-        ))
+        withInfo('This example demonstrates how the input will behave as the user interacts with it step by step')(
+            () => (
+                <Flex width={900}>
+                    <Box width={1 / 3} pl={3}>
+                        <Text bold pt={4} pb={2}>
+                            No User Interaction
+                        </Text>
+                        <FormField>
+                            <Label>Drop-off Location</Label>
+                            <Icon name="search" color="brandBlue" size="18" />
+                            <Input id="drop-off" placeholder="Enter a drop-off location" />
+                        </FormField>
+                    </Box>
+                    <Box width={1 / 3} pl={3}>
+                        <Text bold pt={4} pb={2}>
+                            User Clicks in Box
+                        </Text>
+                        <FormField>
+                            <Label>Drop-off Location</Label>
+                            <Icon name="search" color="brandBlue" size="18" />
+                            <Input id="drop-off" color="brandBlue" placeholder="Enter a drop-off location" />
+                        </FormField>
+                    </Box>
+                    <Box width={1 / 3} pl={3}>
+                        <Text bold pt={4} pb={2}>
+                            User Types a Value
+                        </Text>
+                        <FormField>
+                            <Label>Drop-off Location</Label>
+                            <Icon name="search" color="brandBlue" size="18" />
+                            <Input id="drop-off" color="brandBlue" placeholder="Enter a drop-off location" />
+                        </FormField>
+                    </Box>
+                </Flex>
+            )
+        )
     )
     .add(
         'FormField composed with Select',
-        withInfo(
-            'This example demonstrates how the input field will behave with a select dropdown'
-        )(() => (
+        withInfo('This example demonstrates how the input field will behave with a select dropdown')(() => (
             <Flex width={900}>
                 <Box width={1 / 3} pl={3}>
                     <Text bold pt={4} pb={2}>
                         User Types a Value
                     </Text>
-                    <FormField
-                        onChange={action(
-                            'onChange event is triggered in FormField'
-                        )}>
+                    <FormField onChange={action('onChange event is triggered in FormField')}>
                         <Label>Cabin Class</Label>
                         <Icon name="key" color="blue" size="18" />
-                        <Select
-                            id="cabinClass"
-                            name="cabinClass"
-                            defaultValue="Premium Economy"
-                            prefixIcon="key">
+                        <Select id="cabinClass" name="cabinClass" defaultValue="Premium Economy" prefixIcon="key">
                             <option>Economy</option>
                             <option>Premium Economy</option>
                             <option>Business</option>
                             <option>First Class</option>
-                            <option>
-                                With a super long label that does not get
-                                clobbered by the chevron
-                            </option>
+                            <option>With a super long label that does not get clobbered by the chevron</option>
                         </Select>
                     </FormField>
                 </Box>
@@ -255,9 +203,7 @@ storiesOf('FormField', module)
     )
     .add(
         'FormField composed with Select and label',
-        withInfo(
-            'This example demonstrates how the input field will behave with a select dropdown'
-        )(() => (
+        withInfo('This example demonstrates how the input field will behave with a select dropdown')(() => (
             <Flex width={900}>
                 <Box width={1 / 3} pl={3}>
                     <Text bold pt={4} pb={2}>
@@ -266,19 +212,12 @@ storiesOf('FormField', module)
                     <FormField alwaysShowLabel>
                         <Label>Cabin Class</Label>
                         <Icon name="key" color="blue" size="18" />
-                        <Select
-                            id="cabinClass"
-                            name="cabinClass"
-                            defaultValue="Premium Economy"
-                            prefixIcon="key">
+                        <Select id="cabinClass" name="cabinClass" defaultValue="Premium Economy" prefixIcon="key">
                             <option>Economy</option>
                             <option>Premium Economy</option>
                             <option>Business</option>
                             <option>First Class</option>
-                            <option>
-                                With a super long label that does not get
-                                clobbered by the chevron
-                            </option>
+                            <option>With a super long label that does not get clobbered by the chevron</option>
                         </Select>
                     </FormField>
                 </Box>
@@ -317,11 +256,7 @@ class FormFieldWithController extends React.PureComponent {
         return (
             <FormField
                 color={this.getBorderColor()}
-                info={
-                    !this.state.isValid && this.state.isDirty
-                        ? "That's not 5 letters!"
-                        : null
-                }
+                info={!this.state.isValid && this.state.isDirty ? "That's not 5 letters!" : null}
                 isDirty={this.state.isDirty}
                 isValid={this.state.isValid}>
                 <Label>5 Letter Word</Label>

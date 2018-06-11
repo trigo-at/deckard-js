@@ -8,14 +8,7 @@ import Banner from './Banner';
 storiesOf('Banner', module)
     .add('All bgs', () => (
         <Box>
-            <Banner
-                textAlign="left"
-                mb={2}
-                p={3}
-                header="default"
-                text="Secondary Text"
-                onClose={action('closed')}
-            />
+            <Banner textAlign="left" mb={2} p={3} header="default" text="Secondary Text" onClose={action('closed')} />
             <Banner
                 textAlign="left"
                 mb={2}
@@ -65,72 +58,18 @@ storiesOf('Banner', module)
     ))
     .add('All bgs header only', () => (
         <Box>
-            <Banner
-                textAlign="left"
-                mb={2}
-                p={3}
-                header="default"
-                onClose={action('closed')}
-            />
-            <Banner
-                textAlign="left"
-                mb={2}
-                p={3}
-                header="primary"
-                bg="primary"
-                onClose={action('closed')}
-            />
-            <Banner
-                textAlign="left"
-                mb={2}
-                p={3}
-                header="secondary"
-                bg="secondary"
-                onClose={action('closed')}
-            />
-            <Banner
-                textAlign="left"
-                mb={2}
-                p={3}
-                header="positive"
-                bg="positive"
-                onClose={action('closed')}
-            />
-            <Banner
-                textAlign="left"
-                mb={2}
-                p={3}
-                header="negative"
-                bg="negative"
-                onClose={action('closed')}
-            />
-            <Banner
-                textAlign="left"
-                mb={2}
-                p={3}
-                header="warning"
-                bg="warning"
-                onClose={action('closed')}
-            />
+            <Banner textAlign="left" mb={2} p={3} header="default" onClose={action('closed')} />
+            <Banner textAlign="left" mb={2} p={3} header="primary" bg="primary" onClose={action('closed')} />
+            <Banner textAlign="left" mb={2} p={3} header="secondary" bg="secondary" onClose={action('closed')} />
+            <Banner textAlign="left" mb={2} p={3} header="positive" bg="positive" onClose={action('closed')} />
+            <Banner textAlign="left" mb={2} p={3} header="negative" bg="negative" onClose={action('closed')} />
+            <Banner textAlign="left" mb={2} p={3} header="warning" bg="warning" onClose={action('closed')} />
         </Box>
     ))
     .add('All bgs text only', () => (
         <Box>
-            <Banner
-                textAlign="left"
-                mb={2}
-                p={3}
-                text="Secondary Text"
-                onClose={action('closed')}
-            />
-            <Banner
-                textAlign="left"
-                mb={2}
-                p={3}
-                text="Secondary Text"
-                bg="primary"
-                onClose={action('closed')}
-            />
+            <Banner textAlign="left" mb={2} p={3} text="Secondary Text" onClose={action('closed')} />
+            <Banner textAlign="left" mb={2} p={3} text="Secondary Text" bg="primary" onClose={action('closed')} />
             <Banner
                 textAlign="left"
                 mb={2}
@@ -167,13 +106,7 @@ storiesOf('Banner', module)
     ))
     .add('Sans Close Button', () => (
         <Box>
-            <Banner
-                textAlign="right"
-                mb={2}
-                p={3}
-                header="default"
-                text="Secondary Text"
-            />
+            <Banner textAlign="right" mb={2} p={3} header="default" text="Secondary Text" />
         </Box>
     ))
     .add('Sans Icon', () => (
@@ -191,14 +124,7 @@ storiesOf('Banner', module)
     ))
     .add('Without Icon or Close Button', () => (
         <Box>
-            <Banner
-                textAlign="right"
-                mb={2}
-                p={3}
-                header="default"
-                text="Secondary Text"
-                showIcon={false}
-            />
+            <Banner textAlign="right" mb={2} p={3} header="default" text="Secondary Text" showIcon={false} />
         </Box>
     ))
     .add('With custom icons and sizes', () => (
@@ -225,12 +151,7 @@ storiesOf('Banner', module)
                     </Box>
                 </Flex>
             </Banner>
-            <Banner
-                textAlign="left"
-                mb={2}
-                p={2}
-                header="default"
-                onClose={action('closed')}>
+            <Banner textAlign="left" mb={2} p={2} header="default" onClose={action('closed')}>
                 <Text bold italic>
                     I am a text component!
                 </Text>

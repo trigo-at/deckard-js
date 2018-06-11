@@ -24,10 +24,7 @@ const Wrapper = props => (
 
 const formAction = e => {
     e.preventDefault();
-    action('form was submitted, is checkbox checked?')(
-        e.target[1].id,
-        e.target[1].checked
-    );
+    action('form was submitted, is checkbox checked?')(e.target[1].id, e.target[1].checked);
 };
 
 const checkAction = e => {
@@ -45,11 +42,7 @@ storiesOf('Checkbox', module).add('Checkbox states', () => (
 
         <Wrapper>
             <StyledLabel htmlFor="checked_box">
-                <Checkbox
-                    id="checked_box"
-                    defaultChecked
-                    onChange={checkAction}
-                />
+                <Checkbox id="checked_box" defaultChecked onChange={checkAction} />
                 Checked by Default
             </StyledLabel>
         </Wrapper>
@@ -63,15 +56,8 @@ storiesOf('Checkbox', module).add('Checkbox states', () => (
 
         <Wrapper>
             <StyledLabel htmlFor="disabled_checked_box">
-                <Checkbox
-                    id="disabled_checked_box"
-                    disabled
-                    defaultChecked
-                    onChange={checkAction}
-                />
-                <Text.span color={theme.colors.borderGray}>
-                    Disabled & Checked
-                </Text.span>
+                <Checkbox id="disabled_checked_box" disabled defaultChecked onChange={checkAction} />
+                <Text.span color={theme.colors.borderGray}>Disabled & Checked</Text.span>
             </StyledLabel>
         </Wrapper>
 
@@ -82,11 +68,7 @@ storiesOf('Checkbox', module).add('Checkbox states', () => (
 
                     <Wrapper>
                         <StyledLabel fontSize="14px" htmlFor="form_checkbox">
-                            <Checkbox
-                                id="form_checkbox"
-                                size={30}
-                                onChange={checkAction}
-                            />
+                            <Checkbox id="form_checkbox" size={30} onChange={checkAction} />
                             &nbsp;In This Form
                         </StyledLabel>
                     </Wrapper>
