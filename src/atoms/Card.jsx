@@ -28,7 +28,7 @@ const boxShadow = props => {
 
 const boxBorder = props => {
     return {
-        border: `${props.borderWidth}px solid ${props.theme.colors[props.snow]}`,
+        border: `${props.borderWidth}px solid ${props.theme.colors[props.borderColor || 'snow']}`,
     };
 };
 
