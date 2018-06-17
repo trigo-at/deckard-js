@@ -17,6 +17,8 @@ const blacklistedProps = [
     'p',
     'flexDirection',
     'flex',
+    'fontSize',
+    'mt',
 ];
 
 const cleanElement = props =>
