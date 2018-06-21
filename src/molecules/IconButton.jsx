@@ -40,9 +40,9 @@ IconButton.propTypes = {
 };
 
 IconButton.defaultProps = {
-    onClick: () => {},
-    title: '',
-    color: '',
+    onClick: undefined,
+    title: undefined,
+    color: undefined,
     size: 24,
     theme,
 };
