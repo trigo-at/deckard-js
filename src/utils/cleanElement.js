@@ -9,6 +9,8 @@ const blacklistedProps = [
     'textAlign',
     'flexDirection',
     'justify',
+    'justifyContent',
+    'justifyItems',
     'align',
     'width',
     'size',
@@ -19,6 +21,13 @@ const blacklistedProps = [
     'flex',
     'fontSize',
     'mt',
+    'ml',
+    'mr',
+    'mb',
+    'pl',
+    'pr',
+    'pb',
+    'pt',
 ];
 
 const cleanElement = props =>

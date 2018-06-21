@@ -1,8 +1,23 @@
 import React from 'react';
-import {flexDirection, alignItems, justifyContent, space, width, color, height, flexBasis, flex} from 'styled-system';
+import {
+    flexDirection,
+    alignItems,
+    justifyContent,
+    space,
+    width,
+    color,
+    height,
+    flexBasis,
+    flex,
+    responsiveStyle,
+} from 'styled-system';
 import styled from 'styled-components';
 import cleanElement from '../utils/cleanElement';
 // import Box from './Box';
+
+export const justifyItems = responsiveStyle({
+    prop: 'justifyItems',
+});
 
 const wrap = props => (props.wrap ? {flexWrap: 'wrap'} : null);
 
@@ -13,8 +28,8 @@ const Base = props => {
 
 const Flex = styled(Base)`
     display: flex;
-    ${space} ${width} ${color} ${alignItems} ${justifyContent} ${wrap} ${flexDirection} ${height} ${flexBasis} ${flex};
-
+    ${space} ${width} ${color} ${alignItems} ${justifyContent} ${wrap} ${flexDirection} ${height} ${flexBasis} ${flex}
+    ${justifyItems};
 `;
 
 Flex.displayName = 'Flex';
@@ -29,6 +44,7 @@ Flex.propTypes = {
     ...width.propTypes,
     ...color.propTypes,
     ...height.propTypes,
+    ...justifyItems.propTypes,
 };
 
 export default Flex;
