@@ -25,7 +25,7 @@ storiesOf('Welcome', module).add('Design Principles', () => (
             growing system.
         </Text.p>
         <Heading.h2>Goals</Heading.h2>
-        <Text.p>
+        <Text>
             The core goals of this project are to:
             <ul>
                 <li>Speed up design and development velocity</li>
@@ -39,6 +39,6 @@ storiesOf('Welcome', module).add('Design Principles', () => (
                 <li>Serving as the standard for trigo&apos;s visual language</li>
                 <li>Providing easy-to-use and extensible components for anyone to consume</li>
             </ul>
-        </Text.p>
+        </Text>
     </Container>
 ));

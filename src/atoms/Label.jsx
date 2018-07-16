@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {space, fontSize, fontWeight, color, propTypes, theme as styledTheme} from 'styled-system';
+import {space, fontSize, fontWeight, color, propTypes, themeGet} from 'styled-system';
 import theme from '../theme';
 
 const nowrap = props =>
@@ -20,7 +20,7 @@ const accessiblyHide = props =>
         : null;
 
 const Label = styled.label`
-  font-size: ${styledTheme('fontSizes.1')}px;
+  font-size: ${themeGet('fontSizes.1')}px;
   letter-spacing: 0.2px;
   display: block;
   width: 100%;
@@ -31,10 +31,10 @@ const Label = styled.label`
 `;
 
 Label.propTypes = {
-    ...propTypes.space,
-    ...propTypes.fontSize,
-    ...propTypes.color,
-    ...propTypes.fontWeight,
+    ...space.propTypes,
+    ...fontSize.propTypes,
+    ...color.propTypes,
+    ...fontWeight.propTypes,
 };
 
 Label.defaultProps = {

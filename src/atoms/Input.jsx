@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {space, theme as styledTheme, propTypes} from 'styled-system';
+import {space, themeGet} from 'styled-system';
 import PropTypes from 'prop-types';
 import defaultTheme from '../theme';
 
@@ -23,19 +23,19 @@ const Input = styled.input`
     width: 100%;
     font-family: inherit;
     color: inherit;
-    font-size: ${styledTheme('fontSizes.2')}px;
+    font-size: ${themeGet('fontSizes.2')}px;
     background-color: transparent;
-    border-radius: ${styledTheme('radius')};
+    border-radius: ${themeGet('radius')};
     border-width: 0px;
     border-style: solid;
-    border-color: ${styledTheme('colors.lightGray')};
+    border-color: ${themeGet('colors.lightGray')};
     padding-top: 8px;
     padding-bottom: 8px;
     padding-left: 6px;
     padding-right: 6px;
     margin: 0;
     ::placeholder {
-        color: ${styledTheme('colors.lightGray')};
+        color: ${themeGet('colors.lightGray')};
     }
     ::-ms-clear {
         display: none;
@@ -47,8 +47,8 @@ Input.displayName = 'Input';
 Input.propTypes = {
     id: PropTypes.string.isRequired,
     color: PropTypes.string,
-    ...propTypes.borders,
-    ...propTypes.space,
+    ...borders.propTypes,
+    ...space.propTypes,
 };
 
 Input.defaultProps = {

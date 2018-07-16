@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import {borderRadius, propTypes} from 'styled-system';
+import {borderRadius} from 'styled-system';
 import Box from './Box';
 import theme from '../theme';
 
@@ -26,11 +26,9 @@ const boxShadow = props => {
     );
 };
 
-const boxBorder = props => {
-    return {
-        border: `${props.borderWidth}px solid ${props.theme.colors[props.borderColor || 'snow']}`,
-    };
-};
+const boxBorder = props => ({
+    border: `${props.borderWidth}px solid ${props.theme.colors[props.borderColor || 'snow']}`,
+});
 
 const Card = styled(Box)`
   ${boxShadow} ${boxBorder} ${borderRadius};
@@ -39,7 +37,7 @@ const Card = styled(Box)`
 Card.propTypes = {
     boxShadowSize: PropTypes.oneOf(['sm', 'md', 'lg', 'inner']),
     borderColor: PropTypes.string,
-    ...propTypes.borderRadius,
+    ...borderRadius.propTypes,
     borderWidth: PropTypes.oneOf([1, 2]),
 };
 

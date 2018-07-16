@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {space, fontSize, theme as styledTheme} from 'styled-system';
+import {space, fontSize, themeGet} from 'styled-system';
 
 import theme from '../theme';
 import Flex from './Flex';
@@ -17,14 +17,14 @@ const SelectBase = styled.select`
     font-family: inherit;
     color: inherit;
     background-color: transparent;
-    border-radius: ${styledTheme('radius')};
+    border-radius: ${themeGet('radius')};
     border-width: 1px;
     border-style: solid;
-    border-color: ${styledTheme('colors.lightGray')};
+    border-color: ${themeGet('colors.lightGray')};
     ${space} ${fontSize} &:focus {
         outline: none;
-        border-color: ${styledTheme('colors.active')};
-        box-shadow: 0 0 0 1px ${styledTheme('colors.active')};
+        border-color: ${themeGet('colors.active')};
+        box-shadow: 0 0 0 1px ${themeGet('colors.active')};
     }
 `;
 

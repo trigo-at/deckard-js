@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {space, color, propTypes} from 'styled-system';
+import {space, color} from 'styled-system';
 import {oneOf, oneOfType, string, number} from 'prop-types';
 import icons from '../icons.json';
 import theme from '../theme';
@@ -43,8 +43,8 @@ Icon.defaultProps = {
 };
 
 Icon.propTypes = {
-    ...propTypes.space,
-    ...propTypes.color,
+    ...space.propTypes,
+    ...color.propTypes,
     name: oneOf(Object.keys(icons)).isRequired,
     size: oneOfType([string, number]),
 };
