@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {space, fontSize, fontWeight, color, propTypes, themeGet} from 'styled-system';
+import {space, fontSize, fontWeight, color, themeGet} from 'styled-system';
 import theme from '../theme';
 
 const nowrap = props =>
