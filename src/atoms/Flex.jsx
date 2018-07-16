@@ -9,13 +9,13 @@ import {
     height,
     flexBasis,
     flex,
-    responsiveStyle,
+    style,
 } from 'styled-system';
 import styled from 'styled-components';
 import cleanElement from '../utils/cleanElement';
 // import Box from './Box';
 
-export const justifyItems = responsiveStyle({
+export const justifyItems = style({
     prop: 'justifyItems',
 });
 
