@@ -9,7 +9,7 @@ import Heading from './Heading';
 const ColorBox = ({name, hex, ...props}) => (
     <Flex flexDirection="column" p={3} m={2}>
         <Card boxShadowSize="md" mb={1}>
-            <Flex width="250px" height="100px" alignItems="center" justify="center" {...props} />
+            <Flex width="250px" height="100px" alignItems="center" justifyContent="center" {...props} />
         </Card>
         <Heading>{name}</Heading>
         <Text>{hex}</Text>

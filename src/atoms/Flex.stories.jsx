@@ -5,7 +5,7 @@ import Flex from './Flex';
 
 storiesOf('Flex', module)
     .add('Basic', () => (
-        <Flex align="center">
+        <Flex alignItems="center">
             <Box width={1 / 2} p={3} color="white" bg="brandYellow">
                 Flex
             </Box>
@@ -28,7 +28,7 @@ storiesOf('Flex', module)
         </Flex>
     ))
     .add('Justify', () => (
-        <Flex justify="space-around">
+        <Flex justifyContent="space-around">
             <Box width={1 / 3} p={2} color="white" bg="brandYellow">
                 Flex
             </Box>

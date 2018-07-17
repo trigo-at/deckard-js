@@ -41,7 +41,7 @@ const Banner = ({children, showIcon, header, text, onClose, ...props}) => {
 
     return (
         <Box {...props} bg={bannerColor.backgroundColor || props.bg} color={bannerColor.color || props.color}>
-            <Flex justify="space-between" align="center">
+            <Flex justifyContent="space-between" alignItems="center">
                 {!!icon && !!showIcon && <Icon name={icon} mr={2} size={24} />}
                 <Box w={1}>
                     <Text align={props.textAlign}>
