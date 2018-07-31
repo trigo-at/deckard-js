@@ -77,7 +77,9 @@
         "prop-types": "^15.6.1",
         "react": "^16.3.2",
         "styled-components": "^3.2.6",
-        "styled-system": "^2.2.5"
+        "styled-system": "^2.2.5",
+        "clean-element": "^1.0.0",
+        "rebass": "^2.1.0"
     },
     "jest": {
         "testMatch": [
@@ -92,9 +94,5 @@
             "!src/**/?(*.)(stories).js?(x)"
         ]
     },
-    "dependencies": {
-        "clean-element": "^1.0.0",
-        "rebass": "^2.1.0",
-        "system-components": "^3.0.0"
-    }
+    "dependencies": {}
 }
