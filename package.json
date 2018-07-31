@@ -1,6 +1,6 @@
 {
     "name": "@trigo/design-system",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "trigo design system",
     "main": "dist/designsystem.cjs.js",
     "module": "dist/designsystem.esm.js",
@@ -90,9 +90,9 @@
         ]
     },
     "dependencies": {
-      "clean-element": "^1.0.0",
-      "styled-system": "^3.0.2",
-      "system-components": "^3.0.0",
-      "rebass": "^2.1.0"
+        "clean-element": "^1.0.0",
+        "styled-system": "^3.0.2",
+        "system-components": "^3.0.0",
+        "rebass": "^2.1.0"
     }
 }
