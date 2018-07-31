@@ -69,8 +69,6 @@
         "rollup-plugin-babel": "^3.0.7",
         "rollup-plugin-json": "^3.0.0",
         "rollup-plugin-node-resolve": "^3.3.0",
-        "styled-components": "^3.3.3",
-        "styled-system": "^3.0.2",
         "svgi": "^1.1.0"
     },
     "peerDependencies": {
@@ -93,7 +91,7 @@
     },
     "dependencies": {
       "clean-element": "^1.0.0",
-      "styled-system": "^2.2.5",
+      "styled-system": "^3.0.2",
       "system-components": "^3.0.0",
       "rebass": "^2.1.0"
     }
