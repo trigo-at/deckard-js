@@ -15,6 +15,7 @@
         "react/no-array-index-key": 0,
         "react/forbid-prop-types": 0,
         "import/first": 1,
+        "import/no-unresolved": 0,
         "compat/compat": 2,
         "jsx-a11y/href-no-hash": 0,
         "jsx-a11y/anchor-is-valid": 0,
