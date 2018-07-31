@@ -92,5 +92,9 @@
             "!src/**/?(*.)(stories).js?(x)"
         ]
     },
-    "dependencies": {}
+    "dependencies": {
+        "clean-element": "^1.0.0",
+        "rebass": "^2.1.0",
+        "system-components": "^3.0.0"
+    }
 }

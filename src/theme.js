@@ -24,6 +24,8 @@ const boxShadows = {
     inner: `inset 0 2px 4px 0 rgba(0,0,0,0.06)`,
 };
 
+const borders = [0, 1, 2, 4];
+
 const radii = [0, 2, 6];
 const radius = '2px';
 
@@ -61,6 +63,7 @@ const theme = {
     fontWeights,
     regular,
     bold,
+    borders,
     fonts: {
         content: fontContent,
         heading: fontHeading,

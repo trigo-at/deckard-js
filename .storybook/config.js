@@ -2,8 +2,8 @@ import React from 'react';
 import {configure, addDecorator} from '@storybook/react';
 import {setOptions} from '@storybook/addon-options';
 import {injectGlobal} from 'styled-components';
+import {Box} from 'rebass';
 import ThemeProvider from '../src/ThemeProvider';
-import Box from '../src/atoms/Box';
 
 setOptions({
     name: 'trigo Design System',
@@ -18,7 +18,7 @@ injectGlobal`
 addDecorator(story => <ThemeProvider><Box p={3}>{story()}</Box></ThemeProvider>);
 
 // automatically import all files ending in *.stories.js
-const req = require.context('../src', true, /.stories.jsx$/);
+const req = require.context('../stories', true, /.stories.jsx$/);
 function loadStories() {
     req.keys().forEach(filename => req(filename));
 }
