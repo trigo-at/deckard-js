@@ -1,6 +1,7 @@
 import React from 'react';
-import styled, {ThemeProvider as StyledThemeProvider, injectGlobal} from 'styled-components';
-import theme from './theme';
+import {bool} from 'prop-types';
+import styled, {css, ThemeProvider as StyledThemeProvider, injectGlobal} from 'styled-components';
+import defaultTheme from './theme';
 
 // eslint-disable-next-line
 injectGlobal`
@@ -11,9 +12,14 @@ injectGlobal`
 
 export const Base = styled.div`
     * {
-        font-family: ${props => props.theme.fonts.content};
-        line-height: 1.5;
-        letter-spacing: 0;
+        ${({theme, applyFont}) =>
+            applyFont
+                ? css`
+                      font-family: ${theme.fonts.content};
+                      line-height: 1.5;
+                      letter-spacing: 0;
+                  `
+                : ''};
         box-sizing: border-box;
     }
 
@@ -23,17 +29,28 @@ export const Base = styled.div`
     h4,
     h5,
     h6 {
-        font-family: ${props => props.theme.fonts.heading};
-        letter-spacing: 0.05em;
+        ${({theme, applyFont}) =>
+            applyFont
+                ? css`
+                      font-family: ${theme.fonts.content};
+                      letter-spacing: 0.05em;
+                  `
+                : ''};
     }
 `;
 
-const ThemeProvider = props => (
-    <StyledThemeProvider theme={theme}>
-        <Base {...props} />
+const ThemeProvider = ({applyFont, ...props}) => (
+    <StyledThemeProvider theme={defaultTheme}>
+        <Base {...props} applyFont={applyFont} />
     </StyledThemeProvider>
 );
 
-ThemeProvider.propTypes = {};
+ThemeProvider.propTypes = {
+    applyFont: bool,
+};
+
+ThemeProvider.defaultProps = {
+    applyFont: true,
+};
 
 export default ThemeProvider;
