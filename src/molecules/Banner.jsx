@@ -11,40 +11,34 @@ const bannerColors = {
     primary: {
         backgroundColor: 'primary',
         color: 'white',
-        icon: 'success',
     },
     secondary: {
         backgroundColor: 'secondary',
         color: 'black',
-        icon: 'success',
     },
     negative: {
         backgroundColor: 'negative',
         color: 'white',
-        icon: 'warning',
     },
     positive: {
         backgroundColor: 'positive',
         color: 'black',
-        icon: 'warning',
     },
     warning: {
         backgroundColor: 'warning',
         color: 'black',
-        icon: 'warning',
     },
 };
 
-const Banner = ({children, showIcon, header, text, onClose, ...props}) => {
-    const bannerColor = bannerColors[props.bg] || {};
-    const icon = props.iconName || bannerColor.icon;
+const Banner = ({children, showIcon, header, text, onClose, iconName, bg, color, textAlign, ...props}) => {
+    const bannerColor = bannerColors[bg] || {};
 
     return (
-        <Box {...props} bg={bannerColor.backgroundColor || props.bg} color={bannerColor.color || props.color}>
+        <Box {...props} bg={bannerColor.backgroundColor || bg} color={bannerColor.color || color} textAlign={textAlign}>
             <Flex justifyContent="space-between" alignItems="center">
-                {!!icon && !!showIcon && <Icon name={icon} mr={2} size={24} />}
+                {!!iconName && !!showIcon && <Icon name={iconName} mr={2} size={24} />}
                 <Box w={1}>
-                    <Text align={props.textAlign}>
+                    <Text align={textAlign}>
                         <Heading.h5>{header}</Heading.h5>
                         <Text.span fontSize={1}>{text}</Text.span>
                         {children}
