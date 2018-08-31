@@ -1,5 +1,7 @@
 import React from 'react';
+import {string, any} from 'prop-types';
 import {storiesOf, action} from '@storybook/react';
+import styled from 'styled-components';
 import Text from '../atoms/Text';
 import Box from '../atoms/Box';
 import Heading from '../atoms/Heading';
@@ -9,18 +11,28 @@ import Label from '../atoms/Label';
 import Checkbox from './Checkbox';
 import theme from '../theme';
 
-const StyledLabel = Label.extend`
+const StyledLabel = styled(Label)`
     cursor: pointer;
     font-size: 12px;
     vertical-align: middle;
 `;
 
-const Wrapper = props => (
+const Wrapper = ({title, children}) => (
     <Box p="12px" my="6px" fontSize="12px">
-        {props.title ? <Heading.h6 mb="12px">{props.title}</Heading.h6> : null}
-        {props.children}
+        {title && <Heading.h6 mb="12px">{title}</Heading.h6>}
+        {children}
     </Box>
 );
+
+Wrapper.propTypes = {
+    title: string,
+    children: any,
+};
+
+Wrapper.defaultProps = {
+    title: undefined,
+    children: undefined,
+};
 
 const formAction = e => {
     e.preventDefault();
