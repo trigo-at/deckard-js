@@ -5,7 +5,7 @@ import Flex from '../atoms/Flex';
 import Text from '../atoms/Text';
 import Banner from './Banner';
 
-storiesOf('Banner', module)
+storiesOf('Components/Banner', module)
     .add('All bgs', () => (
         <Box>
             <Banner textAlign="left" mb={2} p={3} header="default" text="Secondary Text" onClose={action('closed')} />

@@ -8,7 +8,7 @@ const description =
     ' using HTML h1-h6 element for setting section headings,' +
     ' supporting all <Text> props.';
 
-storiesOf('Heading', module)
+storiesOf('Components/Heading', module)
     .add(
         'Heading component',
         withInfo({

@@ -3,7 +3,7 @@ import {storiesOf} from '@storybook/react';
 import {withInfo} from '@storybook/addon-info';
 import Badge from './Badge';
 
-storiesOf('Badge', module)
+storiesOf('Components/Badge', module)
     .add(
         'Badge component',
         withInfo({

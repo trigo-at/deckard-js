@@ -11,7 +11,7 @@ import Icon from '../atoms/Icon';
 import Select from '../atoms/Select';
 import FormField from './FormField';
 
-storiesOf('FormField', module)
+storiesOf('Components/FormField', module)
     .add(
         'FormField component',
         withInfo({
@@ -246,27 +246,24 @@ class FormFieldWithController extends React.PureComponent {
         const {isValid, isDirty} = this.state;
         if (isValid && isDirty) {
             return 'positive';
-        } else if (!isValid && isDirty) {
+        }
+        if (!isValid && isDirty) {
             return 'negative';
         }
         return undefined;
     };
 
     render() {
+        const {isValid, isDirty, value} = this.state;
         return (
             <FormField
                 color={this.getBorderColor()}
-                info={!this.state.isValid && this.state.isDirty ? "That's not 5 letters!" : null}
-                isDirty={this.state.isDirty}
-                isValid={this.state.isValid}>
+                info={!isValid && isDirty ? "That's not 5 letters!" : null}
+                isDirty={isDirty}
+                isValid={isValid}>
                 <Label>5 Letter Word</Label>
                 <Icon name="announcement" />
-                <Input
-                    id="form-field"
-                    value={this.state.value}
-                    placeholder="Enter a 5 letter word"
-                    onChange={this.onChange}
-                />
+                <Input id="form-field" value={value} placeholder="Enter a 5 letter word" onChange={this.onChange} />
                 <Icon name="beverage" />
             </FormField>
         );

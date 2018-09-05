@@ -5,7 +5,7 @@ import Label from './Label';
 import Input from './Input';
 // import Flex from './Flex';
 
-storiesOf('Label', module)
+storiesOf('Components/Label', module)
     .add(
         'Label component',
         withInfo({

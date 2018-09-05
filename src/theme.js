@@ -36,7 +36,7 @@ const colors = {
     brandBlue: TRIGO_BLUE,
     brandGreen: TRIGO_GREEN,
     brandYellow: TRIGO_YELLOW,
-    primary: '#2D8EFF',
+    primary: TRIGO_BLUE,
     darkPrimary: '#0073F9',
     secondary: '#DCEEFF',
     darkSecondary: '#A9D5FF',

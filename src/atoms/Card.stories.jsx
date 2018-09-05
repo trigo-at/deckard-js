@@ -3,7 +3,7 @@ import {storiesOf} from '@storybook/react';
 import {withInfo} from '@storybook/addon-info';
 import Card from './Card';
 
-storiesOf('Card', module)
+storiesOf('Components/Card', module)
     .add(
         'Card component',
         withInfo({

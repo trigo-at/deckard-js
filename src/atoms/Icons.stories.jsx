@@ -9,7 +9,7 @@ import icons from '../icons.json';
 
 const keys = Object.keys(icons);
 
-storiesOf('Icon', module)
+storiesOf('Components/Icon', module)
     .add(
         'Icon component',
         withInfo({

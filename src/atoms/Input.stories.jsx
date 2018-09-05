@@ -5,7 +5,7 @@ import Box from './Box';
 import Input from './Input';
 import Label from './Label';
 
-storiesOf('Input', module)
+storiesOf('Components/Input', module)
     .add(
         'Input component',
         withInfo({

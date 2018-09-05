@@ -3,7 +3,7 @@ import {storiesOf} from '@storybook/react';
 import {withInfo} from '@storybook/addon-info';
 import Text from './Text';
 
-storiesOf('Text', module)
+storiesOf('Components/Text', module)
     .add(
         'Typography component',
         withInfo({

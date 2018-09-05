@@ -26,7 +26,7 @@ ColorBox.defaultProps = {
     hex: '',
 };
 
-storiesOf('Colors', module).add('palette', () => (
+storiesOf('Styles/Colors', module).add('palette', () => (
     <Fragment>
         <Flex>
             <ColorBox bg="brandYellow" name="Brand Yellow" hex="#F7CA10">

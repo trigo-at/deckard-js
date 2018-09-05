@@ -43,7 +43,7 @@ const checkAction = e => {
     action(`${e.target.id} was clicked`)(e.target.value, e.target.checked);
 };
 
-storiesOf('Checkbox', module).add('Checkbox states', () => (
+storiesOf('Components/Checkbox', module).add('Checkbox states', () => (
     <div>
         <Wrapper>
             <StyledLabel htmlFor="unchecked_box">

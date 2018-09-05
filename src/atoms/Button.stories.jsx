@@ -4,7 +4,7 @@ import {withInfo} from '@storybook/addon-info';
 import Button from './Button';
 import OutlineButton from './OutlineButton';
 
-storiesOf('Button', module)
+storiesOf('Components/Button', module)
     .add(
         'Button component',
         withInfo({
