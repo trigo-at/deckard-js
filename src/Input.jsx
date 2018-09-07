@@ -13,6 +13,9 @@ const borders = ({color, theme}) => {
             outline: 0,
             'border-color': focusColor,
             'box-shadow': `0 0 0 2px ${focusColor}`,
+            '+label': {
+                color: focusColor,
+            },
         },
     };
 };

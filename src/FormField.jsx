@@ -9,13 +9,12 @@ import Icon from './Icon';
 
 const propTypes = {
     id: string.isRequired,
-    label: string,
+    label: string.isRequired,
     children: any,
     color: oneOf('positive', 'warning', 'negative'),
 };
 
 const defaultProps = {
-    label: undefined,
     children: undefined,
     color: undefined,
 };
@@ -23,7 +22,7 @@ const defaultProps = {
 const StateIcon = styled(Icon)`
     position: absolute;
     right: 12px;
-    top: 12px;
+    top: 32px;
 `;
 
 const ContainerBox = styled(Box)`
@@ -39,14 +38,12 @@ const FormField = ({id, label, color, children}) => {
     }
 
     return (
-        <Flex flexDirection="column">
-            {label && (
-                <Label color={color} htmlFor={id}>
-                    {label}
-                </Label>
-            )}
+        <Flex flexDirection="column-reverse">
+            {children ? React.cloneElement(children, inputProps) : <Input {...inputProps} />}
+            <Label color={color} htmlFor={id}>
+                {label}
+            </Label>
             <ContainerBox>
-                {children ? React.cloneElement(children, inputProps) : <Input {...inputProps} />}
                 {color === 'positive' && <StateIcon color="positive" name="checkmarkOutline" />}
                 {color === 'warning' && <StateIcon color="warning" name="exclamationOutline" />}
                 {color === 'negative' && <StateIcon color="negative" name="closeOutline" />}
