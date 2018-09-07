@@ -17,16 +17,6 @@ const letterSpacings = {
     caps: '0.025em',
 };
 
-const boxShadows = {
-    default: `0 2px 4px 0 rgba(0,0,0,0.10)`,
-    md: `0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08);`,
-    lg: `0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08)`,
-    inner: `inset 0 2px 4px 0 rgba(0,0,0,0.06)`,
-};
-
-const radii = [0, 2, 6];
-const radius = '2px';
-
 // colors
 const TRIGO_YELLOW = '#F7CA10';
 const TRIGO_GREEN = '#7FBD42';
@@ -52,6 +42,11 @@ const colors = {
     snow: '#DDE2E8',
 };
 
+const shadows = ['none', `inset 0 0 0 1px ${colors.gray}`, `inset 0 0 0 1px ${colors.gray}, 0 0 4px ${colors.gray}`];
+
+const radii = [0, 2, 6];
+const radius = '2px';
+
 const maxContainerWidth = '1280px';
 
 const theme = {
@@ -66,7 +61,7 @@ const theme = {
         heading: fontHeading,
     },
     letterSpacings,
-    boxShadows,
+    shadows,
     colors,
     radii,
     radius,
