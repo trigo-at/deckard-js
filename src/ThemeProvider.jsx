@@ -15,7 +15,7 @@ export const Base = styled.div`
         ${({theme, applyFont}) =>
             applyFont
                 ? css`
-                      font-family: ${theme.fonts.content};
+                      font-family: ${theme.fonts};
                       line-height: 1.5;
                       letter-spacing: 0;
                   `
@@ -32,7 +32,7 @@ export const Base = styled.div`
         ${({theme, applyFont}) =>
             applyFont
                 ? css`
-                      font-family: ${theme.fonts.content};
+                      font-family: ${theme.fonts};
                       letter-spacing: 0.05em;
                   `
                 : ''};

@@ -1,39 +1,58 @@
-import system from 'system-components';
-import {themeGet} from 'styled-system';
+import styled from 'styled-components';
+import {space, themeGet} from 'styled-system';
+import {string} from 'prop-types';
+import defaultTheme from './theme';
 
-const Input = system(
-    {
-        is: 'input',
-        type: 'text',
-        fontSize: 'inherit',
-        lineHeight: 'inherit',
-        px: 1,
-        py: 2,
-        m: 0,
-        width: 1,
-        border: 0,
-        borderColor: 'gray',
-        boxShadow: 1,
-        borderRadius: 2,
-        color: 'inherit',
-        bg: 'transparent',
-    },
-    props => ({
-        fontFamily: 'inherit',
-        display: 'inline-block',
-        verticalAlign: 'middle',
-        border: 0,
-        appearance: 'none',
-        '&:focus': {
-            outline: 'none',
-            boxShadow: `inset 0 0 0 1px ${themeGet('colors.primary')(props)}`,
+const borders = ({color, theme}) => {
+    const borderColor = color ? theme.colors[color] : theme.colors.lightGray;
+    const focusColor = color ? borderColor : theme.colors.primary;
+    return {
+        'border-color': borderColor,
+        'box-shadow': `0 0 0 1px ${borderColor}`,
+        ':focus': {
+            outline: 0,
+            'border-color': focusColor,
+            'box-shadow': `0 0 0 2px ${focusColor}`,
         },
-        '&:disabled': {
-            opacity: 1 / 4,
-        },
-    })
-);
+    };
+};
+
+const Input = styled.input`
+    appearance: none;
+    display: block;
+    width: 100%;
+    font-family: inherit;
+    color: inherit;
+    font-size: ${themeGet('fontSizes.1')}px;
+    background-color: transparent;
+    border-radius: ${themeGet('radius')};
+    border-width: 0px;
+    border-style: solid;
+    border-color: ${themeGet('colors.lightGray')};
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin: 0;
+    ::placeholder {
+        color: ${themeGet('colors.gray')};
+    }
+    ::-ms-clear {
+        display: none;
+    }
+    ${borders} ${space};
+`;
 
 Input.displayName = 'Input';
+
+Input.propTypes = {
+    id: string.isRequired,
+    color: string,
+    ...space.propTypes,
+};
+
+Input.defaultProps = {
+    theme: defaultTheme,
+};
 
 export default Input;

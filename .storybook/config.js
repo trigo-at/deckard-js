@@ -10,11 +10,6 @@ setOptions({
     url: 'https://www.trigo.at',
 });
 
-// eslint-disable-next-line
-injectGlobal`
-    @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700');
-`;
-
 addDecorator(story => <ThemeProvider><Box p={3}>{story()}</Box></ThemeProvider>);
 
 // automatically import all files ending in *.stories.js

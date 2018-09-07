@@ -1,6 +1,6 @@
 const breakpoints = ['40em', '52em', '64em'];
 
-const space = [0, 4, 8, 16, 32, 64, 128, 256, 512];
+const space = [0, 4, 8, 16, 32, 64, 128];
 
 const fontSizes = [12, 14, 16, 20, 24, 32, 48];
 export const regular = 400;
@@ -9,8 +9,6 @@ const fontWeights = {
     regular,
     bold,
 };
-const fontContent = `Roboto, sans-serif`;
-const fontHeading = `"Roboto Slab", serif`;
 
 const letterSpacings = {
     normal: 'normal',
@@ -33,16 +31,21 @@ const colors = {
     black: '#000A12',
     white: '#FFFFFF',
     negative: '#FF4949',
-    positive: '#13CE66',
-    warning: '#FFCC3D',
-    active: '#2D8EFF',
+    positive: TRIGO_GREEN,
+    warning: TRIGO_YELLOW,
+    active: TRIGO_BLUE,
     darkGray: '#1F2D3D',
     gray: '#778F9B',
     lightGray: '#B8C1CB',
     snow: '#DDE2E8',
 };
 
-const shadows = ['none', `inset 0 0 0 1px ${colors.gray}`, `inset 0 0 0 1px ${colors.gray}, 0 0 4px ${colors.gray}`];
+const shadows = [
+    `0 0 2px 0 rgba(0,0,0,.08),0 1px 4px 0 rgba(0,0,0,.16)`,
+    `0 0 2px 0 rgba(0,0,0,.08),0 2px 8px 0 rgba(0,0,0,.16)`,
+    `0 0 2px 0 rgba(0,0,0,.08),0 4px 16px 0 rgba(0,0,0,.16)`,
+    `0 0 2px 0 rgba(0,0,0,.08),0 8px 32px 0 rgba(0,0,0,.16)`,
+];
 
 const radii = [0, 2, 6];
 const radius = '2px';
@@ -56,10 +59,7 @@ const theme = {
     fontWeights,
     regular,
     bold,
-    fonts: {
-        content: fontContent,
-        heading: fontHeading,
-    },
+    fonts: `'Montserrat','Helvetica Neue',Helvetica,Arial,sans-serif`,
     letterSpacings,
     shadows,
     colors,

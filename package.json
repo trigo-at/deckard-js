@@ -92,7 +92,5 @@
             "!src/**/?(*.)(stories).js?(x)"
         ]
     },
-    "dependencies": {
-        "system-components": "^3.0.1"
-    }
+    "dependencies": {}
 }

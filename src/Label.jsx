@@ -20,7 +20,6 @@ const accessiblyHide = props =>
         : null;
 
 const Label = styled.label`
-  font-size: ${themeGet('fontSizes.1')}px;
   letter-spacing: 0.2px;
   display: block;
   width: 100%;
@@ -38,8 +37,9 @@ Label.propTypes = {
 };
 
 Label.defaultProps = {
+    fontSize: 1,
     fontWeight: 'bold',
-    color: 'darkGray',
+    color: 'gray',
     theme,
 };
 
