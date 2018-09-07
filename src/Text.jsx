@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import {fontSize, space, color, textAlign} from 'styled-system';
+import {fontSize, space, color, textAlign, opacity} from 'styled-system';
 import theme from './theme';
 
 export const caps = props =>
@@ -25,6 +25,7 @@ const Text = styled.div`
     ${regular}
     ${bold}
     ${textAlign}
+    ${opacity}
 `;
 
 Text.displayName = 'Text';
@@ -55,6 +56,7 @@ Text.propTypes = {
     pl: numberStringOrArray,
     px: numberStringOrArray,
     py: numberStringOrArray,
+    opacity: opacity.propTypes,
 };
 
 Text.defaultProps = {

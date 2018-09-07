@@ -21,7 +21,12 @@ storiesOf('Components/FormField', module)
                 <Text bold pt={4} pb={2}>
                     Hey, ya turkey! Enter a word that has 5 characters in it.
                 </Text>
-                <FormField id="test" label="Test" />
+                <FormField
+                    id="test"
+                    label="Label"
+                    hint="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam ">
+                    <Input />
+                </FormField>
             </Box>
         ))
     )
@@ -34,7 +39,10 @@ storiesOf('Components/FormField', module)
                         <Text bold pt={4} pb={2}>
                             Default
                         </Text>
-                        <FormField label="Label" id="form-field-3">
+                        <FormField
+                            label="Label"
+                            id="form-field-3"
+                            hint="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam ">
                             <Input value="Typing Texa sdfasdfasdflkasjdflasjdflaksjdflk;ajd;flkajs;lkdfjas;ldkfja;lsdfjal;ksjdft" />
                         </FormField>
                     </Box>
@@ -44,7 +52,11 @@ storiesOf('Components/FormField', module)
                         <Text bold pt={4} pb={2}>
                             Success
                         </Text>
-                        <FormField label="Label" id="form-field-3" color="positive">
+                        <FormField
+                            label="Label"
+                            id="form-field-3"
+                            color="positive"
+                            hint="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam ">
                             <Input value="Typing Texa sdfasdfasdflkasjdflasjdflaksjdflk;ajd;flkajs;lkdfjas;ldkfja;lsdfjal;ksjdft" />
                         </FormField>
                     </Box>
@@ -54,7 +66,11 @@ storiesOf('Components/FormField', module)
                         <Text bold pt={4} pb={2}>
                             Warning
                         </Text>
-                        <FormField label="Label" id="form-field-3" color="warning">
+                        <FormField
+                            label="Label"
+                            id="form-field-3"
+                            color="warning"
+                            hint="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam ">
                             <Input value="Typing Text" />
                         </FormField>
                     </Box>
@@ -64,7 +80,11 @@ storiesOf('Components/FormField', module)
                         <Text bold pt={4} pb={2}>
                             Error
                         </Text>
-                        <FormField label="Label" id="form-field-3" color="negative">
+                        <FormField
+                            label="Label"
+                            id="form-field-3"
+                            color="negative"
+                            hint="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam ">
                             <Input value="Typing Text" />
                         </FormField>
                     </Box>

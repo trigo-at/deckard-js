@@ -6,10 +6,12 @@ import Flex from './Flex';
 import Label from './Label';
 import Input from './Input';
 import Icon from './Icon';
+import Text from './Text';
 
 const propTypes = {
     id: string.isRequired,
     label: string.isRequired,
+    hint: string,
     children: any,
     color: oneOf('positive', 'warning', 'negative'),
 };
@@ -17,6 +19,7 @@ const propTypes = {
 const defaultProps = {
     children: undefined,
     color: undefined,
+    hint: undefined,
 };
 
 const StateIcon = styled(Icon)`
@@ -31,7 +34,7 @@ const ContainerBox = styled(Box)`
 
 const showIcon = color => ['positive', 'warning', 'negative'].includes(color);
 
-const FormField = ({id, label, color, children}) => {
+const FormField = ({id, label, hint, color, children}) => {
     const inputProps = {id, color};
     if (showIcon(color)) {
         inputProps.pr = 5;
@@ -39,6 +42,11 @@ const FormField = ({id, label, color, children}) => {
 
     return (
         <Flex flexDirection="column-reverse">
+            {hint && (
+                <Text.span fontSize={0} color={color === 'negative' ? color : 'gray'} mt={1} opacity={0.75}>
+                    {hint}
+                </Text.span>
+            )}
             {children ? React.cloneElement(children, inputProps) : <Input {...inputProps} />}
             <Label color={color} htmlFor={id}>
                 {label}
