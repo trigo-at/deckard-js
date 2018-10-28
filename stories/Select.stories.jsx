@@ -4,7 +4,7 @@ import Box from '../src/Box';
 import Label from '../src/Label';
 import Select from '../src/Select';
 
-storiesOf('Components/Select', module)
+storiesOf('Components|Select', module)
     .add('default', () => (
         <Box>
             <Label htmlFor="cabinClass">Cabin Class</Label>

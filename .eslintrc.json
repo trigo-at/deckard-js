@@ -26,11 +26,6 @@
         "react/prop-types": 1
     },
     "settings": {
-        "import/resolver": {
-            "webpack": {
-                "config": "webpack.config.js"
-            }
-        },
         "polyfills": ["promises", "fetch"]
     }
 }

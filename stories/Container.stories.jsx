@@ -3,7 +3,7 @@ import {storiesOf} from '@storybook/react';
 import Container from '../src/Container';
 import Box from '../src/Box';
 
-storiesOf('Styles/Layout/Container', module)
+storiesOf('Styles|Layout/Container', module)
     .add('Default align with theme max width', () => (
         <Container>
             <Box p={4} bg="lightGray" style={{height: `100vh`}}>

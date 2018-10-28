@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import {bool} from 'prop-types';
 import styled, {css, ThemeProvider as StyledThemeProvider, createGlobalStyle} from 'styled-components';
 import defaultTheme from './theme';
@@ -40,7 +40,10 @@ export const Base = styled.div`
 
 const ThemeProvider = ({applyFont, ...props}) => (
     <StyledThemeProvider theme={defaultTheme}>
-        <Base {...props} applyFont={applyFont} />
+        <Fragment>
+            <Base {...props} applyFont={applyFont} />
+            <GlobalStyle />
+        </Fragment>
     </StyledThemeProvider>
 );
 
@@ -53,7 +56,3 @@ ThemeProvider.defaultProps = {
 };
 
 export default ThemeProvider;
-
-throw new Error(
-    'An injectGlobal usage was converted to createGlobalStyles via codemod but needs to be hooked up. See https://www.styled-components.com/docs/api#createglobalstyle for instructions.'
-);

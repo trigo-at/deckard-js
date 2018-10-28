@@ -1,6 +1,5 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
-import {withInfo} from '@storybook/addon-info';
 import Heading from '../src/Heading';
 
 const description =
@@ -8,14 +7,13 @@ const description =
     ' using HTML h1-h6 element for setting section headings,' +
     ' supporting all <Text> props.';
 
-storiesOf('Components/Heading', module)
-    .add(
-        'Heading component',
-        withInfo({
+storiesOf('Components|Heading', module)
+    .add('Heading component', () => <Heading m={3}>Heading component (renders h2)</Heading>, {
+        info: {
             inline: true,
             text: description,
-        })(() => <Heading m={3}>Heading component (renders h2)</Heading>)
-    )
+        },
+    })
     .add('Using dot-notation with h1-h6', () => (
         <section>
             <Heading.h1>Heading h1</Heading.h1>

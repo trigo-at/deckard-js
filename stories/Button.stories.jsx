@@ -1,17 +1,15 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
-import {withInfo} from '@storybook/addon-info';
 import Button from '../src/Button';
 import OutlineButton from '../src/OutlineButton';
 
-storiesOf('Components/Button', module)
-    .add(
-        'Button component',
-        withInfo({
+storiesOf('Components|Button', module)
+    .add('Button component', () => <Button size="lg">Button</Button>, {
+        info: {
             inline: true,
             text: 'Use the <Button /> or <OutlineButton /> components to render a primitive button.',
-        })(() => <Button size="lg">Button</Button>)
-    )
+        },
+    })
     .add('color', () => (
         <div>
             <Button mr={2}>Button</Button>

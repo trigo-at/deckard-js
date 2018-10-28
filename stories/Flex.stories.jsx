@@ -3,7 +3,7 @@ import {storiesOf} from '@storybook/react';
 import Box from '../src/Box';
 import Flex from '../src/Flex';
 
-storiesOf('Styles/Layout/Flex', module)
+storiesOf('Styles|Layout/Flex', module)
     .add('Basic', () => (
         <Flex alignItems="center">
             <Box width={1 / 2} p={3} color="white" bg="brandYellow">

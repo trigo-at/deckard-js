@@ -8,3 +8,4 @@ storybook-static/
 .vscode
 vimrc
 .idea/
+.cache/

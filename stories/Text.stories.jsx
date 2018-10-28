@@ -1,15 +1,17 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
-import {withInfo} from '@storybook/addon-info';
 import Text from '../src/Text';
 
-storiesOf('Components/Text', module)
+storiesOf('Components|Text', module)
     .add(
         'Typography component',
-        withInfo({
-            inline: true,
-            text: 'A low-level component for setting font-size, typographic styles, margin, and color',
-        })(() => <Text>De carne animata corpora quaeritis. Summus sit​​, morbo vel maleficia?</Text>)
+        () => <Text>De carne animata corpora quaeritis. Summus sit​​, morbo vel maleficia?</Text>,
+        {
+            info: {
+                inline: true,
+                text: 'A low-level component for setting font-size, typographic styles, margin, and color',
+            },
+        }
     )
     .add('fontSize', () => (
         <div>

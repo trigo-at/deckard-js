@@ -1,15 +1,11 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
-import {withInfo} from '@storybook/addon-info';
 import Card from '../src/Card';
 
-storiesOf('Components/Card', module)
+storiesOf('Components|Card', module)
     .add(
         'Card component',
-        withInfo({
-            inline: true,
-            text: 'Box extension to control box-shadow.',
-        })(() => (
+        () => (
             <div>
                 <Card my={4} p={3} width={256} color="black" bg="white">
                     Default Shadow
@@ -24,7 +20,13 @@ storiesOf('Components/Card', module)
                     Inner Shadow
                 </Card>
             </div>
-        ))
+        ),
+        {
+            info: {
+                inline: true,
+                text: 'Box extension to control box-shadow.',
+            },
+        }
     )
     .add('Box Shadows with custom borders', () => (
         <div>

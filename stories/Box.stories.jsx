@@ -1,19 +1,21 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
-import {withInfo} from '@storybook/addon-info';
 import Box from '../src/Box';
 
-storiesOf('Styles/Layout/Box', module)
+storiesOf('Styles|Layout/Box', module)
     .add(
         'Layout component',
-        withInfo({
-            text: 'A low-level layout component for setting width, margin, padding, and color',
-            inline: true,
-        })(() => (
+        () => (
             <Box border="gray" p={3}>
                 Hello
             </Box>
-        ))
+        ),
+        {
+            info: {
+                text: 'A low-level layout component for setting width, margin, padding, and color',
+                inline: true,
+            },
+        }
     )
     .add('Padding', () => <Box p={3}>Hello</Box>)
     .add('Margin', () => <Box m={3}>Hello</Box>)

@@ -1,18 +1,16 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
-import {withInfo} from '@storybook/addon-info';
 import Label from '../src/Label';
 import Input from '../src/Input';
 // import Flex from './Flex';
 
-storiesOf('Components/Label', module)
-    .add(
-        'Label component',
-        withInfo({
+storiesOf('Components|Label', module)
+    .add('Label component', () => <Label m={3}>Label Component</Label>, {
+        info: {
             inline: true,
             text: 'Simple styled label component that supports a number of the styled-system props.',
-        })(() => <Label m={3}>Label Component</Label>)
-    )
+        },
+    })
     .add('Using fontSize', () => (
         <div>
             <Label fontSize={6}>Label with fontSize 6</Label>

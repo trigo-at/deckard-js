@@ -1,6 +1,5 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
-import {withInfo} from '@storybook/addon-info';
 import Icon from '../src/Icon';
 import Flex from '../src/Flex';
 import Box from '../src/Box';
@@ -9,14 +8,13 @@ import icons from '../src/icons.json';
 
 const keys = Object.keys(icons);
 
-storiesOf('Components/Icon', module)
-    .add(
-        'Icon component',
-        withInfo({
+storiesOf('Components|Icon', module)
+    .add('Icon component', () => <Icon name="coffee" size={48} />, {
+        info: {
             text: 'A low-level component to display a svg Icon',
             inline: true,
-        })(() => <Icon name="coffee" size={48} />)
-    )
+        },
+    })
     .add('Icons', () => (
         <Box p={2}>
             <Flex wrap>
