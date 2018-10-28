@@ -1,10 +1,9 @@
 import React from 'react';
 import {bool} from 'prop-types';
-import styled, {css, ThemeProvider as StyledThemeProvider, injectGlobal} from 'styled-components';
+import styled, {css, ThemeProvider as StyledThemeProvider, createGlobalStyle} from 'styled-components';
 import defaultTheme from './theme';
 
-// eslint-disable-next-line
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
     body {
         margin: 0;
     }
@@ -54,3 +53,7 @@ ThemeProvider.defaultProps = {
 };
 
 export default ThemeProvider;
+
+throw new Error(
+    'An injectGlobal usage was converted to createGlobalStyles via codemod but needs to be hooked up. See https://www.styled-components.com/docs/api#createglobalstyle for instructions.'
+);
