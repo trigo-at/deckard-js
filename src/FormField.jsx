@@ -13,7 +13,7 @@ const propTypes = {
     label: string.isRequired,
     hint: string,
     children: any,
-    color: oneOf('positive', 'warning', 'negative'),
+    color: oneOf(['positive', 'warning', 'negative']),
 };
 
 const defaultProps = {
