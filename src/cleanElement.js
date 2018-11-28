@@ -13,6 +13,8 @@ const blacklistedProps = [
     'justifyItems',
     'align',
     'width',
+    'height',
+    'maxWidth',
     'size',
     'color',
     'bg',

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import {fontSize, space, color, textAlign, opacity} from 'styled-system';
+import {fontSize, lineHeight, space, color, textAlign, opacity} from 'styled-system';
 import theme from './theme';
 
 export const caps = props =>
@@ -19,6 +19,7 @@ export const italic = props => (props.italic ? {fontStyle: 'italic'} : null);
 const Text = styled.div`
     ${italic}
     ${fontSize}
+    ${lineHeight}
     ${space}
     ${color}
     ${caps}
@@ -34,6 +35,7 @@ const numberStringOrArray = PropTypes.oneOfType([PropTypes.number, PropTypes.str
 
 Text.propTypes = {
     fontSize: PropTypes.oneOfType([PropTypes.number, PropTypes.string, PropTypes.array]),
+    lineHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string, PropTypes.array]),
     align: PropTypes.oneOf(['left', 'center', 'right', 'justify']),
     caps: PropTypes.bool,
     regular: PropTypes.bool,
@@ -56,7 +58,7 @@ Text.propTypes = {
     pl: numberStringOrArray,
     px: numberStringOrArray,
     py: numberStringOrArray,
-    opacity: opacity.propTypes,
+    ...opacity.propTypes,
 };
 
 Text.defaultProps = {
