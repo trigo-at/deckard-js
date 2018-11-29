@@ -4,12 +4,8 @@ import {borderRadius, boxShadow} from 'styled-system';
 import Box from './Box';
 import theme from './theme';
 
-const boxBorder = props => ({
-    border: `${props.borderWidth}px solid ${props.theme.colors[props.borderColor || 'snow']}`,
-});
-
 const Card = styled(Box)`
-  ${boxShadow} ${boxBorder} ${borderRadius};
+    ${boxShadow} ${borderRadius};
 `;
 
 Card.propTypes = {
@@ -20,9 +16,7 @@ Card.propTypes = {
 };
 
 Card.defaultProps = {
-    borderColor: 'borderGray',
     borderRadius: 1,
-    borderWidth: 1,
     boxShadow: 0,
     theme,
 };
