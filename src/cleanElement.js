@@ -5,7 +5,7 @@ const blacklistedProps = [
     'borderColor',
     'borderRadius',
     'borderWidth',
-    'boxShadowSize',
+    'boxShadow',
     'textAlign',
     'flexDirection',
     'justify',
