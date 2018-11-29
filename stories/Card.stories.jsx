@@ -10,14 +10,14 @@ storiesOf('Components|Card', module)
                 <Card my={4} p={3} width={256} color="black" bg="white">
                     Default Shadow
                 </Card>
-                <Card boxShadowSize="md" my={4} p={3} width={256} color="black" bg="white">
+                <Card boxShadow={1} my={4} p={3} width={256} color="black" bg="white">
                     Medium Shadow
                 </Card>
-                <Card boxShadowSize="lg" my={4} p={3} width={256} color="black" bg="white">
+                <Card boxShadow={2} my={4} p={3} width={256} color="black" bg="white">
                     Large Shadow
                 </Card>
-                <Card boxShadowSize="inner" my={4} p={3} width={256} color="black" bg="white">
-                    Inner Shadow
+                <Card boxShadow={3} my={4} p={3} width={256} color="black" bg="white">
+                    X-Large Shadow
                 </Card>
             </div>
         ),
@@ -34,7 +34,7 @@ storiesOf('Components|Card', module)
                 Default Shadow
             </Card>
             <Card
-                boxShadowSize="md"
+                boxShadow={1}
                 my={4}
                 p={3}
                 width={256}
@@ -45,7 +45,7 @@ storiesOf('Components|Card', module)
                 Medium Shadow
             </Card>
             <Card
-                boxShadowSize="lg"
+                boxShadow={2}
                 my={4}
                 p={3}
                 width={256}
@@ -55,16 +55,8 @@ storiesOf('Components|Card', module)
                 borderColor="success">
                 Large Shadow
             </Card>
-            <Card
-                boxShadowSize="inner"
-                my={4}
-                p={3}
-                width={256}
-                color="black"
-                bg="warning"
-                borderWidth={2}
-                borderColor="error">
-                Inner Shadow
+            <Card boxShadow={3} my={4} p={3} width={256} color="black" bg="warning" borderWidth={2} borderColor="error">
+                X-Large Shadow
             </Card>
         </div>
     ))
@@ -73,13 +65,13 @@ storiesOf('Components|Card', module)
             <Card my={4} p={3} width={256} color="black" bg="white" borderRadius={0}>
                 Default Shadow
             </Card>
-            <Card boxShadowSize="md" my={4} p={3} width={256} color="black" bg="white" borderRadius={8}>
+            <Card boxShadow={1} my={4} p={3} width={256} color="black" bg="white" borderRadius={8}>
                 Medium Shadow
             </Card>
-            <Card boxShadowSize="lg" my={4} p={3} width={256} color="black" bg="white" borderRadius={24}>
+            <Card boxShadow={2} my={4} p={3} width={256} color="black" bg="white" borderRadius={24}>
                 Large Shadow
             </Card>
-            <Card boxShadowSize="inner" my={4} p={3} width={256} color="black" bg="white" borderRadius="2rem">
+            <Card boxShadow={3} my={4} p={3} width={256} color="black" bg="white" borderRadius="2rem">
                 Inner Shadow
             </Card>
         </div>
