@@ -1,7 +1,14 @@
+import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import {fontSize, lineHeight, space, color, textAlign, opacity} from 'styled-system';
 import theme from './theme';
+import cleanElement from './cleanElement';
+
+const Base = props => {
+    const next = cleanElement(props);
+    return <div {...next} />;
+};
 
 export const caps = props =>
     props.caps
@@ -16,7 +23,7 @@ export const bold = props => (props.bold ? {fontWeight: props.theme.bold} : null
 
 export const italic = props => (props.italic ? {fontStyle: 'italic'} : null);
 
-const Text = styled.div`
+const Text = styled(Base)`
     ${italic}
     ${fontSize}
     ${lineHeight}
