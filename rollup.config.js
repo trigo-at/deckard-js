@@ -1,6 +1,7 @@
 import babel from 'rollup-plugin-babel';
 import resolve from 'rollup-plugin-node-resolve';
 import json from 'rollup-plugin-json';
+import postcss from 'rollup-plugin-postcss';
 import pkg from './package.json';
 
 export default {
@@ -30,6 +31,12 @@ export default {
         }),
         babel({
             exclude: 'node_modules/**',
+        }),
+        postcss({
+            extract: './dist/styles.css',
+            // minimize: {
+            //     discardComments: true,
+            // },
         }),
     ],
 };

@@ -1,3 +1,4 @@
+import './styles.css';
 // atoms
 export {default as Badge} from './Badge';
 export {default as Box} from './Box';

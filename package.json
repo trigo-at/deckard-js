@@ -44,6 +44,7 @@
     "@storybook/addon-options": "^4.0.11",
     "@storybook/addons": "^4.0.11",
     "@storybook/react": "^4.0.11",
+    "autoprefixer": "^9.4.2",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
@@ -68,9 +69,11 @@
     "rollup-plugin-babel": "^4.0.3",
     "rollup-plugin-json": "^3.1.0",
     "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-postcss": "^1.6.3",
     "styled-components": "^4.1.2",
     "styled-system": "^3.1.11",
-    "svgi": "^1.1.0"
+    "svgi": "^1.1.0",
+    "tailwindcss": "^0.7.2"
   },
   "peerDependencies": {
     "prop-types": "^15.6.1",
