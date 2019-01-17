@@ -33,6 +33,7 @@ const blacklistedProps = [
     'opacity',
     'nested',
     'state',
+    'bold',
 ];
 
 const cleanElement = props =>
