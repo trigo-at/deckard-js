@@ -3,16 +3,15 @@ import {string} from 'prop-types';
 import {storiesOf} from '@storybook/react';
 import Flex from '../src/Flex';
 import Card from '../src/Card';
-import Text from '../src/Text';
-import Heading from '../src/Heading';
+// import Text from '../src/Text';
 
 const ColorBox = ({name, hex, ...props}) => (
     <Flex flexDirection="column" p={3} m={2}>
         <Card boxShadowSize="md" mb={1}>
             <Flex width="250px" height="100px" alignItems="center" justifyContent="center" {...props} />
         </Card>
-        <Heading>{name}</Heading>
-        <Text>{hex}</Text>
+        <div>{name}</div>
+        <div>{hex}</div>
     </Flex>
 );
 

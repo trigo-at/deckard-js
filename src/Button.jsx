@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import {space} from 'styled-system';
-import theme from './theme';
 import cleanElement from './cleanElement';
 
 const Base = props => {
@@ -92,9 +91,7 @@ Button.propTypes = {
     py: numberStringOrArray,
 };
 
-Button.defaultProps = {
-    theme,
-};
+Button.defaultProps = {};
 
 Button.displayName = 'Button';
 

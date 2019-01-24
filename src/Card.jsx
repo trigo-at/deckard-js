@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import {borderRadius, boxShadow} from 'styled-system';
-import Box from './Box';
-import theme from './theme';
 
-const Card = styled(Box)`
+const Card = styled.div`
     ${boxShadow} ${borderRadius};
 `;
 
@@ -18,7 +16,6 @@ Card.propTypes = {
 Card.defaultProps = {
     borderRadius: 1,
     boxShadow: 0,
-    theme,
 };
 
 Card.displayName = 'Card';

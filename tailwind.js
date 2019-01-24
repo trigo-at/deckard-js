@@ -42,6 +42,10 @@ View the full documentation at https://tailwindcss.com.
 |
 */
 
+// const TRIGO_YELLOW = '#F7CA10';
+// const TRIGO_GREEN = '#7FBD42';
+// const TRIGO_BLUE = '#3AB2D2';
+
 const colors = {
     transparent: 'transparent',
 
@@ -264,15 +268,15 @@ module.exports = {
   */
 
     fontWeights: {
-        hairline: 100,
-        thin: 200,
-        light: 300,
+        // hairline: 100,
+        // thin: 200,
+        // light: 300,
         normal: 400,
-        medium: 500,
+        // medium: 500,
         semibold: 600,
         bold: 700,
-        extrabold: 800,
-        black: 900,
+        // extrabold: 800,
+        // black: 900,
     },
 
     /*

@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import Button from './Button';
-import theme from './theme';
 
 const OutlineButton = styled(Button)`
     color: ${props => props.theme.colors.primary};
@@ -13,9 +12,7 @@ const OutlineButton = styled(Button)`
     }
 `;
 
-OutlineButton.defaultProps = {
-    theme,
-};
+OutlineButton.defaultProps = {};
 
 OutlineButton.displayName = 'OutlineButton';
 

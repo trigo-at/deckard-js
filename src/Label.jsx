@@ -1,48 +1,21 @@
-import styled from 'styled-components';
-import {space, fontSize, fontWeight, color} from 'styled-system';
-import theme from './theme';
+/* eslint jsx-a11y/label-has-associated-control:0 */
+import React from 'react';
+import {string} from 'prop-types';
 
-const nowrap = props =>
-    props.nowrap
-        ? {
-              whiteSpace: 'nowrap',
-          }
-        : null;
-
-const accessiblyHide = props =>
-    props.hidden
-        ? {
-              position: 'absolute',
-              width: '1px',
-              height: '1px',
-              clip: 'rect(1px, 1px, 1px, 1px)',
-          }
-        : null;
-
-const Label = styled.label`
-  letter-spacing: 0.2px;
-  display: block;
-  width: 100%;
-  margin: 0;
-  ${space} ${fontSize} ${color} ${fontWeight};
-  ${nowrap}
-  ${accessiblyHide}
-`;
+const Label = ({htmlFor, ...props}) => (
+    <label
+        className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
+        htmlFor={htmlFor}
+        {...props}
+    />
+);
 
 Label.propTypes = {
-    ...space.propTypes,
-    ...fontSize.propTypes,
-    ...color.propTypes,
-    ...fontWeight.propTypes,
+    htmlFor: string,
 };
 
 Label.defaultProps = {
-    fontSize: 1,
-    fontWeight: 'bold',
-    color: 'gray',
-    theme,
+    htmlFor: undefined,
 };
-
-Label.displayName = 'Label';
 
 export default Label;
