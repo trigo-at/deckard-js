@@ -1,5 +1,5 @@
 {
-    "extends": ["react-trigo", "prettier", "prettier/react"],
+    "extends": ["trigo/react", "prettier", "prettier/react"],
     "plugins": ["prettier"],
     "env": {
         "node": true,
@@ -9,23 +9,8 @@
         "sourceType": "module"
     },
     "rules": {
-        "no-console": 0,
-        "no-underscore-dangle": 0,
-        "no-confusing-arrow": 0,
-        "react/no-array-index-key": 0,
-        "react/forbid-prop-types": 0,
-        "import/first": 1,
-        "compat/compat": 2,
-        "jsx-a11y/href-no-hash": 0,
-        "jsx-a11y/anchor-is-valid": 0,
-        "jsx-a11y/label-has-for": 0,
-        "prettier/prettier": ["warn"],
-        "react/sort-comp": 0,
-        "react/no-unused-prop-types": 1,
-        "react/no-unused-state": 1,
-        "react/prop-types": 1
-    },
-    "settings": {
-        "polyfills": ["promises", "fetch"]
+        "prettier/prettier": [
+            "warn"
+        ]
     }
 }
