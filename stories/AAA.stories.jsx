@@ -1,8 +1,6 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
 import Container from '../src/Container';
-// import div from '../src/div';
-// import Box from '../src/Box';
 
 const divBlock = props => <div color="grey-darker" {...props} />;
 

@@ -1,4 +1,4 @@
-/* eslint jsx-a11y/label-has-associated-control:0 */
+/* eslint jsx-a11y/label-has-associated-control:0 jsx-a11y/label-has-for:0 */
 import React from 'react';
 import {string} from 'prop-types';
 
