@@ -34,11 +34,12 @@ const blacklistedProps = [
     'nested',
     'state',
     'bold',
+    'fullWidth',
 ];
 
 const cleanElement = props =>
-    Object.entries(props)
+    Object.entries(props) // eslint-disable-line
         .filter(([key]) => !blacklistedProps.includes(key))
-        .reduce((obj, [key, val]) => Object.assign(obj, {[key]: val}), {});
+        .reduce((obj, [key, val]) => Object.assign(obj, {[key]: val}), {}); // eslint-disable-line
 
 export default cleanElement;

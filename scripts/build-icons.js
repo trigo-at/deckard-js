@@ -69,14 +69,14 @@ const parseSVG = svg => {
     };
 };
 
-const getData = icons => icons.map(icon => Object.assign({}, icon, parseSVG(icon.svg)));
+const getData = icons => icons.map(icon => Object.assign({}, icon, parseSVG(icon.svg))); // eslint-disable-line
 
 const build = () => {
     const icons = readIcons(newSrc);
 
     const data = getData(icons).reduce(
         (a, {key, viewBox, path: svgPath, polygon, legacy}) =>
-            Object.assign({}, a, {
+            Object.assign({}, a, {  // eslint-disable-line
                 [key]: {
                     viewBox,
                     path: svgPath,
