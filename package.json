@@ -1,6 +1,6 @@
 {
   "name": "@trigo/design-system",
-  "version": "0.13.12",
+  "version": "0.13.13",
   "description": "trigo design system",
   "main": "dist/designsystem.cjs.js",
   "module": "dist/designsystem.esm.js",
