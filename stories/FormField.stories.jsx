@@ -43,7 +43,7 @@ storiesOf('Components|FormField', module)
                         label="Label"
                         id="form-field-3"
                         hint="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam ">
-                        <Input value="Typing Texa sdfasdfasdflkasjdflasjdflaksjdflk;ajd;flkajs;lkdfjas;ldkfja;lsdfjal;ksjdft" />
+                        <Input value="asdfasdfasdfasdfsdf" />
                     </FormField>
                 </Box>
             </Flex>
@@ -57,7 +57,7 @@ storiesOf('Components|FormField', module)
                         id="form-field-3"
                         color="positive"
                         hint="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam ">
-                        <Input value="Typing Texa sdfasdfasdflkasjdflasjdflaksjdflk;ajd;flkajs;lkdfjas;ldkfja;lsdfjal;ksjdft" />
+                        <Input value="asdfasdfasdf" />
                     </FormField>
                 </Box>
             </Flex>
