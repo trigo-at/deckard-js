@@ -1,15 +1,13 @@
 import React, {Fragment} from 'react';
-import {bool, object} from 'prop-types';
-import styled, {css, ThemeProvider as StyledThemeProvider, createGlobalStyle} from 'styled-components';
+import {bool, object, node} from 'prop-types';
+import {css, ThemeProvider as StyledThemeProvider, createGlobalStyle} from 'styled-components';
 import defaultTheme from './theme';
 
 const GlobalStyle = createGlobalStyle`
     body {
         margin: 0;
     }
-`;
 
-export const Base = styled.div`
     * {
         ${({theme, applyFont}) =>
             applyFont
@@ -38,22 +36,24 @@ export const Base = styled.div`
     }
 `;
 
-const ThemeProvider = ({applyFont, theme = {}, ...props}) => (
-    <StyledThemeProvider theme={{...defaultTheme, ...theme}}>
+const ThemeProvider = ({applyFont, theme = {}, children}) => (
+    <StyledThemeProvider theme={{...defaultTheme, ...theme}} applyFont={applyFont}>
         <Fragment>
-            <Base {...props} applyFont={applyFont} />
             <GlobalStyle />
+            {children}
         </Fragment>
     </StyledThemeProvider>
 );
 
 ThemeProvider.propTypes = {
     applyFont: bool,
+    children: node,
     theme: object, // eslint-disable-line
 };
 
 ThemeProvider.defaultProps = {
     applyFont: true,
+    children: undefined,
     theme: undefined,
 };
 
