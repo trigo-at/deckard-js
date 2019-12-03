@@ -14,6 +14,6 @@ PagesStory.story = {
 };
 
 export default {
-    title: 'Patterns',
+    title: 'Documentation|Patterns',
     decorators: [ProviderDecorator],
 };

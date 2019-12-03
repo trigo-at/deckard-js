@@ -176,6 +176,6 @@ GoalsStory.story = {
 };
 
 export default {
-    title: 'Getting Started',
+    title: 'Documentation|Getting Started',
     decorators: [ProviderDecorator],
 };

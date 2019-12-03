@@ -1,6 +1,3 @@
-
-[![Storybook](https://github.com/storybooks/press/blob/master/badges/storybook.svg)](https://trigo-at.github.io/design-system/)
-
 # trigo Design System
 
 [https://trigo-at.github.io/design-system/](https://trigo-at.github.io/design-system/)
