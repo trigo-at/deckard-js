@@ -3,26 +3,24 @@
 		[
 			"@babel/preset-env",
 			{
-				"targets": {
-					"browsers": [
-						"Edge >= 14",
-						"ff >= 54",
-						"Chrome >= 58"
-					]
-				},
-				"useBuiltIns": "entry"
+				"useBuiltIns": "entry",
+				"corejs": 3
 			}
 		],
 		"@babel/preset-react"
 	],
 	"plugins": [
-		[
-			"@babel/plugin-proposal-object-rest-spread",
-			{
-				"useBuiltIns": "entry"
-			}
-		],
-		"@babel/plugin-proposal-class-properties",
-        "babel-plugin-styled-components"
-	]
+		"@babel/proposal-object-rest-spread",
+		"emotion"
+	],
+	"env": {
+		"production": {
+			"plugins": [
+				["transform-react-remove-prop-types", {
+					"mode": "remove",
+					"removeImport": true
+				  }]
+			]
+		}
+	}
 }
