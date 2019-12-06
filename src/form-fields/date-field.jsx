@@ -12,7 +12,7 @@ import {
 import {FormattedMessage} from 'react-intl';
 import FieldError from './field-error';
 
-const DateField = ({name, helperText, isRequired, ...props}) => {
+const DateField = ({name, gridArea, helperText, isRequired, ...props}) => {
     const {input, meta} = useField(name);
     const isInvalid =
         (!!meta.error && meta.touched) ||
@@ -30,7 +30,10 @@ const DateField = ({name, helperText, isRequired, ...props}) => {
         input.onChange(`${e.target.value || ''}-${month || ''}-${day || ''}`);
     };
     return (
-        <FormControl as="fieldset" gridArea={name} isInvalid={isInvalid}>
+        <FormControl
+            as="fieldset"
+            gridArea={gridArea || name}
+            isInvalid={isInvalid}>
             <FormLabel as="legend" htmlFor={name}>
                 <FormattedMessage id={`field.${name}`} />{' '}
                 {!isRequired && <Text as="span">(optional)</Text>}
@@ -76,11 +79,13 @@ const DateField = ({name, helperText, isRequired, ...props}) => {
 
 DateField.propTypes = {
     name: string.isRequired,
+    gridArea: string,
     isRequired: bool,
     helperText: node,
 };
 
 DateField.defaultProps = {
+    gridArea: undefined,
     helperText: undefined,
     isRequired: false,
 };

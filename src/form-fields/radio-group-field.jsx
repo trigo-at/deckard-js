@@ -11,13 +11,16 @@ import {
 import {FormattedMessage} from 'react-intl';
 import FieldError from './field-error';
 
-const RadioGroupField = ({name, options, helperText, ...props}) => {
+const RadioGroupField = ({name, gridArea, options, helperText, ...props}) => {
     const {input, meta} = useField(name);
     const isInvalid =
         (!!meta.error && meta.touched) ||
         (!!meta.submitError && !meta.dirtySinceLastSubmit && !meta.submitting);
     return (
-        <FormControl as="fieldset" gridArea={name} isInvalid={isInvalid}>
+        <FormControl
+            as="fieldset"
+            gridArea={gridArea || name}
+            isInvalid={isInvalid}>
             <FormLabel as="legend">
                 <FormattedMessage id={`field.${name}`} />
             </FormLabel>
@@ -40,11 +43,13 @@ const RadioGroupField = ({name, options, helperText, ...props}) => {
 
 RadioGroupField.propTypes = {
     name: string.isRequired,
+    gridArea: string,
     options: arrayOf(string).isRequired,
     helperText: string,
 };
 
 RadioGroupField.defaultProps = {
+    gridArea: undefined,
     helperText: undefined,
 };
 
