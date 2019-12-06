@@ -1,4 +1,5 @@
 export * from '@chakra-ui/core';
+export {Link} from '@reach/router';
 export {FormattedMessage, useIntl} from 'react-intl';
 export {default as ThemeProvider} from './theme-provider';
 
