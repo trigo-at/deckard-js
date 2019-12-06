@@ -32,7 +32,7 @@ export {default as SecondaryCellContent} from './table/secondary-cell-content';
 export {default as DataTable} from './table/data-table';
 
 // Patterns
-export {default as App} from './patterns/app';
+export {default as AppShell} from './patterns/app-shell';
 export {default as DataList} from './patterns/data-list';
 export {default as PageSection} from './patterns/page-section';
 export {default as ViewSection} from './patterns/view-section';
