@@ -1,7 +1,7 @@
 import React from 'react';
 import {string, bool, node, object} from 'prop-types';
 import {Router} from '@reach/router';
-import IntlProvider from 'react-intl';
+import {IntlProvider} from 'react-intl';
 import ThemeProvider from '../theme-provider';
 import Layout from '../layout/layout';
 import Logo from '../layout/logo';
