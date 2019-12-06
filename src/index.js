@@ -8,6 +8,7 @@ export {default as DateField} from './form-fields/date-field';
 export {default as InputField} from './form-fields/input-field';
 export {default as RadioGroupField} from './form-fields/radio-group-field';
 export {default as SelectField} from './form-fields/select-field';
+export {default as TextareaField} from './form-fields/textarea-field';
 
 // Inidcators
 export {default as ErrorIndicator} from './indicators/error-indicator';

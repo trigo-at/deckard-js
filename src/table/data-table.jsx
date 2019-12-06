@@ -10,6 +10,13 @@ import TableCell from './table-cell';
 import CellContent from './cell-content';
 
 const DataCell = ({column}) => {
+    if (column.Component) {
+        return (
+            <CellContent>
+                <column.Component>{column.value}</column.Component>
+            </CellContent>
+        );
+    }
     if (column.link) {
         return (
             <ChakraLink as={Link} to={column.link}>
@@ -25,13 +32,6 @@ const DataCell = ({column}) => {
         return (
             <CellContent>
                 <FormattedMessage id={`${column.format}.${column.value}`} />
-            </CellContent>
-        );
-    }
-    if (column.Component) {
-        return (
-            <CellContent>
-                <column.Component>{column.value}</column.Component>
             </CellContent>
         );
     }
@@ -86,6 +86,7 @@ DataTable.propTypes = {
                     value: any,
                     link: string,
                     format: string,
+                    Component: node,
                 })
             ).isRequired,
         })
