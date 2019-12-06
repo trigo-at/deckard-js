@@ -71,7 +71,7 @@ SelectField.defaultProps = {
     gridArea: undefined,
     helperText: undefined,
     isRequired: false,
-    hasPlaceholder: bool,
+    hasPlaceholder: false,
 };
 
 export default SelectField;
