@@ -15,7 +15,14 @@ import {
 import {FormattedMessage} from 'react-intl';
 import FieldError from './field-error';
 
-const CurrencyField = ({name, gridArea, helperText, isRequired, ...props}) => {
+const CurrencyField = ({
+    name,
+    gridArea,
+    fieldName,
+    helperText,
+    isRequired,
+    ...props
+}) => {
     const {input, meta} = useField(name);
     const isInvalid =
         (!!meta.error && meta.touched) ||
@@ -23,7 +30,7 @@ const CurrencyField = ({name, gridArea, helperText, isRequired, ...props}) => {
     return (
         <FormControl gridArea={gridArea || name} isInvalid={isInvalid}>
             <FormLabel htmlFor={name}>
-                <FormattedMessage id={`field.${name}`} />
+                <FormattedMessage id={`field.${fieldName || name}`} />
                 {!isRequired && <Text as="span">(optional)</Text>}
             </FormLabel>
             <NumberInput {...input} precision={2} step={0.1}>
@@ -46,6 +53,7 @@ const CurrencyField = ({name, gridArea, helperText, isRequired, ...props}) => {
 CurrencyField.propTypes = {
     name: string.isRequired,
     gridArea: string,
+    fieldName: string,
     isRequired: bool,
     helperText: node,
 };
@@ -53,6 +61,7 @@ CurrencyField.propTypes = {
 CurrencyField.defaultProps = {
     helperText: undefined,
     gridArea: undefined,
+    fieldName: undefined,
     isRequired: false,
 };
 

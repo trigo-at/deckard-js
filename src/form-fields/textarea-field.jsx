@@ -11,7 +11,14 @@ import {
 import {FormattedMessage} from 'react-intl';
 import FieldError from './field-error';
 
-const TextareaField = ({name, gridArea, helperText, isRequired, ...props}) => {
+const TextareaField = ({
+    name,
+    gridArea,
+    fieldName,
+    helperText,
+    isRequired,
+    ...props
+}) => {
     const {input, meta} = useField(name);
     const isInvalid =
         (!!meta.error && meta.touched) ||
@@ -19,7 +26,7 @@ const TextareaField = ({name, gridArea, helperText, isRequired, ...props}) => {
     return (
         <FormControl gridArea={gridArea || name} isInvalid={isInvalid}>
             <FormLabel htmlFor={name}>
-                <FormattedMessage id={`field.${name}`} />{' '}
+                <FormattedMessage id={`field.${fieldName || name}`} />{' '}
                 {!isRequired && <Text as="span">(optional)</Text>}
             </FormLabel>
             <Textarea {...input} {...props} />
@@ -36,12 +43,14 @@ const TextareaField = ({name, gridArea, helperText, isRequired, ...props}) => {
 TextareaField.propTypes = {
     name: string.isRequired,
     gridArea: string,
+    fieldName: string,
     isRequired: bool,
     helperText: node,
 };
 
 TextareaField.defaultProps = {
     gridArea: undefined,
+    fieldName: undefined,
     helperText: undefined,
     isRequired: false,
 };

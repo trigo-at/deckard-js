@@ -14,6 +14,7 @@ import FieldError from './field-error';
 const SelectField = ({
     name,
     gridArea,
+    fieldName,
     options,
     hasPlaceholder,
     helperText,
@@ -28,7 +29,7 @@ const SelectField = ({
     return (
         <FormControl gridArea={gridArea || name} isInvalid={isInvalid}>
             <FormLabel htmlFor={name}>
-                <FormattedMessage id={`field.${name}`} />{' '}
+                <FormattedMessage id={`field.${fieldName || name}`} />{' '}
                 {!isRequired && <Text as="span">(optional)</Text>}
             </FormLabel>
             <Select {...input} {...props}>
@@ -56,6 +57,7 @@ const SelectField = ({
 SelectField.propTypes = {
     name: string.isRequired,
     gridArea: string,
+    fieldName: string,
     options: arrayOf(
         shape({
             value: string.isRequired,
@@ -69,6 +71,7 @@ SelectField.propTypes = {
 
 SelectField.defaultProps = {
     gridArea: undefined,
+    fieldName: undefined,
     helperText: undefined,
     isRequired: false,
     hasPlaceholder: false,

@@ -11,7 +11,14 @@ import {
 import {FormattedMessage} from 'react-intl';
 import FieldError from './field-error';
 
-const InputField = ({name, gridArea, helperText, isRequired, ...props}) => {
+const InputField = ({
+    name,
+    gridArea,
+    fieldName,
+    helperText,
+    isRequired,
+    ...props
+}) => {
     const {input, meta} = useField(name);
     const isInvalid =
         (!!meta.error && meta.touched) ||
@@ -19,7 +26,7 @@ const InputField = ({name, gridArea, helperText, isRequired, ...props}) => {
     return (
         <FormControl gridArea={gridArea || name} isInvalid={isInvalid}>
             <FormLabel htmlFor={name}>
-                <FormattedMessage id={`field.${name}`} />{' '}
+                <FormattedMessage id={`field.${fieldName || name}`} />{' '}
                 {!isRequired && <Text as="span">(optional)</Text>}
             </FormLabel>
             <Input {...input} {...props} />
@@ -36,6 +43,7 @@ const InputField = ({name, gridArea, helperText, isRequired, ...props}) => {
 InputField.propTypes = {
     name: string.isRequired,
     gridArea: string,
+    fieldName: string,
     isRequired: bool,
     helperText: node,
 };
@@ -43,6 +51,7 @@ InputField.propTypes = {
 InputField.defaultProps = {
     helperText: undefined,
     gridArea: undefined,
+    fieldName: undefined,
     isRequired: false,
 };
 

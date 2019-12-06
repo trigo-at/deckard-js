@@ -5,7 +5,7 @@ import {FormControl, Checkbox, FormHelperText} from '@chakra-ui/core';
 import {FormattedMessage} from 'react-intl';
 import FieldError from './field-error';
 
-const CheckboxField = ({name, gridArea, helperText, ...props}) => {
+const CheckboxField = ({name, gridArea, fieldName, helperText, ...props}) => {
     const {input, meta} = useField(name, {type: 'checkbox'});
     const isInvalid =
         (!!meta.error && meta.touched) ||
@@ -13,7 +13,7 @@ const CheckboxField = ({name, gridArea, helperText, ...props}) => {
     return (
         <FormControl gridArea={gridArea || name} isInvalid={isInvalid}>
             <Checkbox {...input} {...props}>
-                <FormattedMessage id={`field.${name}`} />
+                <FormattedMessage id={`field.${fieldName || name}`} />
             </Checkbox>
             {helperText && (
                 <FormHelperText>
@@ -28,12 +28,14 @@ const CheckboxField = ({name, gridArea, helperText, ...props}) => {
 CheckboxField.propTypes = {
     name: string.isRequired,
     gridArea: string,
+    fieldName: string,
     helperText: node,
 };
 
 CheckboxField.defaultProps = {
     helperText: undefined,
     gridArea: undefined,
+    fieldName: undefined,
 };
 
 export default CheckboxField;
