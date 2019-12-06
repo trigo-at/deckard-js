@@ -66,16 +66,17 @@ const AppShell = ({
 }) => {
     return (
         <ThemeProvider>
-            <IntlProvider locale={locale} messages={messages} />
-            <AppLayout
-                title={title}
-                version={version}
-                loading={loading}
-                error={error}
-                header={header}
-                aside={aside}>
-                {children}
-            </AppLayout>
+            <IntlProvider locale={locale} messages={messages}>
+                <AppLayout
+                    title={title}
+                    version={version}
+                    loading={loading}
+                    error={error}
+                    header={header}
+                    aside={aside}>
+                    {children}
+                </AppLayout>
+            </IntlProvider>
         </ThemeProvider>
     );
 };
