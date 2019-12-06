@@ -94,9 +94,9 @@ AppShell.propTypes = {
 
 AppShell.defaultProps = {
     version: undefined,
+    title: undefined,
     loading: false,
     error: undefined,
-    title: undefined,
     header: undefined,
     aside: undefined,
     children: undefined,

@@ -7,7 +7,7 @@ const Header = ({
     userName,
     avatarSrc,
     useSearch,
-    handleLogout,
+    onLogout,
     searchResultRenderer,
 }) => {
     const [filter, setFilter] = useState('');
@@ -39,7 +39,7 @@ const Header = ({
             filter={filter}
             onFilterChange={handleFilterChange}
             onReset={handleReset}
-            onLogout={handleLogout}
+            onLogout={onLogout}
         />
     );
 };
@@ -49,13 +49,13 @@ Header.propTypes = {
     avatarSrc: string,
     useSearch: func.isRequired,
     searchResultRenderer: func.isRequired,
-    handleLogout: func,
+    onLogout: func,
 };
 
 Header.defaultProps = {
     userName: undefined,
     avatarSrc: undefined,
-    handleLogout: undefined,
+    onLogout: undefined,
 };
 
 export default Header;
