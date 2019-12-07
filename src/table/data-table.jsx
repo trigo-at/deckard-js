@@ -1,5 +1,5 @@
 import React from 'react';
-import {arrayOf, shape, string, any, node} from 'prop-types';
+import {arrayOf, shape, string, any, elementType, func} from 'prop-types';
 import {FormattedMessage} from 'react-intl';
 import {Link} from '@reach/router';
 import {Link as ChakraLink} from '@chakra-ui/core';
@@ -10,6 +10,9 @@ import TableCell from './table-cell';
 import CellContent from './cell-content';
 
 const DataCell = ({column}) => {
+    if (column.render) {
+        return <CellContent>{column.render(column.value)}</CellContent>;
+    }
     if (column.Component) {
         return (
             <CellContent>
@@ -43,7 +46,8 @@ DataCell.propTypes = {
         value: any,
         link: string,
         format: string,
-        Component: node,
+        Component: elementType,
+        render: func,
     }).isRequired,
 };
 
@@ -86,7 +90,8 @@ DataTable.propTypes = {
                     value: any,
                     link: string,
                     format: string,
-                    Component: node,
+                    Component: elementType,
+                    render: func,
                 })
             ).isRequired,
         })

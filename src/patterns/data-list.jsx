@@ -1,10 +1,13 @@
 import React, {Fragment} from 'react';
-import {arrayOf, shape, string, any, node} from 'prop-types';
+import {arrayOf, shape, string, any, elementType, func} from 'prop-types';
 import {FormattedMessage} from 'react-intl';
 import {Grid, Text, Link as ChakraLink} from '@chakra-ui/core';
 import {Link} from '@reach/router';
 
 const DataEntry = ({entry}) => {
+    if (entry.render) {
+        return entry.render(entry.value);
+    }
     if (entry.Component) {
         return <entry.Component>{entry.value}</entry.Component>;
     }
@@ -30,7 +33,8 @@ DataEntry.propTypes = {
         value: any,
         link: string,
         format: string,
-        Component: node,
+        Component: elementType,
+        render: func,
     }).isRequired,
 };
 
@@ -69,7 +73,8 @@ DataList.propTypes = {
             value: any,
             format: string,
             link: string,
-            Component: node,
+            Component: elementType,
+            render: func,
         })
     ),
 };
