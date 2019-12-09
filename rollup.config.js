@@ -36,6 +36,7 @@ export default {
         '@babel/runtime/helpers/extends',
         'exenv',
         'react-spring/renderprops.cjs',
+        'date-fns',
     ],
     plugins: [
         babel({

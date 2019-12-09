@@ -2,6 +2,7 @@ import React from 'react';
 import {shape, string} from 'prop-types';
 import ViewSection from './view-section';
 import DataList from './data-list';
+import toDateString from '../to-date-string';
 
 const MetaViewSection = ({entity}) => {
     return (
@@ -10,7 +11,7 @@ const MetaViewSection = ({entity}) => {
                 values={[
                     {
                         field: 'createdAt',
-                        value: entity.createdAt,
+                        value: toDateString(entity.createdAt),
                     },
                     {
                         field: 'createdBy',
@@ -18,7 +19,7 @@ const MetaViewSection = ({entity}) => {
                     },
                     {
                         field: 'updatedAt',
-                        value: entity.updatedAt,
+                        value: toDateString(entity.updatedAt),
                     },
                     {
                         field: 'updatedBy',
