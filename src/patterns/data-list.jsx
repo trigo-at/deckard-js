@@ -41,7 +41,7 @@ DataEntry.propTypes = {
 const DataList = ({values}) => {
     return (
         <Grid
-            alignItems="flex-end"
+            alignItems="flex-start"
             justifyContent="center"
             gridTemplateColumns="0.3fr 0.7fr">
             {values.map(value => (
