@@ -11,7 +11,7 @@ import CellContent from './cell-content';
 
 const DataCell = ({column}) => {
     if (column.render) {
-        return <CellContent>{column.render(column.value)}</CellContent>;
+        return <>{column.render(column.value)}</>;
     }
     if (column.Component) {
         return (
