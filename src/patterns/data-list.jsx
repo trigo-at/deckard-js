@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import {arrayOf, shape, string, any, elementType, func} from 'prop-types';
 import {FormattedMessage} from 'react-intl';
-import {Grid, Text, Link as ChakraLink} from '@chakra-ui/core';
+import {Grid, Text, Link as ChakraLink, Flex} from '@chakra-ui/core';
 import {Link} from '@reach/router';
 
 const DataEntry = ({entry}) => {
@@ -40,19 +40,19 @@ DataEntry.propTypes = {
 
 const DataList = ({values}) => {
     return (
-        <Grid
-            alignItems="flex-start"
-            justifyContent="center"
-            gridTemplateColumns="0.3fr 0.7fr">
+        <Grid justifyContent="center" gridTemplateColumns="0.3fr 0.7fr">
             {values.map(value => (
                 <Fragment key={value.field}>
-                    <Text
+                    <Flex
+                        height="full"
+                        alignItems="flex-start"
                         py={4}
                         borderBottom="1px"
-                        borderBottomColor="gray.200"
-                        color="gray.600">
-                        <FormattedMessage id={`field.${value.field}`} />
-                    </Text>
+                        borderBottomColor="gray.200">
+                        <Text color="gray.600">
+                            <FormattedMessage id={`field.${value.field}`} />
+                        </Text>
+                    </Flex>
                     <Text
                         py={4}
                         borderBottom="1px"

@@ -9,7 +9,10 @@ const values = [
     },
     {
         field: 'customerName',
-        value: '42',
+        value: `asdfasdfasdfasdfasdfasdfl;aksjdf;lkasjdf;lkajsdf;a
+            lksjdf;laksjdf;lajksdf;lkajsdf;lajksdf;lskdjf;alsdjfal;sdkjf;alskdjf;alks
+            djfa;osdifujaoisdfuaoisdufaoisudfiou`,
+        render: v => <pre>{v}</pre>,
     },
 ];
 
