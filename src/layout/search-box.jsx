@@ -16,6 +16,7 @@ import {
     ListItem,
 } from '@chakra-ui/core';
 import useEventListener from './use-event-listener';
+import useInterval from '../use-interval';
 
 const SearchBox = ({
     searchResult,
@@ -25,8 +26,26 @@ const SearchBox = ({
     onReset,
     loading,
 }) => {
-    const [hasFocus, setHasFocus] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+    const [clickedOutside, setClickedOutside] = useState(false);
     const searchInput = useRef();
+
+    useInterval(
+        () => {
+            setIsOpen(false);
+            setClickedOutside(false);
+        },
+        clickedOutside ? 50 : null
+    );
+
+    function handleClickOutside(event) {
+        if (
+            searchInput.current &&
+            !searchInput.current.contains(event.target)
+        ) {
+            setClickedOutside(true);
+        }
+    }
 
     const handleKeydown = useCallback(e => {
         if (e.key === 'F' && e.ctrlKey && e.shiftKey) {
@@ -37,12 +56,13 @@ const SearchBox = ({
 
     // Add event listener using our hook
     useEventListener('keydown', handleKeydown);
+    useEventListener('mousedown', handleClickOutside);
     return (
         <InputGroup>
             <InputLeftElement>
                 <Popover
                     initialFocusRef={searchInput}
-                    isOpen={searchResult.length > 0 && hasFocus}
+                    isOpen={searchResult.length > 0 && isOpen}
                     returnFocusOnClose={false}
                     closeOnBlur={false}
                     placement="bottom-start"
@@ -50,7 +70,7 @@ const SearchBox = ({
                     <PopoverTrigger>
                         <Icon name="search" color="gray.300" />
                     </PopoverTrigger>
-                    <PopoverContent zIndex={4}>
+                    <PopoverContent zIndex={4} maxWidth="2xl">
                         <PopoverArrow />
                         <PopoverBody>
                             {searchResult && (
@@ -71,7 +91,7 @@ const SearchBox = ({
                 name="search-query"
                 value={filter}
                 onChange={onFilterChange}
-                onFocus={() => setHasFocus(true)}
+                onFocus={() => setIsOpen(true)}
                 placeholder="STRG + SHIFT + F drücken, um zu suchen"
             />
             {filter ||

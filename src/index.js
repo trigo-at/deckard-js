@@ -4,6 +4,7 @@ export {FormattedMessage, useIntl} from 'react-intl';
 export {default as ThemeProvider} from './theme-provider';
 export {default as toDateString} from './to-date-string';
 export {default as toDateTimeString} from './to-date-time-string';
+export {default as useInterval} from './use-interval';
 
 // Form fields
 export {default as CheckboxField} from './form-fields/checkbox-field';
