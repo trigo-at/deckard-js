@@ -68,7 +68,7 @@ const SearchBox = ({
                     <PopoverTrigger>
                         <Icon name="search" color="gray.300" />
                     </PopoverTrigger>
-                    <PopoverContent zIndex={4} maxWidth="2xl">
+                    <PopoverContent zIndex={4} maxWidth="4xl">
                         <PopoverArrow />
                         <PopoverBody>
                             {searchResult && searchResultRenderer(searchResult)}
