@@ -12,8 +12,6 @@ import {
     PopoverContent,
     PopoverBody,
     PopoverArrow,
-    List,
-    ListItem,
 } from '@chakra-ui/core';
 import useEventListener from './use-event-listener';
 import useInterval from '../use-interval';
@@ -73,15 +71,7 @@ const SearchBox = ({
                     <PopoverContent zIndex={4} maxWidth="2xl">
                         <PopoverArrow />
                         <PopoverBody>
-                            {searchResult && (
-                                <List spacing={4}>
-                                    {searchResult.map((item, idx) => (
-                                        <ListItem key={idx}>
-                                            {searchResultRenderer(item)}
-                                        </ListItem>
-                                    ))}
-                                </List>
-                            )}
+                            {searchResult && searchResultRenderer(searchResult)}
                         </PopoverBody>
                     </PopoverContent>
                 </Popover>
