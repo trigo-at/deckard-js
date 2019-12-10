@@ -13,19 +13,43 @@ const DataEntry = ({entry}) => {
     }
     if (entry.link) {
         return (
-            <ChakraLink as={Link} to={entry.link}>
-                {entry.format ? (
-                    <FormattedMessage id={`${entry.format}.${entry.value}`} />
-                ) : (
-                    entry.value
-                )}
-            </ChakraLink>
+            <Text
+                py={4}
+                borderBottom="1px"
+                borderBottomColor="gray.200"
+                color="gray.900">
+                <ChakraLink as={Link} to={entry.link}>
+                    {entry.format ? (
+                        <FormattedMessage
+                            id={`${entry.format}.${entry.value}`}
+                        />
+                    ) : (
+                        entry.value
+                    )}
+                </ChakraLink>
+            </Text>
         );
     }
     if (entry.format) {
-        return <FormattedMessage id={`${entry.format}.${entry.value}`} />;
+        return (
+            <Text
+                py={4}
+                borderBottom="1px"
+                borderBottomColor="gray.200"
+                color="gray.900">
+                <FormattedMessage id={`${entry.format}.${entry.value}`} />
+            </Text>
+        );
     }
-    return <>{entry.value}</>;
+    return (
+        <Text
+            py={4}
+            borderBottom="1px"
+            borderBottomColor="gray.200"
+            color="gray.900">
+            {entry.value}{' '}
+        </Text>
+    );
 };
 
 DataEntry.propTypes = {
@@ -53,13 +77,7 @@ const DataList = ({values}) => {
                             <FormattedMessage id={`field.${value.field}`} />
                         </Text>
                     </Flex>
-                    <Text
-                        py={4}
-                        borderBottom="1px"
-                        borderBottomColor="gray.200"
-                        color="gray.900">
-                        <DataEntry entry={value} />
-                    </Text>
+                    <DataEntry entry={value} />
                 </Fragment>
             ))}
         </Grid>
