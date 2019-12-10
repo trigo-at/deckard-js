@@ -22,7 +22,7 @@ const PageSection = ({title, values, actions, children, isPrimary}) => {
                 bg="gray.50"
                 borderRadius={2}
                 shadow="md"
-                p={6}>
+                p={4}>
                 {children}
             </Box>
         </Box>

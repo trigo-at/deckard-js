@@ -36,14 +36,14 @@ const SearchBox = ({
         clickedOutside ? 50 : null
     );
 
-    function handleClickOutside(event) {
+    const handleClickOutside = event => {
         if (
             searchInput.current &&
             !searchInput.current.contains(event.target)
         ) {
             setClickedOutside(true);
         }
-    }
+    };
 
     const handleKeydown = useCallback(e => {
         if (e.key === 'F' && e.ctrlKey && e.shiftKey) {

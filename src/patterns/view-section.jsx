@@ -1,20 +1,15 @@
 import React from 'react';
 import {string, node} from 'prop-types';
-import {Box, Flex} from '@chakra-ui/core';
+import {Box} from '@chakra-ui/core';
 import SectionHeader from './section-header';
 
 const ViewSection = ({title, actions, children}) => {
     return (
         <Box as="section" mb={4}>
-            <Flex
-                px={4}
-                pt={4}
-                pb={2}
-                justifyContent="space-between"
-                alignItems="center">
+            <Box px={2} pt={4} pb={2}>
                 <SectionHeader title={title} />
-                {actions && <Box>{actions}</Box>}
-            </Flex>
+                {actions && <Box py={3}>{actions}</Box>}
+            </Box>
             <Box px={4}>{children}</Box>
         </Box>
     );
