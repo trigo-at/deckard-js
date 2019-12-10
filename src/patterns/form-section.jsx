@@ -10,7 +10,7 @@ const FormSection = ({title, gridTemplateAreas, children}) => {
                 <SectionHeader title={title} />
             </Box>
             <Grid
-                px={4}
+                px={2}
                 gridGap={4}
                 alignItems="flex-start"
                 gridTemplateColumns="repeat(3, 1fr)"
