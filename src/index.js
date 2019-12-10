@@ -14,6 +14,7 @@ export {default as RadioGroupField} from './form-fields/radio-group-field';
 export {default as SelectField} from './form-fields/select-field';
 export {default as TextareaField} from './form-fields/textarea-field';
 export {default as NumberField} from './form-fields/number-field';
+export {default as FieldError} from './form-fields/field-error';
 
 // Inidcators
 export {default as ErrorIndicator} from './indicators/error-indicator';
