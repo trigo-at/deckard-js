@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import {arrayOf, shape, string, any, elementType, func} from 'prop-types';
 import {FormattedMessage} from 'react-intl';
-import {Grid, Text, Link as ChakraLink, Flex} from '@chakra-ui/core';
+import {Grid, Text, Link as ChakraLink, Flex, Box} from '@chakra-ui/core';
 import {Link} from '@reach/router';
 
 const DataEntry = ({entry}) => {
@@ -13,43 +13,23 @@ const DataEntry = ({entry}) => {
     }
     if (entry.link) {
         return (
-            <Text
-                py={4}
-                borderBottom="1px"
-                borderBottomColor="gray.200"
-                color="gray.900">
-                <ChakraLink as={Link} to={entry.link}>
-                    {entry.format ? (
-                        <FormattedMessage
-                            id={`${entry.format}.${entry.value}`}
-                        />
-                    ) : (
-                        entry.value
-                    )}
-                </ChakraLink>
-            </Text>
+            <ChakraLink as={Link} to={entry.link} color="gray.900">
+                {entry.format ? (
+                    <FormattedMessage id={`${entry.format}.${entry.value}`} />
+                ) : (
+                    entry.value
+                )}
+            </ChakraLink>
         );
     }
     if (entry.format) {
         return (
-            <Text
-                py={4}
-                borderBottom="1px"
-                borderBottomColor="gray.200"
-                color="gray.900">
+            <Text color="gray.900">
                 <FormattedMessage id={`${entry.format}.${entry.value}`} />
             </Text>
         );
     }
-    return (
-        <Text
-            py={4}
-            borderBottom="1px"
-            borderBottomColor="gray.200"
-            color="gray.900">
-            {entry.value}{' '}
-        </Text>
-    );
+    return <Text color="gray.900">{entry.value}</Text>;
 };
 
 DataEntry.propTypes = {
@@ -77,7 +57,9 @@ const DataList = ({values}) => {
                             <FormattedMessage id={`field.${value.field}`} />
                         </Text>
                     </Flex>
-                    <DataEntry entry={value} />
+                    <Box py={4} borderBottom="1px" borderBottomColor="gray.200">
+                        <DataEntry entry={value} />
+                    </Box>
                 </Fragment>
             ))}
         </Grid>
