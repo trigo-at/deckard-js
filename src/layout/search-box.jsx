@@ -26,6 +26,7 @@ const SearchBox = ({onSearch, loading}) => {
     const onSubmit = values => {
         if (onSearch) {
             onSearch(values.searchTerm);
+            searchInput.current.focus();
         }
     };
 
