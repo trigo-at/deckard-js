@@ -2,7 +2,7 @@ import React from 'react';
 import {node} from 'prop-types';
 import {Box, Flex} from '@chakra-ui/core';
 
-const TableHeader = ({children}) => (
+const TableHeader = ({children, ...props}) => (
     <Box
         as="th"
         p={2}
@@ -10,7 +10,8 @@ const TableHeader = ({children}) => (
         borderBottomColor="gray.200"
         borderTop="1px solid"
         borderTopColor="gray.200"
-        bg="gray.100">
+        bg="gray.100"
+        {...props}>
         <Flex
             flexDirection="column"
             justifyContent="center"

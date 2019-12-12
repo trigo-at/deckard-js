@@ -2,8 +2,13 @@ import React from 'react';
 import {node} from 'prop-types';
 import {Box, Flex} from '@chakra-ui/core';
 
-const TableCell = ({children}) => (
-    <Box as="td" p={2} borderBottom="1px solid" borderBottomColor="gray.200">
+const TableCell = ({children, ...props}) => (
+    <Box
+        as="td"
+        p={2}
+        borderBottom="1px solid"
+        borderBottomColor="gray.200"
+        {...props}>
         <Flex
             flexDirection="column"
             justifyContent="center"
