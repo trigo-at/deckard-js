@@ -1,125 +1,102 @@
-import React, {useRef, useCallback, useState} from 'react';
-import {string, bool, func, array} from 'prop-types';
+import React, {useRef, useCallback} from 'react';
+import {Form, Field} from 'react-final-form';
+import {bool, func} from 'prop-types';
 import {
     InputGroup,
     InputLeftElement,
     InputRightElement,
+    ButtonGroup,
+    Button,
     IconButton,
     Icon,
     Input,
-    Popover,
-    PopoverTrigger,
-    PopoverContent,
-    PopoverBody,
-    PopoverArrow,
 } from '@chakra-ui/core';
 import useEventListener from './use-event-listener';
-import useInterval from '../use-interval';
 
-const SearchBox = ({
-    searchResult,
-    searchResultRenderer,
-    filter,
-    onFilterChange,
-    onReset,
-    loading,
-}) => {
-    const [isOpen, setIsOpen] = useState(false);
-    const [clickedOutside, setClickedOutside] = useState(false);
+const SearchBox = ({onSearch, loading}) => {
     const searchInput = useRef();
 
-    useInterval(
-        () => {
-            setIsOpen(false);
-            setClickedOutside(false);
-        },
-        clickedOutside ? 50 : null
-    );
-
-    const handleClickOutside = event => {
-        if (
-            searchInput.current &&
-            !searchInput.current.contains(event.target)
-        ) {
-            setClickedOutside(true);
-        }
-    };
-
-    const handleKeydown = useCallback(e => {
+    const handleGlobalKeyDown = useCallback(e => {
         if (e.key === 'F' && e.ctrlKey && e.shiftKey) {
             searchInput.current.focus();
             searchInput.current.select();
         }
     }, []);
 
+    const onSubmit = values => {
+        if (onSearch) {
+            onSearch(values.searchTerm);
+        }
+    };
+
     // Add event listener using our hook
-    useEventListener('keydown', handleKeydown);
-    useEventListener('mousedown', handleClickOutside);
+    useEventListener('keydown', handleGlobalKeyDown);
     return (
-        <InputGroup>
-            <InputLeftElement>
-                <Popover
-                    initialFocusRef={searchInput}
-                    isOpen={searchResult.length > 0 && isOpen}
-                    returnFocusOnClose={false}
-                    closeOnBlur={false}
-                    placement="bottom-start"
-                    usePortal>
-                    <PopoverTrigger>
-                        <Icon name="search" color="gray.300" />
-                    </PopoverTrigger>
-                    <PopoverContent zIndex={4} maxWidth="4xl">
-                        <PopoverArrow />
-                        <PopoverBody>
-                            {searchResult && searchResultRenderer(searchResult)}
-                        </PopoverBody>
-                    </PopoverContent>
-                </Popover>
-            </InputLeftElement>
-            <Input
-                ref={searchInput}
-                name="search-query"
-                value={filter}
-                onChange={onFilterChange}
-                onFocus={() => setIsOpen(true)}
-                placeholder="STRG + SHIFT + F drücken, um zu suchen"
-            />
-            {filter ||
-                (loading && (
-                    <InputRightElement>
-                        <IconButton
-                            isLoading={loading}
-                            color="gray.900"
-                            variant="ghost"
-                            aria-label="Suche zurücksetzen"
-                            icon="close"
-                            size="sm"
-                            name="reset-search-query"
-                            type="button"
-                            onClick={onReset}
-                        />
-                    </InputRightElement>
-                ))}
-        </InputGroup>
+        <Form
+            initialValues={{searchTerm: ''}}
+            onSubmit={onSubmit}
+            render={({form, handleSubmit}) => (
+                <form onSubmit={handleSubmit}>
+                    <Field name="searchTerm">
+                        {({input}) => (
+                            <InputGroup>
+                                <InputLeftElement>
+                                    <Icon name="search" color="gray.300" />
+                                </InputLeftElement>
+                                <Input
+                                    ref={searchInput}
+                                    type="text"
+                                    {...input}
+                                    placeholder="STRG + SHIFT + F drücken, um zu suchen"
+                                />
+
+                                <InputRightElement width="auto" pr={1}>
+                                    <ButtonGroup>
+                                        {input.value && (
+                                            <IconButton
+                                                isLoading={loading}
+                                                color="gray.900"
+                                                variant="ghost"
+                                                aria-label="Suche zurücksetzen"
+                                                icon="close"
+                                                size="sm"
+                                                name="reset-search-query"
+                                                onClick={() => {
+                                                    form.change(
+                                                        'searchTerm',
+                                                        ''
+                                                    );
+                                                    searchInput.current.focus();
+                                                }}
+                                                type="button"
+                                            />
+                                        )}
+                                        <Button
+                                            isLoading={loading}
+                                            color="gray.900"
+                                            size="sm"
+                                            name="execute-search-query"
+                                            type="submit">
+                                            Suchen
+                                        </Button>
+                                    </ButtonGroup>
+                                </InputRightElement>
+                            </InputGroup>
+                        )}
+                    </Field>
+                </form>
+            )}
+        />
     );
 };
 
 SearchBox.propTypes = {
-    searchResult: array,
-    searchResultRenderer: func.isRequired,
     loading: bool,
-    filter: string,
-
-    onFilterChange: func,
-    onReset: func,
+    onSearch: func.isRequired,
 };
 
 SearchBox.defaultProps = {
-    searchResult: [],
     loading: false,
-    filter: '',
-    onFilterChange: undefined,
-    onReset: undefined,
 };
 
 export default SearchBox;

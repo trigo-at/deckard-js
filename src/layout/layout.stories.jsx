@@ -10,32 +10,13 @@ import NavLink from './nav-link';
 import PageSection from '../patterns/page-section';
 import ProviderDecorator from '../provider-decorator';
 
-const searchResultRenderer = items =>
-    items.map(item => <div key={item.id}>{item.name}</div>);
-
-const useSearch = () => {
-    return [
-        searchTerm => console.log(searchTerm),
-        {
-            error: undefined,
-            loading: false,
-            result: [
-                {id: '42', name: 'Max Mustermann'},
-                {id: '43', name: 'Max adf'},
-                {id: '44', name: 'Max 2345'},
-            ],
-        },
-    ];
-};
-
 export const DefaultStory = () => (
     <Layout
         logo={<Logo version="v1.0.0" />}
         header={
             <Header
                 userName="Max Mustermann"
-                useSearch={useSearch}
-                searchResultRenderer={searchResultRenderer}
+                onSearch={searchTerm => console.log(searchTerm)}
             />
         }
         aside={

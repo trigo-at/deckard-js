@@ -1,60 +1,38 @@
-import React, {useCallback, useState, useEffect} from 'react';
+import React from 'react';
 import {string, func} from 'prop-types';
-import useDebounce from './use-debounce';
-import HeaderOrganism from './header-organism';
+import {Flex, Box, Avatar} from '@chakra-ui/core';
+import SearchBox from './search-box';
+import UserMenu from './user-menu';
 
-const Header = ({
-    userName,
-    avatarSrc,
-    useSearch,
-    onLogout,
-    searchResultRenderer,
-}) => {
-    const [filter, setFilter] = useState('');
-    const [search, {loading, result}] = useSearch();
-
-    const debouncedsFilter = useDebounce(filter, 300);
-
-    useEffect(() => {
-        if (debouncedsFilter && debouncedsFilter.length >= 3) {
-            search(debouncedsFilter);
-        }
-    }, [debouncedsFilter]);
-
-    const handleFilterChange = useCallback(e => {
-        setFilter(e.target.value);
-    }, []);
-
-    const handleReset = useCallback(() => {
-        setFilter('');
-    }, []);
-
+const Header = ({userName, avatarSrc, onSearch, onLogout}) => {
     return (
-        <HeaderOrganism
-            userName={userName}
-            avatarSrc={avatarSrc}
-            searchResult={result}
-            searchResultRenderer={searchResultRenderer}
-            loading={loading}
-            filter={filter}
-            onFilterChange={handleFilterChange}
-            onReset={handleReset}
-            onLogout={onLogout}
-        />
+        <Flex alignItems="center" justifyContent="space-between" bg="gray.50">
+            <Box flexGrow="1" px={6}>
+                {onSearch && <SearchBox onSearch={onSearch} />}
+            </Box>
+            <Flex
+                px={6}
+                flexGrow="1"
+                justifyContent="flex-end"
+                alignItems="center">
+                <Avatar mx={2} name={userName} src={avatarSrc} />
+                <UserMenu userName={userName} onLogout={onLogout} />
+            </Flex>
+        </Flex>
     );
 };
 
 Header.propTypes = {
     userName: string,
     avatarSrc: string,
-    useSearch: func.isRequired,
-    searchResultRenderer: func.isRequired,
+    onSearch: func,
     onLogout: func,
 };
 
 Header.defaultProps = {
     userName: undefined,
     avatarSrc: undefined,
+    onSearch: undefined,
     onLogout: undefined,
 };
 
