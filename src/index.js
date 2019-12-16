@@ -8,6 +8,7 @@ export {default as useInterval} from './use-interval';
 
 // Form fields
 export {default as CheckboxField} from './form-fields/checkbox-field';
+export {default as CheckboxGroupField} from './form-fields/checkbox-group-field';
 export {default as CurrencyField} from './form-fields/currency-field';
 export {default as DateField} from './form-fields/date-field';
 export {default as InputField} from './form-fields/input-field';
