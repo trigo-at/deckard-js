@@ -4,12 +4,7 @@ import {FormattedMessage} from 'react-intl';
 
 const Optional = () => {
     return (
-        <Text
-            ml={1}
-            as="span"
-            fontSize="xs"
-            color="gray.500"
-            fontStyle="italic">
+        <Text fontSize="xs" color="gray.500">
             <FormattedMessage id="common.optional" />
         </Text>
     );
