@@ -12,7 +12,7 @@ const FormSection = ({title, gridTemplateAreas, children}) => {
             <Grid
                 px={2}
                 gridGap={4}
-                alignItems="flex-start"
+                alignItems="flex-end"
                 gridTemplateColumns="repeat(3, 1fr)"
                 gridTemplateAreas={gridTemplateAreas}>
                 {children}
