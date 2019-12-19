@@ -10,10 +10,10 @@ import {
     NumberIncrementStepper,
     NumberDecrementStepper,
     FormHelperText,
-    Text,
 } from '@chakra-ui/core';
 import {FormattedMessage} from 'react-intl';
 import FieldError from './field-error';
+import Optional from './optional';
 
 const CurrencyField = ({
     name,
@@ -31,7 +31,7 @@ const CurrencyField = ({
         <FormControl gridArea={gridArea || name} isInvalid={isInvalid}>
             <FormLabel htmlFor={name}>
                 <FormattedMessage id={`field.${fieldName || name}`} />
-                {!isRequired && <Text as="span">(optional)</Text>}
+                {!isRequired && <Optional />}
             </FormLabel>
             <NumberInput {...input} precision={2} step={0.1}>
                 <NumberInputField {...props} />

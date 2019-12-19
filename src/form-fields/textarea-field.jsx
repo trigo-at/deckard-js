@@ -6,10 +6,10 @@ import {
     FormLabel,
     Textarea,
     FormHelperText,
-    Text,
 } from '@chakra-ui/core';
 import {FormattedMessage} from 'react-intl';
 import FieldError from './field-error';
+import Optional from './optional';
 
 const TextareaField = ({
     name,
@@ -27,7 +27,7 @@ const TextareaField = ({
         <FormControl gridArea={gridArea || name} isInvalid={isInvalid}>
             <FormLabel htmlFor={name}>
                 <FormattedMessage id={`field.${fieldName || name}`} />{' '}
-                {!isRequired && <Text as="span">(optional)</Text>}
+                {!isRequired && <Optional />}
             </FormLabel>
             <Textarea {...input} {...props} />
             {helperText && (

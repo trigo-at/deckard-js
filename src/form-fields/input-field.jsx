@@ -1,15 +1,10 @@
 import React from 'react';
 import {string, node, bool} from 'prop-types';
 import {useField} from 'react-final-form';
-import {
-    FormControl,
-    FormLabel,
-    Input,
-    FormHelperText,
-    Text,
-} from '@chakra-ui/core';
+import {FormControl, FormLabel, Input, FormHelperText} from '@chakra-ui/core';
 import {FormattedMessage} from 'react-intl';
 import FieldError from './field-error';
+import Optional from './optional';
 
 const InputField = ({
     name,
@@ -26,8 +21,8 @@ const InputField = ({
     return (
         <FormControl gridArea={gridArea || name} isInvalid={isInvalid}>
             <FormLabel htmlFor={name}>
-                <FormattedMessage id={`field.${fieldName || name}`} />{' '}
-                {!isRequired && <Text as="span">(optional)</Text>}
+                <FormattedMessage id={`field.${fieldName || name}`} />
+                {!isRequired && <Optional />}
             </FormLabel>
             <Input {...input} {...props} />
             {helperText && (

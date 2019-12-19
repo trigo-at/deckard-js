@@ -10,6 +10,7 @@ import {
 } from '@chakra-ui/core';
 import {FormattedMessage, useIntl} from 'react-intl';
 import FieldError from './field-error';
+import Optional from './optional';
 
 const SelectField = ({
     name,
@@ -30,7 +31,7 @@ const SelectField = ({
         <FormControl gridArea={gridArea || name} isInvalid={isInvalid}>
             <FormLabel htmlFor={name}>
                 <FormattedMessage id={`field.${fieldName || name}`} />{' '}
-                {!isRequired && <Text as="span">(optional)</Text>}
+                {!isRequired && <Optional />}
             </FormLabel>
             <Select {...input} {...props}>
                 {hasPlaceholder && (

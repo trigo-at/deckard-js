@@ -30,9 +30,9 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.7.5",
-    "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
-    "@babel/preset-env": "^7.7.6",
+    "@babel/core": "^7.7.7",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
     "@babel/preset-react": "^7.7.4",
     "@chakra-ui/core": "^0.5.1",
     "@emotion/core": "^10.0.22",
@@ -55,7 +55,7 @@
     "babel-plugin-emotion": "^10.0.23",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "chance": "^1.1.4",
-    "core-js": "^3.5.0",
+    "core-js": "^3.6.0",
     "cross-env": "^6.0.3",
     "date-fns": "^2.8.1",
     "emotion-theming": "^10.0.19",

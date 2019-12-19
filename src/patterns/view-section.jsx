@@ -6,7 +6,7 @@ import SectionHeader from './section-header';
 const ViewSection = ({title, actions, children}) => {
     return (
         <Box as="section" mb={4}>
-            <Box px={2} pt={4} pb={2}>
+            <Box px={4} pt={4} pb={2}>
                 <SectionHeader title={title} />
                 {actions && <Box py={3}>{actions}</Box>}
             </Box>

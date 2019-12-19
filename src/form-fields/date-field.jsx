@@ -6,11 +6,11 @@ import {
     FormLabel,
     Input,
     FormHelperText,
-    Text,
     Stack,
 } from '@chakra-ui/core';
 import {FormattedMessage} from 'react-intl';
 import FieldError from './field-error';
+import Optional from './optional';
 
 const DateField = ({
     name,
@@ -43,7 +43,7 @@ const DateField = ({
             isInvalid={isInvalid}>
             <FormLabel as="legend" htmlFor={name}>
                 <FormattedMessage id={`field.${fieldName || name}`} />{' '}
-                {!isRequired && <Text as="span">(optional)</Text>}
+                {!isRequired && <Optional />}
             </FormLabel>
             <Stack isInline spacing={4}>
                 <Input

@@ -23,6 +23,7 @@ export const InputStory = () => (
         {({handleSubmit}) => (
             <form onSubmit={handleSubmit}>
                 <InputField name="name" isRequired />
+                <InputField name="optional" />
             </form>
         )}
     </Form>
