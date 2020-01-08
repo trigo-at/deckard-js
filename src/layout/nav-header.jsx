@@ -6,7 +6,8 @@ const NavHeader = ({children}) => (
     <Heading
         px={6}
         textTransform="uppercase"
-        color="gray.400"
+        color="white"
+        opacity="0.6"
         size="sm"
         letterSpacing="wide">
         {children}

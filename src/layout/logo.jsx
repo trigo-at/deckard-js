@@ -5,10 +5,14 @@ import {Flex, Text} from '@chakra-ui/core';
 const Logo = ({title, version}) => {
     return (
         <Flex justifyContent="center" px={6} flexDirection="column">
-            <Text color="gray.300" fontWeight="bold">
+            <Text color="white" fontWeight="bold">
                 {title}
             </Text>
-            <Text textTransform="uppercase" color="gray.400" fontSize="xs">
+            <Text
+                textTransform="uppercase"
+                opacity="0.6"
+                color="white"
+                fontSize="xs">
                 {version}
             </Text>
         </Flex>

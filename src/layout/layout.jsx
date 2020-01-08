@@ -1,23 +1,29 @@
 import React from 'react';
-import {node} from 'prop-types';
+import {node, string} from 'prop-types';
 import {Grid} from '@chakra-ui/core';
 
-const Layout = ({logo, header, aside, children}) => {
+const Layout = ({logo, header, aside, children, accent}) => {
+    const gridTemplateAreas = aside
+        ? "'logo header' 'aside content'"
+        : "'logo header' 'content content'";
+
     return (
         <Grid
-            gridTemplateAreas="'logo header' 'aside content'"
+            gridTemplateAreas={gridTemplateAreas}
             gridTemplateColumns="240px 1fr"
             gridTemplateRows="64px 1fr"
             minHeight="100vh">
-            <Grid area="logo" bg="gray.800">
+            <Grid area="logo" bg={`${accent}.800`}>
                 {logo}
             </Grid>
             <Grid area="header" bg="white" shadow="md">
                 {header}
             </Grid>
-            <Grid area="aside" bg="gray.600">
-                {aside}
-            </Grid>
+            {aside && (
+                <Grid area="aside" bg={`${accent}.600`}>
+                    {aside}
+                </Grid>
+            )}
             <Grid area="content" bg="gray.200" p={6}>
                 {children}
             </Grid>
@@ -30,6 +36,7 @@ Layout.propTypes = {
     header: node,
     aside: node,
     children: node,
+    accent: string,
 };
 
 Layout.defaultProps = {
@@ -37,6 +44,7 @@ Layout.defaultProps = {
     header: undefined,
     aside: undefined,
     children: undefined,
+    accent: 'gray',
 };
 
 export default Layout;
