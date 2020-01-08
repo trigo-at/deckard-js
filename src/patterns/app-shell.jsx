@@ -67,11 +67,13 @@ const AppShell = ({
     messages,
     locale,
     children,
+    accent,
 }) => {
     return (
         <ThemeProvider>
             <IntlProvider locale={locale} messages={messages}>
                 <AppLayout
+                    accent={accent}
                     title={title}
                     version={version}
                     loading={loading}
@@ -95,6 +97,7 @@ AppShell.propTypes = {
     children: node,
     messages: object,
     locale: string,
+    accent: string,
 };
 
 AppShell.defaultProps = {
@@ -107,6 +110,7 @@ AppShell.defaultProps = {
     children: undefined,
     messages: {},
     locale: 'de',
+    accent: 'gray',
 };
 
 export default AppShell;
