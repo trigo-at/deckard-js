@@ -16,6 +16,7 @@ const AppLayout = ({
     header,
     aside,
     children,
+    accent,
 }) => {
     if (error) {
         return <ErrorIndicator error="loading" description={error} />;
@@ -25,6 +26,7 @@ const AppLayout = ({
     }
     return (
         <Layout
+            accent={accent}
             logo={<Logo title={title} version={version} />}
             header={header}
             aside={aside}>
@@ -41,6 +43,7 @@ AppLayout.propTypes = {
     header: node,
     aside: node,
     children: node,
+    accent: string,
 };
 
 AppLayout.defaultProps = {
@@ -51,6 +54,7 @@ AppLayout.defaultProps = {
     header: undefined,
     aside: undefined,
     children: undefined,
+    accent: 'gray',
 };
 
 const AppShell = ({
