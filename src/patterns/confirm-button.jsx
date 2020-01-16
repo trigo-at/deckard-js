@@ -14,7 +14,15 @@ import {
     ButtonGroup,
 } from '@chakra-ui/core';
 
-const ConfirmButton = ({messageId, onConfirm, ...props}) => {
+const ConfirmButton = ({
+    messageId,
+    onConfirm,
+    confirmMessageId,
+    closeMessageId,
+    headerMessageId,
+    questionMessageId,
+    ...props
+}) => {
     const initialFocusRef = useRef();
     return (
         <Popover
@@ -31,11 +39,11 @@ const ConfirmButton = ({messageId, onConfirm, ...props}) => {
                     <PopoverContent zIndex={4}>
                         <PopoverArrow />
                         <PopoverHeader>
-                            <FormattedMessage id="common.confirm-header" />
+                            <FormattedMessage id={headerMessageId} />
                         </PopoverHeader>
                         <PopoverCloseButton />
                         <PopoverBody>
-                            <FormattedMessage id="common.confirm-question" />
+                            <FormattedMessage id={questionMessageId} />
                         </PopoverBody>
                         <PopoverFooter>
                             <ButtonGroup size="sm">
@@ -45,13 +53,13 @@ const ConfirmButton = ({messageId, onConfirm, ...props}) => {
                                         onConfirm();
                                         onClose();
                                     }}>
-                                    <FormattedMessage id="common.confirm" />
+                                    <FormattedMessage id={confirmMessageId} />
                                 </Button>
                                 <Button
                                     onClick={onClose}
                                     variant="ghost"
                                     ref={initialFocusRef}>
-                                    <FormattedMessage id="common.close" />
+                                    <FormattedMessage id={closeMessageId} />
                                 </Button>
                             </ButtonGroup>
                         </PopoverFooter>
@@ -65,8 +73,17 @@ const ConfirmButton = ({messageId, onConfirm, ...props}) => {
 ConfirmButton.propTypes = {
     onConfirm: func.isRequired,
     messageId: string.isRequired,
+    confirmMessageId: string,
+    closeMessageId: string,
+    headerMessageId: string,
+    questionMessageId: string,
 };
 
-ConfirmButton.defaultProps = {};
+ConfirmButton.defaultProps = {
+    confirmMessageId: 'common.confirm',
+    closeMessageId: 'common.close',
+    headerMessageId: 'common.confirm-header',
+    questionMessageId: 'common.confirm-question',
+};
 
 export default ConfirmButton;
