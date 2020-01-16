@@ -1,3 +1,3 @@
-FROM trigo/node-base:9-yarn
+FROM trigo/node-base:13.3.0
 
-RUN yarn build
+RUN npm run build

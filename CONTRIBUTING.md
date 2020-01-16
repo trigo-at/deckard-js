@@ -26,27 +26,21 @@ cd design-system
 ### Install dependencies:
 
 ```sh
-yarn install
+npm run install
 ```
 
 ### Running tests
 
-We use [Jest][jest] for testing, including unit tests for functionality and [snapshot testing][snapshots] for components.
+We use [Jest][jest] for testing, including unit tests for functionality and components.
 
 ```sh
-yarn test
+npm run test
 ```
 
 To run tests in watch mode (useful for TDD):
 
 ```sh
-yarn test -- --watch
-```
-
-If you make intentional changes to an existing component, you will need to update its snapshot:
-
-```sh
-yarn test -- -u
+npm run test -- --watch
 ```
 
 ### Storybook
@@ -56,7 +50,7 @@ We use [Storybook][storybook] for isolated UI component development.
 To run storybook locally:
 
 ```sh
-yarn start
+npm run start
 open http://localhost:6006/
 ```
 
@@ -118,5 +112,4 @@ Generally follow these rules for creating a PR:
 [issue]: https://github.com/trigo-at/design-system/issues/new
 [github-flow]: https://guides.github.com/introduction/flow/
 [jest]: https://facebook.github.io/jest/
-[snapshots]: https://facebook.github.io/jest/docs/en/snapshot-testing.html#content
 [storybook]: https://storybook.js.org
