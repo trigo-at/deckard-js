@@ -1,8 +1,8 @@
 import React, {useRef} from 'react';
 import {func, string} from 'prop-types';
+import {FormattedMessage} from 'react-intl';
 import {
     Button,
-    FormattedMessage,
     Popover,
     PopoverTrigger,
     PopoverContent,
