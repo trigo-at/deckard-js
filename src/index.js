@@ -46,3 +46,4 @@ export {default as PageSection} from './patterns/page-section';
 export {default as ViewSection} from './patterns/view-section';
 export {default as FormSection} from './patterns/form-section';
 export {default as MetaViewSection} from './patterns/meta-view-section';
+export {default as ConfirmButton} from './patterns/confirm-button';
