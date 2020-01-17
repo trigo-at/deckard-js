@@ -6,9 +6,11 @@ import SectionHeader from './section-header';
 const FormSection = ({title, gridTemplateAreas, children}) => {
     return (
         <Box as="section" mb={4}>
-            <Box px={2} pt={4} pb={2}>
-                <SectionHeader title={title} />
-            </Box>
+            {title && (
+                <Box px={2} pt={4} pb={2}>
+                    <SectionHeader title={title} />
+                </Box>
+            )}
             <Grid
                 px={2}
                 gridGap={4}
@@ -22,12 +24,13 @@ const FormSection = ({title, gridTemplateAreas, children}) => {
 };
 
 FormSection.propTypes = {
-    title: string.isRequired,
+    title: string,
     gridTemplateAreas: string,
     children: node,
 };
 
 FormSection.defaultProps = {
+    title: undefined,
     gridTemplateAreas: undefined,
     children: undefined,
 };
