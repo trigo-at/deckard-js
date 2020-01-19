@@ -31,6 +31,17 @@ const DataCell = ({column}) => {
             </ChakraLink>
         );
     }
+    if (column.link && column.isExternal) {
+        return (
+            <ChakraLink isExternal href={column.link}>
+                {column.format ? (
+                    <FormattedMessage id={`${column.format}.${column.value}`} />
+                ) : (
+                    column.value
+                )}
+            </ChakraLink>
+        );
+    }
     if (column.format) {
         return (
             <CellContent>
