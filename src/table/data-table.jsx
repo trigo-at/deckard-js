@@ -1,5 +1,5 @@
 import React from 'react';
-import {arrayOf, shape, string, any, elementType, func} from 'prop-types';
+import {arrayOf, shape, string, any, elementType, func, bool} from 'prop-types';
 import {FormattedMessage} from 'react-intl';
 import {Link} from '@reach/router';
 import {Link as ChakraLink} from '@chakra-ui/core';
@@ -20,9 +20,9 @@ const DataCell = ({column}) => {
             </CellContent>
         );
     }
-    if (column.link) {
+    if (column.link && column.isExternal) {
         return (
-            <ChakraLink as={Link} to={column.link}>
+            <ChakraLink isExternal href={column.link}>
                 {column.format ? (
                     <FormattedMessage id={`${column.format}.${column.value}`} />
                 ) : (
@@ -31,9 +31,9 @@ const DataCell = ({column}) => {
             </ChakraLink>
         );
     }
-    if (column.link && column.isExternal) {
+    if (column.link) {
         return (
-            <ChakraLink isExternal href={column.link}>
+            <ChakraLink as={Link} to={column.link}>
                 {column.format ? (
                     <FormattedMessage id={`${column.format}.${column.value}`} />
                 ) : (
@@ -56,6 +56,7 @@ DataCell.propTypes = {
     column: shape({
         value: any,
         link: string,
+        isExternal: bool,
         format: string,
         Component: elementType,
         render: func,
@@ -100,6 +101,7 @@ DataTable.propTypes = {
                 shape({
                     value: any,
                     link: string,
+                    isExternal: bool,
                     format: string,
                     Component: elementType,
                     render: func,

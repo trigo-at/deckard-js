@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import {arrayOf, shape, string, any, elementType, func} from 'prop-types';
+import {arrayOf, shape, string, any, elementType, func, bool} from 'prop-types';
 import {FormattedMessage} from 'react-intl';
 import {Grid, Text, Link as ChakraLink, Flex, Box} from '@chakra-ui/core';
 import {Link} from '@reach/router';
@@ -10,6 +10,17 @@ const DataEntry = ({entry}) => {
     }
     if (entry.Component) {
         return <entry.Component>{entry.value}</entry.Component>;
+    }
+    if (entry.link && entry.isExternal) {
+        return (
+            <ChakraLink isExternal href={entry.link} color="gray.900">
+                {entry.format ? (
+                    <FormattedMessage id={`${entry.format}.${entry.value}`} />
+                ) : (
+                    entry.value
+                )}
+            </ChakraLink>
+        );
     }
     if (entry.link) {
         return (
@@ -36,6 +47,7 @@ DataEntry.propTypes = {
     entry: shape({
         value: any,
         link: string,
+        isExternal: bool,
         format: string,
         Component: elementType,
         render: func,
@@ -73,6 +85,7 @@ DataList.propTypes = {
             value: any,
             format: string,
             link: string,
+            isExternal: bool,
             Component: elementType,
             render: func,
         })
