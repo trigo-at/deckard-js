@@ -34,7 +34,9 @@ const RadioGroupField = ({
             <RadioGroup {...input} {...props} id={name}>
                 {options.map(option => (
                     <Radio key={option} value={option}>
-                        <FormattedMessage id={`${name}.${option}`} />
+                        <FormattedMessage
+                            id={`${fieldName || name}.${option}`}
+                        />
                     </Radio>
                 ))}
             </RadioGroup>
