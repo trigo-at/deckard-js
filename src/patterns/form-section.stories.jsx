@@ -28,7 +28,6 @@ export const FormSectionStory = () => (
                     <InputField name="someField" isRequired />
                     <InputField
                         name="someOtherField"
-                        isRequired
                         helperText="some helper text"
                     />
                 </FormSection>
