@@ -8,7 +8,6 @@ import FieldError from './field-error';
 const CheckboxField = forwardRef(
     ({name, gridArea, fieldName, helperText, ...props}, ref) => {
         const {input, meta} = useField(name, {type: 'checkbox'});
-        console.log(input, meta);
         const isInvalid =
             (!!meta.error && meta.touched) ||
             (!!meta.submitError &&
