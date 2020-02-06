@@ -8,6 +8,7 @@ import FieldError from './field-error';
 const CheckboxField = forwardRef(
     ({name, gridArea, fieldName, helperText, ...props}, ref) => {
         const {input, meta} = useField(name, {type: 'checkbox'});
+        console.log(input, meta);
         const isInvalid =
             (!!meta.error && meta.touched) ||
             (!!meta.submitError &&
@@ -15,7 +16,11 @@ const CheckboxField = forwardRef(
                 !meta.submitting);
         return (
             <FormControl gridArea={gridArea || name} isInvalid={isInvalid}>
-                <Checkbox {...input} {...props} ref={ref}>
+                <Checkbox
+                    {...input}
+                    {...props}
+                    ref={ref}
+                    isChecked={input.checked}>
                     <FormattedMessage id={`field.${fieldName || name}`} />
                 </Checkbox>
                 {helperText && (
