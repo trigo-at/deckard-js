@@ -15,7 +15,11 @@ const CheckboxField = forwardRef(
                 !meta.submitting);
         return (
             <FormControl gridArea={gridArea || name} isInvalid={isInvalid}>
-                <Checkbox {...input} {...props} ref={ref}>
+                <Checkbox
+                    {...input}
+                    {...props}
+                    ref={ref}
+                    isChecked={input.checked}>
                     <FormattedMessage id={`field.${fieldName || name}`} />
                 </Checkbox>
                 {helperText && (
