@@ -62,14 +62,14 @@ const DataList = ({values}) => {
                     <Flex
                         height="full"
                         alignItems="flex-start"
-                        py={4}
+                        py={2}
                         borderBottom="1px"
                         borderBottomColor="gray.200">
                         <Text color="gray.600">
                             <FormattedMessage id={`field.${value.field}`} />
                         </Text>
                     </Flex>
-                    <Box py={4} borderBottom="1px" borderBottomColor="gray.200">
+                    <Box py={2} borderBottom="1px" borderBottomColor="gray.200">
                         <DataEntry entry={value} />
                     </Box>
                 </Fragment>

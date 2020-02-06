@@ -2,7 +2,6 @@
     "extends": ["trigo/react", "prettier", "prettier/react"],
     "plugins": ["prettier"],
     "env": {
-        "node": true,
         "browser": true,
         "jest": true
     },
