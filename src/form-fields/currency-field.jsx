@@ -21,6 +21,7 @@ const CurrencyField = ({
     fieldName,
     helperText,
     isRequired,
+    isDisabled,
     ...props
 }) => {
     const {input, meta} = useField(name);
@@ -33,7 +34,11 @@ const CurrencyField = ({
                 <FormattedMessage id={`field.${fieldName || name}`} />
                 {!isRequired && <Optional />}
             </FormLabel>
-            <NumberInput {...input} precision={2} step={0.1}>
+            <NumberInput
+                {...input}
+                precision={2}
+                step={0.1}
+                isDisabled={isDisabled}>
                 <NumberInputField {...props} />
                 <NumberInputStepper>
                     <NumberIncrementStepper />
@@ -55,6 +60,7 @@ CurrencyField.propTypes = {
     gridArea: string,
     fieldName: string,
     isRequired: bool,
+    isDisabled: bool,
     helperText: node,
 };
 
@@ -63,6 +69,7 @@ CurrencyField.defaultProps = {
     gridArea: undefined,
     fieldName: undefined,
     isRequired: false,
+    isDisabled: false,
 };
 
 export default CurrencyField;
