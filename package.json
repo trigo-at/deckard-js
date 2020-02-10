@@ -55,7 +55,7 @@
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "chance": "^1.1.4",
     "core-js": "^3.6.4",
-    "cross-env": "^6.0.3",
+    "cross-env": "^7.0.0",
     "date-fns": "^2.9.0",
     "emotion-theming": "^10.0.27",
     "eslint": "^6.8.0",
