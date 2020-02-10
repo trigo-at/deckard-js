@@ -18,6 +18,7 @@ const DateField = ({
     fieldName,
     helperText,
     isRequired,
+    isDisabled,
     ...props
 }) => {
     const {input, meta} = useField(name);
@@ -40,7 +41,8 @@ const DateField = ({
         <FormControl
             as="fieldset"
             gridArea={gridArea || name}
-            isInvalid={isInvalid}>
+            isInvalid={isInvalid}
+            isDisabled={isDisabled}>
             <FormLabel as="legend" htmlFor={name}>
                 <FormattedMessage id={`field.${fieldName || name}`} />{' '}
                 {!isRequired && <Optional />}
@@ -89,6 +91,7 @@ DateField.propTypes = {
     gridArea: string,
     fieldName: string,
     isRequired: bool,
+    isDisabled: bool,
     helperText: node,
 };
 
@@ -97,6 +100,7 @@ DateField.defaultProps = {
     fieldName: undefined,
     helperText: undefined,
     isRequired: false,
+    isDisabled: false,
 };
 
 export default DateField;
