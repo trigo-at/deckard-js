@@ -34,7 +34,9 @@ const CheckboxGroupField = ({
             <CheckboxGroup id={name} {...input}>
                 {options.map((option, idx) => (
                     <Checkbox key={idx} value={option}>
-                        {option}
+                        <FormattedMessage
+                            id={`${fieldName || name}.${option}`}
+                        />
                     </Checkbox>
                 ))}
             </CheckboxGroup>
