@@ -21,12 +21,12 @@ export const DateFieldStory = () => (
         name="dateField"
         fieldName="testFieldName" // ??
         helperText={{}} // ??
-        initialValues={{}}
+        initialValues={{date: ''}}
         validate={validate}
         onSubmit={onSubmit}>
         {({handleSubmit}) => (
             <form onSubmit={handleSubmit}>
-                <DateField name="date" />
+                <DateField isRequired name="date" />
                 <Button type="submit">submit</Button>
             </form>
         )}
@@ -41,7 +41,7 @@ export const DateFieldStory2 = () => (
         name="dateField"
         fieldName="testFieldName" // ??
         helperText={{}} // ??
-        initialValues={{}}
+        initialValues={{date: '2002-12-28'}}
         validate={validate}
         onSubmit={onSubmit}>
         {({handleSubmit}) => (
@@ -54,7 +54,7 @@ export const DateFieldStory2 = () => (
 );
 
 DateFieldStory2.story = {
-    name: 'disabled',
+    name: 'disabled-with-initial-value',
 };
 
 export default {

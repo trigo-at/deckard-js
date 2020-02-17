@@ -5,37 +5,49 @@ import {Button} from '@chakra-ui/core';
 import CheckboxField from './checkbox-field';
 import ProviderDecorator from '../provider-decorator';
 
-/*  Trigos CheckboxField uses FormControl and Checkbox from Chakra UI.
-    So you have access to the props from both Chakra Components. */
-
 const onSubmit = values => console.log(values);
+// Note: passing {...props} makes all Chakra Component props available through the trigo design system
+
+// List of all available Checkbox and Formcontrol props from the Chakra UI:
+
+// -- Checkbox props --
+// id="string"
+// name="checkboxField1"
+// value="stringOrNumber"
+// variantColor="blue"
+// defaultIsChecked={false}
+// isChecked={false}
+// isIndeterminate={false}
+// isFullWidth={false}
+// size="md"
+// isDisabled={false}
+// isInvalid={false}
+// children={React.ReactNode}
+// onChange={values => console.log(values)}
+// onBlur={() => {}}
+// onFocus={() => {}}
+// aria-label="string"
+// aria-labelledby="string"
+
+// // -- FormControl props --
+// isRequired
+// isReadOnly={false}
 
 export const CheckboxFieldStory = () => (
-    <Form onSubmit={onSubmit}>
+    <Form initialValues={{}} onSubmit={onSubmit}>
         {({handleSubmit}) => (
             <form onSubmit={handleSubmit}>
                 <CheckboxField
-                    // -- FormControl props --
-                    isRequired
-                    isReadOnly={false}
-                    // -- Checkbox props --
                     id="string"
-                    name="string" // required prop
+                    name="checkboxField1"
                     value="stringOrNumber"
                     variantColor="blue"
-                    defaultIsChecked={false}
-                    isChecked={false}
-                    isIndeterminate={false}
-                    isFullWidth={false}
                     size="md"
-                    isDisabled={false}
-                    isInvalid={false}
-                    // children={React.ReactNode}
-                    // onChange={values => console.log(values)}
                     onBlur={() => {}}
                     onFocus={() => {}}
                     aria-label="string"
                     aria-labelledby="string"
+                    isRequired
                 />
                 <Button mt="1" type="submit">
                     submit
@@ -50,6 +62,34 @@ CheckboxFieldStory.story = {
 };
 
 export const CheckboxFieldStory2 = () => (
+    <Form initialValues={{checkboxField1: true}} onSubmit={onSubmit}>
+        {({handleSubmit}) => (
+            <form onSubmit={handleSubmit}>
+                <CheckboxField
+                    isRequired
+                    id="string"
+                    name="checkboxField1"
+                    value="stringOrNumber"
+                    variantColor="blue"
+                    size="md"
+                    onBlur={() => {}}
+                    onFocus={() => {}}
+                    aria-label="string"
+                    aria-labelledby="string"
+                />
+                <Button mt="1" type="submit">
+                    submit
+                </Button>
+            </form>
+        )}
+    </Form>
+);
+
+CheckboxFieldStory2.story = {
+    name: 'with-initial-value',
+};
+
+export const CheckboxFieldStory3 = () => (
     <Form onSubmit={onSubmit}>
         {({handleSubmit}) => (
             <form onSubmit={handleSubmit}>
@@ -64,7 +104,7 @@ export const CheckboxFieldStory2 = () => (
     </Form>
 );
 
-CheckboxFieldStory2.story = {
+CheckboxFieldStory3.story = {
     name: 'multiple',
 };
 

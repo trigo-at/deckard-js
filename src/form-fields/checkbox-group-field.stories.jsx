@@ -13,6 +13,8 @@ const validate = values => {
     return errors;
 };
 
+const onSubmit = values => console.log(values);
+
 export const CheckboxGroupFieldStory = () => (
     <Form
         initialValues={{
@@ -22,8 +24,7 @@ export const CheckboxGroupFieldStory = () => (
             ],
         }}
         validate={validate}
-        subscription={{submitting: true}}
-        onSubmit={values => console.log(values)}>
+        onSubmit={onSubmit}>
         {({handleSubmit}) => (
             <form onSubmit={handleSubmit}>
                 <CheckboxGroupField
@@ -57,8 +58,7 @@ export const CheckboxGroupFieldStory2 = () => (
             ],
         }}
         validate={validate}
-        subscription={{submitting: true}}
-        onSubmit={values => console.log(values)}>
+        onSubmit={onSubmit}>
         {({handleSubmit}) => (
             <form onSubmit={handleSubmit}>
                 <CheckboxGroupField

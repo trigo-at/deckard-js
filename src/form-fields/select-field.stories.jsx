@@ -8,9 +8,7 @@ export const SelectFieldStory = () => (
     <Form
         render={() => (
             <SelectField
-                hasPlaceholder
-                name="alsoPlaceHolderName"
-                fieldName="testFieldName"
+                name="selectField1"
                 helperText="testHelperText"
                 options={[
                     {value: 'Dr', label: 'Doktor'},
@@ -24,7 +22,30 @@ export const SelectFieldStory = () => (
 );
 
 SelectFieldStory.story = {
-    name: 'SelectField',
+    name: 'default',
+};
+
+export const SelectFieldStory2 = () => (
+    <Form
+        render={() => (
+            <SelectField
+                hasPlaceholder
+                name="selectField1"
+                fieldName="testFieldName"
+                helperText="testHelperText"
+                options={[
+                    {value: 'Dr', label: 'Doktor'},
+                    {value: 'Mag', label: 'Magister'},
+                    {value: 'Ing', label: 'Ingenieur'},
+                ]}
+            />
+        )}
+        onSubmit={() => {}}
+    />
+);
+
+SelectFieldStory2.story = {
+    name: 'with-placeholder',
 };
 
 export default {
