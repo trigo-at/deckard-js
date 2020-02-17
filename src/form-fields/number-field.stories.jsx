@@ -1,7 +1,8 @@
 /* eslint-disable no-console */
+/* eslint-disable no-console */
 import React from 'react';
 import {Form} from 'react-final-form';
-import InputField from './input-field';
+import NumberField from './input-field';
 import ProviderDecorator from '../provider-decorator';
 
 const validate = values => {
@@ -22,8 +23,8 @@ export const InputStory = () => (
         onSubmit={values => console.log(values)}>
         {({handleSubmit}) => (
             <form onSubmit={handleSubmit}>
-                <InputField name="name" isRequired />
-                <InputField name="optional" />
+                <NumberField name="name" isRequired />
+                <NumberField name="optional" />
             </form>
         )}
     </Form>
@@ -34,7 +35,7 @@ InputStory.story = {
 };
 
 export default {
-    title: 'Components|InputField',
-    component: InputField,
+    title: 'Components|NumberField',
+    component: NumberField,
     decorators: [ProviderDecorator],
 };

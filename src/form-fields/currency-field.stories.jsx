@@ -4,16 +4,17 @@ import {Form} from 'react-final-form';
 import CurrencyField from './currency-field';
 import ProviderDecorator from '../provider-decorator';
 
+const onSubmit = values => console.log(values);
+
 export const DateFieldStory = () => (
     <Form
         initialValues={{
             name: '',
         }}
         validate={() => {}}
-        subscription={{submitting: true}}
-        onSubmit={values => console.log(values)}>
-        {() => (
-            <form>
+        onSubmit={onSubmit}>
+        {({handleSubmit}) => (
+            <form onSubmit={handleSubmit}>
                 <CurrencyField name="fieldHeaderText" />
             </form>
         )}
@@ -31,12 +32,8 @@ export const DateFieldStory2 = () => (
         }}
         validate={() => {}}
         subscription={{submitting: true}}
-        onSubmit={values => console.log(values)}>
-        {() => (
-            <form>
-                <CurrencyField name="fieldHeaderText" isDisabled />
-            </form>
-        )}
+        onSubmit={onSubmit}>
+        {() => <CurrencyField name="fieldHeaderText" isDisabled />}
     </Form>
 );
 
@@ -51,17 +48,19 @@ export const DateFieldStory3 = () => (
         }}
         validate={() => {}}
         subscription={{submitting: true}}
-        onSubmit={values => console.log(values)}>
-        {() => (
-            <form>
-                <CurrencyField name="fieldHeaderText" />
-                <CurrencyField name="fieldHeaderText" />
-                <CurrencyField name="fieldHeaderText" />
-                <CurrencyField name="fieldHeaderText" />
-                <CurrencyField name="fieldHeaderText" isDisabled />
-                <CurrencyField name="fieldHeaderText" isDisabled />
-            </form>
-        )}
+        onSubmit={onSubmit}>
+        {() => {
+            return (
+                <>
+                    <CurrencyField name="fieldHeaderText" />
+                    <CurrencyField name="fieldHeaderText" />
+                    <CurrencyField name="fieldHeaderText" />
+                    <CurrencyField name="fieldHeaderText" />
+                    <CurrencyField name="fieldHeaderText" isDisabled />
+                    <CurrencyField name="fieldHeaderText" isDisabled />
+                </>
+            );
+        }}
     </Form>
 );
 
