@@ -5,35 +5,12 @@ import {Button} from '@chakra-ui/core';
 import CheckboxField from './checkbox-field';
 import ProviderDecorator from '../provider-decorator';
 
-/* The trigo design-system is a collection of Chakra UI Styled-Components. Trigo DS is like a wrapper 
-    arround the official Chakra UI which allows for alot of custom modifications. */
+/*  The trigo design-system is a collection of Chakra UI Styled-Components.
+    Trigo DS is like a wrapper arround the official Chakra UI,
+    which allows for alot of custom modifications.  */
 
-// Note: passing {...props} makes all Chakra Component props available through the trigo design system
-
-// List of all available Checkbox and Formcontrol props from the Chakra UI:
-
-// -- Checkbox props --
-// id="string"
-// name="checkboxField1"
-// value="stringOrNumber"
-// variantColor="blue"
-// defaultIsChecked={false}
-// isChecked={false}
-// isIndeterminate={false}
-// isFullWidth={false}
-// size="md"
-// isDisabled={false}
-// isInvalid={false}
-// children={React.ReactNode}
-// onChange={values => console.log(values)}
-// onBlur={() => {}}
-// onFocus={() => {}}
-// aria-label="string"
-// aria-labelledby="string"
-
-// // -- FormControl props --
-// isRequired
-// isReadOnly={false}
+/*  Note: passing {...props} makes all Chakra Component props available,
+    through the trigo design system */
 
 const onSubmit = values => console.log(values);
 

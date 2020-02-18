@@ -2,11 +2,14 @@
 import React from 'react';
 import Chance from 'chance';
 
-import {Button} from '@chakra-ui/core';
+import {Heading} from '@chakra-ui/core';
 import ProviderDecorator from '../provider-decorator';
 import DataTable from './data-table';
 
 const chance = new Chance();
+
+/*  You have to choose beetwen link or render your values. 
+    Chakra UI can't handle both features simultaneously. */
 
 export const DataTableStory = () => (
     <DataTable
@@ -18,7 +21,11 @@ export const DataTableStory = () => (
                         value: chance.name(),
                         link: 'https://chakra-ui.com/getting-started',
                         isExternal: true,
-                        render: value => <Button>{value}</Button>,
+                    },
+                    {
+                        value: chance.name(),
+                        link: 'https://chakra-ui.com/getting-started',
+                        isExternal: true,
                     },
                     {
                         value: chance.name(),
@@ -34,35 +41,26 @@ export const DataTableStory = () => (
                         value: chance.name(),
                         link: 'https://chakra-ui.com/getting-started',
                         isExternal: true,
-                        render: value => <Button>{value}</Button>,
                     },
                     {
                         value: chance.name(),
                         link: 'https://chakra-ui.com/getting-started',
                         isExternal: true,
-                        render: value => <Button>{value}</Button>,
                     },
                     {
                         value: chance.name(),
                         link: 'https://chakra-ui.com/getting-started',
                         isExternal: true,
-                        render: value => <Button>{value}</Button>,
-                    },
-                    {
-                        value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
-                        render: value => <Button>{value}</Button>,
                     },
                 ],
             },
         ]}
-        columns={['spalte1', 'spalte2', 'spalte3', 'spalte4']}
+        columns={['col1', 'col2', 'col3']}
     />
 );
 
 DataTableStory.story = {
-    name: 'default', // links doesn't work here
+    name: 'with-links',
 };
 
 export const DataTableStory2 = () => (
@@ -73,38 +71,15 @@ export const DataTableStory2 = () => (
                 columns: [
                     {
                         value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
-                        render: value => <Button>{value}</Button>,
+                        render: value => <Heading>{value}</Heading>,
                     },
                     {
                         value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
-                        render: value => <Button>{value}</Button>,
-                    },
-                ],
-            },
-            {
-                id: chance.string({length: 20}),
-                columns: [
-                    {
-                        value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
-                        render: value => <Button>{value}</Button>,
+                        render: value => <Heading>{value}</Heading>,
                     },
                     {
                         value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
-                        render: value => <Button>{value}</Button>,
-                    },
-                    {
-                        value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
-                        render: value => <Button>{value}</Button>,
+                        render: value => <Heading>{value}</Heading>,
                     },
                 ],
             },
@@ -113,33 +88,25 @@ export const DataTableStory2 = () => (
                 columns: [
                     {
                         value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
+                        render: value => <Heading>{value}</Heading>,
                     },
                     {
                         value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
+                        render: value => <Heading>{value}</Heading>,
                     },
                     {
                         value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
-                    },
-                    {
-                        value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
+                        render: value => <Heading>{value}</Heading>,
                     },
                 ],
             },
         ]}
-        columns={['spalte1', 'spalte2', 'spalte3', 'spalte4']}
+        columns={['col1', 'col2', 'col3']}
     />
 );
 
 DataTableStory2.story = {
-    name: 'mixed',
+    name: 'Components holding value',
 };
 
 export const DataTableStory3 = () => (
@@ -150,9 +117,6 @@ export const DataTableStory3 = () => (
                 columns: [
                     {
                         value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
-                        render: value => <Button>{value}</Button>,
                     },
                 ],
             },
@@ -161,9 +125,6 @@ export const DataTableStory3 = () => (
                 columns: [
                     {
                         value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
-                        render: value => <Button>{value}</Button>,
                     },
                 ],
             },
@@ -172,145 +133,25 @@ export const DataTableStory3 = () => (
                 columns: [
                     {
                         value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
                     },
                     {
                         value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
                     },
                     {
                         value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
                     },
                     {
                         value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
                     },
                 ],
             },
         ]}
-        columns={['spalte1', 'spalte2']}
+        columns={['col1', 'col1']}
     />
 );
 
 DataTableStory3.story = {
     name: 'wrong column amount',
-};
-
-export const DataTableStory4 = () => (
-    <DataTable
-        items={[
-            {
-                id: chance.string({length: 20}),
-                columns: [
-                    {
-                        value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
-                    },
-                    {
-                        value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
-                    },
-                    {
-                        value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
-                    },
-                    {
-                        value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
-                    },
-                ],
-            },
-            {
-                id: chance.string({length: 20}),
-                columns: [
-                    {
-                        value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
-                    },
-                    {
-                        value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
-                    },
-                    {
-                        value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
-                    },
-                    {
-                        value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
-                    },
-                ],
-            },
-            {
-                id: chance.string({length: 20}),
-                columns: [
-                    {
-                        value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
-                    },
-                    {
-                        value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
-                    },
-                    {
-                        value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
-                    },
-                    {
-                        value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
-                    },
-                ],
-            },
-            {
-                id: chance.string({length: 20}),
-                columns: [
-                    {
-                        value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
-                    },
-                    {
-                        value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
-                    },
-                    {
-                        value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
-                    },
-                    {
-                        value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
-                    },
-                ],
-            },
-        ]}
-        columns={['spalte1', 'spalte2', 'spalte3', 'spalte4']}
-    />
-);
-
-DataTableStory4.story = {
-    name: 'long list without render component', // links work here
 };
 
 export default {
