@@ -16,15 +16,26 @@ const validate = values => {
 export const DateFieldStory = () => (
     <Form
         initialValues={{
-            name: '',
+            dateWithValue: '2000-01-01',
         }}
         validate={validate}
-        subscription={{submitting: true}}
+        subscription={{values: true}}
         onSubmit={values => console.log(values)}>
         {({handleSubmit}) => (
             <form onSubmit={handleSubmit}>
-                <DateField name="date" isDisabled />
-                <DateField name="date" />
+                <DateField
+                    name="dateDisabled"
+                    isDisabled
+                    onChange={e => console.log(e.target.value)}
+                />
+                <DateField
+                    name="dateEnabled"
+                    onChange={e => console.log(e.target.value)}
+                />
+                <DateField
+                    name="dateWithValue"
+                    onChange={e => console.log(e.target.value)}
+                />
             </form>
         )}
     </Form>
