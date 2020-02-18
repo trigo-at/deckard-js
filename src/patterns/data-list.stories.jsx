@@ -16,19 +16,18 @@ const values = [
         value: `Lisa Musterfrau`,
         link: 'https://chakra-ui.com',
         isExternal: true, // opens a new tab if you click the link
-        render: value => <Button>{value}</Button>, // wrap your values with an component
-        Component: 'test', // takes React.ElementType, does nothing in the UI
+        render: value => <Button>{value}</Button>, // wrap your values with an component (link does not work then)
     },
 ];
 
-export const DefaultStory = () => <DataList values={values} />;
+export const DataListStory = () => <DataList values={values} />;
 
-DefaultStory.story = {
+DataListStory.story = {
     name: 'default',
 };
-export const DefaultStory2 = () => <DataList />;
+export const DataListStory2 = () => <DataList />;
 
-DefaultStory2.story = {
+DataListStory2.story = {
     name: 'no-values',
 };
 
