@@ -5,7 +5,9 @@ import {Button} from '@chakra-ui/core';
 import CheckboxField from './checkbox-field';
 import ProviderDecorator from '../provider-decorator';
 
-const onSubmit = values => console.log(values);
+/* The trigo design-system is a collection of Chakra UI Styled-Components. Trigo DS is like a wrapper 
+    arround the official Chakra UI which allows for alot of custom modifications. */
+
 // Note: passing {...props} makes all Chakra Component props available through the trigo design system
 
 // List of all available Checkbox and Formcontrol props from the Chakra UI:
@@ -32,6 +34,8 @@ const onSubmit = values => console.log(values);
 // // -- FormControl props --
 // isRequired
 // isReadOnly={false}
+
+const onSubmit = values => console.log(values);
 
 export const CheckboxFieldStory = () => (
     <Form initialValues={{}} onSubmit={onSubmit}>
