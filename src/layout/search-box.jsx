@@ -55,7 +55,6 @@ const SearchBox = ({onSearch, loading}) => {
                                     <ButtonGroup>
                                         {input.value && (
                                             <IconButton
-                                                isLoading={loading}
                                                 color="gray.900"
                                                 variant="ghost"
                                                 aria-label="Suche zurücksetzen"
