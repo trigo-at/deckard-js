@@ -12,6 +12,12 @@ import {FormattedMessage} from 'react-intl';
 import FieldError from './field-error';
 import Optional from './optional';
 
+const padLeft = value => {
+    if (!value) return '';
+    const paddedValue = `0${value}`;
+    return paddedValue.slice(paddedValue.length - 2);
+};
+
 const DateField = ({
     name,
     gridArea,
@@ -37,6 +43,12 @@ const DateField = ({
     const handleYearChange = e => {
         input.onChange(`${e.target.value || ''}-${month || ''}-${day || ''}`);
     };
+
+    const handleOnBlur = e => {
+        input.onChange(`${year}-${padLeft(month)}-${padLeft(day)}`);
+        onBlur(e);
+    };
+
     return (
         <FormControl
             as="fieldset"
@@ -52,27 +64,33 @@ const DateField = ({
                     width={20}
                     maxLength={2}
                     onChange={handleDayChange}
-                    onBlur={onBlur}
+                    onBlur={handleOnBlur}
                     value={day || ''}
                     name={`${name}.day`}
+                    pattern="\d*"
+                    type="text"
                     {...props}
                 />
                 <Input
                     width={20}
                     maxLength={2}
                     onChange={handleMonthChange}
-                    onBlur={onBlur}
+                    onBlur={handleOnBlur}
                     value={month || ''}
                     name={`${name}.month`}
+                    pattern="\d\d"
+                    type="text"
                     {...props}
                 />
                 <Input
                     width={40}
                     maxLength={4}
                     onChange={handleYearChange}
-                    onBlur={onBlur}
+                    onBlur={handleOnBlur}
                     value={year || ''}
                     name={`${name}.year`}
+                    pattern="\d\d\d\d"
+                    type="text"
                     {...props}
                 />
             </Stack>
