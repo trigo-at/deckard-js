@@ -19,7 +19,7 @@ export const DateFieldStory = () => (
             dateWithValue: '2000-01-01',
         }}
         validate={validate}
-        subscription={{values: true}}
+        subscription={{submitting: true}}
         onSubmit={values => console.log(values)}>
         {({handleSubmit}) => (
             <form onSubmit={handleSubmit}>
