@@ -20,7 +20,7 @@ export const LoadingStory = () => {
     return (
         <Header
             userName="Max Mustermann"
-            loading
+            isLoading
             onSearch={searchTerm => console.log(searchTerm)}
         />
     );

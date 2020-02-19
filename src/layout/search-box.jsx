@@ -13,7 +13,7 @@ import {
 } from '@chakra-ui/core';
 import useEventListener from './use-event-listener';
 
-const SearchBox = ({onSearch, loading}) => {
+const SearchBox = ({onSearch, isLoading}) => {
     const searchInput = useRef();
 
     const handleGlobalKeyDown = useCallback(e => {
@@ -72,7 +72,7 @@ const SearchBox = ({onSearch, loading}) => {
                                             />
                                         )}
                                         <Button
-                                            isLoading={loading}
+                                            isLoading={isLoading}
                                             color="gray.900"
                                             size="sm"
                                             name="execute-search-query"
@@ -91,12 +91,12 @@ const SearchBox = ({onSearch, loading}) => {
 };
 
 SearchBox.propTypes = {
-    loading: bool,
+    isLoading: bool,
     onSearch: func.isRequired,
 };
 
 SearchBox.defaultProps = {
-    loading: false,
+    isLoading: false,
 };
 
 export default SearchBox;

@@ -4,12 +4,12 @@ import {Flex, Box} from '@chakra-ui/core';
 import SearchBox from './search-box';
 import UserMenu from './user-menu';
 
-const Header = ({userName, onSearch, onLogout, children, loading}) => {
+const Header = ({userName, onSearch, onLogout, children, isLoading}) => {
     return (
         <Flex alignItems="center" justifyContent="space-between" bg="gray.50">
             <Box flexGrow="1" px={6}>
                 {onSearch && (
-                    <SearchBox loading={loading} onSearch={onSearch} />
+                    <SearchBox isLoading={isLoading} onSearch={onSearch} />
                 )}
             </Box>
             <Flex
@@ -29,7 +29,7 @@ Header.propTypes = {
     userName: string,
     onSearch: func,
     onLogout: func,
-    loading: bool,
+    isLoading: bool,
 };
 
 Header.defaultProps = {
@@ -37,7 +37,7 @@ Header.defaultProps = {
     userName: undefined,
     onSearch: undefined,
     onLogout: undefined,
-    loading: undefined,
+    isLoading: undefined,
 };
 
 export default Header;
