@@ -2,6 +2,7 @@
 import React from 'react';
 import {Form} from 'react-final-form';
 import {parseISO, isValid} from 'date-fns';
+import {Button} from '@chakra-ui/core';
 import DateField from './date-field';
 import ProviderDecorator from '../provider-decorator';
 
@@ -13,25 +14,47 @@ const validate = values => {
     }
 };
 
+const onSubmit = values => console.log(values);
+
 export const DateFieldStory = () => (
     <Form
-        initialValues={{
-            name: '',
-        }}
+        name="dateField"
+        fieldName="testFieldName" // ??
+        helperText={{}} // ??
+        initialValues={{date: ''}}
         validate={validate}
-        subscription={{submitting: true}}
-        onSubmit={values => console.log(values)}>
+        onSubmit={onSubmit}>
         {({handleSubmit}) => (
             <form onSubmit={handleSubmit}>
-                <DateField name="date" isDisabled />
-                <DateField name="date" />
+                <DateField isRequired name="date" />
+                <Button type="submit">submit</Button>
             </form>
         )}
     </Form>
 );
 
 DateFieldStory.story = {
-    name: 'Input',
+    name: 'default',
+};
+export const DateFieldStory2 = () => (
+    <Form
+        name="dateField"
+        fieldName="testFieldName" // ??
+        helperText={{}} // ??
+        initialValues={{date: '2002-12-28'}}
+        validate={validate}
+        onSubmit={onSubmit}>
+        {({handleSubmit}) => (
+            <form onSubmit={handleSubmit}>
+                <DateField name="date" isDisabled />
+                <Button type="submit">submit</Button>
+            </form>
+        )}
+    </Form>
+);
+
+DateFieldStory2.story = {
+    name: 'disabled-with-initial-value',
 };
 
 export default {

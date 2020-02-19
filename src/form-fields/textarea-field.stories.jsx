@@ -2,62 +2,53 @@
 import React from 'react';
 import {Form} from 'react-final-form';
 import {Button} from '@chakra-ui/core';
-import InputField from './input-field';
+import TextareaField from './textarea-field';
 import ProviderDecorator from '../provider-decorator';
-
-const validate = values => {
-    const errors = {};
-    if (!values.name) {
-        errors.name = 'validation.required';
-    }
-    return errors;
-};
 
 const onSubmit = values => console.log(values);
 
-export const InputStory = () => (
-    <Form
-        initialValues={{
-            name: '',
-        }}
-        validate={validate}
-        onSubmit={onSubmit}>
+export const TextareaFieldStory = () => (
+    <Form onSubmit={onSubmit}>
         {({handleSubmit}) => (
             <form onSubmit={handleSubmit}>
-                <InputField name="name" isRequired />
-                <InputField name="optional" />
+                <TextareaField
+                    isRequired
+                    name="textArea"
+                    fieldName="testFieldName"
+                    helperText="testHelperText"
+                />
                 <Button type="submit">submit</Button>
             </form>
         )}
     </Form>
 );
-
-InputStory.story = {
+TextareaFieldStory.story = {
     name: 'default',
 };
-export const InputStory2 = () => (
+export const TextareaFieldStory2 = () => (
     <Form
         initialValues={{
-            name: 'testInitialValue',
+            textArea: 'Hallo ich hab hier schonmal was geschrieben ...',
         }}
-        validate={validate}
         onSubmit={onSubmit}>
         {({handleSubmit}) => (
             <form onSubmit={handleSubmit}>
-                <InputField name="name" isRequired />
-                <InputField name="optional" />
+                <TextareaField
+                    name="textArea"
+                    fieldName="testFieldName"
+                    helperText="testHelperText"
+                />
                 <Button type="submit">submit</Button>
             </form>
         )}
     </Form>
 );
-
-InputStory2.story = {
+TextareaFieldStory2.story = {
     name: 'with-initial-value',
 };
 
 export default {
-    title: 'Components|InputField',
-    component: InputField,
+    title: 'Components|TextareaField',
+    component: TextareaField,
     decorators: [ProviderDecorator],
 };
