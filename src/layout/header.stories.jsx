@@ -22,7 +22,7 @@ export const LoadingStory = () => {
         <Header
             onLogout={event => console.log('logged out:', event)}
             userName="Max Mustermann"
-            loading
+            isLoading
             onSearch={searchTerm => console.log(searchTerm)}
         />
     );
