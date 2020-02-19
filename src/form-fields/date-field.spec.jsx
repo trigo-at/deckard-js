@@ -48,7 +48,7 @@ afterEach(cleanup);
 
         expect(
             onChange.mock.calls[onChange.mock.calls.length - 1]
-        ).toHaveProperty('0.target.value', result);
+        ).toHaveProperty('0', result);
     });
 });
 
@@ -64,7 +64,7 @@ it(`reports change when date was provided via initialValues`, () => {
     });
 
     expect(onChange.mock.calls[onChange.mock.calls.length - 1]).toHaveProperty(
-        '0.target.value',
+        '0',
         '2000-10-01'
     );
 });

@@ -56,7 +56,7 @@ const DateField = ({
 
         input.onChange(inputValue);
         if (props.onChange) {
-            props.onChange({target: {value: inputValue}});
+            props.onChange(inputValue);
         }
     };
 
