@@ -2,6 +2,7 @@
 import React from 'react';
 import {Form} from 'react-final-form';
 import {parseISO, isValid} from 'date-fns';
+import {Button} from '@chakra-ui/core';
 import DateField from './date-field';
 import ProviderDecorator from '../provider-decorator';
 
@@ -13,36 +14,58 @@ const validate = values => {
     }
 };
 
+const onSubmit = values => console.log(values);
+
 export const DateFieldStory = () => (
     <Form
         initialValues={{
             dateWithValue: '2000-01-01',
         }}
         validate={validate}
-        subscription={{submitting: true}}
-        onSubmit={values => console.log(values)}>
+        onSubmit={onSubmit}>
         {({handleSubmit}) => (
             <form onSubmit={handleSubmit}>
                 <DateField
                     name="dateDisabled"
                     isDisabled
-                    onChange={e => console.log(e.target.value)}
+                    onChange={value => console.log(value)}
                 />
                 <DateField
                     name="dateEnabled"
-                    onChange={e => console.log(e.target.value)}
+                    onChange={value => console.log(value)}
                 />
                 <DateField
                     name="dateWithValue"
-                    onChange={e => console.log(e.target.value)}
+                    onChange={value => console.log(value)}
                 />
+                <Button type="submit">submit</Button>
             </form>
         )}
     </Form>
 );
 
 DateFieldStory.story = {
-    name: 'Input',
+    name: 'default',
+};
+export const DateFieldStory2 = () => (
+    <Form
+        name="dateField"
+        fieldName="testFieldName" // ??
+        helperText={{}} // ??
+        initialValues={{date: '2002-12-28'}}
+        validate={validate}
+        onSubmit={onSubmit}>
+        {({handleSubmit}) => (
+            <form onSubmit={handleSubmit}>
+                <DateField name="date" isDisabled />
+                <Button type="submit">submit</Button>
+            </form>
+        )}
+    </Form>
+);
+
+DateFieldStory2.story = {
+    name: 'disabled-with-initial-value',
 };
 
 export default {

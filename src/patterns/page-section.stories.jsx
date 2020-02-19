@@ -45,10 +45,10 @@ export const WithActionsStory = () => (
             title="common.core-data"
             actions={
                 <ButtonGroup>
-                    <Button>action 1</Button>
-                    <Button>action 2</Button>
-                    <Button>action 3</Button>
-                    <Button>action 4</Button>
+                    <Button>action 5</Button>
+                    <Button>action 6</Button>
+                    <Button>action 7</Button>
+                    <Button>action 8</Button>
                 </ButtonGroup>
             }>
             <DataList
