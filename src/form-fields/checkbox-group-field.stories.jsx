@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import React from 'react';
 import {Form} from 'react-final-form';
+import {Button} from '@chakra-ui/core';
 import CheckboxGroupField from './checkbox-group-field';
 import ProviderDecorator from '../provider-decorator';
 
@@ -12,6 +13,8 @@ const validate = values => {
     return errors;
 };
 
+const onSubmit = values => console.log(values);
+
 export const CheckboxGroupFieldStory = () => (
     <Form
         initialValues={{
@@ -21,12 +24,12 @@ export const CheckboxGroupFieldStory = () => (
             ],
         }}
         validate={validate}
-        subscription={{submitting: true}}
-        onSubmit={values => console.log(values)}>
+        onSubmit={onSubmit}>
         {({handleSubmit}) => (
             <form onSubmit={handleSubmit}>
                 <CheckboxGroupField
-                    name="titles"
+                    fieldName="string" // headerText
+                    name="titles" // have to match with initialValues property name
                     isRequired
                     options={[
                         'Diplom-Ingenieur / Diplom-Ingenieurin DI or Dipl.-Ing.',
@@ -44,7 +47,37 @@ export const CheckboxGroupFieldStory = () => (
 );
 
 CheckboxGroupFieldStory.story = {
-    name: 'Input',
+    name: 'default',
+};
+export const CheckboxGroupFieldStory2 = () => (
+    <Form
+        initialValues={{
+            titles: [
+                'Diplom-Tierarzt / Diplom-Tierärztin Mag. med. vet.',
+                'Doktor / Doktorin der gesamten Heilkunde Dr. med. univ.',
+            ],
+        }}
+        validate={validate}
+        onSubmit={onSubmit}>
+        {({handleSubmit}) => (
+            <form onSubmit={handleSubmit}>
+                <CheckboxGroupField
+                    helperText="customHelperText"
+                    fieldName="string"
+                    name="titles"
+                    isRequired
+                    options={['Magister / Magistra der Philosophie Mag. phil.']}
+                />
+                <Button mt="1em" type="submit">
+                    submit
+                </Button>
+            </form>
+        )}
+    </Form>
+);
+
+CheckboxGroupFieldStory2.story = {
+    name: 'withHelperText',
 };
 
 export default {

@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
+/* eslint-disable no-console */
 import React from 'react';
 import {Form} from 'react-final-form';
-import {Button} from '@chakra-ui/core';
-import InputField from './input-field';
+import NumberField from './input-field';
 import ProviderDecorator from '../provider-decorator';
 
 const validate = values => {
@@ -24,9 +24,8 @@ export const InputStory = () => (
         onSubmit={onSubmit}>
         {({handleSubmit}) => (
             <form onSubmit={handleSubmit}>
-                <InputField name="name" isRequired />
-                <InputField name="optional" />
-                <Button type="submit">submit</Button>
+                <NumberField name="name" isRequired />
+                <NumberField name="optional" />
             </form>
         )}
     </Form>
@@ -35,6 +34,7 @@ export const InputStory = () => (
 InputStory.story = {
     name: 'default',
 };
+
 export const InputStory2 = () => (
     <Form
         initialValues={{
@@ -44,9 +44,8 @@ export const InputStory2 = () => (
         onSubmit={onSubmit}>
         {({handleSubmit}) => (
             <form onSubmit={handleSubmit}>
-                <InputField name="name" isRequired />
-                <InputField name="optional" />
-                <Button type="submit">submit</Button>
+                <NumberField name="name" isRequired />
+                <NumberField name="optional" />
             </form>
         )}
     </Form>
@@ -57,7 +56,7 @@ InputStory2.story = {
 };
 
 export default {
-    title: 'Components|InputField',
-    component: InputField,
+    title: 'Components|NumberField',
+    component: NumberField,
     decorators: [ProviderDecorator],
 };
