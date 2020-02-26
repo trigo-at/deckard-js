@@ -21,7 +21,6 @@ export default {
         'final-form-arrays',
         'react-final-form',
         'react-final-form-arrays',
-        'thousands',
         'react-intl',
         'hoist-non-react-statics',
         '@babel/runtime/helpers/inheritsLoose',
@@ -36,6 +35,7 @@ export default {
         'exenv',
         'react-spring/renderprops.cjs',
         'date-fns',
+        'copy-to-clipboard',
     ],
     plugins: [
         babel({
