@@ -100,7 +100,7 @@
     "react-final-form-arrays": "^3",
     "react-intl": "^3",
     "@reach/router": "^1",
-    "@chakra-ui/core": "^0.5",
+    "@chakra-ui/core": "^0.6",
     "@emotion/core": "^10",
     "date-fns": "^2"
   },
