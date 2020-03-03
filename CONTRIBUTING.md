@@ -26,7 +26,7 @@ cd design-system
 ### Install dependencies:
 
 ```sh
-npm run install
+npm install
 ```
 
 ### Running tests
@@ -54,6 +54,13 @@ npm run start
 open http://localhost:6006/
 ```
 
+If you make changes do not forget to run 
+
+```sh
+npm run build-storybook
+```
+
+This builds the static version which is hosted on github.
 
 ### Troubleshooting
 
