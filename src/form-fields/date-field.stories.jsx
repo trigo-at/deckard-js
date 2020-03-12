@@ -10,7 +10,6 @@ const validate = values => {
     const errors = {};
     if (!isValid(parseISO(values.date))) {
         errors.date = 'validation.invalid';
-        console.log(values.date);
     }
 };
 
@@ -55,9 +54,12 @@ export const DateFieldStory2 = () => (
         initialValues={{date: '2002-12-28'}}
         validate={validate}
         onSubmit={onSubmit}>
-        {({handleSubmit}) => (
+        {({handleSubmit, form}) => (
             <form onSubmit={handleSubmit}>
-                <DateField name="date" isDisabled />
+                <DateField name="date" />
+                <Button type="button" onClick={() => form.reset({})}>
+                    reset
+                </Button>
                 <Button type="submit">submit</Button>
             </form>
         )}
@@ -65,7 +67,7 @@ export const DateFieldStory2 = () => (
 );
 
 DateFieldStory2.story = {
-    name: 'disabled-with-initial-value',
+    name: 'with-initial-value',
 };
 
 export default {

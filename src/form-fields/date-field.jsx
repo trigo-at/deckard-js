@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, {useState, useEffect} from 'react';
 import {string, node, bool, func} from 'prop-types';
 import {useField} from 'react-final-form';
 import {
@@ -23,41 +23,41 @@ const DateField = ({
     isDisabled,
     ...props
 }) => {
-    const dayElement = useRef(null);
-    const monthElement = useRef(null);
-    const yearElement = useRef(null);
     const {input, meta} = useField(name);
-    const domElements = {
-        year: yearElement,
-        month: monthElement,
-        day: dayElement,
-    };
-
-    const isInvalid =
-        (!!meta.error && meta.touched) ||
-        (!!meta.submitError && !meta.dirtySinceLastSubmit && !meta.submitting);
 
     const {value, onBlur} = input;
-    const [year, month, day] = value.split('-');
+    const [y, m, d] = value.split('-');
 
-    const handleChange = idx => e => {
-        const domRefs = {...domElements, [idx]: {current: e.target}};
-        const allValues = Object.values(domRefs).map(
-            domElement => domElement.current.value
-        );
-        const areAllValuesSet = allValues.every(v => v);
+    const [year, setYear] = useState(y);
+    const [month, setMonth] = useState(m);
+    const [day, setDay] = useState(d);
+
+    useEffect(() => {
+        if (!value) {
+            setYear('');
+            setMonth('');
+            setDay('');
+        }
+    }, [value]);
+
+    useEffect(() => {
+        const areAllValuesSet = [year, month, day].every(v => v);
         const inputValue = !areAllValuesSet
             ? undefined
-            : [
-                  domRefs.year.current.value,
-                  padString(domRefs.month.current.value),
-                  padString(domRefs.day.current.value),
-              ].join('-');
+            : [year, padString(month), padString(day)].join('-');
 
         input.onChange(inputValue);
         if (props.onChange) {
             props.onChange(inputValue);
         }
+    }, [year, month, day]);
+
+    const isInvalid =
+        (!!meta.error && meta.touched) ||
+        (!!meta.submitError && !meta.dirtySinceLastSubmit && !meta.submitting);
+
+    const handleChange = set => e => {
+        set(e.target.value);
     };
 
     return (
@@ -72,32 +72,26 @@ const DateField = ({
             </FormLabel>
             <Stack isInline spacing={4}>
                 <Input
-                    ref={dayElement}
                     width={20}
                     maxLength={2}
                     name={`${name}.day`}
-                    defaultValue={day}
-                    {...props}
-                    onChange={handleChange('day')}
+                    value={day || ''}
+                    onChange={handleChange(setDay)}
                 />
                 <Input
-                    ref={monthElement}
                     width={20}
                     maxLength={2}
                     name={`${name}.month`}
-                    defaultValue={month}
-                    {...props}
-                    onChange={handleChange('month')}
+                    value={month || ''}
+                    onChange={handleChange(setMonth)}
                 />
                 <Input
-                    ref={yearElement}
                     width={40}
                     maxLength={4}
                     onBlur={onBlur}
-                    defaultValue={year}
+                    value={year || ''}
                     name={`${name}.year`}
-                    {...props}
-                    onChange={handleChange('year')}
+                    onChange={handleChange(setYear)}
                 />
             </Stack>
             {helperText && (
