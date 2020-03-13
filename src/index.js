@@ -6,6 +6,11 @@ export {default as toDateString} from './to-date-string';
 export {default as toDateTimeString} from './to-date-time-string';
 export {default as useInterval} from './use-interval';
 
+// Components
+export {default as PrimaryButton} from './components/primary-button';
+export {default as SecondaryButton} from './components/secondary-button';
+export {default as TertiaryButton} from './components/tertiary-button';
+
 // Form fields
 export {default as CheckboxField} from './form-fields/checkbox-field';
 export {default as CheckboxGroupField} from './form-fields/checkbox-group-field';
