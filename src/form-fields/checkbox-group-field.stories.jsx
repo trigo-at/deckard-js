@@ -3,6 +3,7 @@ import React from 'react';
 import {Form} from 'react-final-form';
 import {Button} from '@chakra-ui/core';
 import CheckboxGroupField from './checkbox-group-field';
+import FormattedCheckboxGroupField from './formatted-checkbox-group-field';
 import ProviderDecorator from '../provider-decorator';
 
 const validate = values => {
@@ -49,6 +50,7 @@ export const CheckboxGroupFieldStory = () => (
 CheckboxGroupFieldStory.story = {
     name: 'default',
 };
+
 export const CheckboxGroupFieldStory2 = () => (
     <Form
         initialValues={{
@@ -78,6 +80,34 @@ export const CheckboxGroupFieldStory2 = () => (
 
 CheckboxGroupFieldStory2.story = {
     name: 'withHelperText',
+};
+
+export const FormattedCheckboxGroupFieldStory = () => (
+    <Form
+        initialValues={{
+            titles: ['translation1'],
+        }}
+        validate={validate}
+        onSubmit={onSubmit}>
+        {({handleSubmit}) => (
+            <form onSubmit={handleSubmit}>
+                <FormattedCheckboxGroupField
+                    helperText="customHelperText"
+                    fieldName="string"
+                    name="titles"
+                    isRequired
+                    options={['translation1']}
+                />
+                <Button mt="1em" type="submit">
+                    submit
+                </Button>
+            </form>
+        )}
+    </Form>
+);
+
+FormattedCheckboxGroupFieldStory.story = {
+    name: 'formatted',
 };
 
 export default {

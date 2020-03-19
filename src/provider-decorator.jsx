@@ -4,7 +4,12 @@ import ThemeProvider from './theme-provider';
 
 export default story => (
     <ThemeProvider>
-        <IntlProvider locale="de" messages={{}}>
+        <IntlProvider
+            locale="de"
+            messages={{
+                'string.translation1':
+                    'Diplom-Tierarzt / Diplom-Tierärztin Mag. med. vet.',
+            }}>
             {story()}
         </IntlProvider>
     </ThemeProvider>
