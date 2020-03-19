@@ -19,6 +19,7 @@ export {default as CurrencyField} from './form-fields/currency-field';
 export {default as DateField} from './form-fields/date-field';
 export {default as InputField} from './form-fields/input-field';
 export {default as RadioGroupField} from './form-fields/radio-group-field';
+export {default as FormattedRadioGroupField} from './form-fields/formatted-radio-group-field';
 export {default as SelectField} from './form-fields/select-field';
 export {default as TextareaField} from './form-fields/textarea-field';
 export {default as NumberField} from './form-fields/number-field';
