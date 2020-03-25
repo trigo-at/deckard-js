@@ -1,5 +1,5 @@
 'use strict';
 
-global.requestAnimationFrame = callback => {
+global.requestAnimationFrame = (callback) => {
     setTimeout(callback, 0);
 };

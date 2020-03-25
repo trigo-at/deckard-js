@@ -6,7 +6,7 @@ import HideOptionalContext from './hide-optional-context';
 const Optional = () => {
     return (
         <HideOptionalContext.Consumer>
-            {hideOptional =>
+            {(hideOptional) =>
                 hideOptional ? null : (
                     <Text fontSize="xs" color="gray.500">
                         <FormattedMessage id="common.optional" />

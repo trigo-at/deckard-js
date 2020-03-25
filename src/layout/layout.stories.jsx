@@ -16,7 +16,7 @@ export const DefaultStory = () => (
         header={
             <Header
                 userName="Max Mustermann"
-                onSearch={searchTerm => console.log(searchTerm)}
+                onSearch={(searchTerm) => console.log(searchTerm)}
             />
         }
         aside={
@@ -65,7 +65,7 @@ export const DifferentLogoBGStory = () => (
         header={
             <Header
                 userName="Max Mustermann"
-                onSearch={searchTerm => console.log(searchTerm)}
+                onSearch={(searchTerm) => console.log(searchTerm)}
             />
         }
         aside={

@@ -6,7 +6,7 @@ import UserMenu from './user-menu';
 export const UserMenuStory = () => (
     <UserMenu
         userName="John Doe"
-        onLogout={event => console.log('logged out:', event)}
+        onLogout={(event) => console.log('logged out:', event)}
     />
 );
 
@@ -15,7 +15,7 @@ UserMenuStory.story = {
 };
 
 export const UserMenuStory2 = () => (
-    <UserMenu onLogout={event => console.log('logged out:', event)} />
+    <UserMenu onLogout={(event) => console.log('logged out:', event)} />
 );
 
 UserMenuStory2.story = {

@@ -16,14 +16,14 @@ import useEventListener from './use-event-listener';
 const SearchBox = ({onSearch, isLoading}) => {
     const searchInput = useRef();
 
-    const handleGlobalKeyDown = useCallback(e => {
+    const handleGlobalKeyDown = useCallback((e) => {
         if (e.key === 'F' && e.ctrlKey && e.shiftKey) {
             searchInput.current.focus();
             searchInput.current.select();
         }
     }, []);
 
-    const onSubmit = values => {
+    const onSubmit = (values) => {
         if (onSearch) {
             onSearch(values.searchTerm);
             searchInput.current.focus();

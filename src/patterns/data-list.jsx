@@ -57,7 +57,7 @@ DataEntry.propTypes = {
 const DataList = ({values}) => {
     return (
         <Grid justifyContent="center" gridTemplateColumns="0.3fr 0.7fr">
-            {values.map(value => (
+            {values.map((value) => (
                 <Fragment key={value.field}>
                     <Flex
                         height="full"

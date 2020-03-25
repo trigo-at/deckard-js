@@ -16,7 +16,7 @@ const values = [
         value: `Lisa Musterfrau`,
         link: 'https://chakra-ui.com',
         isExternal: true, // opens a new tab if you click the link
-        render: value => <Button>{value}</Button>, // wrap your values with an component (link does not work then)
+        render: (value) => <Button>{value}</Button>, // wrap your values with an component (link does not work then)
     },
 ];
 

@@ -6,7 +6,7 @@ import CheckboxGroupField from './checkbox-group-field';
 import FormattedCheckboxGroupField from './formatted-checkbox-group-field';
 import ProviderDecorator from '../provider-decorator';
 
-const validate = values => {
+const validate = (values) => {
     const errors = {};
     if (!values.titles) {
         errors.titles = 'validation.required';
@@ -14,7 +14,7 @@ const validate = values => {
     return errors;
 };
 
-const onSubmit = values => console.log(values);
+const onSubmit = (values) => console.log(values);
 
 export const CheckboxGroupFieldStory = () => (
     <Form

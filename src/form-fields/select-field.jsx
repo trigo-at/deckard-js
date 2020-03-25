@@ -39,7 +39,7 @@ const SelectField = ({
                         {intl.formatMessage({id: `placeholder.${name}`})}
                     </Text>
                 )}
-                {options.map(option => (
+                {options.map((option) => (
                     <option key={option.value} value={option.value}>
                         {option.label}
                     </option>

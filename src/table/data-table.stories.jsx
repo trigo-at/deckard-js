@@ -71,15 +71,15 @@ export const DataTableStory2 = () => (
                 columns: [
                     {
                         value: chance.name(),
-                        render: value => <Heading>{value}</Heading>,
+                        render: (value) => <Heading>{value}</Heading>,
                     },
                     {
                         value: chance.name(),
-                        render: value => <Heading>{value}</Heading>,
+                        render: (value) => <Heading>{value}</Heading>,
                     },
                     {
                         value: chance.name(),
-                        render: value => <Heading>{value}</Heading>,
+                        render: (value) => <Heading>{value}</Heading>,
                     },
                 ],
             },
@@ -88,15 +88,15 @@ export const DataTableStory2 = () => (
                 columns: [
                     {
                         value: chance.name(),
-                        render: value => <Heading>{value}</Heading>,
+                        render: (value) => <Heading>{value}</Heading>,
                     },
                     {
                         value: chance.name(),
-                        render: value => <Heading>{value}</Heading>,
+                        render: (value) => <Heading>{value}</Heading>,
                     },
                     {
                         value: chance.name(),
-                        render: value => <Heading>{value}</Heading>,
+                        render: (value) => <Heading>{value}</Heading>,
                     },
                 ],
             },

@@ -6,14 +6,14 @@ import {Button} from '@chakra-ui/core';
 import DateField from './date-field';
 import ProviderDecorator from '../provider-decorator';
 
-const validate = values => {
+const validate = (values) => {
     const errors = {};
     if (!isValid(parseISO(values.date))) {
         errors.date = 'validation.invalid';
     }
 };
 
-const onSubmit = values => console.log(values);
+const onSubmit = (values) => console.log(values);
 
 export const DateFieldStory = () => (
     <Form
@@ -27,15 +27,15 @@ export const DateFieldStory = () => (
                 <DateField
                     name="dateDisabled"
                     isDisabled
-                    onChange={value => console.log(value)}
+                    onChange={(value) => console.log(value)}
                 />
                 <DateField
                     name="dateEnabled"
-                    onChange={value => console.log(value)}
+                    onChange={(value) => console.log(value)}
                 />
                 <DateField
                     name="dateWithValue"
-                    onChange={value => console.log(value)}
+                    onChange={(value) => console.log(value)}
                 />
                 <Button type="submit">submit</Button>
             </form>

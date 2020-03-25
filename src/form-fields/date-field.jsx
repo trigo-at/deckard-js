@@ -12,7 +12,7 @@ import {FormattedMessage} from 'react-intl';
 import FieldError from './field-error';
 import Optional from './optional';
 
-const padString = value => `0${value}`.slice(-2);
+const padString = (value) => `0${value}`.slice(-2);
 
 const DateField = ({
     name,
@@ -41,7 +41,7 @@ const DateField = ({
     }, [value]);
 
     useEffect(() => {
-        const areAllValuesSet = [year, month, day].every(v => v);
+        const areAllValuesSet = [year, month, day].every((v) => v);
         const inputValue = !areAllValuesSet
             ? undefined
             : [year, padString(month), padString(day)].join('-');
@@ -56,7 +56,7 @@ const DateField = ({
         (!!meta.error && meta.touched) ||
         (!!meta.submitError && !meta.dirtySinceLastSubmit && !meta.submitting);
 
-    const handleChange = set => e => {
+    const handleChange = (set) => (e) => {
         set(e.target.value);
     };
 

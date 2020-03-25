@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button} from '@chakra-ui/core';
 
-const SecondaryButton = props => {
+const SecondaryButton = (props) => {
     return <Button variantColor="teal" variant="outline" {...props} />;
 };
 

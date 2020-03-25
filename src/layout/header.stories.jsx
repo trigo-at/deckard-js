@@ -6,9 +6,9 @@ import Header from './header';
 export const DefaultStory = () => {
     return (
         <Header
-            onLogout={event => console.log('logged out:', event)}
+            onLogout={(event) => console.log('logged out:', event)}
             userName="Max Mustermann"
-            onSearch={searchTerm => console.log(searchTerm)}
+            onSearch={(searchTerm) => console.log(searchTerm)}
         />
     );
 };
@@ -20,10 +20,10 @@ DefaultStory.story = {
 export const LoadingStory = () => {
     return (
         <Header
-            onLogout={event => console.log('logged out:', event)}
+            onLogout={(event) => console.log('logged out:', event)}
             userName="Max Mustermann"
             isLoading
-            onSearch={searchTerm => console.log(searchTerm)}
+            onSearch={(searchTerm) => console.log(searchTerm)}
         />
     );
 };

@@ -6,7 +6,7 @@ import RadioGroupField from './radio-group-field';
 import FormattedRadioGroupField from './formatted-radio-group-field';
 import ProviderDecorator from '../provider-decorator';
 
-const onSubmit = values => console.log(values);
+const onSubmit = (values) => console.log(values);
 
 export const RadioGroupFieldStory = () => (
     <Form initialValues={{radioGroup: ''}} onSubmit={onSubmit}>

@@ -2,7 +2,7 @@ import React from 'react';
 import {FormattedMessage} from 'react-intl';
 import RadioGroupField from './radio-group-field';
 
-const FormattedRadioGroupField = props => {
+const FormattedRadioGroupField = (props) => {
     return (
         <RadioGroupField
             {...props}

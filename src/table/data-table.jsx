@@ -68,7 +68,7 @@ const DataTable = ({columns, items}) => {
         <Table>
             <thead>
                 <TableRow>
-                    {columns.map(column => (
+                    {columns.map((column) => (
                         <TableHeader key={column}>
                             <CellContent>
                                 <FormattedMessage id={`field.${column}`} />
@@ -78,7 +78,7 @@ const DataTable = ({columns, items}) => {
                 </TableRow>
             </thead>
             <tbody>
-                {items.map(item => (
+                {items.map((item) => (
                     <TableRow key={item.id}>
                         {item.columns.map((column, idx) => (
                             <TableCell key={idx}>

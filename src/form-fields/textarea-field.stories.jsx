@@ -5,7 +5,7 @@ import {Button} from '@chakra-ui/core';
 import TextareaField from './textarea-field';
 import ProviderDecorator from '../provider-decorator';
 
-const onSubmit = values => console.log(values);
+const onSubmit = (values) => console.log(values);
 
 export const TextareaFieldStory = () => (
     <Form onSubmit={onSubmit}>

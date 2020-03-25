@@ -2,7 +2,7 @@ import React from 'react';
 import {FormattedMessage} from 'react-intl';
 import CheckboxGroupField from './checkbox-group-field';
 
-const FormattedCheckboxGroupField = props => {
+const FormattedCheckboxGroupField = (props) => {
     return (
         <CheckboxGroupField
             {...props}

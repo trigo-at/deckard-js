@@ -5,7 +5,7 @@ import {Form} from 'react-final-form';
 import NumberField from './input-field';
 import ProviderDecorator from '../provider-decorator';
 
-const validate = values => {
+const validate = (values) => {
     const errors = {};
     if (!values.name) {
         errors.name = 'validation.required';
@@ -13,7 +13,7 @@ const validate = values => {
     return errors;
 };
 
-const onSubmit = values => console.log(values);
+const onSubmit = (values) => console.log(values);
 
 export const InputStory = () => (
     <Form

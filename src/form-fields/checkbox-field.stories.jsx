@@ -12,7 +12,7 @@ import ProviderDecorator from '../provider-decorator';
 /*  Note: passing {...props} makes all Chakra Component props available,
     through the trigo design system */
 
-const onSubmit = values => console.log(values);
+const onSubmit = (values) => console.log(values);
 
 export const CheckboxFieldStory = () => (
     <Form initialValues={{}} onSubmit={onSubmit}>

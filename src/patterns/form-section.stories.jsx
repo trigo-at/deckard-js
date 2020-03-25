@@ -5,7 +5,7 @@ import FormSection from './form-section';
 import InputField from '../form-fields/input-field';
 import ProviderDecorator from '../provider-decorator';
 
-const validate = values => {
+const validate = (values) => {
     const errors = {};
     if (!values.someField) {
         errors.someField = 'validation.required';
@@ -21,7 +21,7 @@ export const FormSectionStory = () => (
         initialValues={{}}
         validate={validate}
         subscription={{submitting: true}}
-        onSubmit={values => console.log(values)}>
+        onSubmit={(values) => console.log(values)}>
         {({handleSubmit}) => (
             <form onSubmit={handleSubmit}>
                 <FormSection gridTemplateAreas={gridTemplateAreas}>
