@@ -45,7 +45,6 @@ const InlineSearchField = ({
         <FormControl gridArea={gridArea || name} isInvalid={isInvalid}>
             <FormLabel htmlFor={name}>
                 <FormattedMessage id={`field.${fieldName || name}`} />
-                {!isRequired && <Optional />}
             </FormLabel>
             <InputGroup>
                 <Input {...input} {...props} pr="8rem" />
@@ -86,6 +85,7 @@ const InlineSearchField = ({
                     </Popover>
                 </InputRightElement>
             </InputGroup>
+            {!isRequired && <Optional />}
             {helperText && (
                 <FormHelperText>
                     <FormattedMessage id={helperText} />

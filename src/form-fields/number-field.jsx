@@ -31,7 +31,6 @@ const NumberField = ({
         <FormControl gridArea={gridArea || name} isInvalid={isInvalid}>
             <FormLabel htmlFor={name}>
                 <FormattedMessage id={`field.${fieldName || name}`} />
-                {!isRequired && <Optional />}
             </FormLabel>
             <NumberInput {...input} precision={0} step={1}>
                 <NumberInputField {...props} />
@@ -40,6 +39,7 @@ const NumberField = ({
                     <NumberDecrementStepper />
                 </NumberInputStepper>
             </NumberInput>
+            {!isRequired && <Optional />}
             {helperText && (
                 <FormHelperText>
                     <FormattedMessage id={helperText} />

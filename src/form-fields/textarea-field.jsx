@@ -27,9 +27,9 @@ const TextareaField = ({
         <FormControl gridArea={gridArea || name} isInvalid={isInvalid}>
             <FormLabel htmlFor={name}>
                 <FormattedMessage id={`field.${fieldName || name}`} />{' '}
-                {!isRequired && <Optional />}
             </FormLabel>
             <Textarea {...input} {...props} />
+            {!isRequired && <Optional />}
             {helperText && (
                 <FormHelperText>
                     <FormattedMessage id={helperText} />

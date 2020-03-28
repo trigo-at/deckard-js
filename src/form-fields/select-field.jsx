@@ -31,7 +31,6 @@ const SelectField = ({
         <FormControl gridArea={gridArea || name} isInvalid={isInvalid}>
             <FormLabel htmlFor={name}>
                 <FormattedMessage id={`field.${fieldName || name}`} />{' '}
-                {!isRequired && <Optional />}
             </FormLabel>
             <Select {...input} {...props}>
                 {hasPlaceholder && (
@@ -45,6 +44,7 @@ const SelectField = ({
                     </option>
                 ))}
             </Select>
+            {!isRequired && <Optional />}
             {helperText && (
                 <FormHelperText>
                     <FormattedMessage id={helperText} />

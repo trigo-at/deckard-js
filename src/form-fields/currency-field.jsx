@@ -32,7 +32,6 @@ const CurrencyField = ({
         <FormControl gridArea={gridArea || name} isInvalid={isInvalid}>
             <FormLabel htmlFor={name}>
                 <FormattedMessage id={`field.${fieldName || name}`} />
-                {!isRequired && <Optional />}
             </FormLabel>
             <NumberInput
                 {...input}
@@ -45,6 +44,7 @@ const CurrencyField = ({
                     <NumberDecrementStepper />
                 </NumberInputStepper>
             </NumberInput>
+            {!isRequired && <Optional />}
             {helperText && (
                 <FormHelperText>
                     <FormattedMessage id={helperText} />

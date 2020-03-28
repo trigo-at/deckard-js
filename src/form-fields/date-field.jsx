@@ -68,7 +68,6 @@ const DateField = ({
             isDisabled={isDisabled}>
             <FormLabel as="legend" htmlFor={name}>
                 <FormattedMessage id={`field.${fieldName || name}`} />{' '}
-                {!isRequired && <Optional />}
             </FormLabel>
             <Stack isInline spacing={4}>
                 <Input
@@ -94,6 +93,7 @@ const DateField = ({
                     onChange={handleChange(setYear)}
                 />
             </Stack>
+            {!isRequired && <Optional />}
             {helperText && (
                 <FormHelperText>
                     <FormattedMessage id={helperText} />
