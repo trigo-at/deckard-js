@@ -2,7 +2,6 @@ import React, {useRef} from 'react';
 import {func, string} from 'prop-types';
 import {FormattedMessage} from 'react-intl';
 import {
-    Button,
     Popover,
     PopoverTrigger,
     PopoverContent,
@@ -11,8 +10,10 @@ import {
     PopoverCloseButton,
     PopoverBody,
     PopoverFooter,
-    ButtonGroup,
+    Stack,
 } from '@chakra-ui/core';
+import PrimaryButton from '../components/primary-button';
+import SecondaryButton from '../components/secondary-button';
 
 const ConfirmButton = ({
     messageId,
@@ -32,9 +33,9 @@ const ConfirmButton = ({
             {({onClose}) => (
                 <>
                     <PopoverTrigger>
-                        <Button {...props}>
+                        <PrimaryButton {...props}>
                             <FormattedMessage id={messageId} />
-                        </Button>
+                        </PrimaryButton>
                     </PopoverTrigger>
                     <PopoverContent zIndex={4}>
                         <PopoverArrow />
@@ -46,22 +47,20 @@ const ConfirmButton = ({
                             <FormattedMessage id={questionMessageId} />
                         </PopoverBody>
                         <PopoverFooter>
-                            <ButtonGroup size="sm">
-                                <Button
-                                    variantColor="blue"
+                            <Stack spacing={2} isInLine>
+                                <PrimaryButton
                                     onClick={() => {
                                         onConfirm();
                                         onClose();
                                     }}>
                                     <FormattedMessage id={confirmMessageId} />
-                                </Button>
-                                <Button
+                                </PrimaryButton>
+                                <SecondaryButton
                                     onClick={onClose}
-                                    variant="ghost"
                                     ref={initialFocusRef}>
                                     <FormattedMessage id={closeMessageId} />
-                                </Button>
-                            </ButtonGroup>
+                                </SecondaryButton>
+                            </Stack>
                         </PopoverFooter>
                     </PopoverContent>
                 </>
