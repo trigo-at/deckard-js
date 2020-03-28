@@ -84,7 +84,7 @@
     "react-dom": "^16.13.1",
     "react-final-form": "^6.3.5",
     "react-final-form-arrays": "^3.1.1",
-    "react-intl": "^4.3.0",
+    "react-intl": "^4.3.1",
     "regenerator-runtime": "^0.13.5",
     "rollup": "^2.2.0",
     "rollup-plugin-babel": "^4.4.0",
