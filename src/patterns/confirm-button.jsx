@@ -47,7 +47,7 @@ const ConfirmButton = ({
                             <FormattedMessage id={questionMessageId} />
                         </PopoverBody>
                         <PopoverFooter>
-                            <Stack spacing={2} isInLine>
+                            <Stack spacing={2} isInline>
                                 <PrimaryButton
                                     onClick={() => {
                                         onConfirm();
