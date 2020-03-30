@@ -13,7 +13,7 @@ import {
     Stack,
 } from '@chakra-ui/core';
 import PrimaryButton from '../components/primary-button';
-import SecondaryButton from '../components/secondary-button';
+import TertiaryButton from '../components/tertiary-button';
 
 const ConfirmButton = ({
     messageId,
@@ -55,11 +55,11 @@ const ConfirmButton = ({
                                     }}>
                                     <FormattedMessage id={confirmMessageId} />
                                 </PrimaryButton>
-                                <SecondaryButton
+                                <TertiaryButton
                                     onClick={onClose}
                                     ref={initialFocusRef}>
                                     <FormattedMessage id={closeMessageId} />
-                                </SecondaryButton>
+                                </TertiaryButton>
                             </Stack>
                         </PopoverFooter>
                     </PopoverContent>
