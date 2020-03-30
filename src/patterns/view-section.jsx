@@ -1,16 +1,22 @@
 import React from 'react';
 import {string, node} from 'prop-types';
-import {Box} from '@chakra-ui/core';
+import {Box, Grid} from '@chakra-ui/core';
 import SectionHeader from './section-header';
 
 const ViewSection = ({title, actions, children, ...props}) => {
     return (
-        <Box as="section" mb={10} {...props}>
-            <Box px={4} pt={4} pb={2}>
+        <Box as="section" mb={10} {...props} p={4}>
+            <Grid
+                pb={6}
+                justifyContent="center"
+                gridTemplateColumns="0.3fr 0.7fr"
+                borderBottom="1px"
+                borderBottomColor="gray.200"
+                alignItems="center">
                 <SectionHeader title={title} />
-                {actions && <Box py={3}>{actions}</Box>}
-            </Box>
-            <Box px={4}>{children}</Box>
+                {actions && <Box>{actions}</Box>}
+            </Grid>
+            <Box>{children}</Box>
         </Box>
     );
 };

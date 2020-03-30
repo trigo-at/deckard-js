@@ -1,11 +1,12 @@
 /* eslint-disable no-console */
 import React from 'react';
 import Chance from 'chance';
-import {ButtonGroup, Button} from '@chakra-ui/core';
+import {ButtonGroup} from '@chakra-ui/core';
 import ViewSection from './view-section';
 import DataList from './data-list';
 import toDateString from '../to-date-string';
 import ProviderDecorator from '../provider-decorator';
+import SecondaryButton from '../components/secondary-button';
 
 const chance = new Chance();
 
@@ -14,10 +15,10 @@ export const DefaultStory = () => (
         title="common.core-data"
         actions={
             <ButtonGroup>
-                <Button>action 1</Button>
-                <Button>action 2</Button>
-                <Button>action 3</Button>
-                <Button>action 4</Button>
+                <SecondaryButton>action 1</SecondaryButton>
+                <SecondaryButton>action 2</SecondaryButton>
+                <SecondaryButton>action 3</SecondaryButton>
+                <SecondaryButton>action 4</SecondaryButton>
             </ButtonGroup>
         }>
         <DataList
