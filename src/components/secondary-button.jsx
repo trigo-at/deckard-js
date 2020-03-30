@@ -5,10 +5,10 @@ const SecondaryButton = forwardRef((props, ref) => {
     return (
         <Button
             ref={ref}
-            bg="teal.200"
+            bg="teal.100"
             variant="solid"
-            _hover={{bg: 'teal.100'}}
-            color="teal.800"
+            _hover={{bg: 'teal.50'}}
+            color="teal.700"
             {...props}
         />
     );
