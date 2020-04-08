@@ -29,7 +29,7 @@ const RadioGroupField = ({
             as="fieldset"
             gridArea={gridArea || name}
             isInvalid={isInvalid}>
-            <FormLabel as="legend">
+            <FormLabel fontSize="sm" as="legend">
                 <FormattedMessage id={`field.${fieldName || name}`} />
             </FormLabel>
             <RadioGroup {...input} {...props} id={name}>

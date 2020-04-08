@@ -29,8 +29,13 @@ const NumberField = ({
         (!!meta.submitError && !meta.dirtySinceLastSubmit && !meta.submitting);
     return (
         <FormControl gridArea={gridArea || name} isInvalid={isInvalid}>
-            <FormLabel htmlFor={name}>
+            <FormLabel
+                fontSize="sm"
+                htmlFor={name}
+                display="flex"
+                alignItems="flex-end">
                 <FormattedMessage id={`field.${fieldName || name}`} />
+                {!isRequired && <Optional ml={1} />}
             </FormLabel>
             <NumberInput {...input} precision={0} step={1}>
                 <NumberInputField {...props} />
@@ -39,7 +44,6 @@ const NumberField = ({
                     <NumberDecrementStepper />
                 </NumberInputStepper>
             </NumberInput>
-            {!isRequired && <Optional />}
             {helperText && (
                 <FormHelperText>
                     <FormattedMessage id={helperText} />

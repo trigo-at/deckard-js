@@ -7,6 +7,7 @@ export default (story) => (
         <IntlProvider
             locale="de"
             messages={{
+                'common.optional': '(optional)',
                 'string.translation1':
                     'Diplom-Tierarzt / Diplom-Tierärztin Mag. med. vet.',
             }}>

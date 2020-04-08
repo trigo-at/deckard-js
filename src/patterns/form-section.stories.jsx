@@ -1,9 +1,12 @@
 /* eslint-disable no-console */
 import React from 'react';
 import {Form} from 'react-final-form';
+import {Divider} from '@chakra-ui/core';
 import FormSection from './form-section';
 import InputField from '../form-fields/input-field';
+import PageSection from './page-section';
 import ProviderDecorator from '../provider-decorator';
+import PrimaryButton from '../components/primary-button';
 
 const validate = (values) => {
     const errors = {};
@@ -14,7 +17,8 @@ const validate = (values) => {
 };
 
 const gridTemplateAreas = `
-"someField someOtherField ."`;
+'someField . .'
+'someOtherField someOtherField .'`;
 
 export const FormSectionStory = () => (
     <Form
@@ -24,14 +28,42 @@ export const FormSectionStory = () => (
         onSubmit={(values) => console.log(values)}>
         {({handleSubmit}) => (
             <form onSubmit={handleSubmit}>
-                <FormSection gridTemplateAreas={gridTemplateAreas}>
-                    <InputField name="someField" isRequired />
-                    <InputField
-                        name="someOtherField"
-                        helperText="some helper text"
-                    />
-                </FormSection>
-                <button type="submit">submit</button>
+                <PageSection
+                    title="page-section.title"
+                    isPrimary
+                    actions={
+                        <PrimaryButton type="submit">submit</PrimaryButton>
+                    }>
+                    <FormSection
+                        gridTemplateAreas={gridTemplateAreas}
+                        title="form-section.title1"
+                        description="form-section.description1">
+                        <InputField
+                            name="someField"
+                            isRequired
+                            helperText="some helper text"
+                        />
+                        <InputField
+                            name="someOtherField"
+                            helperText="some helper text"
+                        />
+                    </FormSection>
+                    <Divider my={8} />
+                    <FormSection
+                        gridTemplateAreas={gridTemplateAreas}
+                        title="form-section.title2"
+                        description="form-section.description2">
+                        <InputField
+                            name="someField"
+                            isRequired
+                            helperText="some helper text"
+                        />
+                        <InputField
+                            name="someOtherField"
+                            helperText="some helper text"
+                        />
+                    </FormSection>
+                </PageSection>
             </form>
         )}
     </Form>

@@ -66,8 +66,14 @@ const DateField = ({
             gridArea={gridArea || name}
             isInvalid={isInvalid}
             isDisabled={isDisabled}>
-            <FormLabel as="legend" htmlFor={name}>
-                <FormattedMessage id={`field.${fieldName || name}`} />{' '}
+            <FormLabel
+                fontSize="sm"
+                as="legend"
+                htmlFor={name}
+                display="flex"
+                alignItems="flex-end">
+                <FormattedMessage id={`field.${fieldName || name}`} />
+                {!isRequired && <Optional ml={1} />}
             </FormLabel>
             <Stack isInline spacing={4}>
                 <Input
@@ -93,7 +99,6 @@ const DateField = ({
                     onChange={handleChange(setYear)}
                 />
             </Stack>
-            {!isRequired && <Optional />}
             {helperText && (
                 <FormHelperText>
                     <FormattedMessage id={helperText} />

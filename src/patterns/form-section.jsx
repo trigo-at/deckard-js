@@ -2,25 +2,32 @@ import React from 'react';
 import {string, node, bool} from 'prop-types';
 import {Box, Grid} from '@chakra-ui/core';
 import SectionHeader from './section-header';
+import SectionDescription from './section-description';
 import HideOptionalContext from '../form-fields/hide-optional-context';
 
 const FormSection = ({
     title,
+    description,
     gridTemplateAreas,
     children,
     hideOptionalIndicator,
 }) => {
     return (
         <HideOptionalContext.Provider value={hideOptionalIndicator}>
-            <Box as="section" mb={4}>
+            <Box as="section">
                 {title && (
-                    <Box px={2} pt={4} pb={2}>
+                    <Box mb={6}>
                         <SectionHeader title={title} />
+                        {description && (
+                            <SectionDescription
+                                description={description}
+                                mt={1}
+                            />
+                        )}
                     </Box>
                 )}
                 <Grid
-                    px={2}
-                    gridGap={4}
+                    gridGap={6}
                     alignItems="flex-start"
                     gridTemplateColumns="repeat(3, 1fr)"
                     gridTemplateAreas={gridTemplateAreas}>
@@ -33,6 +40,7 @@ const FormSection = ({
 
 FormSection.propTypes = {
     title: string,
+    description: string,
     gridTemplateAreas: string,
     children: node,
     hideOptionalIndicator: bool,
@@ -40,6 +48,7 @@ FormSection.propTypes = {
 
 FormSection.defaultProps = {
     title: undefined,
+    description: undefined,
     gridTemplateAreas: undefined,
     children: undefined,
     hideOptionalIndicator: false,

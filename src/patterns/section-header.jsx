@@ -5,7 +5,7 @@ import {FormattedMessage} from 'react-intl';
 
 const SectionHeader = ({title}) => {
     return (
-        <Heading as="h3" size="md">
+        <Heading as="h3" fontSize="lg" lineHeight="base">
             <FormattedMessage id={title} />
         </Heading>
     );

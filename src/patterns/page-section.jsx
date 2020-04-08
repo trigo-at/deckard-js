@@ -8,7 +8,7 @@ const PageSection = ({title, values, actions, children, isPrimary}) => {
         <Box as="section" mb={8}>
             <Flex justifyContent="space-between" alignItems="center">
                 <Heading
-                    size={isPrimary ? 'xl' : 'lg'}
+                    size={isPrimary ? 'lg' : 'md'}
                     as={isPrimary ? 'h1' : 'h2'}
                     color="gray.900"
                     mb={4}
@@ -17,12 +17,7 @@ const PageSection = ({title, values, actions, children, isPrimary}) => {
                 </Heading>
                 {actions && <Box>{actions}</Box>}
             </Flex>
-            <Box
-                color="gray.900"
-                bg="gray.50"
-                borderRadius={2}
-                shadow="md"
-                p={4}>
+            <Box color="gray.900" bg="white" borderRadius={4} shadow="sm" p={4}>
                 {children}
             </Box>
         </Box>

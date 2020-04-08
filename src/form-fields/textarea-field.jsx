@@ -25,17 +25,21 @@ const TextareaField = ({
         (!!meta.submitError && !meta.dirtySinceLastSubmit && !meta.submitting);
     return (
         <FormControl gridArea={gridArea || name} isInvalid={isInvalid}>
-            <FormLabel htmlFor={name}>
-                <FormattedMessage id={`field.${fieldName || name}`} />{' '}
+            <FormLabel
+                fontSize="sm"
+                htmlFor={name}
+                display="flex"
+                alignItems="flex-end">
+                <FormattedMessage id={`field.${fieldName || name}`} />
+                {!isRequired && <Optional ml={1} />}
             </FormLabel>
             <Textarea {...input} {...props} />
-            {!isRequired && <Optional />}
             {helperText && (
-                <FormHelperText>
+                <FormHelperText fontSize="sm">
                     <FormattedMessage id={helperText} />
                 </FormHelperText>
             )}
-            <FieldError isInvalid={isInvalid} meta={meta} />
+            <FieldError fontSize="sm" isInvalid={isInvalid} meta={meta} />
         </FormControl>
     );
 };

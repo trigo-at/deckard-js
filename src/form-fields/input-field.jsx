@@ -20,11 +20,15 @@ const InputField = ({
         (!!meta.submitError && !meta.dirtySinceLastSubmit && !meta.submitting);
     return (
         <FormControl gridArea={gridArea || name} isInvalid={isInvalid}>
-            <FormLabel htmlFor={name}>
+            <FormLabel
+                fontSize="sm"
+                htmlFor={name}
+                display="flex"
+                alignItems="flex-end">
                 <FormattedMessage id={`field.${fieldName || name}`} />
+                {!isRequired && <Optional ml={1} />}
             </FormLabel>
             <Input {...input} {...props} />
-            {!isRequired && <Optional />}
             {helperText && (
                 <FormHelperText>
                     <FormattedMessage id={helperText} />

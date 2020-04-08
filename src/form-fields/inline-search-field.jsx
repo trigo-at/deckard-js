@@ -43,8 +43,13 @@ const InlineSearchField = ({
         (!!meta.submitError && !meta.dirtySinceLastSubmit && !meta.submitting);
     return (
         <FormControl gridArea={gridArea || name} isInvalid={isInvalid}>
-            <FormLabel htmlFor={name}>
+            <FormLabel
+                fontSize="sm"
+                htmlFor={name}
+                display="flex"
+                alignItems="flex-end">
                 <FormattedMessage id={`field.${fieldName || name}`} />
+                {!isRequired && <Optional ml={1} />}
             </FormLabel>
             <InputGroup>
                 <Input {...input} {...props} pr="8rem" />
@@ -85,7 +90,6 @@ const InlineSearchField = ({
                     </Popover>
                 </InputRightElement>
             </InputGroup>
-            {!isRequired && <Optional />}
             {helperText && (
                 <FormHelperText>
                     <FormattedMessage id={helperText} />

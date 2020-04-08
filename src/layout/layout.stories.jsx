@@ -8,6 +8,7 @@ import Logo from './logo';
 import NavSection from './nav-section';
 import NavLink from './nav-link';
 import PageSection from '../patterns/page-section';
+import {FormSectionStory} from '../patterns/form-section.stories';
 import ProviderDecorator from '../provider-decorator';
 
 export const DefaultStory = () => (
@@ -31,26 +32,7 @@ export const DefaultStory = () => (
                 </NavSection>
             </Aside>
         }>
-        <PageSection
-            title="trigo"
-            footer={
-                <Stack align="flex-start">
-                    <Button
-                        variantColor="blue"
-                        width={48}
-                        justifyContent="flex-start">
-                        Speichern
-                    </Button>
-                    <Button
-                        variant="ghost"
-                        width={32}
-                        justifyContent="flex-start">
-                        Abbrechen
-                    </Button>
-                </Stack>
-            }>
-            content
-        </PageSection>
+        <FormSectionStory />
     </Layout>
 );
 

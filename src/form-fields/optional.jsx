@@ -3,12 +3,12 @@ import {Text} from '@chakra-ui/core';
 import {FormattedMessage} from 'react-intl';
 import HideOptionalContext from './hide-optional-context';
 
-const Optional = () => {
+const Optional = ({...props}) => {
     return (
         <HideOptionalContext.Consumer>
             {(hideOptional) =>
                 hideOptional ? null : (
-                    <Text fontSize="xs" color="gray.500">
+                    <Text color="gray.500" {...props}>
                         <FormattedMessage id="common.optional" />
                     </Text>
                 )

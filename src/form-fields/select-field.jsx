@@ -29,8 +29,13 @@ const SelectField = ({
         (!!meta.submitError && !meta.dirtySinceLastSubmit && !meta.submitting);
     return (
         <FormControl gridArea={gridArea || name} isInvalid={isInvalid}>
-            <FormLabel htmlFor={name}>
-                <FormattedMessage id={`field.${fieldName || name}`} />{' '}
+            <FormLabel
+                fontSize="sm"
+                htmlFor={name}
+                display="flex"
+                alignItems="flex-end">
+                <FormattedMessage id={`field.${fieldName || name}`} />
+                {!isRequired && <Optional ml={1} />}
             </FormLabel>
             <Select {...input} {...props}>
                 {hasPlaceholder && (
@@ -44,7 +49,6 @@ const SelectField = ({
                     </option>
                 ))}
             </Select>
-            {!isRequired && <Optional />}
             {helperText && (
                 <FormHelperText>
                     <FormattedMessage id={helperText} />
