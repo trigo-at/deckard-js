@@ -1,5 +1,5 @@
 import React from 'react';
-import {string, node, bool} from 'prop-types';
+import {string, node, bool, object} from 'prop-types';
 import {Box, Grid} from '@chakra-ui/core';
 import SectionHeader from './section-header';
 import SectionDescription from './section-description';
@@ -8,6 +8,7 @@ import HideOptionalContext from '../form-fields/hide-optional-context';
 const FormSection = ({
     title,
     description,
+    values,
     gridTemplateAreas,
     children,
     hideOptionalIndicator,
@@ -17,10 +18,11 @@ const FormSection = ({
             <Box as="section">
                 {title && (
                     <Box mb={6}>
-                        <SectionHeader title={title} />
+                        <SectionHeader title={title} values={values} />
                         {description && (
                             <SectionDescription
                                 description={description}
+                                values={values}
                                 mt={1}
                             />
                         )}
@@ -40,6 +42,7 @@ const FormSection = ({
 
 FormSection.propTypes = {
     title: string,
+    values: object,
     description: string,
     gridTemplateAreas: string,
     children: node,
@@ -48,6 +51,7 @@ FormSection.propTypes = {
 
 FormSection.defaultProps = {
     title: undefined,
+    values: undefined,
     description: undefined,
     gridTemplateAreas: undefined,
     children: undefined,

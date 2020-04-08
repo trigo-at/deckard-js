@@ -1,20 +1,21 @@
 import React from 'react';
-import {string} from 'prop-types';
+import {string, object} from 'prop-types';
 import {Heading} from '@chakra-ui/core';
 import {FormattedMessage} from 'react-intl';
 
-const SectionHeader = ({title}) => {
+const SectionHeader = ({title, values, ...props}) => {
     return (
-        <Heading as="h3" fontSize="lg" lineHeight="base">
-            <FormattedMessage id={title} />
+        <Heading as="h3" fontSize="lg" lineHeight="base" {...props}>
+            <FormattedMessage id={title} values={values} />
         </Heading>
     );
 };
 
 SectionHeader.propTypes = {
     title: string.isRequired,
+    values: object,
 };
 
-SectionHeader.defaultProps = {};
+SectionHeader.defaultProps = {values: undefined};
 
 export default SectionHeader;
