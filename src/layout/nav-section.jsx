@@ -5,7 +5,7 @@ import NavHeader from './nav-header';
 
 const NavSection = ({header, children}) => (
     <>
-        <NavHeader>{header}</NavHeader>
+        {header && <NavHeader>{header}</NavHeader>}
         <Box pt={2} pb={10}>
             {children}
         </Box>

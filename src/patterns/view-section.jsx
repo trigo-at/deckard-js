@@ -7,7 +7,7 @@ const ViewSection = ({title, actions, isEmbedded, children, ...props}) => {
     return (
         <Box as="section" mb={10} {...props}>
             <Box px={isEmbedded ? 0 : 4} pt={4} pb={2}>
-                <SectionHeader title={title} />
+                {title && <SectionHeader title={title} />}
                 {actions && <Box py={3}>{actions}</Box>}
             </Box>
             <Box px={isEmbedded ? 0 : 4}>{children}</Box>
@@ -16,13 +16,14 @@ const ViewSection = ({title, actions, isEmbedded, children, ...props}) => {
 };
 
 ViewSection.propTypes = {
-    title: string.isRequired,
+    title: string,
     isEmbedded: bool,
     actions: node,
     children: node,
 };
 
 ViewSection.defaultProps = {
+    title: undefined,
     children: undefined,
     actions: undefined,
     isEmbedded: false,
