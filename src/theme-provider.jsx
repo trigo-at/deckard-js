@@ -107,21 +107,21 @@ const customIcons = {
         ),
         viewBox: '0 0 20 20',
     },
-    dotsHorizontal: {
+    'dots-horizontal': {
         path: (
             <path
                 fill="currentColor"
-                d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"
+                d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"
             />
         ),
 
         viewBox: '0 0 24 24',
     },
-    dotsVertical: {
+    'dots-vertical': {
         path: (
             <path
                 fill="currentColor"
-                d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
+                d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"
             />
         ),
         viewBox: '0 0 24 24',
