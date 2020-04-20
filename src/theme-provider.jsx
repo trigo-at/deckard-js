@@ -115,7 +115,7 @@ const customIcons = {
             />
         ),
 
-        viewBox: '0 0 24 24',
+        viewBox: '0 0 20 20',
     },
     'dots-vertical': {
         path: (
@@ -124,7 +124,7 @@ const customIcons = {
                 d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"
             />
         ),
-        viewBox: '0 0 24 24',
+        viewBox: '0 0 20 20',
     },
 };
 
