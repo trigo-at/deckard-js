@@ -16,7 +16,6 @@ const InputField = ({
     ...props
 }) => {
     const {input, meta} = useField(name);
-    console.log(input);
     const isInvalid =
         (!!meta.error && meta.touched) ||
         (!!meta.submitError && !meta.dirtySinceLastSubmit && !meta.submitting);
