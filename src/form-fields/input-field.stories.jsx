@@ -25,7 +25,7 @@ export const InputStory = () => (
         {({handleSubmit}) => (
             <form onSubmit={handleSubmit}>
                 <InputField name="name" isRequired />
-                <InputField name="optional" />
+                <InputField name="optional" type="file" />
                 <Button type="submit">submit</Button>
             </form>
         )}

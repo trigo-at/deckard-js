@@ -16,6 +16,7 @@ const InputField = ({
     ...props
 }) => {
     const {input, meta} = useField(name);
+    console.log(input);
     const isInvalid =
         (!!meta.error && meta.touched) ||
         (!!meta.submitError && !meta.dirtySinceLastSubmit && !meta.submitting);
@@ -34,6 +35,7 @@ const InputField = ({
             <Input
                 {...input}
                 type={type}
+                value={type === 'file' ? undefined : input.value}
                 onChange={
                     type === 'file'
                         ? ({target}) => input.onChange(target.files)
