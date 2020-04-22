@@ -33,6 +33,7 @@ const InputField = ({
             </FormLabel>
             <Input
                 {...input}
+                type={type}
                 onChange={
                     type === 'file'
                         ? ({target}) => input.onChange(target.files)
