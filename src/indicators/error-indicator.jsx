@@ -7,7 +7,7 @@ const ErrorIndicator = ({error, description}) => {
     return (
         <Alert
             status="error"
-            variant="subtle"
+            variant="left-accent"
             flexDirection="column"
             justifyContent="center"
             textAlign="center"

@@ -12,6 +12,7 @@ const InputField = ({
     fieldName,
     helperText,
     isRequired,
+    type,
     ...props
 }) => {
     const {input, meta} = useField(name);
@@ -30,7 +31,15 @@ const InputField = ({
                 <FormattedMessage id={`field.${fieldName || name}`} />
                 {!isRequired && <Optional />}
             </FormLabel>
-            <Input {...input} {...props} />
+            <Input
+                {...input}
+                onChange={
+                    type === 'file'
+                        ? ({target}) => input.onChange(target.files)
+                        : input.onChange
+                }
+                {...props}
+            />
             {helperText && (
                 <FormHelperText>
                     <FormattedMessage id={helperText} />
@@ -47,6 +56,7 @@ InputField.propTypes = {
     fieldName: string,
     isRequired: bool,
     helperText: node,
+    type: string,
 };
 
 InputField.defaultProps = {
@@ -54,6 +64,7 @@ InputField.defaultProps = {
     gridArea: undefined,
     fieldName: undefined,
     isRequired: false,
+    type: 'text',
 };
 
 export default InputField;
