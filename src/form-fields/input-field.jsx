@@ -21,12 +21,14 @@ const InputField = ({
     return (
         <FormControl gridArea={gridArea || name} isInvalid={isInvalid}>
             <FormLabel
+                pr={0}
                 fontSize="sm"
                 htmlFor={name}
                 display="flex"
+                justifyContent="space-between"
                 alignItems="flex-end">
                 <FormattedMessage id={`field.${fieldName || name}`} />
-                {!isRequired && <Optional ml={1} />}
+                {!isRequired && <Optional />}
             </FormLabel>
             <Input {...input} {...props} />
             {helperText && (

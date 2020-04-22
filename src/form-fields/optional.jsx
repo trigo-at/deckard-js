@@ -8,7 +8,7 @@ const Optional = ({...props}) => {
         <HideOptionalContext.Consumer>
             {(hideOptional) =>
                 hideOptional ? null : (
-                    <Text color="gray.500" {...props}>
+                    <Text color="gray.500" fontSize="xs" {...props}>
                         <FormattedMessage id="common.optional" />
                     </Text>
                 )

@@ -17,7 +17,7 @@ const FormSection = ({
         <HideOptionalContext.Provider value={hideOptionalIndicator}>
             <Box as="section">
                 {title && (
-                    <Box mb={6}>
+                    <Box mb={2}>
                         <SectionHeader title={title} values={values} />
                         {description && (
                             <SectionDescription

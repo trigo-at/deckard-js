@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import React from 'react';
 import {Form} from 'react-final-form';
-import {Divider} from '@chakra-ui/core';
+import FormDivider from './form-divider';
 import FormSection from './form-section';
 import InputField from '../form-fields/input-field';
 import PageSection from './page-section';
@@ -48,11 +48,10 @@ export const FormSectionStory = () => (
                             helperText="some helper text"
                         />
                     </FormSection>
-                    <Divider my={8} />
+                    <FormDivider />
                     <FormSection
                         gridTemplateAreas={gridTemplateAreas}
-                        title="form-section.title2"
-                        description="form-section.description2">
+                        title="form-section.title2">
                         <InputField
                             name="someField"
                             isRequired
