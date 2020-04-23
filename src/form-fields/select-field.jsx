@@ -33,9 +33,11 @@ const SelectField = ({
                 fontSize="sm"
                 htmlFor={name}
                 display="flex"
+                pr={0}
+                justifyContent="space-between"
                 alignItems="flex-end">
                 <FormattedMessage id={`field.${fieldName || name}`} />
-                {!isRequired && <Optional ml={1} />}
+                {!isRequired && <Optional />}
             </FormLabel>
             <Select {...input} {...props}>
                 {hasPlaceholder && (

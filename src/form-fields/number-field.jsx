@@ -33,9 +33,11 @@ const NumberField = ({
                 fontSize="sm"
                 htmlFor={name}
                 display="flex"
+                pr={0}
+                justifyContent="space-between"
                 alignItems="flex-end">
                 <FormattedMessage id={`field.${fieldName || name}`} />
-                {!isRequired && <Optional ml={1} />}
+                {!isRequired && <Optional />}
             </FormLabel>
             <NumberInput {...input} precision={0} step={1}>
                 <NumberInputField {...props} />

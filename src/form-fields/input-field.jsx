@@ -22,10 +22,10 @@ const InputField = ({
     return (
         <FormControl gridArea={gridArea || name} isInvalid={isInvalid}>
             <FormLabel
-                pr={0}
                 fontSize="sm"
                 htmlFor={name}
                 display="flex"
+                pr={0}
                 justifyContent="space-between"
                 alignItems="flex-end">
                 <FormattedMessage id={`field.${fieldName || name}`} />

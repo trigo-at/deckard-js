@@ -71,9 +71,11 @@ const DateField = ({
                 as="legend"
                 htmlFor={name}
                 display="flex"
+                pr={0}
+                justifyContent="space-between"
                 alignItems="flex-end">
                 <FormattedMessage id={`field.${fieldName || name}`} />
-                {!isRequired && <Optional ml={1} />}
+                {!isRequired && <Optional />}
             </FormLabel>
             <Stack isInline spacing={4}>
                 <Input
