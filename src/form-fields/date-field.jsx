@@ -72,6 +72,7 @@ const DateField = ({
                 htmlFor={name}
                 display="flex"
                 pr={0}
+                width="full"
                 justifyContent="space-between"
                 alignItems="flex-end">
                 <FormattedMessage id={`field.${fieldName || name}`} />
@@ -79,21 +80,21 @@ const DateField = ({
             </FormLabel>
             <Stack isInline spacing={4}>
                 <Input
-                    width={20}
+                    width="25%"
                     maxLength={2}
                     name={`${name}.day`}
                     value={day || ''}
                     onChange={handleChange(setDay)}
                 />
                 <Input
-                    width={20}
+                    width="25%"
                     maxLength={2}
                     name={`${name}.month`}
                     value={month || ''}
                     onChange={handleChange(setMonth)}
                 />
                 <Input
-                    width={40}
+                    width="50%"
                     maxLength={4}
                     onBlur={onBlur}
                     value={year || ''}
