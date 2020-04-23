@@ -22,6 +22,7 @@ const ConfirmButton = ({
     closeMessageId,
     headerMessageId,
     questionMessageId,
+    variantColor,
     ...props
 }) => {
     const initialFocusRef = useRef();
@@ -33,7 +34,7 @@ const ConfirmButton = ({
             {({onClose}) => (
                 <>
                     <PopoverTrigger>
-                        <PrimaryButton {...props}>
+                        <PrimaryButton variantColor={variantColor} {...props}>
                             <FormattedMessage id={messageId} />
                         </PrimaryButton>
                     </PopoverTrigger>
@@ -49,6 +50,7 @@ const ConfirmButton = ({
                         <PopoverFooter>
                             <Stack spacing={2} isInline>
                                 <PrimaryButton
+                                    variantColor={variantColor}
                                     onClick={() => {
                                         onConfirm();
                                         onClose();
@@ -76,6 +78,7 @@ ConfirmButton.propTypes = {
     closeMessageId: string,
     headerMessageId: string,
     questionMessageId: string,
+    variantColor: string,
 };
 
 ConfirmButton.defaultProps = {
@@ -83,6 +86,7 @@ ConfirmButton.defaultProps = {
     closeMessageId: 'common.close',
     headerMessageId: 'common.confirm-header',
     questionMessageId: 'common.confirm-question',
+    variantColor: 'teal',
 };
 
 export default ConfirmButton;

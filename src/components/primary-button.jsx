@@ -5,8 +5,7 @@ const PrimaryButton = forwardRef((props, ref) => {
     return (
         <Button
             ref={ref}
-            bg="teal.600"
-            _hover={{bg: 'teal.500'}}
+            variantColor="teal"
             color="white"
             variant="solid"
             {...props}
