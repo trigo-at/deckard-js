@@ -5,11 +5,10 @@ const TertiaryButton = forwardRef((props, ref) => {
     return (
         <Button
             ref={ref}
-            color="gray.700"
-            variant="outline"
-            borderColor="gray.300"
-            _hover={{color: 'gray.500'}}
-            bg="white"
+            _hover={{bg: 'gray.400'}}
+            _active={{bg: 'gray.500'}}
+            shadow="sm"
+            bg="gray.300"
             {...props}
         />
     );
