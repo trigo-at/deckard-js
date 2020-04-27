@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {string, node, bool, func, object} from 'prop-types';
+import {string, node, bool, func, object, any} from 'prop-types';
 import {useField} from 'react-final-form';
 import {
     FormControl,
@@ -22,6 +22,7 @@ const DateField = ({
     isRequired,
     isDisabled,
     config,
+    emptyValue,
     ...props
 }) => {
     const {input, meta} = useField(name, config);
@@ -44,7 +45,7 @@ const DateField = ({
     useEffect(() => {
         const areAllValuesSet = [year, month, day].every((v) => v);
         const inputValue = !areAllValuesSet
-            ? null
+            ? emptyValue
             : [year, padString(month), padString(day)].join('-');
 
         input.onChange(inputValue);
@@ -122,6 +123,7 @@ DateField.propTypes = {
     helperText: node,
     onChange: func,
     config: object,
+    emptyValue: any,
 };
 
 DateField.defaultProps = {
@@ -132,6 +134,7 @@ DateField.defaultProps = {
     isDisabled: false,
     onChange: undefined,
     config: undefined,
+    emptyValue: undefined,
 };
 
 export default DateField;
