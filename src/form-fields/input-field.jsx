@@ -1,5 +1,5 @@
 import React from 'react';
-import {string, node, bool} from 'prop-types';
+import {string, node, bool, object} from 'prop-types';
 import {useField} from 'react-final-form';
 import {FormControl, FormLabel, Input, FormHelperText} from '@chakra-ui/core';
 import {FormattedMessage} from 'react-intl';
@@ -13,9 +13,10 @@ const InputField = ({
     helperText,
     isRequired,
     type,
+    config,
     ...props
 }) => {
-    const {input, meta} = useField(name);
+    const {input, meta} = useField(name, config);
     const isInvalid =
         (!!meta.error && meta.touched) ||
         (!!meta.submitError && !meta.dirtySinceLastSubmit && !meta.submitting);
@@ -59,6 +60,7 @@ InputField.propTypes = {
     isRequired: bool,
     helperText: node,
     type: string,
+    config: object,
 };
 
 InputField.defaultProps = {
@@ -67,6 +69,7 @@ InputField.defaultProps = {
     fieldName: undefined,
     isRequired: false,
     type: 'text',
+    config: undefined,
 };
 
 export default InputField;

@@ -1,5 +1,5 @@
 import React from 'react';
-import {string, func, array, bool} from 'prop-types';
+import {string, func, array, bool, object} from 'prop-types';
 import {useField} from 'react-final-form';
 import {
     FormControl,
@@ -35,9 +35,10 @@ const InlineSearchField = ({
     itemRenderer,
     getItemId,
     onItemSelect,
+    config,
     ...props
 }) => {
-    const {input, meta} = useField(name);
+    const {input, meta} = useField(name, config);
     const isInvalid =
         (!!meta.error && meta.touched) ||
         (!!meta.submitError && !meta.dirtySinceLastSubmit && !meta.submitting);
@@ -115,6 +116,7 @@ InlineSearchField.propTypes = {
     itemRenderer: func,
     getItemId: func,
     onItemSelect: func,
+    config: object,
 };
 
 InlineSearchField.defaultProps = {
@@ -129,6 +131,7 @@ InlineSearchField.defaultProps = {
     itemRenderer: (val) => val,
     getItemId: (val) => val.id,
     onItemSelect: undefined,
+    config: undefined,
 };
 
 export default InlineSearchField;

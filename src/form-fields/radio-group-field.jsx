@@ -1,5 +1,5 @@
 import React from 'react';
-import {string, arrayOf, func} from 'prop-types';
+import {string, arrayOf, func, object} from 'prop-types';
 import {useField} from 'react-final-form';
 import {
     FormControl,
@@ -18,9 +18,10 @@ const RadioGroupField = ({
     options,
     helperText,
     renderOption,
+    config,
     ...props
 }) => {
-    const {input, meta} = useField(name);
+    const {input, meta} = useField(name, config);
     const isInvalid =
         (!!meta.error && meta.touched) ||
         (!!meta.submitError && !meta.dirtySinceLastSubmit && !meta.submitting);
@@ -56,6 +57,7 @@ RadioGroupField.propTypes = {
     options: arrayOf(string).isRequired,
     helperText: string,
     renderOption: func,
+    config: object,
 };
 
 RadioGroupField.defaultProps = {
@@ -63,6 +65,7 @@ RadioGroupField.defaultProps = {
     fieldName: undefined,
     helperText: undefined,
     renderOption: ({option}) => option,
+    config: undefined,
 };
 
 export default RadioGroupField;

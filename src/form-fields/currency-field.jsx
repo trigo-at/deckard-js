@@ -1,5 +1,5 @@
 import React from 'react';
-import {string, node, bool} from 'prop-types';
+import {string, node, bool, object} from 'prop-types';
 import {useField} from 'react-final-form';
 import {
     FormControl,
@@ -22,9 +22,10 @@ const CurrencyField = ({
     helperText,
     isRequired,
     isDisabled,
+    config,
     ...props
 }) => {
-    const {input, meta} = useField(name);
+    const {input, meta} = useField(name, config);
     const isInvalid =
         (!!meta.error && meta.touched) ||
         (!!meta.submitError && !meta.dirtySinceLastSubmit && !meta.submitting);
@@ -68,6 +69,7 @@ CurrencyField.propTypes = {
     isRequired: bool,
     isDisabled: bool,
     helperText: node,
+    config: object,
 };
 
 CurrencyField.defaultProps = {
@@ -76,6 +78,7 @@ CurrencyField.defaultProps = {
     fieldName: undefined,
     isRequired: false,
     isDisabled: false,
+    config: undefined,
 };
 
 export default CurrencyField;

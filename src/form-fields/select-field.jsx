@@ -1,5 +1,5 @@
 import React from 'react';
-import {string, node, bool, arrayOf, shape} from 'prop-types';
+import {string, node, bool, arrayOf, shape, object} from 'prop-types';
 import {useField} from 'react-final-form';
 import {
     FormControl,
@@ -20,9 +20,10 @@ const SelectField = ({
     hasPlaceholder,
     helperText,
     isRequired,
+    config,
     ...props
 }) => {
-    const {input, meta} = useField(name);
+    const {input, meta} = useField(name, config);
     const intl = useIntl();
     const isInvalid =
         (!!meta.error && meta.touched) ||
@@ -74,6 +75,7 @@ SelectField.propTypes = {
     isRequired: bool,
     helperText: node,
     hasPlaceholder: bool,
+    config: object,
 };
 
 SelectField.defaultProps = {
@@ -82,6 +84,7 @@ SelectField.defaultProps = {
     helperText: undefined,
     isRequired: false,
     hasPlaceholder: false,
+    config: undefined,
 };
 
 export default SelectField;

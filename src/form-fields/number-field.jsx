@@ -1,5 +1,5 @@
 import React from 'react';
-import {string, node, bool} from 'prop-types';
+import {string, node, bool, object} from 'prop-types';
 import {useField} from 'react-final-form';
 import {
     FormControl,
@@ -21,9 +21,10 @@ const NumberField = ({
     fieldName,
     helperText,
     isRequired,
+    config,
     ...props
 }) => {
-    const {input, meta} = useField(name);
+    const {input, meta} = useField(name, config);
     const isInvalid =
         (!!meta.error && meta.touched) ||
         (!!meta.submitError && !meta.dirtySinceLastSubmit && !meta.submitting);
@@ -62,6 +63,7 @@ NumberField.propTypes = {
     fieldName: string,
     isRequired: bool,
     helperText: node,
+    config: object,
 };
 
 NumberField.defaultProps = {
@@ -69,6 +71,7 @@ NumberField.defaultProps = {
     gridArea: undefined,
     fieldName: undefined,
     isRequired: false,
+    config: undefined,
 };
 
 export default NumberField;

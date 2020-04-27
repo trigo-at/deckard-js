@@ -1,5 +1,5 @@
 import React from 'react';
-import {string, node, bool} from 'prop-types';
+import {string, node, bool, object} from 'prop-types';
 import {useField} from 'react-final-form';
 import {
     FormControl,
@@ -17,9 +17,10 @@ const TextareaField = ({
     fieldName,
     helperText,
     isRequired,
+    config,
     ...props
 }) => {
-    const {input, meta} = useField(name);
+    const {input, meta} = useField(name, config);
     const isInvalid =
         (!!meta.error && meta.touched) ||
         (!!meta.submitError && !meta.dirtySinceLastSubmit && !meta.submitting);
@@ -52,6 +53,7 @@ TextareaField.propTypes = {
     fieldName: string,
     isRequired: bool,
     helperText: node,
+    config: object,
 };
 
 TextareaField.defaultProps = {
@@ -59,6 +61,7 @@ TextareaField.defaultProps = {
     fieldName: undefined,
     helperText: undefined,
     isRequired: false,
+    config: undefined,
 };
 
 export default TextareaField;

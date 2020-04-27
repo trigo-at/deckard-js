@@ -1,12 +1,12 @@
 import React, {forwardRef} from 'react';
-import {string, node} from 'prop-types';
+import {string, node, object} from 'prop-types';
 import {useField} from 'react-final-form';
 import {FormControl, Checkbox, FormHelperText} from '@chakra-ui/core';
 import {FormattedMessage} from 'react-intl';
 import FieldError from './field-error';
 
 const CheckboxField = forwardRef(
-    ({name, gridArea, fieldName, helperText, ...props}, ref) => {
+    ({name, gridArea, fieldName, helperText, config, ...props}, ref) => {
         const {input, meta} = useField(name, {type: 'checkbox'});
         const isInvalid =
             (!!meta.error && meta.touched) ||
@@ -38,12 +38,14 @@ CheckboxField.propTypes = {
     gridArea: string,
     fieldName: string,
     helperText: node,
+    config: object,
 };
 
 CheckboxField.defaultProps = {
     helperText: undefined,
     gridArea: undefined,
     fieldName: undefined,
+    config: undefined,
 };
 
 export default CheckboxField;

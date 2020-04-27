@@ -1,5 +1,5 @@
 import React from 'react';
-import {string, arrayOf, func} from 'prop-types';
+import {string, arrayOf, func, object} from 'prop-types';
 import {useField} from 'react-final-form';
 import {
     FormControl,
@@ -18,8 +18,9 @@ const CheckboxGroupField = ({
     options,
     helperText,
     renderOption,
+    config,
 }) => {
-    const {input, meta} = useField(name);
+    const {input, meta} = useField(name, config);
 
     const isInvalid =
         (!!meta.error && meta.touched) ||
@@ -52,6 +53,7 @@ CheckboxGroupField.propTypes = {
     options: arrayOf(string).isRequired,
     helperText: string,
     renderOption: func,
+    config: object,
 };
 
 CheckboxGroupField.defaultProps = {
@@ -59,6 +61,7 @@ CheckboxGroupField.defaultProps = {
     fieldName: undefined,
     helperText: undefined,
     renderOption: ({option}) => option,
+    config: undefined,
 };
 
 export default CheckboxGroupField;

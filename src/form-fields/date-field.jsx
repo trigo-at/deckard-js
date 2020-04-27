@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {string, node, bool, func} from 'prop-types';
+import {string, node, bool, func, object} from 'prop-types';
 import {useField} from 'react-final-form';
 import {
     FormControl,
@@ -21,9 +21,10 @@ const DateField = ({
     helperText,
     isRequired,
     isDisabled,
+    config,
     ...props
 }) => {
-    const {input, meta} = useField(name);
+    const {input, meta} = useField(name, config);
 
     const {value, onBlur} = input;
     const [y, m, d] = value.split('-');
@@ -120,6 +121,7 @@ DateField.propTypes = {
     isDisabled: bool,
     helperText: node,
     onChange: func,
+    config: object,
 };
 
 DateField.defaultProps = {
@@ -129,6 +131,7 @@ DateField.defaultProps = {
     isRequired: false,
     isDisabled: false,
     onChange: undefined,
+    config: undefined,
 };
 
 export default DateField;
