@@ -43,7 +43,7 @@ const DateField = ({
     useEffect(() => {
         const areAllValuesSet = [year, month, day].every((v) => v);
         const inputValue = !areAllValuesSet
-            ? undefined
+            ? null
             : [year, padString(month), padString(day)].join('-');
 
         input.onChange(inputValue);
