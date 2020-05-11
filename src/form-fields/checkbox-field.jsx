@@ -16,7 +16,6 @@ const CheckboxField = forwardRef(
             label,
             formattedName,
             formattedPrefix,
-
             ...props
         },
         ref

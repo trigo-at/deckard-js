@@ -14,8 +14,16 @@ const InputField = ({
     isRequired,
     type,
     config,
+    label,
+    formattedName,
+    formattedPrefix,
     ...props
 }) => {
+    if (fieldName) {
+        console.warn(
+            'The property "fieldName" is deprecated. Use "formattedName" instead. "fieldName" will be removed in future versions.'
+        );
+    }
     const {input, meta} = useField(name, config);
     const isInvalid =
         (!!meta.error && meta.touched) ||
@@ -29,7 +37,13 @@ const InputField = ({
                 pr={0}
                 justifyContent="space-between"
                 alignItems="flex-end">
-                <FormattedMessage id={`field.${fieldName || name}`} />
+                {label || (
+                    <FormattedMessage
+                        id={`${formattedPrefix}.${
+                            formattedName || fieldName || name
+                        }`}
+                    />
+                )}
                 {!isRequired && <Optional />}
             </FormLabel>
             <Input
@@ -61,6 +75,9 @@ InputField.propTypes = {
     helperText: node,
     type: string,
     config: object,
+    label: string,
+    formattedName: string,
+    formattedPrefix: string,
 };
 
 InputField.defaultProps = {
@@ -70,6 +87,9 @@ InputField.defaultProps = {
     isRequired: false,
     type: 'text',
     config: undefined,
+    label: undefined,
+    formattedName: undefined,
+    formattedPrefix: 'field',
 };
 
 export default InputField;
