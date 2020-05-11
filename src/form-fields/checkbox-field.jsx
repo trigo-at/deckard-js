@@ -6,7 +6,26 @@ import {FormattedMessage} from 'react-intl';
 import FieldError from './field-error';
 
 const CheckboxField = forwardRef(
-    ({name, gridArea, fieldName, helperText, config, ...props}, ref) => {
+    (
+        {
+            name,
+            gridArea,
+            fieldName,
+            helperText,
+            config,
+            label,
+            formattedName,
+            formattedPrefix,
+
+            ...props
+        },
+        ref
+    ) => {
+        if (fieldName) {
+            console.warn(
+                'The property "fieldName" is deprecated. Use "formattedName" instead. "fieldName" will be removed in future versions.'
+            );
+        }
         const {input, meta} = useField(name, {type: 'checkbox'});
         const isInvalid =
             (!!meta.error && meta.touched) ||
@@ -20,7 +39,13 @@ const CheckboxField = forwardRef(
                     {...props}
                     ref={ref}
                     isChecked={input.checked}>
-                    <FormattedMessage id={`field.${fieldName || name}`} />
+                    {label || (
+                        <FormattedMessage
+                            id={`${formattedPrefix}.${
+                                formattedName || fieldName || name
+                            }`}
+                        />
+                    )}
                 </Checkbox>
                 {helperText && (
                     <FormHelperText>
@@ -39,6 +64,9 @@ CheckboxField.propTypes = {
     fieldName: string,
     helperText: node,
     config: object,
+    label: string,
+    formattedName: string,
+    formattedPrefix: string,
 };
 
 CheckboxField.defaultProps = {
@@ -46,6 +74,9 @@ CheckboxField.defaultProps = {
     gridArea: undefined,
     fieldName: undefined,
     config: undefined,
+    label: undefined,
+    formattedName: undefined,
+    formattedPrefix: 'field',
 };
 
 export default CheckboxField;
