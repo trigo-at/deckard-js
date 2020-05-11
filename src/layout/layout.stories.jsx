@@ -10,10 +10,13 @@ import NavLink from './nav-link';
 import PageSection from '../patterns/page-section';
 import {FormSectionStory} from '../patterns/form-section.stories';
 import ProviderDecorator from '../provider-decorator';
+import logo from './trigo-logo.svg';
 
 export const DefaultStory = () => (
     <Layout
-        logo={<Logo title="trigo Design System" version="v1.0.0" />}
+        logo={
+            <Logo title="trigo Design System" version="v1.0.0" imgSrc={logo} />
+        }
         header={
             <Header
                 userName="Max Mustermann"

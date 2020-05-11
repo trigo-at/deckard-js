@@ -11,6 +11,7 @@ import LoadingIndicator from '../indicators/loading-indicator';
 const AppLayout = ({
     title,
     version,
+    imgSrc,
     loading,
     error,
     header,
@@ -27,7 +28,7 @@ const AppLayout = ({
     return (
         <Layout
             accent={accent}
-            logo={<Logo title={title} version={version} />}
+            logo={<Logo title={title} version={version} imgSrc={imgSrc} />}
             header={header}
             aside={aside}>
             <Router>{children}</Router>
@@ -38,6 +39,7 @@ const AppLayout = ({
 AppLayout.propTypes = {
     title: string,
     version: string,
+    imgSrc: string,
     loading: bool,
     error: string,
     header: node,
@@ -49,6 +51,7 @@ AppLayout.propTypes = {
 AppLayout.defaultProps = {
     version: undefined,
     loading: false,
+    imgSrc: undefined,
     error: undefined,
     title: undefined,
     header: undefined,
@@ -60,6 +63,7 @@ AppLayout.defaultProps = {
 const AppShell = ({
     title,
     version,
+    imgSrc,
     loading,
     error,
     header,
@@ -76,6 +80,7 @@ const AppShell = ({
                     accent={accent}
                     title={title}
                     version={version}
+                    imgSrc={imgSrc}
                     loading={loading}
                     error={error}
                     header={header}
@@ -90,6 +95,7 @@ const AppShell = ({
 AppShell.propTypes = {
     title: string,
     version: string,
+    imgSrc: string,
     loading: bool,
     error: string,
     header: node,
@@ -103,6 +109,7 @@ AppShell.propTypes = {
 AppShell.defaultProps = {
     version: undefined,
     title: undefined,
+    imgSrc: undefined,
     loading: false,
     error: undefined,
     header: undefined,
