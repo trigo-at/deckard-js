@@ -10,6 +10,9 @@ export default (story) => (
                 'common.optional': 'optional',
                 'string.translation1':
                     'Diplom-Tierarzt / Diplom-Tierärztin Mag. med. vet.',
+                'fullpagealert.title': 'Bacon is life!',
+                'fullpagealert.description':
+                    'Bacon ipsum dolor amet tail venison hamburger buffalo. Pastrami brisket capicola, chislic beef shankle t-bone chuck boudin meatloaf pig turkey sirloin swine. Ham hock kevin shankle kielbasa landjaeger.',
             }}>
             {story()}
         </IntlProvider>
