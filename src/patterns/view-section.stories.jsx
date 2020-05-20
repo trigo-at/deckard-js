@@ -20,6 +20,14 @@ export const DefaultStory = () => (
                 <SecondaryButton>action 3</SecondaryButton>
                 <SecondaryButton>action 4</SecondaryButton>
             </ButtonGroup>
+        }
+        footer={
+            <ButtonGroup>
+                <SecondaryButton>footer 1</SecondaryButton>
+                <SecondaryButton>footer 2</SecondaryButton>
+                <SecondaryButton>footer 3</SecondaryButton>
+                <SecondaryButton>footer 4</SecondaryButton>
+            </ButtonGroup>
         }>
         <DataList
             values={[
