@@ -36,6 +36,8 @@ export const DefaultStory = () => (
             </Aside>
         }>
         <FormSectionStory />
+        <FormSectionStory />
+        <FormSectionStory />
     </Layout>
 );
 
@@ -90,6 +92,33 @@ export const DifferentLogoBGStory = () => (
 
 DifferentLogoBGStory.story = {
     name: 'Different logo background',
+};
+
+export const NoHeaderStory = () => (
+    <Layout
+        logo={
+            <Logo title="trigo Design System" version="v1.0.0" imgSrc={logo} />
+        }
+        aside={
+            <Aside>
+                <NavSection header="Dashboards">
+                    <NavLink to="/" icon="home">
+                        Dashboard
+                    </NavLink>
+                    <NavLink to="/2" icon="home">
+                        Dashboard 2
+                    </NavLink>
+                </NavSection>
+            </Aside>
+        }>
+        <FormSectionStory />
+        <FormSectionStory />
+        <FormSectionStory />
+    </Layout>
+);
+
+NoHeaderStory.story = {
+    name: 'No header',
 };
 
 export default {
