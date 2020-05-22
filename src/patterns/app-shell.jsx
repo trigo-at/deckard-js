@@ -28,7 +28,7 @@ const AppLayout = ({
     }
     return (
         <Layout
-            fixedAsid={fixedAside}
+            fixedAside={fixedAside}
             accent={accent}
             logo={<Logo title={title} version={version} imgSrc={imgSrc} />}
             header={header}
