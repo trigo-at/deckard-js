@@ -18,6 +18,7 @@ const AppLayout = ({
     aside,
     children,
     accent,
+    fixedAside,
 }) => {
     if (error) {
         return <ErrorIndicator error="loading" description={error} />;
@@ -27,6 +28,7 @@ const AppLayout = ({
     }
     return (
         <Layout
+            fixedAsid={fixedAside}
             accent={accent}
             logo={<Logo title={title} version={version} imgSrc={imgSrc} />}
             header={header}
@@ -46,6 +48,7 @@ AppLayout.propTypes = {
     aside: node,
     children: node,
     accent: string,
+    fixedAside: bool,
 };
 
 AppLayout.defaultProps = {
@@ -58,6 +61,7 @@ AppLayout.defaultProps = {
     aside: undefined,
     children: undefined,
     accent: 'gray',
+    fixedAside: false,
 };
 
 const AppShell = ({
@@ -72,6 +76,7 @@ const AppShell = ({
     locale,
     children,
     accent,
+    fixedAside,
 }) => {
     return (
         <ThemeProvider>
@@ -84,7 +89,8 @@ const AppShell = ({
                     loading={loading}
                     error={error}
                     header={header}
-                    aside={aside}>
+                    aside={aside}
+                    fixedAside={fixedAside}>
                     {children}
                 </AppLayout>
             </IntlProvider>
@@ -104,6 +110,7 @@ AppShell.propTypes = {
     messages: object,
     locale: string,
     accent: string,
+    fixedAside: bool,
 };
 
 AppShell.defaultProps = {
@@ -118,6 +125,7 @@ AppShell.defaultProps = {
     messages: {},
     locale: 'de',
     accent: 'gray',
+    fixedAside: false,
 };
 
 export default AppShell;

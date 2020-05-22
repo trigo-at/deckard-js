@@ -1,6 +1,7 @@
 import React from 'react';
-import {node, string} from 'prop-types';
+import {node, string, bool} from 'prop-types';
 import {Grid} from '@chakra-ui/core';
+import {Global, css} from '@emotion/core';
 
 const buildGridTemplateAreas = ({hasAside, hasHeader}) => {
     if (hasAside && !hasHeader) {
@@ -14,41 +15,51 @@ const buildGridTemplateAreas = ({hasAside, hasHeader}) => {
     return `'logo header' 'aside content'`;
 };
 
-const Layout = ({logo, header, aside, children, accent}) => {
+const Layout = ({logo, header, aside, children, accent, fixedAside}) => {
     const gridTemplateAreas = buildGridTemplateAreas({
         hasAside: !!aside,
         hasHeader: !!header,
     });
 
+    const contentProps = fixedAside
+        ? {fixedoverflow: 'hidden', overflowY: 'scroll'}
+        : {};
+
     return (
-        <Grid
-            gridTemplateAreas={gridTemplateAreas}
-            gridTemplateColumns="240px 1fr"
-            gridTemplateRows="64px 1fr"
-            height="100vh"
-            width="100vw">
-            <Grid area="logo" bg={`${accent}.800`}>
-                {logo}
-            </Grid>
-            {header && (
-                <Grid area="header" bg="white" shadow="md">
-                    {header}
-                </Grid>
-            )}
-            {aside && (
-                <Grid area="aside" bg={`${accent}.600`}>
-                    {aside}
-                </Grid>
+        <>
+            {fixedAside && (
+                <Global
+                    styles={css`
+                        body {
+                            overflow: hidden;
+                        }
+                    `}
+                />
             )}
             <Grid
-                area="content"
-                bg="gray.200"
-                p={6}
-                overflow="hidden"
-                overflowY="scroll">
-                {children}
+                gridTemplateAreas={gridTemplateAreas}
+                gridTemplateColumns="240px 1fr"
+                gridTemplateRows="64px 1fr"
+                height={fixedAside ? '100vh' : undefined}
+                width={fixedAside ? '100vw' : undefined}>
+                <Grid area="logo" bg={`${accent}.800`}>
+                    {logo}
+                </Grid>
+                {header && (
+                    <Grid area="header" bg="white" shadow="md">
+                        {header}
+                    </Grid>
+                )}
+                {aside && (
+                    <Grid area="aside" bg={`${accent}.600`}>
+                        {aside}
+                    </Grid>
+                )}
+                <Grid area="content" bg="gray.200" p={6} {...contentProps}>
+                    {children}
+                </Grid>
             </Grid>
-        </Grid>
+        </>
     );
 };
 
@@ -58,6 +69,7 @@ Layout.propTypes = {
     aside: node,
     children: node,
     accent: string,
+    fixedAside: bool,
 };
 
 Layout.defaultProps = {
@@ -66,6 +78,7 @@ Layout.defaultProps = {
     aside: undefined,
     children: undefined,
     accent: 'gray',
+    fixedAside: false,
 };
 
 export default Layout;

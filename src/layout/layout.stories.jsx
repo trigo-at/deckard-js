@@ -45,6 +45,40 @@ DefaultStory.story = {
     name: 'default',
 };
 
+export const FixedStory = () => (
+    <Layout
+        fixedAside
+        logo={
+            <Logo title="trigo Design System" version="v1.0.0" imgSrc={logo} />
+        }
+        header={
+            <Header
+                userName="Max Mustermann"
+                onSearch={(searchTerm) => console.log(searchTerm)}
+            />
+        }
+        aside={
+            <Aside>
+                <NavSection header="Dashboards">
+                    <NavLink to="/" icon="home">
+                        Dashboard
+                    </NavLink>
+                    <NavLink to="/2" icon="home">
+                        Dashboard 2
+                    </NavLink>
+                </NavSection>
+            </Aside>
+        }>
+        <FormSectionStory />
+        <FormSectionStory />
+        <FormSectionStory />
+    </Layout>
+);
+
+FixedStory.story = {
+    name: 'fixed aside',
+};
+
 export const DifferentLogoBGStory = () => (
     <Layout
         accent="green"

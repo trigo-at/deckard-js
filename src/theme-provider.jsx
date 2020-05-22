@@ -176,9 +176,6 @@ const ThemeProvider = ({children}) => {
                             font-family: 'Inter var', sans-serif;
                         }
                     }
-                    body {
-                        overflow: hidden;
-                    }
                 `}
             />
             {children}
