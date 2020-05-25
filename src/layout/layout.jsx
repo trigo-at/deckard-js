@@ -22,7 +22,7 @@ const Layout = ({logo, header, aside, children, accent, fixedAside}) => {
     });
 
     const contentProps = fixedAside
-        ? {fixedoverflow: 'hidden', overflowY: 'scroll'}
+        ? {fixedoverflow: 'hidden', overflowY: 'auto'}
         : {};
 
     return (
@@ -41,7 +41,8 @@ const Layout = ({logo, header, aside, children, accent, fixedAside}) => {
                 gridTemplateColumns="240px 1fr"
                 gridTemplateRows="64px 1fr"
                 height={fixedAside ? '100vh' : undefined}
-                width={fixedAside ? '100vw' : undefined}>
+                width={fixedAside ? '100vw' : undefined}
+                minHeight="100vh">
                 <Grid area="logo" bg={`${accent}.800`}>
                     {logo}
                 </Grid>
