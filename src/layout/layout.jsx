@@ -52,7 +52,7 @@ const Layout = ({logo, header, aside, children, accent, fixedAside}) => {
                     </Grid>
                 )}
                 {aside && (
-                    <Grid area="aside" bg={`${accent}.600`}>
+                    <Grid area="aside" bg={`${accent}.600`} {...contentProps}>
                         {aside}
                     </Grid>
                 )}
