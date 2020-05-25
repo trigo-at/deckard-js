@@ -22,7 +22,7 @@ const Layout = ({logo, header, aside, children, accent, fixedAside}) => {
     });
 
     const contentProps = fixedAside
-        ? {fixedoverflow: 'hidden', overflowY: 'auto'}
+        ? {overflow: 'hidden', overflowY: 'auto'}
         : {};
 
     return (
