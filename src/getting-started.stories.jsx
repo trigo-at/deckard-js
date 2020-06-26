@@ -108,9 +108,6 @@ export const DesignPrinciplesStory = () => (
                 communicate the meaning and reduce ambiguity.
             </TextBlock>
         </Box>
-        <Box p={3}>
-            <Heading>Motivation</Heading>
-        </Box>
     </>
 );
 
