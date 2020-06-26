@@ -63,7 +63,7 @@ DataCell.propTypes = {
     }).isRequired,
 };
 
-const DataTable = ({columns, items}) => {
+const DataTable = ({columns, items, tableRowEntryAnimation}) => {
     return (
         <Table>
             <thead>
@@ -79,7 +79,9 @@ const DataTable = ({columns, items}) => {
             </thead>
             <tbody>
                 {items.map((item) => (
-                    <TableRow key={item.id}>
+                    <TableRow
+                        key={item.id}
+                        entryAnimation={tableRowEntryAnimation}>
                         {item.columns.map((column, idx) => (
                             <TableCell key={idx}>
                                 <DataCell column={column} />
@@ -109,11 +111,13 @@ DataTable.propTypes = {
             ).isRequired,
         })
     ),
+    tableRowEntryAnimation: bool,
 };
 
 DataTable.defaultProps = {
     columns: [],
     items: [],
+    tableRowEntryAnimation: false,
 };
 
 export default DataTable;
