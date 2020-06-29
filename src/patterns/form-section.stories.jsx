@@ -13,16 +13,13 @@ import DateField from '../form-fields/date-field';
 import PageSection from './page-section';
 import ProviderDecorator from '../provider-decorator';
 import PrimaryButton from '../components/primary-button';
-import TrigoStoryWrapper from '../trigo-story-wrapper';
+import TrigoStoryWrapper from '../../.storybook/trigo-story-wrapper';
+import {InlineCode} from '../../.storybook/code';
 
 const validate = (values) => {
     const errors = {};
-    if (!values.name) {
-        errors.name = 'validation.required';
-    }
-    if (!values.birthday) {
-        errors.birthday = 'validation.required';
-    }
+    if (!values.name) errors.name = 'validation.required';
+    if (!values.birthday) errors.birthday = 'validation.required';
     return errors;
 };
 
@@ -34,18 +31,15 @@ const gridTemplateAreas2 = `
 'birthday birthday .'
 'skillLevel skillLevel .'`;
 
-const Code = ({children}) => (
-    <pre style={{display: 'inline-block'}}>{children}</pre>
-);
-
 export const Description = () => (
     <TrigoStoryWrapper>
         <Box bg="white" p={5}>
-            A <Code>FormSection</Code> is used to group relevant input fields.
-            You would typically group information like <b>Personal Data</b> or{' '}
-            <b>Account Information</b>. Formlabels should be self-explanatory.
-            If they are not, you can use the <i>helperText</i> prop on any
-            InputField. Some examples can be found here:
+            A <InlineCode>FormSection</InlineCode> is used to group relevant
+            input fields. You would typically group information like{' '}
+            <b>Personal Data</b> or <b>Account Information</b>. Formlabels
+            should be self-explanatory. If they are not, you can use the{' '}
+            <i>helperText</i> prop on any InputField. Some examples can be found
+            here:
             <List m={5} styleType="disc">
                 <ListItem>
                     <LinkTo story="simple-form-section">

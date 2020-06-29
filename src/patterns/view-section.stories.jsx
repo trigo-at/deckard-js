@@ -15,20 +15,19 @@ import PrimaryButton from '../components/primary-button';
 import TertiaryButton from '../components/tertiary-button';
 import MetaViewSectionComponent from './meta-view-section';
 import DataTable from '../table/data-table';
-import TrigoStoryWrapper from '../trigo-story-wrapper';
+import TrigoStoryWrapper from '../../.storybook/trigo-story-wrapper';
+import {InlineCode} from '../../.storybook/code';
 
 const chance = new Chance();
-
-const Code = ({children}) => (
-    <pre style={{display: 'inline-block'}}>{children}</pre>
-);
 
 export const Description = () => (
     <TrigoStoryWrapper>
         <Box bg="white" p={5}>
-            A <Code>ViewSection</Code> is used to group relevant information.
-            Typically it is used to render a <Code>DataList</Code> or{' '}
-            <Code>DataTable</Code> Component. Some examples can be found here:
+            A <InlineCode>ViewSection</InlineCode> is used to group relevant
+            information. Typically it is used to render a{' '}
+            <InlineCode>DataList</InlineCode> or{' '}
+            <InlineCode>DataTable</InlineCode> Component. Some examples can be
+            found here:
             <List m={5} styleType="disc">
                 <ListItem>
                     <LinkTo story="detail-view-section">

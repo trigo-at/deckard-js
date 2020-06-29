@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import {Box, Flex, Text, Image} from '@chakra-ui/core';
 import trigoLogo from '../.storybook/logo.png';

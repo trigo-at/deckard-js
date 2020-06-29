@@ -1,7 +1,7 @@
 import React from 'react';
 import FullPageAlert from './full-page-alert';
 import ProviderDecorator from '../provider-decorator';
-import TrigoStoryWrapper from '../trigo-story-wrapper';
+import TrigoStoryWrapper from '../../.storybook/trigo-story-wrapper';
 
 export const InfoStory = () => (
     <TrigoStoryWrapper>

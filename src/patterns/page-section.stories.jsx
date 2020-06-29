@@ -11,11 +11,12 @@ import ViewSection from './view-section';
 import DataList from './data-list';
 import toDateString from '../to-date-string';
 import ProviderDecorator from '../provider-decorator';
-import TrigoStoryWrapper from '../trigo-story-wrapper';
+import TrigoStoryWrapper from '../../.storybook/trigo-story-wrapper';
 import PrimaryButton from '../components/primary-button';
 import SecondaryButton from '../components/secondary-button';
 import TertiaryButton from '../components/tertiary-button';
 import DataTable from '../table/data-table';
+import {InlineCode} from '../../.storybook/code';
 
 const chance = new Chance();
 
@@ -45,16 +46,12 @@ const getColumnData = () => [
     },
 ];
 
-const Code = ({children}) => (
-    <pre style={{display: 'inline-block'}}>{children}</pre>
-);
-
 export const Description = () => (
     <TrigoStoryWrapper>
         <PageSection title="common.pagesection.title">
-            A <Code>PageSection</Code> is the main Entrypoint to any
+            A <InlineCode>PageSection</InlineCode> is the main Entrypoint to any
             client-side-route. It typically renders one or more{' '}
-            <Code>ViewSection</Code> Components
+            <InlineCode>ViewSection</InlineCode> Components
             <List m={5} styleType="disc">
                 <ListItem>
                     <LinkTo story="simple-page-section">

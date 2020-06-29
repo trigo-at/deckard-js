@@ -1,7 +1,7 @@
 import React from 'react';
 import {Box, Heading, Text, List, ListItem} from '@chakra-ui/core';
 import ProviderDecorator from './provider-decorator';
-import TrigoStoryWrapper from './trigo-story-wrapper';
+import TrigoStoryWrapper from '../.storybook/trigo-story-wrapper';
 
 const TextBlock = (props) => <Text color="gray.900" {...props} />;
 
