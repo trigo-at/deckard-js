@@ -1,15 +1,15 @@
 import React from 'react';
-import {Box} from '@chakra-ui/core';
 import FullPageAlert from './full-page-alert';
 import ProviderDecorator from '../provider-decorator';
+import TrigoStoryWrapper from '../trigo-story-wrapper';
 
 export const InfoStory = () => (
-    <Box p={6} bg="gray.50">
+    <TrigoStoryWrapper>
         <FullPageAlert
             title="fullpagealert.title"
             description="fullpagealert.description"
         />
-    </Box>
+    </TrigoStoryWrapper>
 );
 
 InfoStory.story = {
@@ -17,13 +17,13 @@ InfoStory.story = {
 };
 
 export const ErrorStory = () => (
-    <Box p={6} bg="gray.50">
+    <TrigoStoryWrapper>
         <FullPageAlert
             title="fullpagealert.title"
             description="fullpagealert.description"
             status="error"
         />
-    </Box>
+    </TrigoStoryWrapper>
 );
 
 ErrorStory.story = {
@@ -31,13 +31,13 @@ ErrorStory.story = {
 };
 
 export const SuccessStory = () => (
-    <Box p={6} bg="gray.50">
+    <TrigoStoryWrapper>
         <FullPageAlert
             title="fullpagealert.title"
             description="fullpagealert.description"
             status="success"
         />
-    </Box>
+    </TrigoStoryWrapper>
 );
 
 SuccessStory.story = {
@@ -45,13 +45,13 @@ SuccessStory.story = {
 };
 
 export const WarningStory = () => (
-    <Box p={6} bg="gray.50">
+    <TrigoStoryWrapper>
         <FullPageAlert
             title="fullpagealert.title"
             description="fullpagealert.description"
             status="warning"
         />
-    </Box>
+    </TrigoStoryWrapper>
 );
 
 WarningStory.story = {

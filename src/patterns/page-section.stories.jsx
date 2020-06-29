@@ -1,78 +1,239 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-console */
 import React from 'react';
 import Chance from 'chance';
-import {ButtonGroup, Button} from '@chakra-ui/core';
+import {Button, Stack, List, ListItem} from '@chakra-ui/core';
+import {FormattedMessage} from 'react-intl';
+import {Link} from '@reach/router';
+import LinkTo from '@storybook/addon-links/dist/react';
 import PageSection from './page-section';
 import ViewSection from './view-section';
 import DataList from './data-list';
 import toDateString from '../to-date-string';
 import ProviderDecorator from '../provider-decorator';
+import TrigoStoryWrapper from '../trigo-story-wrapper';
+import PrimaryButton from '../components/primary-button';
+import SecondaryButton from '../components/secondary-button';
+import TertiaryButton from '../components/tertiary-button';
+import DataTable from '../table/data-table';
 
 const chance = new Chance();
 
-export const DefaultStory = () => (
-    <PageSection title="common.title">
-        <div>asdfasdf</div>
-    </PageSection>
+const getColumnData = () => [
+    {
+        field: 'name',
+        value: chance.name(),
+    },
+    {
+        field: 'customerNumber',
+        value: chance.integer({
+            min: 100000,
+            max: 99999999,
+        }),
+    },
+    {
+        field: 'birthday',
+        value: toDateString(chance.date().toISOString()),
+    },
+    {
+        value: chance.string(),
+        render: () => (
+            <Button size="sm" as={Link} to="/">
+                <FormattedMessage id="common.actions.showDetails" />
+            </Button>
+        ),
+    },
+];
+
+const Code = ({children}) => (
+    <pre style={{display: 'inline-block'}}>{children}</pre>
 );
 
-DefaultStory.story = {
-    name: 'default',
-};
-
-export const IsPrimaryStory = () => (
-    <PageSection title="common.title" isPrimary>
-        <div>asdfasdf</div>
-    </PageSection>
+export const Description = () => (
+    <TrigoStoryWrapper>
+        <PageSection title="common.pagesection.title">
+            A <Code>PageSection</Code> is the main Entrypoint to any
+            client-side-route. It typically renders one or more{' '}
+            <Code>ViewSection</Code> Components
+            <List m={5} styleType="disc">
+                <ListItem>
+                    <LinkTo story="simple-page-section">
+                        Simple PageSection Example
+                    </LinkTo>
+                </ListItem>
+                <ListItem>
+                    <LinkTo story="primary-page-section">
+                        Primary PageSection Example
+                    </LinkTo>
+                </ListItem>
+                <ListItem>
+                    <LinkTo story="page-section-with-actions">
+                        PageSection Example with Actions
+                    </LinkTo>
+                </ListItem>
+            </List>
+        </PageSection>
+    </TrigoStoryWrapper>
 );
 
-IsPrimaryStory.story = {
-    name: 'is-primary',
+Description.story = {
+    name: 'description',
 };
 
-export const WithActionsStory = () => (
-    <PageSection
-        title="common.title"
-        actions={
-            <ButtonGroup>
-                <Button>action 1</Button>
-                <Button>action 2</Button>
-                <Button>action 3</Button>
-                <Button>action 4</Button>
-            </ButtonGroup>
-        }>
-        <ViewSection
-            title="common.core-data"
+export const SimplePageSection = () => (
+    <TrigoStoryWrapper>
+        <PageSection title="common.pagesection.title">
+            <ViewSection title="common.viewsection.title">
+                <DataList
+                    values={[
+                        {
+                            field: 'name',
+                            value: chance.name(),
+                        },
+                        {
+                            field: 'customerNumber',
+                            value: chance.integer({min: 100000, max: 99999999}),
+                        },
+                        {
+                            field: 'birthday',
+                            value: toDateString(chance.date().toISOString()),
+                        },
+                    ]}
+                />
+            </ViewSection>
+            <ViewSection title="common.viewsection.title">
+                <DataTable
+                    columns={['name', 'customerNumber', 'birthday', 'action']}
+                    items={[
+                        {
+                            id: chance.string(),
+                            columns: getColumnData(),
+                        },
+                        {
+                            id: chance.string(),
+                            columns: getColumnData(),
+                        },
+                        {
+                            id: chance.string(),
+                            columns: getColumnData(),
+                        },
+                    ]}
+                />
+            </ViewSection>
+        </PageSection>
+    </TrigoStoryWrapper>
+);
+
+SimplePageSection.story = {
+    name: 'simple-page-section',
+};
+
+export const PrimaryPageSection = () => (
+    <TrigoStoryWrapper>
+        <PageSection title="common.pagesection.title" isPrimary>
+            <ViewSection title="common.viewsection.title">
+                <DataList
+                    values={[
+                        {
+                            field: 'name',
+                            value: chance.name(),
+                        },
+                        {
+                            field: 'customerNumber',
+                            value: chance.integer({min: 100000, max: 99999999}),
+                        },
+                        {
+                            field: 'birthday',
+                            value: toDateString(chance.date().toISOString()),
+                        },
+                    ]}
+                />
+            </ViewSection>
+            <ViewSection title="common.viewsection.title">
+                <DataTable
+                    columns={['name', 'customerNumber', 'birthday', 'action']}
+                    items={[
+                        {
+                            id: chance.string(),
+                            columns: getColumnData(),
+                        },
+                        {
+                            id: chance.string(),
+                            columns: getColumnData(),
+                        },
+                        {
+                            id: chance.string(),
+                            columns: getColumnData(),
+                        },
+                    ]}
+                />
+            </ViewSection>
+        </PageSection>
+    </TrigoStoryWrapper>
+);
+
+PrimaryPageSection.story = {
+    name: 'primary-page-section',
+};
+
+export const PageSectionWithActions = () => (
+    <TrigoStoryWrapper>
+        <PageSection
+            title="common.pagesection.title"
+            isPrimary
             actions={
-                <ButtonGroup>
-                    <Button>action 5</Button>
-                    <Button>action 6</Button>
-                    <Button>action 7</Button>
-                    <Button>action 8</Button>
-                </ButtonGroup>
+                <Stack isInline>
+                    <TertiaryButton>Tertiary</TertiaryButton>
+                    <SecondaryButton>Secondary</SecondaryButton>
+                    <PrimaryButton>Primary</PrimaryButton>
+                </Stack>
             }>
-            <DataList
-                values={[
-                    {
-                        field: 'customerName',
-                        value: chance.name(),
-                    },
-                    {
-                        field: 'customerNumber',
-                        value: chance.integer({min: 0}),
-                    },
-                    {
-                        field: 'birthday',
-                        value: toDateString(chance.date().toISOString()),
-                    },
-                ]}
-            />
-        </ViewSection>
-    </PageSection>
+            <ViewSection title="common.viewsection.title">
+                <DataList
+                    values={[
+                        {
+                            field: 'name',
+                            value: chance.name(),
+                        },
+                        {
+                            field: 'customerNumber',
+                            value: chance.integer({
+                                min: 100000,
+                                max: 99999999,
+                            }),
+                        },
+                        {
+                            field: 'birthday',
+                            value: toDateString(chance.date().toISOString()),
+                        },
+                    ]}
+                />
+            </ViewSection>
+            <ViewSection title="common.viewsection.title">
+                <DataTable
+                    columns={['name', 'customerNumber', 'birthday', 'action']}
+                    items={[
+                        {
+                            id: chance.string(),
+                            columns: getColumnData(),
+                        },
+                        {
+                            id: chance.string(),
+                            columns: getColumnData(),
+                        },
+                        {
+                            id: chance.string(),
+                            columns: getColumnData(),
+                        },
+                    ]}
+                />
+            </ViewSection>
+        </PageSection>
+    </TrigoStoryWrapper>
 );
 
-WithActionsStory.story = {
-    name: 'with-actions',
+PageSectionWithActions.story = {
+    name: 'page-section-with-actions',
 };
 
 export default {

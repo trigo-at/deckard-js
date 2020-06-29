@@ -1,8 +1,10 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-console */
 import React from 'react';
 import Chance from 'chance';
-import {Box, Stack, Button} from '@chakra-ui/core';
+import {Box, Stack, Button, ListItem, List} from '@chakra-ui/core';
 import {Link} from '@reach/router';
+import LinkTo from '@storybook/addon-links/react';
 import {FormattedMessage} from 'react-intl';
 import ViewSection from './view-section';
 import DataList from './data-list';
@@ -11,13 +13,69 @@ import ProviderDecorator from '../provider-decorator';
 import SecondaryButton from '../components/secondary-button';
 import PrimaryButton from '../components/primary-button';
 import TertiaryButton from '../components/tertiary-button';
-import MetaViewSection from './meta-view-section';
+import MetaViewSectionComponent from './meta-view-section';
 import DataTable from '../table/data-table';
+import TrigoStoryWrapper from '../trigo-story-wrapper';
 
 const chance = new Chance();
 
+const Code = ({children}) => (
+    <pre style={{display: 'inline-block'}}>{children}</pre>
+);
+
+export const Description = () => (
+    <TrigoStoryWrapper>
+        <Box bg="white" p={5}>
+            A <Code>ViewSection</Code> is used to group relevant information.
+            Typically it is used to render a <Code>DataList</Code> or{' '}
+            <Code>DataTable</Code> Component. Some examples can be found here:
+            <List m={5} styleType="disc">
+                <ListItem>
+                    <LinkTo story="detail-view-section">
+                        Simple DataList Example
+                    </LinkTo>
+                </ListItem>
+                <ListItem>
+                    <LinkTo story="detail-view-section-with-actions">
+                        DataList Example with actions
+                    </LinkTo>
+                </ListItem>
+                <ListItem>
+                    <LinkTo story="detail-view-section-with-footer">
+                        DataList Example with footer
+                    </LinkTo>
+                </ListItem>
+                <ListItem>
+                    <LinkTo story="list-view-section">
+                        Simple DataTable Example
+                    </LinkTo>
+                </ListItem>
+                <ListItem>
+                    <LinkTo story="list-view-section-with-actions">
+                        DataTable Example with actions
+                    </LinkTo>
+                </ListItem>
+                <ListItem>
+                    <LinkTo story="list-view-section-with-footer">
+                        DataTable Example with footer
+                    </LinkTo>
+                </ListItem>
+                <ListItem>
+                    <LinkTo story="meta-view-section">
+                        Example MetaViewSection
+                    </LinkTo>
+                </ListItem>
+            </List>
+        </Box>
+    </TrigoStoryWrapper>
+);
+
+Description.story = {
+    name: 'description',
+};
+
 export const DetailViewSection = () => (
-    <Box bg="gray.200" p={5} w="100vw" h="100vh">
+    <TrigoStoryWrapper>
         <Box bg="white" p={5}>
             <ViewSection title="common.viewsection.title">
                 <DataList
@@ -38,15 +96,15 @@ export const DetailViewSection = () => (
                 />
             </ViewSection>
         </Box>
-    </Box>
+    </TrigoStoryWrapper>
 );
 
 DetailViewSection.story = {
-    name: 'Detail Viewsection',
+    name: 'detail-view-section',
 };
 
 export const DetailViewSectionWithActions = () => (
-    <Box bg="gray.200" p={5} w="100vw" h="100vh">
+    <TrigoStoryWrapper>
         <Box bg="white" p={5}>
             <ViewSection
                 title="common.viewsection.title"
@@ -65,7 +123,10 @@ export const DetailViewSectionWithActions = () => (
                         },
                         {
                             field: 'customerNumber',
-                            value: chance.integer({min: 100000, max: 99999999}),
+                            value: chance.integer({
+                                min: 100000,
+                                max: 99999999,
+                            }),
                         },
                         {
                             field: 'birthday',
@@ -75,15 +136,15 @@ export const DetailViewSectionWithActions = () => (
                 />
             </ViewSection>
         </Box>
-    </Box>
+    </TrigoStoryWrapper>
 );
 
 DetailViewSectionWithActions.story = {
-    name: 'Detail Viewsection with Actions',
+    name: 'detail-view-section-with-actions',
 };
 
 export const DetailViewSectionWithFooter = () => (
-    <Box bg="gray.200" p={5} w="100vw" h="100vh">
+    <TrigoStoryWrapper>
         <Box bg="white" p={5}>
             <ViewSection
                 title="common.viewsection.title"
@@ -109,7 +170,10 @@ export const DetailViewSectionWithFooter = () => (
                         },
                         {
                             field: 'customerNumber',
-                            value: chance.integer({min: 100000, max: 99999999}),
+                            value: chance.integer({
+                                min: 100000,
+                                max: 99999999,
+                            }),
                         },
                         {
                             field: 'birthday',
@@ -119,11 +183,11 @@ export const DetailViewSectionWithFooter = () => (
                 />
             </ViewSection>
         </Box>
-    </Box>
+    </TrigoStoryWrapper>
 );
 
 DetailViewSectionWithFooter.story = {
-    name: 'Detail Viewsection with Footer',
+    name: 'detail-view-section-with-footer',
 };
 
 const getColumnData = () => [
@@ -153,7 +217,7 @@ const getColumnData = () => [
 ];
 
 export const ListViewSection = () => (
-    <Box bg="gray.200" p={5} w="100vw" h="100vh">
+    <TrigoStoryWrapper>
         <Box bg="white" p={5}>
             <ViewSection title="common.viewsection.title">
                 <DataTable
@@ -175,15 +239,15 @@ export const ListViewSection = () => (
                 />
             </ViewSection>
         </Box>
-    </Box>
+    </TrigoStoryWrapper>
 );
 
 ListViewSection.story = {
-    name: 'List Viewsection',
+    name: 'list-view-section',
 };
 
 export const ListViewSectionWithActions = () => (
-    <Box bg="gray.200" p={5} w="100vw" h="100vh">
+    <TrigoStoryWrapper>
         <Box bg="white" p={5}>
             <ViewSection
                 title="common.viewsection.title"
@@ -213,15 +277,15 @@ export const ListViewSectionWithActions = () => (
                 />
             </ViewSection>
         </Box>
-    </Box>
+    </TrigoStoryWrapper>
 );
 
 ListViewSectionWithActions.story = {
-    name: 'List Viewsection with Actions',
+    name: 'list-view-section-with-actions',
 };
 
 export const ListViewSectionWithFooter = () => (
-    <Box bg="gray.200" p={5} w="100vw" h="100vh">
+    <TrigoStoryWrapper>
         <Box bg="white" p={5}>
             <ViewSection
                 title="common.viewsection.title"
@@ -258,17 +322,17 @@ export const ListViewSectionWithFooter = () => (
                 />
             </ViewSection>
         </Box>
-    </Box>
+    </TrigoStoryWrapper>
 );
 
 ListViewSectionWithFooter.story = {
-    name: 'List Viewsection with Footer',
+    name: 'list-view-section-with-footer',
 };
 
-export const MetaViewSectionStory = () => (
-    <Box bg="gray.200" p={5} w="100vw" h="100vh">
+export const MetaViewSection = () => (
+    <TrigoStoryWrapper>
         <Box bg="white" p={5}>
-            <MetaViewSection
+            <MetaViewSectionComponent
                 entity={{
                     createdAt: '2002-12-28',
                     createdBy: '2002-12-28',
@@ -277,11 +341,11 @@ export const MetaViewSectionStory = () => (
                 }}
             />
         </Box>
-    </Box>
+    </TrigoStoryWrapper>
 );
 
-MetaViewSectionStory.story = {
-    name: 'Meta Viewsection',
+MetaViewSection.story = {
+    name: 'meta-view-section',
 };
 
 export default {
