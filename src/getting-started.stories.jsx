@@ -6,10 +6,10 @@ const TextBlock = (props) => <Text color="gray.900" {...props} />;
 
 export const DesignPrinciplesStory = () => (
     <>
-        <Box p={3}>
+        <Box p={5}>
             <Heading>Design Principles</Heading>
         </Box>
-        <Box p={3}>
+        <Box p={5}>
             <Heading as="h2" size="md">
                 1. Avoid unnecessary elements
             </Heading>
@@ -23,7 +23,7 @@ export const DesignPrinciplesStory = () => (
                 overvalue it at the cost of clarity.
             </TextBlock>
         </Box>
-        <Box p={3}>
+        <Box p={5}>
             <Heading as="h2" size="md">
                 2. Leverage common design patterns
             </Heading>
@@ -35,7 +35,7 @@ export const DesignPrinciplesStory = () => (
                 closer to achieving their goal.
             </TextBlock>
         </Box>
-        <Box p={3}>
+        <Box p={5}>
             <Heading as="h2" size="md">
                 3. Eliminate unnescessary tasks
             </Heading>
@@ -51,7 +51,7 @@ export const DesignPrinciplesStory = () => (
                 design.
             </TextBlock>
         </Box>
-        <Box p={3}>
+        <Box p={5}>
             <Heading as="h2" size="md">
                 4. Minimize choices
             </Heading>
@@ -63,7 +63,7 @@ export const DesignPrinciplesStory = () => (
                 places such as navigation, forms, and drop-downs.
             </TextBlock>
         </Box>
-        <Box p={3}>
+        <Box p={5}>
             <Heading as="h2" size="md">
                 5. Display choices as a group
             </Heading>
@@ -78,7 +78,7 @@ export const DesignPrinciplesStory = () => (
                 by always displaying choices as a group.
             </TextBlock>
         </Box>
-        <Box p={3}>
+        <Box p={5}>
             <Heading as="h2" size="md">
                 6. Strive for readability
             </Heading>
@@ -92,7 +92,7 @@ export const DesignPrinciplesStory = () => (
                 the user.
             </TextBlock>
         </Box>
-        <Box p={3}>
+        <Box p={5}>
             <Heading as="h2" size="md">
                 7. Use iconography with caution
             </Heading>
@@ -108,7 +108,7 @@ export const DesignPrinciplesStory = () => (
                 communicate the meaning and reduce ambiguity.
             </TextBlock>
         </Box>
-        <Box p={3}>
+        <Box p={5}>
             <Heading>Motivation</Heading>
         </Box>
     </>
@@ -119,7 +119,7 @@ DesignPrinciplesStory.story = {
 };
 
 export const MotivationStory = () => (
-    <Box p={3}>
+    <Box p={5}>
         <Heading>Motivation</Heading>
         <TextBlock>
             In order to create a consistently great experience for our users,
@@ -136,39 +136,54 @@ MotivationStory.story = {
 };
 
 export const GoalsStory = () => (
-    <Box p={3}>
-        <Heading>Goals</Heading>
-        <TextBlock>
-            The core goals of this project are to:
-            <List styleType="disc">
-                <ListItem>Speed up design and development velocity</ListItem>
-                <ListItem>
-                    Help create consistent, beautiful, and usable UI in our
-                    applications
-                </ListItem>
-                <ListItem>
-                    Promote best practices for accessibility,
-                    internationalization, and responsive web design
-                </ListItem>
-            </List>
-            We hope to accomplish these goals by:
-            <List styleType="disc">
-                <ListItem>
-                    Reducing the number of decisions needed when iterating on UI
-                </ListItem>
-                <ListItem>
-                    Reducing the amount of code duplication in our apps
-                </ListItem>
-                <ListItem>
-                    Serving as the standard for trigo&apos;s visual language
-                </ListItem>
-                <ListItem>
-                    Providing easy-to-use and extensible components for anyone
-                    to consume
-                </ListItem>
-            </List>
-        </TextBlock>
-    </Box>
+    <>
+        <Box p={5}>
+            <Heading>Goals</Heading>
+        </Box>
+        <Box p={5}>
+            <TextBlock>
+                <Heading as="h2" size="md">
+                    The core goals of this project are to:
+                </Heading>
+                <List styleType="disc">
+                    <ListItem>
+                        Speed up design and development velocity
+                    </ListItem>
+                    <ListItem>
+                        Help create consistent, beautiful, and usable UI in our
+                        applications
+                    </ListItem>
+                    <ListItem>
+                        Promote best practices for accessibility,
+                        internationalization, and responsive web design
+                    </ListItem>
+                </List>
+            </TextBlock>
+        </Box>
+        <Box p={5}>
+            <TextBlock>
+                <Heading as="h2" size="md">
+                    We hope to accomplish these goals by:
+                </Heading>
+                <List styleType="disc">
+                    <ListItem>
+                        Reducing the number of decisions needed when iterating
+                        on UI
+                    </ListItem>
+                    <ListItem>
+                        Reducing the amount of code duplication in our apps
+                    </ListItem>
+                    <ListItem>
+                        Serving as the standard for trigo&apos;s visual language
+                    </ListItem>
+                    <ListItem>
+                        Providing easy-to-use and extensible components for
+                        anyone to consume
+                    </ListItem>
+                </List>
+            </TextBlock>
+        </Box>
+    </>
 );
 
 GoalsStory.story = {
