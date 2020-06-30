@@ -63,7 +63,7 @@ DataCell.propTypes = {
     }).isRequired,
 };
 
-const DataTable = ({columns, items, tableRowEntryAnimation}) => {
+const DataTable = ({columns, items, animateNewRow}) => {
     const [initialIds, setInitialIds] = useState([]);
 
     useEffect(() => {
@@ -89,7 +89,7 @@ const DataTable = ({columns, items, tableRowEntryAnimation}) => {
                         key={item.id}
                         entryAnimation={
                             initialIds.length && !initialIds.includes(item.id)
-                                ? tableRowEntryAnimation
+                                ? animateNewRow
                                 : undefined
                         }>
                         {item.columns.map((column, idx) => (
@@ -121,13 +121,13 @@ DataTable.propTypes = {
             ).isRequired,
         })
     ),
-    tableRowEntryAnimation: bool,
+    animateNewRow: bool,
 };
 
 DataTable.defaultProps = {
     columns: [],
     items: [],
-    tableRowEntryAnimation: false,
+    animateNewRow: false,
 };
 
 export default DataTable;

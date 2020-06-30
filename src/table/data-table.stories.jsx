@@ -195,7 +195,7 @@ export const DataTableStory4 = () => {
                 </ButtonGroup>
             }>
             <DataTable
-                tableRowEntryAnimation
+                animateNewRow
                 items={items}
                 columns={['col1', 'col2', 'col3']}
             />
