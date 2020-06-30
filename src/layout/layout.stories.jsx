@@ -8,7 +8,7 @@ import Logo from './logo';
 import NavSection from './nav-section';
 import NavLink from './nav-link';
 import PageSection from '../patterns/page-section';
-import {FormSectionStory} from '../patterns/form-section.stories';
+import {FormWithPageSection} from '../patterns/form-section.stories';
 import ProviderDecorator from '../provider-decorator';
 import logo from './trigo-logo.svg';
 
@@ -35,9 +35,9 @@ export const DefaultStory = () => (
                 </NavSection>
             </Aside>
         }>
-        <FormSectionStory />
-        <FormSectionStory />
-        <FormSectionStory />
+        <FormWithPageSection />
+        <FormWithPageSection />
+        <FormWithPageSection />
     </Layout>
 );
 
@@ -69,9 +69,9 @@ export const FixedStory = () => (
                 </NavSection>
             </Aside>
         }>
-        <FormSectionStory />
-        <FormSectionStory />
-        <FormSectionStory />
+        <FormWithPageSection />
+        <FormWithPageSection />
+        <FormWithPageSection />
     </Layout>
 );
 
@@ -145,9 +145,9 @@ export const NoHeaderStory = () => (
                 </NavSection>
             </Aside>
         }>
-        <FormSectionStory />
-        <FormSectionStory />
-        <FormSectionStory />
+        <FormWithPageSection />
+        <FormWithPageSection />
+        <FormWithPageSection />
     </Layout>
 );
 
