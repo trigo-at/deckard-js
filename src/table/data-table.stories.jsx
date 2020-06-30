@@ -155,21 +155,24 @@ DataTableStory3.story = {
     name: 'wrong column amount',
 };
 
+const getTableRowData = () => ({
+    id: chance.string({length: 20}),
+    columns: [
+        {value: chance.name()},
+        {value: chance.name()},
+        {value: chance.name()},
+    ],
+});
+
 export const DataTableStory4 = () => {
-    const [items, setItems] = useState([]);
+    const [items, setItems] = useState([
+        getTableRowData(),
+        getTableRowData(),
+        getTableRowData(),
+    ]);
 
     const onAddItem = () => {
-        setItems((prevItems) => [
-            {
-                id: chance.string({length: 20}),
-                columns: [
-                    {value: chance.name()},
-                    {value: chance.name()},
-                    {value: chance.name()},
-                ],
-            },
-            ...prevItems,
-        ]);
+        setItems((prevItems) => [getTableRowData(), ...prevItems]);
     };
 
     const onRemoveItem = () => {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {arrayOf, shape, string, any, elementType, func, bool} from 'prop-types';
 import {FormattedMessage} from 'react-intl';
 import {Link} from '@reach/router';
@@ -64,6 +64,12 @@ DataCell.propTypes = {
 };
 
 const DataTable = ({columns, items, tableRowEntryAnimation}) => {
+    const [initialIds, setInitialIds] = useState([]);
+
+    useEffect(() => {
+        if (Array.isArray(items)) setInitialIds(items.map((item) => item.id));
+    }, []);
+
     return (
         <Table>
             <thead>
@@ -81,7 +87,11 @@ const DataTable = ({columns, items, tableRowEntryAnimation}) => {
                 {items.map((item) => (
                     <TableRow
                         key={item.id}
-                        entryAnimation={tableRowEntryAnimation}>
+                        entryAnimation={
+                            initialIds.length && !initialIds.includes(item.id)
+                                ? tableRowEntryAnimation
+                                : undefined
+                        }>
                         {item.columns.map((column, idx) => (
                             <TableCell key={idx}>
                                 <DataCell column={column} />

@@ -3,13 +3,13 @@ import {jsx, keyframes, css} from '@emotion/core';
 import {node, bool} from 'prop-types';
 import {Box} from '@chakra-ui/core';
 
-const blink = keyframes`
+const blink = (color) => keyframes`
     from {
-        background-color: #fff9c2;
+        background-color: ${color};
     }
 
     50% {
-        background-color: #fff9c2;
+        background-color: ${color};
     }
 
     to {
@@ -20,10 +20,11 @@ const blink = keyframes`
 const TableRow = ({entryAnimation, children}) => (
     <Box
         as="tr"
-        css={
+        css={(theme) =>
             entryAnimation
                 ? css`
-                      animation: ${blink} 3s ease-out;
+                      animation: ${blink(theme.colors.yellow['200'])} 3s
+                          ease-out;
                   `
                 : undefined
         }>
