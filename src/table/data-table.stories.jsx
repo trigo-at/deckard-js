@@ -1,10 +1,11 @@
 /* eslint-disable no-console */
-import React from 'react';
+import React, {useState} from 'react';
 import Chance from 'chance';
-
-import {Heading} from '@chakra-ui/core';
+import {Heading, ButtonGroup} from '@chakra-ui/core';
 import ProviderDecorator from '../provider-decorator';
 import DataTable from './data-table';
+import ViewSection from '../patterns/view-section';
+import SecondaryButton from '../components/secondary-button';
 
 const chance = new Chance();
 
@@ -152,6 +153,58 @@ export const DataTableStory3 = () => (
 
 DataTableStory3.story = {
     name: 'wrong column amount',
+};
+
+const getTableRowData = () => ({
+    id: chance.string({length: 20}),
+    columns: [
+        {value: chance.name()},
+        {value: chance.name()},
+        {value: chance.name()},
+    ],
+});
+
+export const DataTableStory4 = () => {
+    const [items, setItems] = useState([
+        getTableRowData(),
+        getTableRowData(),
+        getTableRowData(),
+    ]);
+
+    const onAddItem = () => {
+        setItems((prevItems) => [getTableRowData(), ...prevItems]);
+    };
+
+    const onRemoveItem = () => {
+        setItems((prevItems) => {
+            const [, ...others] = prevItems;
+            return others;
+        });
+    };
+
+    return (
+        <ViewSection
+            actions={
+                <ButtonGroup>
+                    <SecondaryButton onClick={onAddItem}>
+                        add one
+                    </SecondaryButton>
+                    <SecondaryButton onClick={onRemoveItem}>
+                        remove one
+                    </SecondaryButton>
+                </ButtonGroup>
+            }>
+            <DataTable
+                animateNewRow
+                items={items}
+                columns={['col1', 'col2', 'col3']}
+            />
+        </ViewSection>
+    );
+};
+
+DataTableStory4.story = {
+    name: 'Animated TableRow',
 };
 
 export default {
