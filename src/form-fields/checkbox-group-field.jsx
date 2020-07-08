@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import {string, arrayOf, func, object} from 'prop-types';
 import {useField} from 'react-final-form';

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React, {useState, useEffect} from 'react';
 import {arrayOf, shape, string, any, elementType, func, bool} from 'prop-types';
 import {FormattedMessage} from 'react-intl';

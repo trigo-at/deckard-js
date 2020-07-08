@@ -1,7 +1,10 @@
 import babel from 'rollup-plugin-babel';
 import resolve from 'rollup-plugin-node-resolve';
 import json from 'rollup-plugin-json';
+import postcss from 'rollup-plugin-postcss';
 import pkg from './package.json';
+
+const extensions = ['.mjs', '.js', '.jsx', '.ts', '.tsx'];
 
 export default {
     input: 'src/index',
@@ -39,10 +42,11 @@ export default {
     ],
     plugins: [
         babel({
+            extensions,
             exclude: 'node_modules/**',
         }),
         resolve({
-            extensions: ['.mjs', '.js', '.jsx'],
+            extensions,
             modulesOnly: true,
         }),
         json({
@@ -57,6 +61,11 @@ export default {
             // specify indentation for the generated default export —
             // defaults to '\t'
             indent: '  ',
+        }),
+        postcss({
+            config: {
+                path: './config/postcss.config.js',
+            },
         }),
     ],
 };

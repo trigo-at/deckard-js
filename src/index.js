@@ -1,3 +1,5 @@
+import './index.css';
+
 export * from '@chakra-ui/core';
 export {Link as RouterLink} from '@reach/router';
 export {FormattedMessage, useIntl} from 'react-intl';
@@ -62,3 +64,7 @@ export {default as FullPageAlert} from './patterns/full-page-alert';
 
 export {default as ResponsePageError} from './pages/response-page-error';
 export {default as ResponsePageSuccess} from './pages/response-page-success';
+
+// typescript
+
+export {default as Test} from './test.tsx';
