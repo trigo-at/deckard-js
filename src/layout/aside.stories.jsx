@@ -1,7 +1,5 @@
 /* eslint-disable no-console */
 import React from 'react';
-
-import ProviderDecorator from '../provider-decorator';
 import Aside from './aside';
 
 export const AsideStory = () => (
@@ -17,5 +15,4 @@ AsideStory.story = {
 export default {
     title: 'Components|Aside',
     component: Aside,
-    decorators: [ProviderDecorator],
 };

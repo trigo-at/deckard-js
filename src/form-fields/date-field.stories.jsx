@@ -4,7 +4,6 @@ import {Form} from 'react-final-form';
 import {parseISO, isValid} from 'date-fns';
 import {Button} from '@chakra-ui/core';
 import DateField from './date-field';
-import ProviderDecorator from '../provider-decorator';
 
 const validate = (values) => {
     const errors = {};
@@ -73,5 +72,4 @@ DateFieldStory2.story = {
 export default {
     title: 'Components|DateField',
     component: DateField,
-    decorators: [ProviderDecorator],
 };

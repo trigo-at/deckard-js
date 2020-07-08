@@ -1,7 +1,5 @@
 /* eslint-disable no-console */
 import React from 'react';
-
-import ProviderDecorator from '../provider-decorator';
 import ErrorIndicator from './error-indicator';
 
 export const ErrorIndicatorStory = () => (
@@ -15,5 +13,4 @@ ErrorIndicatorStory.story = {
 export default {
     title: 'Components|ErrorIndicator',
     component: ErrorIndicator,
-    decorators: [ProviderDecorator],
 };

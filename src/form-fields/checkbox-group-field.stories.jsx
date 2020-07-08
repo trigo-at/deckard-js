@@ -4,7 +4,6 @@ import {Form} from 'react-final-form';
 import {Button} from '@chakra-ui/core';
 import CheckboxGroupField from './checkbox-group-field';
 import FormattedCheckboxGroupField from './formatted-checkbox-group-field';
-import ProviderDecorator from '../provider-decorator';
 
 const validate = (values) => {
     const errors = {};
@@ -113,5 +112,4 @@ FormattedCheckboxGroupFieldStory.story = {
 export default {
     title: 'Components|CheckboxGroupField',
     component: CheckboxGroupField,
-    decorators: [ProviderDecorator],
 };

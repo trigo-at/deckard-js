@@ -9,7 +9,6 @@ import {FormattedMessage} from 'react-intl';
 import ViewSection from './view-section';
 import DataList from './data-list';
 import toDateString from '../to-date-string';
-import ProviderDecorator from '../provider-decorator';
 import SecondaryButton from '../components/secondary-button';
 import PrimaryButton from '../components/primary-button';
 import TertiaryButton from '../components/tertiary-button';
@@ -350,5 +349,4 @@ MetaViewSection.story = {
 export default {
     title: 'Patterns|ViewSection',
     component: ViewSection,
-    decorators: [ProviderDecorator],
 };

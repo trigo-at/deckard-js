@@ -11,7 +11,6 @@ import InputField from '../form-fields/input-field';
 import SelectField from '../form-fields/select-field';
 import DateField from '../form-fields/date-field';
 import PageSection from './page-section';
-import ProviderDecorator from '../provider-decorator';
 import PrimaryButton from '../components/primary-button';
 import TrigoStoryWrapper from '../../.storybook/trigo-story-wrapper';
 import {InlineCode} from '../../.storybook/code';
@@ -150,5 +149,4 @@ FormWithPageSection.story = {
 export default {
     title: 'Patterns|FormSection',
     component: FormSection,
-    decorators: [ProviderDecorator],
 };

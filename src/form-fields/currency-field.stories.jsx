@@ -3,7 +3,6 @@ import React from 'react';
 import {Form} from 'react-final-form';
 import {Button} from '@chakra-ui/core';
 import CurrencyField from './currency-field';
-import ProviderDecorator from '../provider-decorator';
 
 const onSubmit = (values) => console.log(values);
 
@@ -85,5 +84,4 @@ DateFieldStory4.story = {
 export default {
     title: 'Components|CurrencyField',
     component: CurrencyField,
-    decorators: [ProviderDecorator],
 };

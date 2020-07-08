@@ -3,7 +3,6 @@
 import React from 'react';
 import {Form} from 'react-final-form';
 import NumberField from './input-field';
-import ProviderDecorator from '../provider-decorator';
 
 const validate = (values) => {
     const errors = {};
@@ -58,5 +57,4 @@ InputStory2.story = {
 export default {
     title: 'Components|NumberField',
     component: NumberField,
-    decorators: [ProviderDecorator],
 };

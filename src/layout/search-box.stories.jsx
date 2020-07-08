@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 import React from 'react';
-import ProviderDecorator from '../provider-decorator';
 import SearchBox from './search-box';
 
 export const SearchBoxStory = () => (
@@ -21,5 +20,4 @@ SearchBoxStory2.story = {
 export default {
     title: 'Components|SearchBox',
     component: SearchBox,
-    decorators: [ProviderDecorator],
 };

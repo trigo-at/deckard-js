@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 import React from 'react';
-import ProviderDecorator from '../provider-decorator';
 import Header from './header';
 
 export const DefaultStory = () => {
@@ -35,5 +34,4 @@ LoadingStory.story = {
 export default {
     title: 'Components|Header',
     component: Header,
-    decorators: [ProviderDecorator],
 };

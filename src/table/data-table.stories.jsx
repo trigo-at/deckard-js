@@ -2,7 +2,6 @@
 import React, {useState} from 'react';
 import Chance from 'chance';
 import {Heading, ButtonGroup} from '@chakra-ui/core';
-import ProviderDecorator from '../provider-decorator';
 import DataTable from './data-table';
 import ViewSection from '../patterns/view-section';
 import SecondaryButton from '../components/secondary-button';
@@ -210,5 +209,4 @@ DataTableStory4.story = {
 export default {
     title: 'Components|DataTable',
     component: DataTable,
-    decorators: [ProviderDecorator],
 };

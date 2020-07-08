@@ -4,7 +4,6 @@ import {Stack} from '@chakra-ui/core';
 import PrimaryButton from './primary-button';
 import SecondaryButton from './secondary-button';
 import TertiaryButton from './tertiary-button';
-import ProviderDecorator from '../provider-decorator';
 
 export const ButtonsStory = () => (
     <Stack isInline p={10}>
@@ -20,5 +19,4 @@ ButtonsStory.story = {
 
 export default {
     title: 'Components|Buttons',
-    decorators: [ProviderDecorator],
 };

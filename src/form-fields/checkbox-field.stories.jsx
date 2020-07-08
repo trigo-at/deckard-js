@@ -3,7 +3,6 @@ import React from 'react';
 import {Form} from 'react-final-form';
 import {Button} from '@chakra-ui/core';
 import CheckboxField from './checkbox-field';
-import ProviderDecorator from '../provider-decorator';
 
 /*  The trigo design-system is a collection of Chakra UI Styled-Components.
     Trigo DS is like a wrapper arround the official Chakra UI,
@@ -92,5 +91,4 @@ CheckboxFieldStory3.story = {
 export default {
     title: 'Components|CheckboxField',
     component: CheckboxField,
-    decorators: [ProviderDecorator],
 };

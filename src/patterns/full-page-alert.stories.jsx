@@ -1,6 +1,5 @@
 import React from 'react';
 import FullPageAlert from './full-page-alert';
-import ProviderDecorator from '../provider-decorator';
 import TrigoStoryWrapper from '../../.storybook/trigo-story-wrapper';
 
 export const InfoStory = () => (
@@ -61,5 +60,4 @@ WarningStory.story = {
 export default {
     title: 'Patterns|FullPageAlert',
     component: FullPageAlert,
-    decorators: [ProviderDecorator],
 };

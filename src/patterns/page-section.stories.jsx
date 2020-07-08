@@ -10,7 +10,6 @@ import PageSection from './page-section';
 import ViewSection from './view-section';
 import DataList from './data-list';
 import toDateString from '../to-date-string';
-import ProviderDecorator from '../provider-decorator';
 import TrigoStoryWrapper from '../../.storybook/trigo-story-wrapper';
 import PrimaryButton from '../components/primary-button';
 import SecondaryButton from '../components/secondary-button';
@@ -236,5 +235,4 @@ PageSectionWithActions.story = {
 export default {
     title: 'Patterns|PageSection',
     component: PageSection,
-    decorators: [ProviderDecorator],
 };

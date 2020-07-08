@@ -2,7 +2,6 @@
 import React from 'react';
 import {Form} from 'react-final-form';
 import SelectField from './select-field';
-import ProviderDecorator from '../provider-decorator';
 
 export const SelectFieldStory = () => (
     <Form
@@ -51,5 +50,4 @@ SelectFieldStory2.story = {
 export default {
     title: 'Components|SelectField',
     component: SelectField,
-    decorators: [ProviderDecorator],
 };

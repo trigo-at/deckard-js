@@ -4,7 +4,6 @@ import {Form} from 'react-final-form';
 import Chance from 'chance';
 import {Button, Box} from '@chakra-ui/core';
 import InlineSearchField from './inline-search-field';
-import ProviderDecorator from '../provider-decorator';
 
 const chance = new Chance();
 
@@ -70,5 +69,4 @@ InlineSearchStory.story = {
 export default {
     title: 'Experimental|InlineSearchStory',
     component: InlineSearchStory,
-    decorators: [ProviderDecorator],
 };

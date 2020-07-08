@@ -9,7 +9,6 @@ import NavSection from './nav-section';
 import NavLink from './nav-link';
 import PageSection from '../patterns/page-section';
 import {FormWithPageSection} from '../patterns/form-section.stories';
-import ProviderDecorator from '../provider-decorator';
 import logo from './trigo-logo.svg';
 
 export const DefaultStory = () => (
@@ -158,5 +157,4 @@ NoHeaderStory.story = {
 export default {
     title: 'Components|Layout',
     component: Layout,
-    decorators: [ProviderDecorator],
 };
