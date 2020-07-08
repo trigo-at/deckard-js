@@ -1,6 +1,6 @@
 import React from 'react';
 import {Box, Flex, Text, Image} from '@chakra-ui/core';
-import trigoLogo from '../.storybook/logo.png';
+import trigoLogo from './.storybook/logo.png';
 
 const TrigoStoryWrapper = ({bg = 'gray.100', children}) => (
     <Box bg={bg} p={5} h="100%" minH="100vh">

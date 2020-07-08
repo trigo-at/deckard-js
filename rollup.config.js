@@ -62,10 +62,6 @@ export default {
             // defaults to '\t'
             indent: '  ',
         }),
-        postcss({
-            config: {
-                path: './config/postcss.config.js',
-            },
-        }),
+        postcss(),
     ],
 };
