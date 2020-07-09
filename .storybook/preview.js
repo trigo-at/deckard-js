@@ -5,7 +5,6 @@ import ProviderDecorator from '../src/provider-decorator';
 import '../src/index.css';
 
 const headers = [
-    'Test',
     'Documentation',
     'Patterns',
     'Components',
