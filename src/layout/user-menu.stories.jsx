@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import React from 'react';
 import UserMenu from './user-menu';
+import ProviderDecorator from '../provider-decorator';
 
 export const UserMenuStory = () => (
     <UserMenu
@@ -24,4 +25,5 @@ UserMenuStory2.story = {
 export default {
     title: 'Components|UserMenu',
     component: UserMenu,
+    decorators: [ProviderDecorator],
 };

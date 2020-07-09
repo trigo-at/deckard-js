@@ -3,6 +3,7 @@ import React from 'react';
 import {Form} from 'react-final-form';
 import {Button} from '@chakra-ui/core';
 import InputField from './input-field';
+import ProviderDecorator from '../provider-decorator';
 
 const validate = (values) => {
     const errors = {};
@@ -58,4 +59,5 @@ InputStory2.story = {
 export default {
     title: 'Components|InputField',
     component: InputField,
+    decorators: [ProviderDecorator],
 };

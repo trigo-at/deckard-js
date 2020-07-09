@@ -1,14 +1,21 @@
 {
     "compilerOptions": {
-        "sourceMap": true,
-        "outDir": "./dist/",
-        "noImplicitAny": true,
-        "module": "es6",
-        "target": "es5",
+        "baseUrl": ".",
+        "declaration": true,
+        "declarationDir": "./dist/",
+        "target": "esnext",
+        "moduleResolution": "node",
+        "esModuleInterop": true,
         "jsx": "react",
-        "allowJs": true,
-        "strict": true,
-        "strictNullChecks": true,
-        "allowSyntheticDefaultImports": true,
-    }
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "rootDir": "./src",
+        "strictNullChecks": true
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
 }

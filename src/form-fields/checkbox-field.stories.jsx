@@ -3,6 +3,7 @@ import React from 'react';
 import {Form} from 'react-final-form';
 import {Button} from '@chakra-ui/core';
 import CheckboxField from './checkbox-field';
+import ProviderDecorator from '../provider-decorator';
 
 /*  The trigo design-system is a collection of Chakra UI Styled-Components.
     Trigo DS is like a wrapper arround the official Chakra UI,
@@ -23,8 +24,12 @@ export const CheckboxFieldStory = () => (
                     value="stringOrNumber"
                     variantColor="blue"
                     size="md"
-                    onBlur={() => {}}
-                    onFocus={() => {}}
+                    onBlur={() => {
+                        console.log('onBlur');
+                    }}
+                    onFocus={() => {
+                        console.log('onFocus');
+                    }}
                     aria-label="string"
                     aria-labelledby="string"
                     isRequired
@@ -52,8 +57,12 @@ export const CheckboxFieldStory2 = () => (
                     value="stringOrNumber"
                     variantColor="blue"
                     size="md"
-                    onBlur={() => {}}
-                    onFocus={() => {}}
+                    onBlur={() => {
+                        console.log('onBlur');
+                    }}
+                    onFocus={() => {
+                        console.log('onFocus');
+                    }}
                     aria-label="string"
                     aria-labelledby="string"
                 />
@@ -91,4 +100,5 @@ CheckboxFieldStory3.story = {
 export default {
     title: 'Components|CheckboxField',
     component: CheckboxField,
+    decorators: [ProviderDecorator],
 };

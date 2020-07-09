@@ -4,6 +4,7 @@ import {Form} from 'react-final-form';
 import {Button} from '@chakra-ui/core';
 import RadioGroupField from './radio-group-field';
 import FormattedRadioGroupField from './formatted-radio-group-field';
+import ProviderDecorator from '../provider-decorator';
 
 const onSubmit = (values) => console.log(values);
 
@@ -70,4 +71,5 @@ FormattedRadioGroupFieldStory.story = {
 export default {
     title: 'Components|RadioGroupField',
     component: RadioGroupField,
+    decorators: [ProviderDecorator],
 };

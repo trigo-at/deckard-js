@@ -1,5 +1,7 @@
-/* eslint-disable global-require */
+/* eslint-disable @typescript-eslint/no-var-requires */
+const tailwind = require('tailwindcss');
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
-    plugins: [require('tailwindcss'), require('autoprefixer')],
+    plugins: [tailwind, autoprefixer],
 };

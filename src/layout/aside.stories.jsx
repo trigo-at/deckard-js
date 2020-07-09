@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import React from 'react';
 import Aside from './aside';
+import ProviderDecorator from '../provider-decorator';
 
 export const AsideStory = () => (
     <Aside>
@@ -15,4 +16,5 @@ AsideStory.story = {
 export default {
     title: 'Components|Aside',
     component: Aside,
+    decorators: [ProviderDecorator],
 };

@@ -39,6 +39,10 @@ export default {
         'react-spring/renderprops.cjs',
         'date-fns',
         'copy-to-clipboard',
+        'core-js/modules/es.array.iterator',
+        'core-js/modules/es.symbol.description',
+        'core-js/modules/web.dom-collections.iterator',
+        'core-js/modules/web.url',
     ],
     plugins: [
         babel({

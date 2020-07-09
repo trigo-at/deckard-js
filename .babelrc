@@ -1,21 +1,19 @@
 {
 	"presets": [
-		"@babel/typescript",
-		[
-			"@babel/preset-env",
-			{
-				"useBuiltIns": "entry",
-                "corejs": 3,
-                "bugfixes": true
-			}
-		],
-		"@babel/preset-react"
+		["@babel/preset-env",
+            {
+                "useBuiltIns": "usage",
+                "corejs": 3
+            }
+        ],
+        "@babel/react",
+        "@babel/typescript"
 	],
 	"plugins": [
 		"@babel/proposal-object-rest-spread",
-		"emotion"
-	],
-	"env": {
+        "emotion"
+    ],
+    "env": {
 		"production": {
 			"plugins": [
 				["transform-react-remove-prop-types", {

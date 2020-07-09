@@ -3,6 +3,7 @@ import React from 'react';
 import {Form} from 'react-final-form';
 import {Button} from '@chakra-ui/core';
 import TextareaField from './textarea-field';
+import ProviderDecorator from '../provider-decorator';
 
 const onSubmit = (values) => console.log(values);
 
@@ -49,4 +50,5 @@ TextareaFieldStory2.story = {
 export default {
     title: 'Components|TextareaField',
     component: TextareaField,
+    decorators: [ProviderDecorator],
 };

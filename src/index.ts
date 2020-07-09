@@ -67,4 +67,4 @@ export {default as ResponsePageSuccess} from './pages/response-page-success';
 
 // typescript
 
-export {default as Test} from './test.tsx';
+export {default as Test} from './test';

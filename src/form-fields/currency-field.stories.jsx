@@ -3,13 +3,16 @@ import React from 'react';
 import {Form} from 'react-final-form';
 import {Button} from '@chakra-ui/core';
 import CurrencyField from './currency-field';
+import ProviderDecorator from '../provider-decorator';
 
 const onSubmit = (values) => console.log(values);
 
 export const DateFieldStory = () => (
     <Form
         initialValues={{currencyField1: ''}}
-        validate={() => {}}
+        validate={() => {
+            console.log('validate');
+        }}
         onSubmit={onSubmit}>
         {({handleSubmit}) => (
             <form onSubmit={handleSubmit}>
@@ -27,7 +30,9 @@ DateFieldStory.story = {
 export const DateFieldStory2 = () => (
     <Form
         initialValues={{currencyField1: 'testInitialValue'}}
-        validate={() => {}}
+        validate={() => {
+            console.log('validate');
+        }}
         onSubmit={onSubmit}>
         {({handleSubmit}) => (
             <form onSubmit={handleSubmit}>
@@ -43,7 +48,12 @@ DateFieldStory2.story = {
 };
 
 export const DateFieldStory3 = () => (
-    <Form initialValues={{name: ''}} validate={() => {}} onSubmit={onSubmit}>
+    <Form
+        initialValues={{name: ''}}
+        validate={() => {
+            console.log('validate');
+        }}
+        onSubmit={onSubmit}>
         {({handleSubmit}) => (
             <form onSubmit={handleSubmit}>
                 <CurrencyField isDisabled name="fieldHeaderText" />
@@ -63,7 +73,9 @@ export const DateFieldStory4 = () => (
             currencyField1: 'testInitialValue1',
             currencyField3: 'testInitialValue3',
         }}
-        validate={() => {}}
+        validate={() => {
+            console.log('validate');
+        }}
         onSubmit={onSubmit}>
         {({handleSubmit}) => (
             <form onSubmit={handleSubmit}>
@@ -84,4 +96,5 @@ DateFieldStory4.story = {
 export default {
     title: 'Components|CurrencyField',
     component: CurrencyField,
+    decorators: [ProviderDecorator],
 };

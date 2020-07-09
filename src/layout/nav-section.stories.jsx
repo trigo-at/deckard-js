@@ -2,6 +2,7 @@
 import React from 'react';
 import {Button} from '@chakra-ui/core';
 import NavSection from './nav-section';
+import ProviderDecorator from '../provider-decorator';
 
 export const DefaultStory = () => (
     <NavSection
@@ -19,4 +20,5 @@ DefaultStory.story = {
 export default {
     title: 'Components|NavSection',
     component: NavSection,
+    decorators: [ProviderDecorator],
 };

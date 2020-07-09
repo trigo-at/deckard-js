@@ -1,54 +1,24 @@
 {
-  "extends": ["trigo/react", "prettier", "prettier/react"],
-  "plugins": ["prettier"],
-  "env": {
-      "browser": true,
-      "jest": true
-  },
-  "rules": {
-      "prettier/prettier": [
-          "error"
-      ]
-  },
-    "overrides": [
-      {
-        "files": ["**/*.ts", "**/*.tsx"],
-        "extends": [
-            "eslint:recommended",
-            "plugin:@typescript-eslint/eslint-recommended",
-            "plugin:@typescript-eslint/recommended",
-            "plugin:react/recommended",
-            "prettier",
-            "prettier/react"
+    "extends": [
+        "trigo/react-typescript",
+        "prettier",
+        "prettier/react",
+        "prettier/@typescript-eslint"
+    ],
+    "plugins": [
+        "prettier"
+    ],
+    "env": {
+        "node": true,
+        "browser": true,
+        "jest": true
+    },
+    "rules": {
+        "prettier/prettier": [
+            "warn"
         ],
-        "parser": "@typescript-eslint/parser",
-        "plugins": [
-            "@typescript-eslint",
-            "prettier"
-        ],
-        "settings": {
-            "import/resolver": {
-              "node": {
-                "extensions": [".js", ".jsx", ".ts", ".tsx"]
-              }
-            }
-        },
-        "rules": {
-            "import/extensions": "off",
-            "quotes": [
-                "error",
-                "single"
-            ],
-            "@typescript-eslint/no-explicit-any": [
-                "error",
-                {
-                    "ignoreRestArgs": true
-                }
-            ],
-            "@typescript-eslint/explicit-function-return-type": "off",
-            "@typescript-eslint/explicit-module-boundary-types": "off",
-            "react/jsx-filename-extension": [2, { "extensions": [".ts", ".tsx"] }]
-        }
-      }
-    ]
+        "@typescript-eslint/no-explicit-any": 0,
+        "import/no-named-as-default": 0,
+        "import/extensions": 0
+    }
 }

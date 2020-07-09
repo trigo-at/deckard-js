@@ -1,14 +1,12 @@
 import React from 'react';
 import FullPageAlert from './full-page-alert';
-import TrigoStoryWrapper from '../../.storybook/trigo-story-wrapper';
+import ProviderDecorator from '../provider-decorator';
 
 export const InfoStory = () => (
-    <TrigoStoryWrapper>
-        <FullPageAlert
-            title="fullpagealert.title"
-            description="fullpagealert.description"
-        />
-    </TrigoStoryWrapper>
+    <FullPageAlert
+        title="fullpagealert.title"
+        description="fullpagealert.description"
+    />
 );
 
 InfoStory.story = {
@@ -16,13 +14,11 @@ InfoStory.story = {
 };
 
 export const ErrorStory = () => (
-    <TrigoStoryWrapper>
-        <FullPageAlert
-            title="fullpagealert.title"
-            description="fullpagealert.description"
-            status="error"
-        />
-    </TrigoStoryWrapper>
+    <FullPageAlert
+        title="fullpagealert.title"
+        description="fullpagealert.description"
+        status="error"
+    />
 );
 
 ErrorStory.story = {
@@ -30,13 +26,11 @@ ErrorStory.story = {
 };
 
 export const SuccessStory = () => (
-    <TrigoStoryWrapper>
-        <FullPageAlert
-            title="fullpagealert.title"
-            description="fullpagealert.description"
-            status="success"
-        />
-    </TrigoStoryWrapper>
+    <FullPageAlert
+        title="fullpagealert.title"
+        description="fullpagealert.description"
+        status="success"
+    />
 );
 
 SuccessStory.story = {
@@ -44,13 +38,11 @@ SuccessStory.story = {
 };
 
 export const WarningStory = () => (
-    <TrigoStoryWrapper>
-        <FullPageAlert
-            title="fullpagealert.title"
-            description="fullpagealert.description"
-            status="warning"
-        />
-    </TrigoStoryWrapper>
+    <FullPageAlert
+        title="fullpagealert.title"
+        description="fullpagealert.description"
+        status="warning"
+    />
 );
 
 WarningStory.story = {
@@ -60,4 +52,5 @@ WarningStory.story = {
 export default {
     title: 'Patterns|FullPageAlert',
     component: FullPageAlert,
+    decorators: [ProviderDecorator],
 };
