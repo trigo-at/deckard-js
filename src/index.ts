@@ -64,7 +64,3 @@ export {default as FullPageAlert} from './patterns/full-page-alert';
 
 export {default as ResponsePageError} from './pages/response-page-error';
 export {default as ResponsePageSuccess} from './pages/response-page-success';
-
-// typescript
-
-export {default as Test} from './test';
