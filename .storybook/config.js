@@ -2,6 +2,8 @@ import {configure, addDecorator, addParameters} from '@storybook/react';
 import {withA11y} from '@storybook/addon-a11y';
 import {withKnobs} from '@storybook/addon-knobs';
 
+import '../src/index.css';
+
 const headers = [
     'Documentation',
     'Patterns',
@@ -22,13 +24,9 @@ const storySort = (a, b) => {
     return 0;
 };
 
-addParameters({
-    options: {
-        storySort,
-    },
-});
-
 addDecorator(withA11y);
 addDecorator(withKnobs);
+addParameters({options: {storySort}});
 
-configure(require.context('../src', true, /\.stories\.(jsx|mdx)$/), module);
+configure(require.context('../src', true, /\.stories\.(jsx|tsx|mdx)$/), module);
+

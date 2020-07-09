@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
 import React from 'react';
 import {Button} from '@chakra-ui/core';
-import ProviderDecorator from '../provider-decorator';
 import NavSection from './nav-section';
+import ProviderDecorator from '../provider-decorator';
 
 export const DefaultStory = () => (
     <NavSection

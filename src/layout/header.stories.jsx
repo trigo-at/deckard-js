@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import React from 'react';
-import ProviderDecorator from '../provider-decorator';
 import Header from './header';
+import ProviderDecorator from '../provider-decorator';
 
 export const DefaultStory = () => {
     return (

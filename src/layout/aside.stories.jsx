@@ -1,8 +1,7 @@
 /* eslint-disable no-console */
 import React from 'react';
-
-import ProviderDecorator from '../provider-decorator';
 import Aside from './aside';
+import ProviderDecorator from '../provider-decorator';
 
 export const AsideStory = () => (
     <Aside>

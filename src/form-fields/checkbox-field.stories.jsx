@@ -24,8 +24,12 @@ export const CheckboxFieldStory = () => (
                     value="stringOrNumber"
                     variantColor="blue"
                     size="md"
-                    onBlur={() => {}}
-                    onFocus={() => {}}
+                    onBlur={() => {
+                        console.log('onBlur');
+                    }}
+                    onFocus={() => {
+                        console.log('onFocus');
+                    }}
                     aria-label="string"
                     aria-labelledby="string"
                     isRequired
@@ -53,8 +57,12 @@ export const CheckboxFieldStory2 = () => (
                     value="stringOrNumber"
                     variantColor="blue"
                     size="md"
-                    onBlur={() => {}}
-                    onFocus={() => {}}
+                    onBlur={() => {
+                        console.log('onBlur');
+                    }}
+                    onFocus={() => {
+                        console.log('onFocus');
+                    }}
                     aria-label="string"
                     aria-labelledby="string"
                 />

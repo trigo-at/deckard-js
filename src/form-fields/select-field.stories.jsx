@@ -17,7 +17,9 @@ export const SelectFieldStory = () => (
                 ]}
             />
         )}
-        onSubmit={() => {}}
+        onSubmit={() => {
+            console.log('onSubmit');
+        }}
     />
 );
 
@@ -40,7 +42,9 @@ export const SelectFieldStory2 = () => (
                 ]}
             />
         )}
-        onSubmit={() => {}}
+        onSubmit={() => {
+            console.log('onSubmit');
+        }}
     />
 );
 

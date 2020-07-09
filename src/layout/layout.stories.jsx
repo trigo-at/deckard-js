@@ -9,8 +9,8 @@ import NavSection from './nav-section';
 import NavLink from './nav-link';
 import PageSection from '../patterns/page-section';
 import {FormWithPageSection} from '../patterns/form-section.stories';
-import ProviderDecorator from '../provider-decorator';
 import logo from './trigo-logo.svg';
+import ProviderDecorator from '../provider-decorator';
 
 export const DefaultStory = () => (
     <Layout
