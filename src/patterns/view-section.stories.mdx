@@ -1,0 +1,126 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import {Stack} from '@chakra-ui/core';
+import PrimaryButton from '../components/primary-button';
+import SecondaryButton from '../components/secondary-button';
+import TertiaryButton from '../components/tertiary-button';
+import ProviderDecorator from '../provider-decorator';
+import ViewSection from './view-section';
+import DataList from './data-list';
+import toDateString from '../to-date-string';
+
+<Meta title="Patterns|ViewSection" component={ViewSection} decorators={[ProviderDecorator]} />
+
+# ViewSection
+
+A `ViewSection` can be used to group relevant information together. A example group of information could be **Account Information** or **Address**
+
+## Example
+
+<Preview>
+  <Story name="viewsection-example">
+    <ViewSection
+        title="common.viewsection.title"
+        actions={
+            <Stack isInline>
+                <PrimaryButton size="sm">Primary</PrimaryButton>
+                <SecondaryButton size="sm">Secondary</SecondaryButton>
+                <TertiaryButton size="sm">Tertiary</TertiaryButton>
+            </Stack>
+        }>
+        <DataList
+            values={[
+                {
+                    field: 'name',
+                    value: chance.name(),
+                },
+                {
+                    field: 'customerNumber',
+                    value: chance.integer({
+                        min: 100000,
+                        max: 99999999,
+                    }),
+                },
+                {
+                    field: 'birthday',
+                    value: toDateString(chance.date().toISOString()),
+                },
+            ]}
+        />
+    </ViewSection>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={ViewSection} />
+
+## Example without title and actions
+
+<Preview>
+  <Story name="viewsection-example-without-title">
+    <ViewSection>
+        <DataList
+            values={[
+                {
+                    field: 'name',
+                    value: chance.name(),
+                },
+                {
+                    field: 'customerNumber',
+                    value: chance.integer({
+                        min: 100000,
+                        max: 99999999,
+                    }),
+                },
+                {
+                    field: 'birthday',
+                    value: toDateString(chance.date().toISOString()),
+                },
+            ]}
+        />
+    </ViewSection>
+  </Story>
+</Preview>
+
+## Example with Footer
+
+<Preview>
+  <Story name="viewsection-example-with-footer">
+    <ViewSection
+        title="common.viewsection.title"
+        actions={
+            <Stack isInline>
+                <PrimaryButton size="sm">Primary</PrimaryButton>
+                <SecondaryButton size="sm">Secondary</SecondaryButton>
+                <TertiaryButton size="sm">Tertiary</TertiaryButton>
+            </Stack>
+        }
+        footer={
+            <Stack isInline>
+                <TertiaryButton size="sm">Action 1</TertiaryButton>
+                <TertiaryButton size="sm">Action 2</TertiaryButton>
+                <TertiaryButton size="sm">Action 3</TertiaryButton>
+            </Stack>
+        }>
+        <DataList
+            values={[
+                {
+                    field: 'name',
+                    value: chance.name(),
+                },
+                {
+                    field: 'customerNumber',
+                    value: chance.integer({
+                        min: 100000,
+                        max: 99999999,
+                    }),
+                },
+                {
+                    field: 'birthday',
+                    value: toDateString(chance.date().toISOString()),
+                },
+            ]}
+        />
+    </ViewSection>
+  </Story>
+</Preview>
