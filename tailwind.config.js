@@ -15,9 +15,6 @@ module.exports = {
                 'trigo-blue': '#3AB2D2',
                 'trigo-dark': '#1A202C',
             },
-            gridTemplateColumns: {
-                'view-section': '0.3fr 0.7fr',
-            },
         },
     },
     variants: {},

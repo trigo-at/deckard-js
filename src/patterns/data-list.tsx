@@ -50,15 +50,15 @@ type DataListProps = {
 
 const DataList: React.FC<DataListProps> = ({values}: DataListProps) => {
     return (
-        <div className="grid grid-cols-view-section">
+        <div className="grid grid-cols-3">
             {values.map((value) => (
                 <Fragment key={value.field}>
-                    <div className="flex items-start py-3 h-full border-b-2 border-gray-200">
+                    <div className="col-span-1 flex items-start py-3 h-full border-b-2 border-gray-200">
                         <p className="text-gray-600">
                             <FormattedMessage id={`field.${value.field}`} />
                         </p>
                     </div>
-                    <div className="py-3 border-b-2 border-gray-200">
+                    <div className="col-span-2 py-3 border-b-2 border-gray-200">
                         <DataEntry entry={value} />
                     </div>
                 </Fragment>
