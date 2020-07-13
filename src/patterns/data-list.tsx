@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-import React, {Fragment, ReactNode} from 'react';
+import React, {Fragment, ReactElement} from 'react';
 import {FormattedMessage} from 'react-intl';
 import Link from '../components/link';
 
@@ -10,14 +9,13 @@ type DataEntry = {
     link?: string;
     isExternal?: boolean;
     Component: React.FC<any>;
-    render: (value: string) => ReactNode;
+    render: (value: string) => ReactElement;
 };
 
 type DataEntryProps = {
     entry: DataEntry;
 };
 
-// @ts-ignore
 const DataEntry: React.FC<DataEntryProps> = ({entry}: DataEntryProps) => {
     if (entry.render) {
         return entry.render(entry.value);
