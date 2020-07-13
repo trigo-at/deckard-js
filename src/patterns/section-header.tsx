@@ -1,21 +1,17 @@
 import React from 'react';
-import {Heading} from '@chakra-ui/core';
 import {FormattedMessage} from 'react-intl';
-
-type TranslationMessage = string;
-type TranslationValues = Record<string, any>;
+import {TranslationMessage, TranslationValues} from 'src/types';
 
 type Props = {
-    [x: string]: unknown;
     title: TranslationMessage;
     values?: TranslationValues;
 };
 
-const SectionHeader: React.FC<Props> = ({title, values, ...props}: Props) => {
+const SectionHeader: React.FC<Props> = ({title, values}: Props) => {
     return (
-        <Heading as="h3" fontSize="lg" lineHeight="base" {...props}>
+        <h3 className="text-lg font-bold">
             <FormattedMessage id={title} values={values} />
-        </Heading>
+        </h3>
     );
 };
 
