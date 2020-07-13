@@ -25,20 +25,9 @@ const DataEntry: React.FC<DataEntryProps> = ({entry}: DataEntryProps) => {
     if (entry.Component) {
         return <entry.Component>{entry.value}</entry.Component>;
     }
-    if (entry.link && entry.isExternal) {
-        return (
-            <Link to={entry.link}>
-                {entry.format ? (
-                    <FormattedMessage id={`${entry.format}.${entry.value}`} />
-                ) : (
-                    entry.value
-                )}
-            </Link>
-        );
-    }
     if (entry.link) {
         return (
-            <Link to={entry.link}>
+            <Link to={entry.link} isExternal={entry.isExternal}>
                 {entry.format ? (
                     <FormattedMessage id={`${entry.format}.${entry.value}`} />
                 ) : (
