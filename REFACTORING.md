@@ -1,5 +1,5 @@
 # Refactoring Notes
 
-- DataList
-    - remoe Component from options in DataEntry
-    - expose a `<Link />` and a `<ExternalLink />` Component that can be used in the render-function of the DataEntry Component, so we can remove the `link` and `isExternal` prop.
+- DataList => DataEntry
+    - remove `Component` prop (a render-function can be used as well)
+    - remove the `link` and `isExternal` prop (a render-function can be used as well) expose the `<Link />` Component at `./components/link.tsx` and update all apps that are using the design system.
