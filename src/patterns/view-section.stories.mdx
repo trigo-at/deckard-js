@@ -6,13 +6,14 @@ import TertiaryButton from '../components/tertiary-button';
 import ProviderDecorator from '../provider-decorator';
 import ViewSection from './view-section';
 import DataList from './data-list';
+import DataTable from '../table/data-table';
 import toDateString from '../to-date-string';
 
 <Meta title="Patterns|ViewSection" component={ViewSection} decorators={[ProviderDecorator]} />
 
 # ViewSection
 
-A `ViewSection` can be used to group relevant information together. A example group of information could be **Account Information** or **Address**. You would like to use the `DataList` Component to display these groups of Information or you can use a `DataTable` Component to display informations as a list.
+A `ViewSection` can be used to group relevant information together. A example group of information could be **Account Information** or **Address**. You would like to use the `DataList` Component to display these groups of Information. Another use-case would be to render a `DataTable` instead of a `DataList`.
 
 ## Example
 
@@ -220,6 +221,53 @@ A `ViewSection` can be used to group relevant information together. A example gr
                     field: 'birthday',
                     value: toDateString(chance.date().toISOString()),
                 },
+            ]}
+        />
+    </ViewSection>
+  </Story>
+</Preview>
+
+## Example with a DataTable
+
+<Preview>
+  <Story name="viewsection-example-with-data-table">
+    <ViewSection
+        title="common.viewsection.title"
+        actions={
+            <Stack isInline>
+                <PrimaryButton size="sm">Primary</PrimaryButton>
+                <SecondaryButton size="sm">Secondary</SecondaryButton>
+                <TertiaryButton size="sm">Tertiary</TertiaryButton>
+            </Stack>
+        }>
+        <DataTable
+            columns={['name', 'name', 'name']}
+            animateNewRow
+            items={[
+                {
+                    id: chance.string({length: 20}),
+                    columns: [
+                        {value: chance.name()},
+                        {value: chance.name()},
+                        {value: chance.name()},
+                    ],
+                },
+                {
+                    id: chance.string({length: 20}),
+                    columns: [
+                        {value: chance.name()},
+                        {value: chance.name()},
+                        {value: chance.name()},
+                    ],
+                },
+                {
+                    id: chance.string({length: 20}),
+                    columns: [
+                        {value: chance.name()},
+                        {value: chance.name()},
+                        {value: chance.name()},
+                    ],
+                }
             ]}
         />
     </ViewSection>
