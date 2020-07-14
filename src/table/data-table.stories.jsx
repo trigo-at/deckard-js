@@ -2,14 +2,14 @@
 import React, {useState} from 'react';
 import Chance from 'chance';
 import {Heading, ButtonGroup} from '@chakra-ui/core';
-import ProviderDecorator from '../provider-decorator';
 import DataTable from './data-table';
 import ViewSection from '../patterns/view-section';
 import SecondaryButton from '../components/secondary-button';
+import ProviderDecorator from '../provider-decorator';
 
 const chance = new Chance();
 
-/*  You have to choose beetwen link or render your values. 
+/*  You have to choose beetwen link or render your values.
     Chakra UI can't handle both features simultaneously. */
 
 export const DataTableStory = () => (

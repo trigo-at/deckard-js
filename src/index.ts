@@ -1,3 +1,5 @@
+import './index.css';
+
 export * from '@chakra-ui/core';
 export {Link as RouterLink} from '@reach/router';
 export {FormattedMessage, useIntl} from 'react-intl';

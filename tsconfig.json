@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "declaration": true,
+        "declarationDir": "./dist/",
+        "target": "esnext",
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "jsx": "react",
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "rootDir": "./src",
+        "strictNullChecks": true
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

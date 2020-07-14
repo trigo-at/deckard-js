@@ -1,14 +1,24 @@
 {
-    "extends": ["trigo/react", "prettier", "prettier/react"],
-    "plugins": ["prettier"],
+    "extends": [
+        "trigo/react-typescript",
+        "prettier",
+        "prettier/react",
+        "prettier/@typescript-eslint"
+    ],
+    "plugins": [
+        "prettier"
+    ],
     "env": {
+        "node": true,
         "browser": true,
         "jest": true
     },
     "rules": {
         "prettier/prettier": [
-            "error"
+            "warn"
         ],
-        "react/no-array-index-key": 0
+        "@typescript-eslint/no-explicit-any": 0,
+        "import/no-named-as-default": 0,
+        "import/extensions": 0
     }
 }
