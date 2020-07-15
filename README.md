@@ -1,6 +1,6 @@
 # trigo Design System
 
-[https://trigo-at.github.io/design-system/](https://trigo-at.github.io/design-system/)
+[https://design-system.trigo.dev/](https://design-system.trigo.dev/)
 
 ```sh
 npm install @trigo/design-system
@@ -41,6 +41,6 @@ We hope to accomplish these goals by:
 -   Serving as the standard for trigo's visual language
 -   Providing easy-to-use and extensible components for anyone to consume
 
-[site]: https://trigo-at.github.io/design-system/
+[site]: https://design-system.trigo.dev/
 
 [MIT License](LICENSE.md)
