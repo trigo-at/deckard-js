@@ -44,3 +44,7 @@ We hope to accomplish these goals by:
 [site]: https://design-system.trigo.dev/
 
 [MIT License](LICENSE.md)
+
+## Breaking Changes
+
+- `PrimaryButton` / `SecondaryButton` / `TertiaryButton` now cannot handle styled-system props anymore. So if they are used within a Stack, make sure that you set the `shouldWrapChildren` prop on the Stack Component
