@@ -4,6 +4,9 @@ import {Icon} from '@chakra-ui/core';
 import cx from '../utils/cx';
 import LoadingIndicator from './loading-indicator';
 
+// this Component is currently not exported, it is only used within this repo
+// to serve as a base-component for primary-button / secondary-button and tertiary-button
+
 type Props = {
     className: string;
     ref?: Ref<HTMLButtonElement>;
