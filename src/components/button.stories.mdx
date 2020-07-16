@@ -1,0 +1,103 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import {Stack} from '@chakra-ui/core';
+import Button from './button';
+import PrimaryButton from './primary-button';
+import SecondaryButton from './secondary-button';
+import TertiaryButton from './tertiary-button';
+import ProviderDecorator from '../provider-decorator';
+
+<Meta title="Components|Buttons" component={PrimaryButton} decorators={[ProviderDecorator]} />
+
+# Buttons
+
+
+## Example
+
+<Preview>
+  <Story name="button-example">
+    <Stack isInline spacing={4} shouldWrapChildren>
+      <PrimaryButton>Primary</PrimaryButton>
+      <SecondaryButton>Secondary</SecondaryButton>
+      <TertiaryButton>Tertiary</TertiaryButton>
+    </Stack>
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={PrimaryButton} />
+
+## Example with isDisabled flag
+
+<Preview>
+  <Story name="button-example-disabled">
+    <Stack isInline spacing={4} shouldWrapChildren>
+      <PrimaryButton isDisabled>Primary</PrimaryButton>
+      <SecondaryButton isDisabled>Secondary</SecondaryButton>
+      <TertiaryButton isDisabled>Tertiary</TertiaryButton>
+    </Stack>
+  </Story>
+</Preview>
+
+## Example with isLoading flag
+
+<Preview>
+  <Story name="button-example-loading">
+    <Stack isInline spacing={4} shouldWrapChildren>
+      <PrimaryButton isLoading>Primary</PrimaryButton>
+      <SecondaryButton isLoading>Secondary</SecondaryButton>
+      <TertiaryButton isLoading>Tertiary</TertiaryButton>
+    </Stack>
+  </Story>
+</Preview>
+
+## Example with leftIcon
+
+<Preview>
+  <Story name="button-example-left-icon">
+    <Stack isInline spacing={4} shouldWrapChildren>
+      <PrimaryButton leftIcon="email">Primary</PrimaryButton>
+      <SecondaryButton leftIcon="email">Secondary</SecondaryButton>
+      <TertiaryButton leftIcon="email">Tertiary</TertiaryButton>
+    </Stack>
+  </Story>
+</Preview>
+
+## Example with rightIcon
+
+<Preview>
+  <Story name="button-example-right-icon">
+    <Stack isInline spacing={4} shouldWrapChildren>
+      <PrimaryButton rightIcon="arrow-forward">Primary</PrimaryButton>
+      <SecondaryButton rightIcon="arrow-forward">Secondary</SecondaryButton>
+      <TertiaryButton rightIcon="arrow-forward">Tertiary</TertiaryButton>
+    </Stack>
+  </Story>
+</Preview>
+
+## Example with different sizes
+
+<Preview>
+  <Story name="button-example-size">
+    <>
+      <Stack isInline spacing={4} shouldWrapChildren mb={8}>
+        <PrimaryButton size="lg">Primary lg</PrimaryButton>
+        <PrimaryButton size="md">Primary md</PrimaryButton>
+        <PrimaryButton size="sm">Primary sm</PrimaryButton>
+        <PrimaryButton size="xs">Primary xs</PrimaryButton>
+      </Stack>
+      <Stack isInline spacing={4} shouldWrapChildren mb={8}>
+        <SecondaryButton size="lg">Secondary lg</SecondaryButton>
+        <SecondaryButton size="md">Secondary md</SecondaryButton>
+        <SecondaryButton size="sm">Secondary sm</SecondaryButton>
+        <SecondaryButton size="xs">Secondary xs</SecondaryButton>
+      </Stack>
+      <Stack isInline spacing={4} shouldWrapChildren>
+        <TertiaryButton size="lg">Tertiary lg</TertiaryButton>
+        <TertiaryButton size="md">Tertiary md</TertiaryButton>
+        <TertiaryButton size="sm">Tertiary sm</TertiaryButton>
+        <TertiaryButton size="xs">Tertiary xs</TertiaryButton>
+      </Stack>
+    </>
+  </Story>
+</Preview>

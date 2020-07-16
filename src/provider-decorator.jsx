@@ -28,6 +28,8 @@ export default (story) => (
                 'field.customerNumber': 'Customernumber',
                 'field.birthday': 'Birthday',
                 'field.skillLevel': 'Skilllevel',
+                'field.link': 'Link',
+                'field.externalLink': 'External Link',
                 'field.action': 'Action',
                 'validation.required': 'This field is required',
             }}>
