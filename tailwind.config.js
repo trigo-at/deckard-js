@@ -14,17 +14,6 @@ module.exports = {
                 'trigo-green': '#7FBD42',
                 'trigo-blue': '#3AB2D2',
                 'trigo-dark': '#1A202C',
-
-                'teal-50': '#E6FFFA',
-                'teal-100': '#B2F5EA',
-                'teal-200': '#81E6D9',
-                'teal-300': '#4FD1C5',
-                'teal-400': '#38B2AC',
-                'teal-500': '#319795',
-                'teal-600': '#2C7A7B',
-                'teal-700': '#285E61',
-                'teal-800': '#234E52',
-                'teal-900': '#1D4044',
             },
             minWidth: {
                 button: '5rem',
