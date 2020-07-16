@@ -1,0 +1,62 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Documentation|Roadmap" />
+
+<div style={{display: 'none'}}>list styles problem: https://github.com/storybookjs/storybook/pull/11281</div>
+
+# Roadmap
+
+Currently we are working on a refactoring to typescript and tailwind. The goal is to have a better Developer Experience because of typescript. We also want to remove the overhead by injecting css from js at runtime. The tailwind team does a great job in design. We want to benefit from tailwindCSS as a framework and from tailwindUI as a template for specific components and patterns. Also we can share our trigo design language better in non react / css in js enviroments like a simple landing page or within cms systems.
+
+## High Level Overview
+
+1. **1)** Remove Chakra UI as Component Library in this repo and in all Applications that use it, but keep the look & feel where possible to enable a smooth transition for all customers that use the design system.
+2. **2)** Remove the javascript and css-in-js toolchain (build tools, linter config, etc.) to reduce the bundle-size to only the things we really need (Will be interesting how much we can save here :) )
+3. **3)** Remove the look & feel of Chakra UI and start with things like `<Button />`, `<Input />`, `<Label />`, etc.. Later on we can also adapt our patterns like `<ViewSection />`, `<PageSection />`, `<DataList />`, `<DataTable />`, etc.
+
+## 1 Refactor Components from Chakra UI to tailwindCSS
+
+**Always keep in mind that you need to stay API Compatible and if you cannot for some reason, make sure that you provide and document a upgrade strategy**
+
+Also if you are refactoring already keep in mind that you now have the chance to leave the codebase in a better state than you found it. Every pattern and component should have documentation. The documentation should include all information the user needs to use it in the way you intended it to be used!
+
+- [ ] PageSection
+- [x] ViewSection
+- [x] SectionHeader
+- [x] DataList
+
+- [x] PrimaryButton
+- [x] SecondaryButton
+- [x] TertiaryButton
+- [ ] ConfirmButton
+
+- [ ] Form / Field related Components
+    - [ ] CheckBoxField
+    - [ ] CheckBoxGroupField
+    - [ ] CurrencyField
+    - [ ] DateField
+    - [ ] FieldError
+    - [ ] InlineSearchField
+    - [ ] InputField
+    - [ ] NumberField
+    - [ ] Optional
+    - [ ] RadioGroupField
+    - [ ] SelectField
+    - [ ] TeaxtAreaField
+
+- [ ] Table related Components
+    - [ ] DataTable
+    - [ ] Table
+    - [ ] TableCell
+    - [ ] TableHeader
+    - [ ] TableRow
+
+- [ ] Layout related Components
+    - [ ] Aside
+    - [ ] Header
+    - [ ] Layout
+    - [ ] NavHeader
+    - [ ] NavLink
+    - [ ] NavSection
+    - [ ] SearchBox
+
