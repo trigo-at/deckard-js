@@ -9,7 +9,39 @@ import * as stories from './data-table.stories';
 
 # DataTable
 
-Ein `DataTable` oida.
+A `DataTable` is pretty self-explanatory :) For every column in an item you can decide how you want to render it. Here are some examples for the items prop:
+
+```js
+// render a value as string to the dom
+const items = [{
+    id: '42',
+    columns: [
+        {value: 'some-value'},
+    ],
+}];
+```
+
+```js
+// render a value as link to the dom
+const items = [{
+    id: '42',
+    columns: [
+        {value: 'some-link', link: 'https://design-system.trigo.dev/', isExternal: true},
+    ],
+}];
+```
+
+```jsx
+// use a render prop to render whatever you want
+const items = [{
+    id: '42',
+    columns: [
+        {render: (value) => <SomeFanyComponent value={value} />},
+    ],
+}];
+```
+
+The `DataTable` has also the ability to display a blink-animation whenver the `items` array grows. To enable this feature pass the `animateNewRow` prop. There is a interactive example below.
 
 ## Example
 
