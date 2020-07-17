@@ -1,18 +1,29 @@
 /* eslint-disable react/no-array-index-key */
-import React, {useState, useEffect} from 'react';
-import {arrayOf, shape, string, any, elementType, func, bool} from 'prop-types';
+import React, {useState, useEffect, FC, ReactElement} from 'react';
 import {FormattedMessage} from 'react-intl';
-import {Link} from '@reach/router';
-import {Link as ChakraLink} from '@chakra-ui/core';
+import Link from '../components/link';
 import Table from './table';
 import TableHeader from './table-header';
 import TableRow from './table-row';
 import TableCell from './table-cell';
 import CellContent from './cell-content';
 
-const DataCell = ({column}) => {
+type Column = {
+    value?: any;
+    link?: string;
+    isExternal?: boolean;
+    format?: string;
+    Component?: React.FC<any>;
+    render?: (value: string) => ReactElement;
+};
+
+type DataCellProps = {
+    column: Column;
+};
+
+const DataCell: FC<DataCellProps> = ({column}: DataCellProps) => {
     if (column.render) {
-        return <>{column.render(column.value)}</>;
+        return column.render(column.value);
     }
     if (column.Component) {
         return (
@@ -21,26 +32,15 @@ const DataCell = ({column}) => {
             </CellContent>
         );
     }
-    if (column.link && column.isExternal) {
-        return (
-            <ChakraLink isExternal href={column.link}>
-                {column.format ? (
-                    <FormattedMessage id={`${column.format}.${column.value}`} />
-                ) : (
-                    column.value
-                )}
-            </ChakraLink>
-        );
-    }
     if (column.link) {
         return (
-            <ChakraLink as={Link} to={column.link}>
+            <Link to={column.link} isExternal={column.isExternal}>
                 {column.format ? (
                     <FormattedMessage id={`${column.format}.${column.value}`} />
                 ) : (
                     column.value
                 )}
-            </ChakraLink>
+            </Link>
         );
     }
     if (column.format) {
@@ -53,19 +53,21 @@ const DataCell = ({column}) => {
     return <CellContent>{column.value}</CellContent>;
 };
 
-DataCell.propTypes = {
-    column: shape({
-        value: any,
-        link: string,
-        isExternal: bool,
-        format: string,
-        Component: elementType,
-        render: func,
-    }).isRequired,
+type DataTableProps = {
+    animateNewRow?: boolean;
+    columns: Array<string>;
+    items: Array<{
+        id: string;
+        columns: Column[];
+    }>;
 };
 
-const DataTable = ({columns, items, animateNewRow}) => {
-    const [initialIds, setInitialIds] = useState([]);
+const DataTable: FC<DataTableProps> = ({
+    columns,
+    items,
+    animateNewRow,
+}: DataTableProps) => {
+    const [initialIds, setInitialIds] = useState<Array<string>>([]);
 
     useEffect(() => {
         if (Array.isArray(items)) setInitialIds(items.map((item) => item.id));
@@ -91,7 +93,7 @@ const DataTable = ({columns, items, animateNewRow}) => {
                         entryAnimation={
                             initialIds.length && !initialIds.includes(item.id)
                                 ? animateNewRow
-                                : undefined
+                                : false
                         }>
                         {item.columns.map((column, idx) => (
                             <TableCell key={idx}>
@@ -103,32 +105,6 @@ const DataTable = ({columns, items, animateNewRow}) => {
             </tbody>
         </Table>
     );
-};
-
-DataTable.propTypes = {
-    columns: arrayOf(string),
-    items: arrayOf(
-        shape({
-            id: string.isRequired,
-            columns: arrayOf(
-                shape({
-                    value: any,
-                    link: string,
-                    isExternal: bool,
-                    format: string,
-                    Component: elementType,
-                    render: func,
-                })
-            ).isRequired,
-        })
-    ),
-    animateNewRow: bool,
-};
-
-DataTable.defaultProps = {
-    columns: [],
-    items: [],
-    animateNewRow: false,
 };
 
 export default DataTable;

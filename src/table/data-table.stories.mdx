@@ -1,0 +1,132 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import {Stack} from '@chakra-ui/core';
+import ProviderDecorator from '../provider-decorator';
+import DataTable from '../table/data-table';
+import TertiaryButton from '../components/tertiary-button';
+import * as stories from './data-table.stories';
+
+<Meta title="Components|DataTable" component={DataTable} decorators={[ProviderDecorator]} />
+
+# DataTable
+
+Ein `DataTable` oida.
+
+## Example
+
+<Preview>
+  <Story name="datatable-example">
+    <DataTable
+        columns={['name', 'email', 'customerNumber']}
+        items={[
+            {
+                id: chance.string({length: 20}),
+                columns: [
+                    {value: chance.name()},
+                    {value: chance.email()},
+                    {value: chance.integer({min: 10000000, max: 99999999 })},
+                ],
+            },
+            {
+                id: chance.string({length: 20}),
+                columns: [
+                    {value: chance.name()},
+                    {value: chance.email()},
+                    {value: chance.integer({min: 10000000, max: 99999999 })},
+                ],
+            },
+            {
+                id: chance.string({length: 20}),
+                columns: [
+                    {value: chance.name()},
+                    {value: chance.email()},
+                    {value: chance.integer({min: 10000000, max: 99999999 })},
+                ],
+            }
+        ]}
+    />
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={DataTable} />
+
+## Example with inline feedback
+
+<Preview>
+  <Story name="datatable-example-with-inline-feedback">
+    {stories.DataTableWithEntryAnimation()}
+  </Story>
+</Preview>
+
+## Example with links
+
+<Preview>
+  <Story name="datatable-example-with-links">
+    <DataTable
+        columns={['name', 'website', 'customerNumber']}
+        items={[
+            {
+                id: chance.string({length: 20}),
+                columns: [
+                    {value: chance.name()},
+                    {value: 'design-system.trigo.dev', link: 'https://design-system.trigo.dev/', isExternal: true},
+                    {value: chance.integer({min: 10000000, max: 99999999 })},
+                ],
+            },
+            {
+                id: chance.string({length: 20}),
+                columns: [
+                    {value: chance.name()},
+                    {value: 'design-system.trigo.dev', link: 'https://design-system.trigo.dev/', isExternal: true},
+                    {value: chance.integer({min: 10000000, max: 99999999 })},
+                ],
+            },
+            {
+                id: chance.string({length: 20}),
+                columns: [
+                    {value: chance.name()},
+                    {value: 'design-system.trigo.dev', link: 'https://design-system.trigo.dev/', isExternal: true},
+                    {value: chance.integer({min: 10000000, max: 99999999 })},
+                ],
+            }
+        ]}
+    />
+  </Story>
+</Preview>
+
+## Example with actions
+
+<Preview>
+  <Story name="datatable-example-with-actions">
+    <DataTable
+        columns={['name', 'email', 'action']}
+        items={[
+            {
+                id: chance.string({length: 20}),
+                columns: [
+                    {value: chance.name()},
+                    {value: chance.email()},
+                    {render: () => <TertiaryButton size="sm">Action</TertiaryButton>},
+                ],
+            },
+            {
+                id: chance.string({length: 20}),
+                columns: [
+                    {value: chance.name()},
+                    {value: chance.email()},
+                    {render: () => <TertiaryButton size="sm">Action</TertiaryButton>},
+                ],
+            },
+            {
+                id: chance.string({length: 20}),
+                columns: [
+                    {value: chance.name()},
+                    {value: chance.email()},
+                    {render: () => <TertiaryButton size="sm">Action</TertiaryButton>},
+                ],
+            }
+        ]}
+    />
+  </Story>
+</Preview>
