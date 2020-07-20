@@ -25,7 +25,7 @@ const PageSection: SFC<Props> = ({
                         <FormattedMessage id={title} values={values} />
                     </h1>
                 ) : (
-                    <h2 className="font-bold mb-4 mt-4 text-lg">
+                    <h2 className="font-bold mb-4 mt-4 text-md">
                         <FormattedMessage id={title} values={values} />
                     </h2>
                 )}
