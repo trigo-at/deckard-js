@@ -23,37 +23,41 @@ shadow arround and a header title.
 
 <Preview>
     <Story name="pagesection-example-viewsection-children">
-        <PageSection title="common.pagesection.title" isPrimary>
+        <PageSection 
+            title="common.viewsection.title"
+            actions={<Stack isInline shouldWrapChildren>
+                        <PrimaryButton size="sm">PageAction1</PrimaryButton>
+                        <SecondaryButton size="sm">PageAction2</SecondaryButton>
+                        <TertiaryButton size="sm">PageAction3</TertiaryButton>
+                    </Stack>} 
+            title="common.pagesection.title" 
+            isPrimary>
                 <ViewSection
-        title="common.viewsection.title"
-        isEmbedded
-        actions={
-            <Stack isInline shouldWrapChildren>
-                <PrimaryButton size="sm">Primary</PrimaryButton>
-                <SecondaryButton size="sm">Secondary</SecondaryButton>
-                <TertiaryButton size="sm">Tertiary</TertiaryButton>
-            </Stack>
-        }>
-        <DataList
-            values={[
-                {
-                    field: 'name',
-                    value: chance.name(),
-                },
-                {
-                    field: 'customerNumber',
-                    value: chance.integer({
-                        min: 100000,
-                        max: 99999999,
-                    }),
-                },
-                {
-                    field: 'birthday',
-                    value: toDateString(chance.date().toISOString()),
-                },
-            ]}
-        />
-    </ViewSection>
+                    isEmbedded
+                   
+                    actions={<Stack isInline shouldWrapChildren>
+                                <PrimaryButton size="sm">Primary</PrimaryButton>
+                                <SecondaryButton size="sm">Secondary</SecondaryButton>
+                                <TertiaryButton size="sm">Tertiary</TertiaryButton>
+                            </Stack>}>
+                        <DataList  
+                            values={[
+                                {
+                                    field: 'name',
+                                    value: chance.name(),
+                                },
+                                {
+                                    field: 'customerNumber',
+                                    value: chance.integer({
+                                        min: 100000,
+                                        max: 99999999,
+                                    }),
+                                },
+                                {
+                                    field: 'birthday',
+                                    value: toDateString(chance.date().toISOString()),
+                                }]}/>
+                </ViewSection>
         </PageSection>
     </Story>
 </Preview>
