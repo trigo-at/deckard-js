@@ -1,0 +1,110 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import {Stack} from '@chakra-ui/core';
+import PrimaryButton from '../components/primary-button';
+import SecondaryButton from '../components/secondary-button';
+import TertiaryButton from '../components/tertiary-button';
+import ProviderDecorator from '../provider-decorator';
+import PageSection from './page-section';
+import ViewSection from './view-section';
+import DataList from './data-list';
+import toDateString from '../to-date-string';
+
+
+<Meta title="Patterns|PageSection" component={PageSection} decorators={[ProviderDecorator]} />
+
+# PageSection
+
+A `PageSection` is semantically used as a seperator on a single page. A single page can contain 
+multiple PageSections and provides a semantic separation of different component groups. 
+Its used to wrap other components collections, so its simply a container with some
+shadow arround and a header title.
+
+## Example with ViewSection as Children
+
+<Preview>
+    <Story name="default with viewsection as children">
+        <PageSection 
+            title="common.viewsection.title"
+            actions={<Stack isInline shouldWrapChildren>
+                        <PrimaryButton size="sm">PageAction1</PrimaryButton>
+                        <SecondaryButton size="sm">PageAction2</SecondaryButton>
+                        <TertiaryButton size="sm">PageAction3</TertiaryButton>
+                    </Stack>} 
+            title="common.pagesection.title" 
+            isPrimary>
+                <ViewSection
+                    isEmbedded
+                   
+                    actions={<Stack isInline shouldWrapChildren>
+                                <PrimaryButton size="sm">Primary</PrimaryButton>
+                                <SecondaryButton size="sm">Secondary</SecondaryButton>
+                                <TertiaryButton size="sm">Tertiary</TertiaryButton>
+                            </Stack>}>
+                        <DataList  
+                            values={[
+                                {
+                                    field: 'name',
+                                    value: chance.name(),
+                                },
+                                {
+                                    field: 'customerNumber',
+                                    value: chance.integer({
+                                        min: 100000,
+                                        max: 99999999,
+                                    }),
+                                },
+                                {
+                                    field: 'birthday',
+                                    value: toDateString(chance.date().toISOString()),
+                                }]}/>
+                </ViewSection>
+        </PageSection>
+    </Story>
+</Preview>
+
+## Props
+
+<Props of={PageSection} />
+
+
+## Default example without isPrimary(smaller Heading)
+
+<Preview>
+    <Story name="default without isPrimary">
+        <PageSection 
+            title="common.viewsection.title"
+            actions={<Stack isInline shouldWrapChildren>
+                        <PrimaryButton size="sm">PageAction1</PrimaryButton>
+                        <SecondaryButton size="sm">PageAction2</SecondaryButton>
+                        <TertiaryButton size="sm">PageAction3</TertiaryButton>
+                    </Stack>} 
+            title="common.pagesection.title">
+                <ViewSection
+                    isEmbedded
+                   
+                    actions={<Stack isInline shouldWrapChildren>
+                                <PrimaryButton size="sm">Primary</PrimaryButton>
+                                <SecondaryButton size="sm">Secondary</SecondaryButton>
+                                <TertiaryButton size="sm">Tertiary</TertiaryButton>
+                            </Stack>}>
+                        <DataList  
+                            values={[
+                                {
+                                    field: 'name',
+                                    value: chance.name(),
+                                },
+                                {
+                                    field: 'customerNumber',
+                                    value: chance.integer({
+                                        min: 100000,
+                                        max: 99999999,
+                                    }),
+                                },
+                                {
+                                    field: 'birthday',
+                                    value: toDateString(chance.date().toISOString()),
+                                }]}/>
+                </ViewSection>
+        </PageSection>
+    </Story>
+</Preview>
