@@ -1,3 +1,21 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+@keyframes blinkKeyFrames {
+    from {
+        background-color: theme('colors.yellow.200');
+    }
+
+    50% {
+        background-color: theme('colors.yellow.200');
+    }
+
+    to {
+        background-color: transparent;
+    }
+}
+
+.animation--blink {
+    animation: blinkKeyFrames 3s ease-out;
+}

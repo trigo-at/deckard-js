@@ -1,170 +1,23 @@
 /* eslint-disable no-console */
 import React, {useState} from 'react';
 import Chance from 'chance';
-import {Heading, ButtonGroup} from '@chakra-ui/core';
+import {Stack} from '@chakra-ui/core';
 import DataTable from './data-table';
 import ViewSection from '../patterns/view-section';
-import SecondaryButton from '../components/secondary-button';
-import ProviderDecorator from '../provider-decorator';
+import TertiaryButton from '../components/tertiary-button';
 
 const chance = new Chance();
-
-/*  You have to choose beetwen link or render your values.
-    Chakra UI can't handle both features simultaneously. */
-
-export const DataTableStory = () => (
-    <DataTable
-        items={[
-            {
-                id: chance.string({length: 20}),
-                columns: [
-                    {
-                        value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
-                    },
-                    {
-                        value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
-                    },
-                    {
-                        value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
-                    },
-                ],
-            },
-            {
-                id: chance.string({length: 20}),
-                columns: [
-                    {
-                        value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
-                    },
-                    {
-                        value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
-                    },
-                    {
-                        value: chance.name(),
-                        link: 'https://chakra-ui.com/getting-started',
-                        isExternal: true,
-                    },
-                ],
-            },
-        ]}
-        columns={['col1', 'col2', 'col3']}
-    />
-);
-
-DataTableStory.story = {
-    name: 'with-links',
-};
-
-export const DataTableStory2 = () => (
-    <DataTable
-        items={[
-            {
-                id: chance.string({length: 20}),
-                columns: [
-                    {
-                        value: chance.name(),
-                        render: (value) => <Heading>{value}</Heading>,
-                    },
-                    {
-                        value: chance.name(),
-                        render: (value) => <Heading>{value}</Heading>,
-                    },
-                    {
-                        value: chance.name(),
-                        render: (value) => <Heading>{value}</Heading>,
-                    },
-                ],
-            },
-            {
-                id: chance.string({length: 20}),
-                columns: [
-                    {
-                        value: chance.name(),
-                        render: (value) => <Heading>{value}</Heading>,
-                    },
-                    {
-                        value: chance.name(),
-                        render: (value) => <Heading>{value}</Heading>,
-                    },
-                    {
-                        value: chance.name(),
-                        render: (value) => <Heading>{value}</Heading>,
-                    },
-                ],
-            },
-        ]}
-        columns={['col1', 'col2', 'col3']}
-    />
-);
-
-DataTableStory2.story = {
-    name: 'Components holding value',
-};
-
-export const DataTableStory3 = () => (
-    <DataTable
-        items={[
-            {
-                id: chance.string({length: 20}),
-                columns: [
-                    {
-                        value: chance.name(),
-                    },
-                ],
-            },
-            {
-                id: chance.string({length: 20}),
-                columns: [
-                    {
-                        value: chance.name(),
-                    },
-                ],
-            },
-            {
-                id: chance.string({length: 20}),
-                columns: [
-                    {
-                        value: chance.name(),
-                    },
-                    {
-                        value: chance.name(),
-                    },
-                    {
-                        value: chance.name(),
-                    },
-                    {
-                        value: chance.name(),
-                    },
-                ],
-            },
-        ]}
-        columns={['col1', 'col1']}
-    />
-);
-
-DataTableStory3.story = {
-    name: 'wrong column amount',
-};
 
 const getTableRowData = () => ({
     id: chance.string({length: 20}),
     columns: [
         {value: chance.name()},
-        {value: chance.name()},
-        {value: chance.name()},
+        {value: chance.email()},
+        {value: chance.integer({min: 10000000, max: 99999999})},
     ],
 });
 
-export const DataTableStory4 = () => {
+export const DataTableWithEntryAnimation = () => {
     const [items, setItems] = useState([
         getTableRowData(),
         getTableRowData(),
@@ -185,30 +38,20 @@ export const DataTableStory4 = () => {
     return (
         <ViewSection
             actions={
-                <ButtonGroup>
-                    <SecondaryButton onClick={onAddItem}>
+                <Stack isInline spacing={2} shouldWrapChildren>
+                    <TertiaryButton onClick={onAddItem} size="sm">
                         add one
-                    </SecondaryButton>
-                    <SecondaryButton onClick={onRemoveItem}>
+                    </TertiaryButton>
+                    <TertiaryButton onClick={onRemoveItem} size="sm">
                         remove one
-                    </SecondaryButton>
-                </ButtonGroup>
+                    </TertiaryButton>
+                </Stack>
             }>
             <DataTable
                 animateNewRow
                 items={items}
-                columns={['col1', 'col2', 'col3']}
+                columns={['name', 'email', 'customerNumber']}
             />
         </ViewSection>
     );
-};
-
-DataTableStory4.story = {
-    name: 'Animated TableRow',
-};
-
-export default {
-    title: 'Components|DataTable',
-    component: DataTable,
-    decorators: [ProviderDecorator],
 };
