@@ -2,10 +2,6 @@ import React, {SFC, ReactNode} from 'react';
 import {TranslationMessage, TranslationValues} from 'src/types';
 import {FormattedMessage} from 'react-intl';
 
-// Questions:   1.  Check if bg white is really needed
-//              2.  Check if its necessary to use a Transaltion libary like FormattedMessage/react-intl?
-//                  Maybe there is a lightweight vanilla js-solution for it to reduce external dependencies.
-
 type Props = {
     title?: TranslationMessage;
     values?: TranslationValues;
@@ -36,11 +32,7 @@ const PageSection: SFC<Props> = ({
 
                 {actions && <div>{actions}</div>}
             </div>
-            <div
-                className="bg-white rounded shadow-md p-4" // bg white needed ? seems not needed for me
-            >
-                {children}
-            </div>
+            <div className="bg-white rounded shadow-md p-4">{children}</div>
         </section>
     );
 };
