@@ -34,6 +34,7 @@ export default (story) => (
                 'field.externalLink': 'External Link',
                 'field.action': 'Action',
                 'validation.required': 'This field is required',
+                fuu: 'hello {x}',
             }}>
             {story()}
         </IntlProvider>

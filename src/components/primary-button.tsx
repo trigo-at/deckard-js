@@ -13,19 +13,20 @@ type Props = {
     onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
     children: ReactNode;
 };
+export const getPrimaryButtonClassName = (props: any) =>
+    cx(getSharedButtonClassNames(props), 'bg-teal-500 text-white', {
+        'hover:bg-teal-700': !props.isDisabled && !props.isLoading,
+    });
 
 const PrimaryButton: FC<Props> = forwardRef(
     (props: Props, ref: Ref<HTMLButtonElement>) => {
         const {children, ...others} = props;
 
-        const className = cx(
-            getSharedButtonClassNames(props),
-            'bg-teal-500 text-white',
-            {'hover:bg-teal-700': !props.isDisabled && !props.isLoading}
-        );
-
         return (
-            <Button ref={ref} className={className} {...others}>
+            <Button
+                ref={ref}
+                className={getPrimaryButtonClassName(props)}
+                {...others}>
                 {children}
             </Button>
         );
