@@ -1,4 +1,8 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import {Stack} from '@chakra-ui/core';
+import PrimaryButton from '../components/primary-button';
+import SecondaryButton from '../components/secondary-button';
+import TertiaryButton from '../components/tertiary-button';
 import ProviderDecorator from '../provider-decorator';
 import PageSection from './page-section';
 import ViewSection from './view-section';
@@ -15,20 +19,6 @@ multiple PageSections and provides a semantic separation of different component 
 Its used to wrap other components collections, so its simply a container with some
 shadow arround and a header title.
 
-
-## Example without Children
-
-<Preview>
-    <Story name="pagesection-example-no-children">
-        <PageSection title="common.pagesection.title" isPrimary></PageSection>
-    </Story>
-</Preview>
-
-## Props
-
-<Props of={PageSection} />
-
-
 ## Example with text as Children
 
 <Preview>
@@ -37,11 +27,7 @@ shadow arround and a header title.
     </Story>
 </Preview>
 
-## Props
-
-<Props of={PageSection} />
-
-## Example PageSection which contains a ViewSection
+## Example PageSection with ViewSection as Children
 
 <Preview>
     <Story name="pagesection-example-viewsection-children">
@@ -79,8 +65,4 @@ shadow arround and a header title.
         </PageSection>
     </Story>
 </Preview>
-
-## Props
-
-<Props of={PageSection} />
 
