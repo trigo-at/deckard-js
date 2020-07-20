@@ -7,7 +7,7 @@ type Props = {
     values?: TranslationValues;
     actions?: ReactNode;
     children: ReactNode;
-    isPrimary: boolean;
+    isPrimary?: boolean;
 };
 
 const PageSection: SFC<Props> = ({
