@@ -1,9 +1,8 @@
-import React, {SFC, ReactNode} from 'react';
-import {TranslationMessage} from 'src/types';
+import React, {SFC} from 'react';
 import {FormattedMessage} from 'react-intl';
 import {Alert, AlertIcon} from '@chakra-ui/core';
+import {TranslationMessage} from '../types';
 import Link from '../components/link';
-import PrimaryButton from '../components/primary-button';
 
 type Props = {
     status?: 'error' | 'success' | 'warning' | 'info' | undefined;
@@ -21,31 +20,9 @@ const FullPageAlert: SFC<Props> = ({
     action,
 }: Props): React.ReactElement => {
     return (
-        // <Box>
-        //     <Alert
-        //         status={status}
-        //         variant="subtle"
-        //         flexDirection="column"
-        //         justifyContent="center"
-        //         textAlign="center"
-        //         minHeight="200px">
-        //         <AlertIcon size="40px" mr={0} />
-        //         <AlertTitle mt={4} mb={2} fontSize="2xl">
-        //             <FormattedMessage id={title} />
-        //         </AlertTitle>
-        //         <AlertDescription maxWidth="xl">
-        //             <FormattedMessage id={description} />
-        //         </AlertDescription>
-        //     </Alert>
-        //     <Flex mt={10} justifyContent="center" alignItems="center">
-        //         <PrimaryButton as={Link} to={to || '/'}>
-        //             <FormattedMessage id={action || 'common.next'} />
-        //         </PrimaryButton>
-        //     </Flex>
-        // </Box>
         <div>
             <Alert
-                className="flex flex-col justify-center text-center h-64"
+                className="flex flex-col justify-center text-center h-52"
                 status={status}>
                 <AlertIcon size="40px" mr={0} />
                 <div className="mt-4 mb-2 font-bold text-2xl">
@@ -56,10 +33,7 @@ const FullPageAlert: SFC<Props> = ({
                 </div>
             </Alert>
             <div className="flex justify-center items-center mt-10">
-                {/* <PrimaryButton as={Link} to={to || '/'}>
-                    <FormattedMessage id={action || 'common.next'} />
-                </PrimaryButton> */}
-                <Link variant to={to || '/'}>
+                <Link renderAsButton to={to || '/'}>
                     <FormattedMessage id={action || 'common.next'} />
                 </Link>
             </div>
@@ -68,5 +42,3 @@ const FullPageAlert: SFC<Props> = ({
 };
 
 export default FullPageAlert;
-
-// change variant="primary" as standard link style for fullpagealert

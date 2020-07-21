@@ -25,7 +25,11 @@ const TertiaryButton: FC<Props> = forwardRef(
         );
 
         return (
-            <Button ref={ref} className={className} {...others}>
+            <Button
+                ref={ref}
+                className={className}
+                {...others} // eslint-disable-line react/jsx-props-no-spreading
+            >
                 {children}
             </Button>
         );

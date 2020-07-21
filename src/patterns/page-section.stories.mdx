@@ -24,10 +24,6 @@ shadow arround and a header title.
 <Preview>
     <Story name="default with viewsection as children">
         <PageSection 
-            values={
-                {x: 'deinemama'}
-            }
-            title="fuu"
             actions={<Stack isInline shouldWrapChildren>
                         <PrimaryButton size="sm">PageAction1</PrimaryButton>
                         <SecondaryButton size="sm">PageAction2</SecondaryButton>
@@ -82,6 +78,52 @@ shadow arround and a header title.
                         <TertiaryButton size="sm">PageAction3</TertiaryButton>
                     </Stack>} 
             title="common.pagesection.title">
+                <ViewSection
+                    isEmbedded
+                   
+                    actions={<Stack isInline shouldWrapChildren>
+                                <PrimaryButton size="sm">Primary</PrimaryButton>
+                                <SecondaryButton size="sm">Secondary</SecondaryButton>
+                                <TertiaryButton size="sm">Tertiary</TertiaryButton>
+                            </Stack>}>
+                        <DataList  
+                            values={[
+                                {
+                                    field: 'name',
+                                    value: chance.name(),
+                                },
+                                {
+                                    field: 'customerNumber',
+                                    value: chance.integer({
+                                        min: 100000,
+                                        max: 99999999,
+                                    }),
+                                },
+                                {
+                                    field: 'birthday',
+                                    value: toDateString(chance.date().toISOString()),
+                                }]}/>
+                </ViewSection>
+        </PageSection>
+    </Story>
+</Preview>
+
+         
+
+## Default example with translationValue
+
+<Preview>
+    <Story name="default with translationValue">
+        <PageSection 
+               values={
+                {x: 'testTranslationValue'}
+            }
+            title="fuu"
+            actions={<Stack isInline shouldWrapChildren>
+                        <PrimaryButton size="sm">PageAction1</PrimaryButton>
+                        <SecondaryButton size="sm">PageAction2</SecondaryButton>
+                        <TertiaryButton size="sm">PageAction3</TertiaryButton>
+                    </Stack>}>
                 <ViewSection
                     isEmbedded
                    

@@ -10,17 +10,17 @@ type Props = {
     to: string;
     isExternal?: boolean;
     children: ReactNode;
-    variant?: boolean; // change to union "primary" || "tertiary"
+    renderAsButton?: boolean;
 };
 
-const Link: FC<Props> = ({to, isExternal, children, variant}: Props) =>
+const Link: FC<Props> = ({to, isExternal, children, renderAsButton}: Props) =>
     isExternal ? (
         <a
             target="_blank"
             rel="noopener noreferrer"
             href={to}
             className={
-                variant
+                renderAsButton
                     ? getPrimaryButtonClassName({size: 'md'})
                     : `text-gray-900 hover:underline`
             }>
@@ -30,7 +30,7 @@ const Link: FC<Props> = ({to, isExternal, children, variant}: Props) =>
         <RouterLink
             to={to}
             className={
-                variant
+                renderAsButton
                     ? getPrimaryButtonClassName({size: 'md'})
                     : `text-gray-900 hover:underline`
             }>
