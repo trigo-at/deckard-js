@@ -1,6 +1,6 @@
 import React, {SFC, ReactNode} from 'react';
-import {TranslationMessage, TranslationValues} from 'src/types';
 import {FormattedMessage} from 'react-intl';
+import {TranslationMessage, TranslationValues} from '../types';
 
 type Props = {
     title?: TranslationMessage;

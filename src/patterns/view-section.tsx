@@ -1,5 +1,5 @@
 import React, {FC, ReactNode} from 'react';
-import {TranslationMessage, TranslationValues} from 'src/types';
+import {TranslationMessage, TranslationValues} from '../types';
 import SectionHeader from './section-header';
 
 type Props = {

@@ -1,0 +1,65 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+
+import FullPageAlert from './full-page-alert';
+import ProviderDecorator from '../provider-decorator';
+
+
+<Meta title="Patterns|FullPageAlert" component={FullPageAlert} decorators={[ProviderDecorator]} />
+
+# FullPageAlert
+
+A `FullPageAlert` is a alert for all kinds of error handling or to highlight important imformations 
+for the user. There are 4 Kinds of Alerts (info, error, success, warning)
+
+## Example info alert
+
+<Preview>
+    <Story name="info">
+        <FullPageAlert
+            title="fullpagealert.title"
+            description="fullpagealert.description"
+            status="info"
+        />
+    </Story>
+</Preview>
+
+
+## Props
+
+<Props of={FullPageAlert} />
+
+## Example error alert
+
+<Preview>
+    <Story name="error">
+        <FullPageAlert
+            title="fullpagealert.title"
+            description="fullpagealert.description"
+            status="error"
+        />
+    </Story>
+</Preview>
+
+## Example success alert
+
+<Preview>
+    <Story name="success">
+        <FullPageAlert
+            title="fullpagealert.title"
+            description="fullpagealert.description"
+            status="success"
+        />
+    </Story>
+</Preview>
+
+## Example warning alert
+
+<Preview>
+    <Story name="warning">
+        <FullPageAlert
+            title="fullpagealert.title"
+            description="fullpagealert.description"
+            status="warning"
+        />
+    </Story>
+</Preview>
