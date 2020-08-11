@@ -52,9 +52,7 @@ export const Description = () => (
     </Box>
 );
 
-Description.story = {
-    name: 'description',
-};
+Description.storyName = 'description';
 
 export const SimpleFormSection = () => (
     <Form
@@ -83,9 +81,7 @@ export const SimpleFormSection = () => (
     </Form>
 );
 
-SimpleFormSection.story = {
-    name: 'simple-form-section',
-};
+SimpleFormSection.storyName = 'simple-form-section';
 
 export const FormWithPageSection = () => (
     <Form
@@ -135,12 +131,10 @@ export const FormWithPageSection = () => (
     </Form>
 );
 
-FormWithPageSection.story = {
-    name: 'form-with-page-section',
-};
+FormWithPageSection.storyName = 'form-with-page-section';
 
 export default {
-    title: 'Patterns|FormSection',
+    title: 'Patterns/FormSection',
     component: FormSection,
     decorators: [ProviderDecorator],
 };

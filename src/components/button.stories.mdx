@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import {Stack} from '@chakra-ui/core';
 import Button from './button';
 import PrimaryButton from './primary-button';
@@ -6,14 +6,14 @@ import SecondaryButton from './secondary-button';
 import TertiaryButton from './tertiary-button';
 import ProviderDecorator from '../provider-decorator';
 
-<Meta title="Components|Buttons" component={PrimaryButton} decorators={[ProviderDecorator]} />
+<Meta title="Components/Buttons" component={PrimaryButton} decorators={[ProviderDecorator]} />
 
 # Buttons
 
 
 ## Example
 
-<Preview>
+<Canvas>
   <Story name="button-example">
     <Stack isInline spacing={4} shouldWrapChildren>
       <PrimaryButton>Primary</PrimaryButton>
@@ -21,15 +21,15 @@ import ProviderDecorator from '../provider-decorator';
       <TertiaryButton>Tertiary</TertiaryButton>
     </Stack>
   </Story>
-</Preview>
+</Canvas>
 
 ## Props
 
-<Props of={PrimaryButton} />
+<ArgsTable of={PrimaryButton} />
 
 ## Example with isDisabled flag
 
-<Preview>
+<Canvas>
   <Story name="button-example-disabled">
     <Stack isInline spacing={4} shouldWrapChildren>
       <PrimaryButton isDisabled>Primary</PrimaryButton>
@@ -37,11 +37,11 @@ import ProviderDecorator from '../provider-decorator';
       <TertiaryButton isDisabled>Tertiary</TertiaryButton>
     </Stack>
   </Story>
-</Preview>
+</Canvas>
 
 ## Example with isLoading flag
 
-<Preview>
+<Canvas>
   <Story name="button-example-loading">
     <Stack isInline spacing={4} shouldWrapChildren>
       <PrimaryButton isLoading>Primary</PrimaryButton>
@@ -49,11 +49,11 @@ import ProviderDecorator from '../provider-decorator';
       <TertiaryButton isLoading>Tertiary</TertiaryButton>
     </Stack>
   </Story>
-</Preview>
+</Canvas>
 
 ## Example with leftIcon
 
-<Preview>
+<Canvas>
   <Story name="button-example-left-icon">
     <Stack isInline spacing={4} shouldWrapChildren>
       <PrimaryButton leftIcon="email">Primary</PrimaryButton>
@@ -61,11 +61,11 @@ import ProviderDecorator from '../provider-decorator';
       <TertiaryButton leftIcon="email">Tertiary</TertiaryButton>
     </Stack>
   </Story>
-</Preview>
+</Canvas>
 
 ## Example with rightIcon
 
-<Preview>
+<Canvas>
   <Story name="button-example-right-icon">
     <Stack isInline spacing={4} shouldWrapChildren>
       <PrimaryButton rightIcon="arrow-forward">Primary</PrimaryButton>
@@ -73,11 +73,11 @@ import ProviderDecorator from '../provider-decorator';
       <TertiaryButton rightIcon="arrow-forward">Tertiary</TertiaryButton>
     </Stack>
   </Story>
-</Preview>
+</Canvas>
 
 ## Example with different sizes
 
-<Preview>
+<Canvas>
   <Story name="button-example-size">
     <>
       <Stack isInline spacing={4} shouldWrapChildren mb={8}>
@@ -100,4 +100,4 @@ import ProviderDecorator from '../provider-decorator';
       </Stack>
     </>
   </Story>
-</Preview>
+</Canvas>

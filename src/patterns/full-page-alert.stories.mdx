@@ -1,19 +1,18 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 
 import FullPageAlert from './full-page-alert';
 import ProviderDecorator from '../provider-decorator';
 
-
-<Meta title="Patterns|FullPageAlert" component={FullPageAlert} decorators={[ProviderDecorator]} />
+<Meta title="Patterns/FullPageAlert" component={FullPageAlert} decorators={[ProviderDecorator]} />
 
 # FullPageAlert
 
-A `FullPageAlert` is a alert for all kinds of error handling or to highlight important imformations 
+A `FullPageAlert` is a alert for all kinds of error handling or to highlight important imformations
 for the user. There are 4 Kinds of Alerts (info, error, success, warning)
 
 ## Example info alert
 
-<Preview>
+<Canvas>
     <Story name="info">
         <FullPageAlert
             title="fullpagealert.title"
@@ -21,16 +20,16 @@ for the user. There are 4 Kinds of Alerts (info, error, success, warning)
             status="info"
         />
     </Story>
-</Preview>
+</Canvas>
 
 
 ## Props
 
-<Props of={FullPageAlert} />
+<ArgsTable of={FullPageAlert} />
 
 ## Example error alert
 
-<Preview>
+<Canvas>
     <Story name="error">
         <FullPageAlert
             title="fullpagealert.title"
@@ -38,11 +37,11 @@ for the user. There are 4 Kinds of Alerts (info, error, success, warning)
             status="error"
         />
     </Story>
-</Preview>
+</Canvas>
 
 ## Example success alert
 
-<Preview>
+<Canvas>
     <Story name="success">
         <FullPageAlert
             title="fullpagealert.title"
@@ -50,11 +49,11 @@ for the user. There are 4 Kinds of Alerts (info, error, success, warning)
             status="success"
         />
     </Story>
-</Preview>
+</Canvas>
 
 ## Example warning alert
 
-<Preview>
+<Canvas>
     <Story name="warning">
         <FullPageAlert
             title="fullpagealert.title"
@@ -62,4 +61,4 @@ for the user. There are 4 Kinds of Alerts (info, error, success, warning)
             status="warning"
         />
     </Story>
-</Preview>
+</Canvas>

@@ -47,9 +47,7 @@ export const CheckboxGroupFieldStory = () => (
     </Form>
 );
 
-CheckboxGroupFieldStory.story = {
-    name: 'default',
-};
+CheckboxGroupFieldStory.storyName = 'default';
 
 export const CheckboxGroupFieldStory2 = () => (
     <Form
@@ -78,9 +76,7 @@ export const CheckboxGroupFieldStory2 = () => (
     </Form>
 );
 
-CheckboxGroupFieldStory2.story = {
-    name: 'withHelperText',
-};
+CheckboxGroupFieldStory2.storyName = 'withHelperText';
 
 export const FormattedCheckboxGroupFieldStory = () => (
     <Form
@@ -106,12 +102,10 @@ export const FormattedCheckboxGroupFieldStory = () => (
     </Form>
 );
 
-FormattedCheckboxGroupFieldStory.story = {
-    name: 'formatted',
-};
+FormattedCheckboxGroupFieldStory.storyName = 'formatted';
 
 export default {
-    title: 'Components|CheckboxGroupField',
+    title: 'Components/CheckboxGroupField',
     component: CheckboxGroupField,
     decorators: [ProviderDecorator],
 };

@@ -13,9 +13,7 @@ export const DefaultStory = () => {
     );
 };
 
-DefaultStory.story = {
-    name: 'default',
-};
+DefaultStory.storyName = 'default';
 
 export const LoadingStory = () => {
     return (
@@ -28,12 +26,10 @@ export const LoadingStory = () => {
     );
 };
 
-LoadingStory.story = {
-    name: 'loading',
-};
+LoadingStory.storyName = 'loading';
 
 export default {
-    title: 'Components|Header',
+    title: 'Components/Header',
     component: Header,
     decorators: [ProviderDecorator],
 };

@@ -1,11 +1,11 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import {Stack} from '@chakra-ui/core';
 import ProviderDecorator from '../provider-decorator';
 import DataTable from '../table/data-table';
 import TertiaryButton from '../components/tertiary-button';
 import * as stories from './data-table.stories';
 
-<Meta title="Components|DataTable" component={DataTable} decorators={[ProviderDecorator]} />
+<Meta title="Components/DataTable" component={DataTable} decorators={[ProviderDecorator]} />
 
 # DataTable
 
@@ -45,7 +45,7 @@ The `DataTable` has also the ability to display a blink-animation whenver the `i
 
 ## Example
 
-<Preview>
+<Canvas>
   <Story name="datatable-example">
     <DataTable
         columns={['name', 'email', 'customerNumber']}
@@ -77,23 +77,23 @@ The `DataTable` has also the ability to display a blink-animation whenver the `i
         ]}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Props
 
-<Props of={DataTable} />
+<ArgsTable of={DataTable} />
 
 ## Example with inline feedback
 
-<Preview>
+<Canvas>
   <Story name="datatable-example-with-inline-feedback">
     {stories.DataTableWithEntryAnimation()}
   </Story>
-</Preview>
+</Canvas>
 
 ## Example with links
 
-<Preview>
+<Canvas>
   <Story name="datatable-example-with-links">
     <DataTable
         columns={['name', 'website', 'customerNumber']}
@@ -125,11 +125,11 @@ The `DataTable` has also the ability to display a blink-animation whenver the `i
         ]}
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Example with actions
 
-<Preview>
+<Canvas>
   <Story name="datatable-example-with-actions">
     <DataTable
         columns={['name', 'email', 'action']}
@@ -161,4 +161,4 @@ The `DataTable` has also the ability to display a blink-animation whenver the `i
         ]}
     />
   </Story>
-</Preview>
+</Canvas>

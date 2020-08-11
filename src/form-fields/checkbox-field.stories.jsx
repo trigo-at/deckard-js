@@ -42,9 +42,7 @@ export const CheckboxFieldStory = () => (
     </Form>
 );
 
-CheckboxFieldStory.story = {
-    name: 'default',
-};
+CheckboxFieldStory.storyName = 'default';
 
 export const CheckboxFieldStory2 = () => (
     <Form initialValues={{checkboxField1: true}} onSubmit={onSubmit}>
@@ -74,9 +72,7 @@ export const CheckboxFieldStory2 = () => (
     </Form>
 );
 
-CheckboxFieldStory2.story = {
-    name: 'with-initial-value',
-};
+CheckboxFieldStory2.storyName = 'with-initial-value';
 
 export const CheckboxFieldStory3 = () => (
     <Form onSubmit={onSubmit}>
@@ -93,12 +89,10 @@ export const CheckboxFieldStory3 = () => (
     </Form>
 );
 
-CheckboxFieldStory3.story = {
-    name: 'multiple',
-};
+CheckboxFieldStory3.storyName = 'multiple';
 
 export default {
-    title: 'Components|CheckboxField',
+    title: 'Components/CheckboxField',
     component: CheckboxField,
     decorators: [ProviderDecorator],
 };

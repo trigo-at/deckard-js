@@ -7,12 +7,10 @@ export const ErrorIndicatorStory = () => (
     <ErrorIndicator error="testError" description="testDescription" />
 );
 
-ErrorIndicatorStory.story = {
-    name: 'default',
-};
+ErrorIndicatorStory.storyName = 'default';
 
 export default {
-    title: 'Components|ErrorIndicator',
+    title: 'Components/ErrorIndicator',
     component: ErrorIndicator,
     decorators: [ProviderDecorator],
 };

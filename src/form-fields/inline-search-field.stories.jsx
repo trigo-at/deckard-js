@@ -63,12 +63,10 @@ export const InlineSearchStory = () => {
     );
 };
 
-InlineSearchStory.story = {
-    name: 'default',
-};
+InlineSearchStory.storyName = 'default';
 
 export default {
-    title: 'Experimental|InlineSearchStory',
+    title: 'Experimental/InlineSearchStory',
     component: InlineSearchStory,
     decorators: [ProviderDecorator],
 };

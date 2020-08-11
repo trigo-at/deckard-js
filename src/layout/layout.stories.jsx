@@ -41,9 +41,7 @@ export const DefaultStory = () => (
     </Layout>
 );
 
-DefaultStory.story = {
-    name: 'default',
-};
+DefaultStory.storyName = 'default';
 
 export const FixedStory = () => (
     <Layout
@@ -75,9 +73,7 @@ export const FixedStory = () => (
     </Layout>
 );
 
-FixedStory.story = {
-    name: 'fixed aside',
-};
+FixedStory.storyName = 'fixed aside';
 
 export const DifferentLogoBGStory = () => (
     <Layout
@@ -124,9 +120,7 @@ export const DifferentLogoBGStory = () => (
     </Layout>
 );
 
-DifferentLogoBGStory.story = {
-    name: 'Different logo background',
-};
+DifferentLogoBGStory.storyName = 'Different logo background';
 
 export const NoHeaderStory = () => (
     <Layout
@@ -151,12 +145,10 @@ export const NoHeaderStory = () => (
     </Layout>
 );
 
-NoHeaderStory.story = {
-    name: 'No header',
-};
+NoHeaderStory.storyName = 'No header';
 
 export default {
-    title: 'Components|Layout',
+    title: 'Components/Layout',
     component: Layout,
     decorators: [ProviderDecorator],
 };

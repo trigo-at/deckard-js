@@ -43,9 +43,7 @@ export const DateFieldStory = () => (
     </Form>
 );
 
-DateFieldStory.story = {
-    name: 'default',
-};
+DateFieldStory.storyName = 'default';
 export const DateFieldStory2 = () => (
     <Form
         name="dateField"
@@ -66,12 +64,10 @@ export const DateFieldStory2 = () => (
     </Form>
 );
 
-DateFieldStory2.story = {
-    name: 'with-initial-value',
-};
+DateFieldStory2.storyName = 'with-initial-value';
 
 export default {
-    title: 'Components|DateField',
+    title: 'Components/DateField',
     component: DateField,
     decorators: [ProviderDecorator],
 };

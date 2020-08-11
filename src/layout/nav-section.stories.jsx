@@ -13,12 +13,10 @@ export const DefaultStory = () => (
     </NavSection>
 );
 
-DefaultStory.story = {
-    name: 'default',
-};
+DefaultStory.storyName = 'default';
 
 export default {
-    title: 'Components|NavSection',
+    title: 'Components/NavSection',
     component: NavSection,
     decorators: [ProviderDecorator],
 };

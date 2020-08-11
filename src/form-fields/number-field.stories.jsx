@@ -31,9 +31,7 @@ export const InputStory = () => (
     </Form>
 );
 
-InputStory.story = {
-    name: 'default',
-};
+InputStory.storyName = 'default';
 
 export const InputStory2 = () => (
     <Form
@@ -51,12 +49,10 @@ export const InputStory2 = () => (
     </Form>
 );
 
-InputStory2.story = {
-    name: 'with-initial-value',
-};
+InputStory2.storyName = 'with-initial-value';
 
 export default {
-    title: 'Components|NumberField',
+    title: 'Components/NumberField',
     component: NumberField,
     decorators: [ProviderDecorator],
 };

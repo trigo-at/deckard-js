@@ -22,9 +22,7 @@ export const TextareaFieldStory = () => (
         )}
     </Form>
 );
-TextareaFieldStory.story = {
-    name: 'default',
-};
+TextareaFieldStory.storyName = 'default';
 export const TextareaFieldStory2 = () => (
     <Form
         initialValues={{
@@ -43,12 +41,10 @@ export const TextareaFieldStory2 = () => (
         )}
     </Form>
 );
-TextareaFieldStory2.story = {
-    name: 'with-initial-value',
-};
+TextareaFieldStory2.storyName = 'with-initial-value';
 
 export default {
-    title: 'Components|TextareaField',
+    title: 'Components/TextareaField',
     component: TextareaField,
     decorators: [ProviderDecorator],
 };

@@ -23,9 +23,7 @@ export const SelectFieldStory = () => (
     />
 );
 
-SelectFieldStory.story = {
-    name: 'default',
-};
+SelectFieldStory.storyName = 'default';
 
 export const SelectFieldStory2 = () => (
     <Form
@@ -48,12 +46,10 @@ export const SelectFieldStory2 = () => (
     />
 );
 
-SelectFieldStory2.story = {
-    name: 'with-placeholder',
-};
+SelectFieldStory2.storyName = 'with-placeholder';
 
 export default {
-    title: 'Components|SelectField',
+    title: 'Components/SelectField',
     component: SelectField,
     decorators: [ProviderDecorator],
 };

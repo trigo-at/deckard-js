@@ -9,12 +9,10 @@ export const AsideStory = () => (
     </Aside>
 );
 
-AsideStory.story = {
-    name: 'default',
-};
+AsideStory.storyName = 'default';
 
 export default {
-    title: 'Components|Aside',
+    title: 'Components/Aside',
     component: Aside,
     decorators: [ProviderDecorator],
 };

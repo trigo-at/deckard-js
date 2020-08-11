@@ -24,9 +24,7 @@ export const RadioGroupFieldStory = () => (
     </Form>
 );
 
-RadioGroupFieldStory.story = {
-    name: 'default',
-};
+RadioGroupFieldStory.storyName = 'default';
 
 export const RadioGroupFieldStory2 = () => (
     <Form initialValues={{radioGroup: 'Doktor'}} onSubmit={onSubmit}>
@@ -44,9 +42,7 @@ export const RadioGroupFieldStory2 = () => (
     </Form>
 );
 
-RadioGroupFieldStory2.story = {
-    name: 'with-initial-value',
-};
+RadioGroupFieldStory2.storyName = 'with-initial-value';
 
 export const FormattedRadioGroupFieldStory = () => (
     <Form initialValues={{radioGroup: 'Doktor'}} onSubmit={onSubmit}>
@@ -64,12 +60,10 @@ export const FormattedRadioGroupFieldStory = () => (
     </Form>
 );
 
-FormattedRadioGroupFieldStory.story = {
-    name: 'formatted',
-};
+FormattedRadioGroupFieldStory.storyName = 'formatted';
 
 export default {
-    title: 'Components|RadioGroupField',
+    title: 'Components/RadioGroupField',
     component: RadioGroupField,
     decorators: [ProviderDecorator],
 };

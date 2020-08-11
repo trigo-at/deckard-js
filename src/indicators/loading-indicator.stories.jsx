@@ -5,12 +5,10 @@ import ProviderDecorator from '../provider-decorator';
 
 export const LoadingIndicatorStory = () => <LoadingIndicator />;
 
-LoadingIndicatorStory.story = {
-    name: 'default',
-};
+LoadingIndicatorStory.storyName = 'default';
 
 export default {
-    title: 'Components|LoadingIndicator',
+    title: 'Components/LoadingIndicator',
     component: LoadingIndicator,
     decorators: [ProviderDecorator],
 };

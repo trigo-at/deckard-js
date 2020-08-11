@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import {Stack} from '@chakra-ui/core';
 import PrimaryButton from '../components/primary-button';
 import SecondaryButton from '../components/secondary-button';
@@ -9,7 +9,7 @@ import DataList from './data-list';
 import DataTable from '../table/data-table';
 import toDateString from '../to-date-string';
 
-<Meta title="Patterns|ViewSection" component={ViewSection} decorators={[ProviderDecorator]} />
+<Meta title="Patterns/ViewSection" component={ViewSection} decorators={[ProviderDecorator]} />
 
 # ViewSection
 
@@ -17,7 +17,7 @@ A `ViewSection` can be used to group relevant information together. A example gr
 
 ## Example
 
-<Preview>
+<Canvas>
   <Story name="viewsection-example">
     <ViewSection
         title="common.viewsection.title"
@@ -49,15 +49,15 @@ A `ViewSection` can be used to group relevant information together. A example gr
         />
     </ViewSection>
   </Story>
-</Preview>
+</Canvas>
 
 ## Props
 
-<Props of={ViewSection} />
+<ArgsTable of={ViewSection} />
 
 ## Example embedded
 
-<Preview>
+<Canvas>
   <Story name="viewsection-example-embedded">
     <ViewSection
         title="common.viewsection.title"
@@ -90,11 +90,11 @@ A `ViewSection` can be used to group relevant information together. A example gr
         />
     </ViewSection>
   </Story>
-</Preview>
+</Canvas>
 
 ## Example without Title and Actions
 
-<Preview>
+<Canvas>
   <Story name="viewsection-example-without-title-and-actions">
     <ViewSection>
         <DataList
@@ -118,11 +118,11 @@ A `ViewSection` can be used to group relevant information together. A example gr
         />
     </ViewSection>
   </Story>
-</Preview>
+</Canvas>
 
 ## Example with Links and render-function
 
-<Preview>
+<Canvas>
   <Story name="viewsection-example-with-links-and-render-function">
     <ViewSection>
         <DataList
@@ -146,11 +146,11 @@ A `ViewSection` can be used to group relevant information together. A example gr
         />
     </ViewSection>
   </Story>
-</Preview>
+</Canvas>
 
 ## Example with Footer
 
-<Preview>
+<Canvas>
   <Story name="viewsection-example-with-footer">
     <ViewSection
         title="common.viewsection.title"
@@ -182,11 +182,11 @@ A `ViewSection` can be used to group relevant information together. A example gr
         />
     </ViewSection>
   </Story>
-</Preview>
+</Canvas>
 
 ## Example with Actions and Footer
 
-<Preview>
+<Canvas>
   <Story name="viewsection-example-with-actions-and-footer">
     <ViewSection
         title="common.viewsection.title"
@@ -225,11 +225,11 @@ A `ViewSection` can be used to group relevant information together. A example gr
         />
     </ViewSection>
   </Story>
-</Preview>
+</Canvas>
 
 ## Example with a DataTable
 
-<Preview>
+<Canvas>
   <Story name="viewsection-example-with-data-table">
     <ViewSection
         title="common.viewsection.title"
@@ -272,4 +272,4 @@ A `ViewSection` can be used to group relevant information together. A example gr
         />
     </ViewSection>
   </Story>
-</Preview>
+</Canvas>

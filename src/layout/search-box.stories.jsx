@@ -7,19 +7,15 @@ export const SearchBoxStory = () => (
     <SearchBox onSearch={(searchterm) => console.log(searchterm)} />
 );
 
-SearchBoxStory.story = {
-    name: 'default',
-};
+SearchBoxStory.storyName = 'default';
 export const SearchBoxStory2 = () => (
     <SearchBox onSearch={(searchterm) => console.log(searchterm)} loading />
 );
 
-SearchBoxStory2.story = {
-    name: 'loading',
-};
+SearchBoxStory2.storyName = 'loading';
 
 export default {
-    title: 'Components|SearchBox',
+    title: 'Components/SearchBox',
     component: SearchBox,
     decorators: [ProviderDecorator],
 };

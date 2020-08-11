@@ -23,9 +23,7 @@ export const DateFieldStory = () => (
     </Form>
 );
 
-DateFieldStory.story = {
-    name: 'default',
-};
+DateFieldStory.storyName = 'default';
 
 export const DateFieldStory2 = () => (
     <Form
@@ -43,9 +41,7 @@ export const DateFieldStory2 = () => (
     </Form>
 );
 
-DateFieldStory2.story = {
-    name: 'with-initial-value',
-};
+DateFieldStory2.storyName = 'with-initial-value';
 
 export const DateFieldStory3 = () => (
     <Form
@@ -63,9 +59,7 @@ export const DateFieldStory3 = () => (
     </Form>
 );
 
-DateFieldStory3.story = {
-    name: 'disabled',
-};
+DateFieldStory3.storyName = 'disabled';
 
 export const DateFieldStory4 = () => (
     <Form
@@ -89,12 +83,10 @@ export const DateFieldStory4 = () => (
     </Form>
 );
 
-DateFieldStory4.story = {
-    name: 'mixed',
-};
+DateFieldStory4.storyName = 'mixed';
 
 export default {
-    title: 'Components|CurrencyField',
+    title: 'Components/CurrencyField',
     component: CurrencyField,
     decorators: [ProviderDecorator],
 };

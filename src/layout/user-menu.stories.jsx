@@ -10,20 +10,16 @@ export const UserMenuStory = () => (
     />
 );
 
-UserMenuStory.story = {
-    name: 'default',
-};
+UserMenuStory.storyName = 'default';
 
 export const UserMenuStory2 = () => (
     <UserMenu onLogout={(event) => console.log('logged out:', event)} />
 );
 
-UserMenuStory2.story = {
-    name: 'no-username',
-};
+UserMenuStory2.storyName = 'no-username';
 
 export default {
-    title: 'Components|UserMenu',
+    title: 'Components/UserMenu',
     component: UserMenu,
     decorators: [ProviderDecorator],
 };
