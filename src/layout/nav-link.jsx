@@ -13,7 +13,8 @@ const NavLink = ({to, icon, children}) => (
                         bg="gray.900"
                         py={3}
                         borderLeftWidth="4px"
-                        borderLeftColor="blue.300">
+                        borderLeftColor="blue.300"
+                        wordBreak="break-word">
                         <Box
                             to="/"
                             ml="-4px"
@@ -30,7 +31,8 @@ const NavLink = ({to, icon, children}) => (
                         py={3}
                         display="flex"
                         alignItems="center"
-                        color="gray.200">
+                        color="gray.200"
+                        wordBreak="break-word">
                         <Icon name={icon} mr={2} size="24px" />
                         <Text as="span">{children}</Text>
                     </Box>
