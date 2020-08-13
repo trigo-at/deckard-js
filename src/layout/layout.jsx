@@ -15,51 +15,49 @@ const buildGridTemplateAreas = ({hasAside, hasHeader}) => {
     return `'logo header' 'aside content'`;
 };
 
-const Layout = ({logo, header, aside, children, accent, fixedAside}) => {
+const Layout = ({logo, header, aside, children, accent}) => {
     const gridTemplateAreas = buildGridTemplateAreas({
         hasAside: !!aside,
         hasHeader: !!header,
     });
 
-    const contentProps = fixedAside
-        ? {fixedoverflow: 'hidden', overflowY: 'scroll'}
-        : {};
-
     return (
-        <>
-            {fixedAside && (
-                <Global
-                    styles={css`
-                        body {
-                            overflow: hidden;
-                        }
-                    `}
-                />
+        <Grid
+            gridTemplateAreas={gridTemplateAreas}
+            gridTemplateColumns="280px 1fr"
+            gridTemplateRows="64px 1fr"
+            position="fixed"
+            top="0px"
+            left="0px"
+            width="100vw"
+            height="100vh"
+            overflow="hidden">
+            <Grid area="logo" bg={`${accent}.800`}>
+                {logo}
+            </Grid>
+            {header && (
+                <Grid area="header" bg="white" shadow="md">
+                    {header}
+                </Grid>
+            )}
+            {aside && (
+                <Grid
+                    area="aside"
+                    bg={`${accent}.600`}
+                    overflowX="hidden"
+                    overflowY="auto">
+                    {aside}
+                </Grid>
             )}
             <Grid
-                gridTemplateAreas={gridTemplateAreas}
-                gridTemplateColumns="240px 1fr"
-                gridTemplateRows="64px 1fr"
-                height={fixedAside ? '100vh' : undefined}
-                width={fixedAside ? '100vw' : undefined}>
-                <Grid area="logo" bg={`${accent}.800`}>
-                    {logo}
-                </Grid>
-                {header && (
-                    <Grid area="header" bg="white" shadow="md">
-                        {header}
-                    </Grid>
-                )}
-                {aside && (
-                    <Grid area="aside" bg={`${accent}.600`}>
-                        {aside}
-                    </Grid>
-                )}
-                <Grid area="content" bg="gray.200" p={6} {...contentProps}>
-                    {children}
-                </Grid>
+                area="content"
+                bg="gray.200"
+                p={6}
+                overflowX="hidden"
+                overflowY="auto">
+                {children}
             </Grid>
-        </>
+        </Grid>
     );
 };
 
@@ -69,7 +67,6 @@ Layout.propTypes = {
     aside: node,
     children: node,
     accent: string,
-    fixedAside: bool,
 };
 
 Layout.defaultProps = {
@@ -78,7 +75,6 @@ Layout.defaultProps = {
     aside: undefined,
     children: undefined,
     accent: 'gray',
-    fixedAside: false,
 };
 
 export default Layout;
