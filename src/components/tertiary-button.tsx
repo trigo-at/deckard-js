@@ -14,20 +14,21 @@ type Props = {
     children: ReactNode;
 };
 
+export const getTertiaryButtonClassName = (
+    props: Record<string, any>
+): string =>
+    cx(getSharedButtonClassNames(props), 'bg-gray-400 text-white', {
+        'hover:bg-gray-600': !props.isDisabled && !props.isLoading,
+    });
+
 const TertiaryButton: FC<Props> = forwardRef(
     (props: Props, ref: Ref<HTMLButtonElement>) => {
         const {children, ...others} = props;
 
-        const className = cx(
-            getSharedButtonClassNames(props),
-            'bg-gray-400 text-white',
-            {'hover:bg-gray-600': !props.isDisabled && !props.isLoading}
-        );
-
         return (
             <Button
                 ref={ref}
-                className={className}
+                className={getTertiaryButtonClassName(props)}
                 {...others} // eslint-disable-line react/jsx-props-no-spreading
             >
                 {children}

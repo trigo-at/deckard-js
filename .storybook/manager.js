@@ -1,10 +1,6 @@
-import {create} from '@storybook/theming';
-import logo from './trigo-logo.png';
+import {addons} from '@storybook/addons';
+import theme from './theme';
 
-export default create({
-    base: 'light',
-
-    brandTitle: 'trigo Design System',
-    brandUrl: 'https://www.trigo.dev',
-    brandImage: logo,
+addons.setConfig({
+    theme,
 });

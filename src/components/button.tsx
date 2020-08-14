@@ -9,6 +9,7 @@ import LoadingIndicator from './loading-indicator';
 
 type Props = {
     className: string;
+    // eslint-disable-next-line react/no-unused-prop-types
     ref?: Ref<HTMLButtonElement>;
     type?: 'button' | 'submit' | 'reset';
     size?: 'xs' | 'sm' | 'md' | 'lg';
@@ -41,8 +42,8 @@ export const getSharedButtonClassNames = (props: Record<string, any>): string =>
     );
 
 const Button: FC<Props> = forwardRef(
-    (props: Props, ref: Ref<HTMLButtonElement>) => {
-        const {
+    (
+        {
             className,
             type,
             size,
@@ -52,37 +53,34 @@ const Button: FC<Props> = forwardRef(
             rightIcon,
             onClick,
             children,
-        } = props;
-
-        return (
-            <button
-                type={type}
-                ref={ref}
-                aria-disabled={isDisabled || isLoading}
-                className={className}
-                style={{outlineColor: '#05a9f0'}}
-                onClick={isDisabled || isLoading ? undefined : onClick}
-                aria-label={
-                    isLoading && typeof children === 'string'
-                        ? children
-                        : undefined
-                }>
-                {isLoading ? (
-                    <LoadingIndicator size={size} />
-                ) : (
-                    <>
-                        {leftIcon ? (
-                            <Icon name={leftIcon} mr={2} fontSize={size} />
-                        ) : null}
-                        {children}
-                        {rightIcon ? (
-                            <Icon name={rightIcon} ml={2} fontSize={size} />
-                        ) : null}
-                    </>
-                )}
-            </button>
-        );
-    }
+        }: Props,
+        ref: Ref<HTMLButtonElement>
+    ) => (
+        <button
+            type={type}
+            ref={ref}
+            aria-disabled={isDisabled || isLoading}
+            className={className}
+            style={{outlineColor: '#05a9f0'}}
+            onClick={isDisabled || isLoading ? undefined : onClick}
+            aria-label={
+                isLoading && typeof children === 'string' ? children : undefined
+            }>
+            {isLoading ? (
+                <LoadingIndicator size={size} />
+            ) : (
+                <>
+                    {leftIcon ? (
+                        <Icon name={leftIcon} mr={2} fontSize={size} />
+                    ) : null}
+                    {children}
+                    {rightIcon ? (
+                        <Icon name={rightIcon} ml={2} fontSize={size} />
+                    ) : null}
+                </>
+            )}
+        </button>
+    )
 );
 
 Button.defaultProps = {

@@ -13,6 +13,7 @@ type Props = {
     onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
     children: ReactNode;
 };
+
 export const getPrimaryButtonClassName = (props: Record<string, any>): string =>
     cx(getSharedButtonClassNames(props), 'bg-teal-500 text-white', {
         'hover:bg-teal-700': !props.isDisabled && !props.isLoading,
@@ -26,8 +27,7 @@ const PrimaryButton: FC<Props> = forwardRef(
             <Button
                 ref={ref}
                 className={getPrimaryButtonClassName(props)}
-                {...others} // eslint-disable-line react/jsx-props-no-spreading
-            >
+                {...others}>
                 {children}
             </Button>
         );

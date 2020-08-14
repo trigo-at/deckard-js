@@ -14,18 +14,26 @@ type Props = {
     children: ReactNode;
 };
 
+export const getSecondaryButtonClassName = (
+    props: Record<string, any>
+): string =>
+    cx(
+        getSharedButtonClassNames(props),
+        'bg-transparent text-teal-500 border border-teal-500',
+        {
+            'hover:bg-teal-100': !props.isDisabled && !props.isLoading,
+        }
+    );
+
 const SecondaryButton: FC<Props> = forwardRef(
     (props: Props, ref: Ref<HTMLButtonElement>) => {
         const {children, ...others} = props;
 
-        const className = cx(
-            getSharedButtonClassNames(props),
-            'bg-transparent text-teal-500 border border-teal-500',
-            {'hover:bg-teal-100': !props.isDisabled && !props.isLoading}
-        );
-
         return (
-            <Button ref={ref} className={className} {...others}>
+            <Button
+                ref={ref}
+                className={getSecondaryButtonClassName(props)}
+                {...others}>
                 {children}
             </Button>
         );
