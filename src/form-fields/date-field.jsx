@@ -85,14 +85,18 @@ const DateField = ({
                     width="25%"
                     maxLength={2}
                     name={`${name}.day`}
+                    id={`${name}.day`}
                     value={day || ''}
+                    type="text"
                     onChange={handleChange(setDay)}
                 />
                 <Input
                     width="25%"
                     maxLength={2}
                     name={`${name}.month`}
+                    id={`${name}.month`}
                     value={month || ''}
+                    type="text"
                     onChange={handleChange(setMonth)}
                 />
                 <Input
@@ -101,6 +105,8 @@ const DateField = ({
                     onBlur={onBlur}
                     value={year || ''}
                     name={`${name}.year`}
+                    id={`${name}.year`}
+                    type="text"
                     onChange={handleChange(setYear)}
                 />
             </Stack>

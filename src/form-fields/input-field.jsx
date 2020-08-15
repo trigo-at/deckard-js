@@ -48,7 +48,8 @@ const InputField = ({
             </FormLabel>
             <Input
                 {...input}
-                type={type}
+                id={input.name}
+                type={type || 'text'}
                 value={type === 'file' ? undefined : input.value}
                 onChange={
                     type === 'file'
