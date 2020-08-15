@@ -40,7 +40,7 @@ const SelectField = ({
                 <FormattedMessage id={`field.${fieldName || name}`} />
                 {!isRequired && <Optional />}
             </FormLabel>
-            <Select {...input} {...props}>
+            <Select {...input} {...props} id={input.name}>
                 {hasPlaceholder && (
                     <Text as="option" value="">
                         {intl.formatMessage({id: `placeholder.${name}`})}
