@@ -32,5 +32,9 @@ module.exports = {
         },
     },
     variants: {},
-    plugins: [tailwindcssui],
+    plugins: [
+        tailwindcssui({
+            layout: 'sidebar',
+        }),
+    ],
 };

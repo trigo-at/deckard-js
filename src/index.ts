@@ -40,11 +40,12 @@ export {default as LoadingIndicator} from './indicators/loading-indicator';
 
 // Layout
 export {default as Layout} from './layout/layout';
-export {default as Aside} from './layout/aside';
-export {default as NavSection} from './layout/nav-section';
-export {default as NavLink} from './layout/nav-link';
+export {default as Sidebar} from './layout/sidebar';
+export {default as NavMenu} from './layout/nav-menu';
+export {default as NavMenuItem} from './layout/nav-menu-item';
 export {default as Header} from './layout/header';
-export {default as Logo} from './layout/logo';
+export {default as NavSecondaryMenu} from './layout/nav-secondary-menu';
+export {default as NavSecondaryMenuItem} from './layout/nav-secondary-menu-item';
 
 // table
 export {default as Table} from './table/table';

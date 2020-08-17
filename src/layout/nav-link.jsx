@@ -1,50 +1,41 @@
 import React from 'react';
 import {string, node} from 'prop-types';
 import {Link, Match} from '@reach/router';
-import {Box, Icon, Text} from '@chakra-ui/core';
+import Icon from '../components/icon';
+import cx from '../utils/cx';
 
 const NavLink = ({to, icon, children}) => (
-    <Link to={to}>
+    <div>
         <Match path={to}>
-            {({match}) =>
-                match ? (
-                    <Box
-                        px={6}
-                        bg="gray.900"
-                        py={3}
-                        borderLeftWidth="4px"
-                        borderLeftColor="blue.300"
-                        wordBreak="break-word">
-                        <Box
-                            to="/"
-                            ml="-4px"
-                            display="flex"
-                            alignItems="center"
-                            color="gray.200">
-                            <Icon name={icon} mr={2} size="24px" />
-                            <Text as="span">{children}</Text>
-                        </Box>
-                    </Box>
-                ) : (
-                    <Box
-                        px={6}
-                        py={3}
-                        display="flex"
-                        alignItems="center"
-                        color="gray.200"
-                        wordBreak="break-word">
-                        <Icon name={icon} mr={2} size="24px" />
-                        <Text as="span">{children}</Text>
-                    </Box>
-                )
-            }
+            {({match}) => (
+                <Link
+                    className={cx(
+                        'group w-full flex items-center pl-2 py-2 text-sm leading-5 font-medium rounded-md focus:outline-none transition ease-in-out duration-150',
+                        {
+                            'text-gray-900 hover:text-gray-900 hover:bg-gray-100 bg-gray-100 focus:bg-gray-200': match,
+                            'text-gray-600 hover:text-gray-900 hover:bg-gray-50 focus:text-gray-900 focus:bg-gray-50': !match,
+                        }
+                    )}
+                    to={to}>
+                    <Icon
+                        className={cx(
+                            'mr-3 h-6 w-6 transition ease-in-out duration-150',
+                            {
+                                'text-gray-600 ': match,
+                                'text-gray-400': !match,
+                            }
+                        )}
+                        icon={icon}
+                    />
+                    {children}
+                </Link>
+            )}
         </Match>
-    </Link>
+    </div>
 );
 
 NavLink.propTypes = {
     to: string.isRequired,
-    icon: string.isRequired,
     children: node.isRequired,
 };
 

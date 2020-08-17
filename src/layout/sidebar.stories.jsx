@@ -1,18 +1,18 @@
 /* eslint-disable no-console */
 import React from 'react';
-import Aside from './aside';
+import Sidebar from './sidebar';
 import ProviderDecorator from '../provider-decorator';
 
-export const AsideStory = () => (
-    <Aside>
+export const SidebarStory = () => (
+    <Sidebar>
         <p>i am a children in a box</p>
-    </Aside>
+    </Sidebar>
 );
 
-AsideStory.storyName = 'default';
+SidebarStory.storyName = 'default';
 
 export default {
-    title: 'Components/Aside',
-    component: Aside,
+    title: 'Components/Sidebar',
+    component: Sidebar,
     decorators: [ProviderDecorator],
 };

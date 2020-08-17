@@ -1,31 +1,44 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {string, func} from 'prop-types';
 import {FormattedMessage} from 'react-intl';
-import {
-    Text,
-    Menu,
-    MenuButton,
-    MenuList,
-    MenuItem,
-    Button,
-} from '@chakra-ui/core';
 
 const UserMenu = ({userName, onLogout}) => {
-    if (!onLogout) {
-        return <Text>{userName}</Text>;
-    }
-
+    const [menuOpen, setMenuOpen] = useState(false);
     return (
-        <Menu>
-            <MenuButton as={Button} variant="ghost" rightIcon="chevron-down">
-                {userName}
-            </MenuButton>
-            <MenuList>
-                <MenuItem onClick={onLogout}>
-                    <FormattedMessage id="common.logout" />
-                </MenuItem>
-            </MenuList>
-        </Menu>
+        <div className="relative">
+            <div>
+                <button
+                    type="button"
+                    className="max-w-xs flex items-center text-sm rounded-full focus:outline-none focus:shadow-outline"
+                    id="user-menu"
+                    onClick={() => setMenuOpen(!menuOpen)}
+                    aria-label="User menu"
+                    aria-haspopup="true">
+                    {userName}
+                </button>
+            </div>
+
+            {menuOpen && (
+                <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg">
+                    <div
+                        className="py-1 rounded-md bg-white shadow-xs"
+                        role="menu"
+                        aria-orientation="vertical"
+                        aria-labelledby="user-menu">
+                        <button
+                            type="button"
+                            onClick={() => {
+                                setMenuOpen(false);
+                                onLogout();
+                            }}
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition ease-in-out duration-150 w-full text-left"
+                            role="menuitem">
+                            <FormattedMessage id="common.logout" />
+                        </button>
+                    </div>
+                </div>
+            )}
+        </div>
     );
 };
 
