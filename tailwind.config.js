@@ -3,7 +3,13 @@ const tailwindcssui = require('@tailwindcss/ui');
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
-    purge: ['./src/**/*.html', './src/**/*.jsx', './src/**/*.tsx'],
+    purge: [
+        './src/**/*.html',
+        './src/**/*.jsx',
+        './src/**/*.tsx',
+        './src/**/*.js',
+        './src/**/*.ts',
+    ],
     theme: {
         extend: {
             fontFamily: {
