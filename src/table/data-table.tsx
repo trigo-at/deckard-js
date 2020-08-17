@@ -1,9 +1,11 @@
 /* eslint-disable react/no-array-index-key */
 import React, {useState, useEffect, FC, ReactElement} from 'react';
 import {FormattedMessage} from 'react-intl';
-import TertiaryLink from '../components/tertiary-link';
+import TableLink from './table-link';
 import Table from './table';
-import TableHeader from './table-header';
+import TableHead from './table-head';
+import TableHeaderCell from './table-header-cell';
+import TableBody from './table-body';
 import TableRow from './table-row';
 import TableCell from './table-cell';
 import CellContent from './cell-content';
@@ -34,13 +36,13 @@ const DataCell: FC<DataCellProps> = ({column}: DataCellProps) => {
     }
     if (column.link) {
         return (
-            <TertiaryLink to={column.link} isExternal={column.isExternal}>
+            <TableLink to={column.link} isExternal={column.isExternal}>
                 {column.format ? (
                     <FormattedMessage id={`${column.format}.${column.value}`} />
                 ) : (
                     column.value
                 )}
-            </TertiaryLink>
+            </TableLink>
         );
     }
     if (column.format) {
@@ -75,18 +77,16 @@ const DataTable: FC<DataTableProps> = ({
 
     return (
         <Table>
-            <thead>
+            <TableHead>
                 <TableRow>
                     {columns.map((column) => (
-                        <TableHeader key={column}>
-                            <CellContent>
-                                <FormattedMessage id={`field.${column}`} />
-                            </CellContent>
-                        </TableHeader>
+                        <TableHeaderCell key={column}>
+                            <FormattedMessage id={`field.${column}`} />
+                        </TableHeaderCell>
                     ))}
                 </TableRow>
-            </thead>
-            <tbody>
+            </TableHead>
+            <TableBody>
                 {items.map((item) => (
                     <TableRow
                         key={item.id}
@@ -102,7 +102,7 @@ const DataTable: FC<DataTableProps> = ({
                         ))}
                     </TableRow>
                 ))}
-            </tbody>
+            </TableBody>
         </Table>
     );
 };

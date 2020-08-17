@@ -5,7 +5,11 @@ type Props = {
 };
 
 const CellContent: FC<Props> = ({children}: Props) => {
-    return <span className="text-gray-900">{children}</span>;
+    return (
+        <div className="text-sm leading-5 font-medium text-gray-900">
+            {children}
+        </div>
+    );
 };
 
 export default CellContent;

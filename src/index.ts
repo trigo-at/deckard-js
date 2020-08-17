@@ -48,11 +48,14 @@ export {default as Logo} from './layout/logo';
 
 // table
 export {default as Table} from './table/table';
-export {default as TableCell} from './table/table-cell';
-export {default as TableHeader} from './table/table-header';
+export {default as TableHead} from './table/table-head';
+export {default as TableHeaderCell} from './table/table-header-cell';
+export {default as TableBody} from './table/table-body';
 export {default as TableRow} from './table/table-row';
+export {default as TableCell} from './table/table-cell';
 export {default as CellContent} from './table/cell-content';
 export {default as SecondaryCellContent} from './table/secondary-cell-content';
+export {default as TableLink} from './table/table-link';
 export {default as DataTable} from './table/data-table';
 
 // Patterns

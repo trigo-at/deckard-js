@@ -5,7 +5,7 @@ type Props = {
 };
 
 const SecondaryCellContent: FC<Props> = ({children}: Props) => {
-    return <span className="text-sm text-gray-600">{children}</span>;
+    return <div className="text-sm leading-5 text-gray-500">{children}</div>;
 };
 
 export default SecondaryCellContent;

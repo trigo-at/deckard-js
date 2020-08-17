@@ -8,11 +8,9 @@ type Props = {
 const TableCell: FC<Props> = ({className, children, ...props}: Props) => {
     return (
         <td
-            className={`px-2 py-4 border-b border-gray-200 ${className}`}
+            className={`px-6 py-4 whitespace-no-wrap border-b border-gray-200 ${className}`}
             {...props}>
-            <div className="flex flex-col justify-center items-start">
-                {children}
-            </div>
+            {children}
         </td>
     );
 };
