@@ -3,13 +3,18 @@ const tailwindcssui = require('@tailwindcss/ui');
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
-    // purge: [
-    //     './src/**/*.html',
-    //     './src/**/*.jsx',
-    //     './src/**/*.tsx',
-    //     './src/**/*.js',
-    //     './src/**/*.ts',
-    // ],
+    purge: {
+        content: [
+            './src/**/*.html',
+            './src/**/*.jsx',
+            './src/**/*.tsx',
+            './src/**/*.js',
+            './src/**/*.ts',
+        ],
+        options: {
+            whitelist: ['bg-green-100'],
+        },
+    },
     theme: {
         extend: {
             fontFamily: {
