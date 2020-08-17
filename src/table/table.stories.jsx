@@ -12,65 +12,71 @@ import Badge from '../components/badge';
 import ProviderDecorator from '../provider-decorator';
 
 export const DefaultStory = () => (
-    <Table>
-        <TableHead>
-            <TableRow>
-                <TableHeaderCell>Name</TableHeaderCell>
-                <TableHeaderCell>Title</TableHeaderCell>
-                <TableHeaderCell>Status</TableHeaderCell>
-                <TableHeaderCell>Role</TableHeaderCell>
-                <TableHeaderCell />
-            </TableRow>
-        </TableHead>
-        <TableBody>
-            <TableRow tripedType="odd">
-                <TableCell>
-                    <CellContent>Jane Cooper</CellContent>
-                    <SecondaryCellContent>
-                        jane.cooper@example.com
-                    </SecondaryCellContent>
-                </TableCell>
-                <TableCell>
-                    <CellContent>Regional Paradigm Technician</CellContent>
-                    <SecondaryCellContent>Optimization</SecondaryCellContent>
-                </TableCell>
-                <TableCell>
-                    <Badge variant="green">Active</Badge>
-                </TableCell>
-                <TableCell>
-                    <CellContent>Admin</CellContent>
-                </TableCell>
-                <TableCell>
-                    <TableLink isExternal to="https://www.trigo.dev">
-                        Edit
-                    </TableLink>
-                </TableCell>
-            </TableRow>
-            <TableRow stripedType="even">
-                <TableCell>
-                    <CellContent>Jane Cooper</CellContent>
-                    <SecondaryCellContent>
-                        jane.cooper@example.com
-                    </SecondaryCellContent>
-                </TableCell>
-                <TableCell>
-                    <CellContent>Regional Paradigm Technician</CellContent>
-                    <SecondaryCellContent>Optimization</SecondaryCellContent>
-                </TableCell>
-                <TableCell>
-                    <Badge variant="green">Active</Badge>
-                </TableCell>
-                <TableCell>
-                    <CellContent>Admin</CellContent>
-                </TableCell>
-                <TableCell>
-                    <TableLink isExternal to="https://www.trigo.dev">
-                        Edit
-                    </TableLink>
-                </TableCell>
-            </TableRow>
-        </TableBody>
-    </Table>
+    <div className="max-w-full">
+        <Table>
+            <TableHead>
+                <TableRow>
+                    <TableHeaderCell>Name</TableHeaderCell>
+                    <TableHeaderCell>Title</TableHeaderCell>
+                    <TableHeaderCell>Status</TableHeaderCell>
+                    <TableHeaderCell>Role</TableHeaderCell>
+                    <TableHeaderCell />
+                </TableRow>
+            </TableHead>
+            <TableBody>
+                <TableRow tripedType="even">
+                    <TableCell twelfthPart={4}>
+                        <CellContent>Jane Cooper</CellContent>
+                        <SecondaryCellContent>
+                            jane.cooper@example.com
+                        </SecondaryCellContent>
+                    </TableCell>
+                    <TableCell twelfthPart={4}>
+                        <CellContent>Regional Paradigm Technician</CellContent>
+                        <SecondaryCellContent>
+                            Optimization
+                        </SecondaryCellContent>
+                    </TableCell>
+                    <TableCell twelfthPart={1}>
+                        <Badge variant="green">Active</Badge>
+                    </TableCell>
+                    <TableCell twelfthPart={1}>
+                        <CellContent>Admin</CellContent>
+                    </TableCell>
+                    <TableCell twelfthPart={2}>
+                        <TableLink isExternal to="https://www.trigo.dev">
+                            Edit
+                        </TableLink>
+                    </TableCell>
+                </TableRow>
+                <TableRow stripedType="odd">
+                    <TableCell>
+                        <CellContent>Jane Cooper</CellContent>
+                        <SecondaryCellContent>
+                            jane.cooper@example.com
+                        </SecondaryCellContent>
+                    </TableCell>
+                    <TableCell>
+                        <CellContent>Regional Paradigm Technician</CellContent>
+                        <SecondaryCellContent>
+                            Optimization
+                        </SecondaryCellContent>
+                    </TableCell>
+                    <TableCell>
+                        <Badge variant="green">Active</Badge>
+                    </TableCell>
+                    <TableCell>
+                        <CellContent>Admin</CellContent>
+                    </TableCell>
+                    <TableCell>
+                        <TableLink isExternal to="https://www.trigo.dev">
+                            Edit
+                        </TableLink>
+                    </TableCell>
+                </TableRow>
+            </TableBody>
+        </Table>
+    </div>
 );
 
 DefaultStory.storyName = 'default';

@@ -87,16 +87,17 @@ const DataTable: FC<DataTableProps> = ({
                 </TableRow>
             </TableHead>
             <TableBody>
-                {items.map((item) => (
+                {items.map((item, idx) => (
                     <TableRow
                         key={item.id}
+                        stripedType={(idx + 1) % 2 === 0 ? 'even' : 'odd'}
                         entryAnimation={
                             initialIds.length && !initialIds.includes(item.id)
                                 ? animateNewRow
                                 : false
                         }>
-                        {item.columns.map((column, idx) => (
-                            <TableCell key={idx}>
+                        {item.columns.map((column, colIdx) => (
+                            <TableCell key={colIdx}>
                                 <DataCell column={column} />
                             </TableCell>
                         ))}

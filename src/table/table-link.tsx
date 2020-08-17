@@ -12,7 +12,7 @@ const TableLink: FC<Props> = ({to, isExternal, children, ...props}: Props) =>
         <a
             target="_blank"
             href={to}
-            className="text-indigo-600 hover:text-indigo-900 text-sm leading-5 font-medium"
+            className="block text-indigo-600 hover:text-indigo-900 text-sm leading-5 font-medium"
             {...props}
             rel="noopener noreferrer">
             {children}
@@ -20,7 +20,7 @@ const TableLink: FC<Props> = ({to, isExternal, children, ...props}: Props) =>
     ) : (
         <RouterLink
             to={to}
-            className="text-indigo-600 hover:text-indigo-900 text-sm leading-5 font-medium"
+            className="block text-indigo-600 hover:text-indigo-900 text-sm leading-5 font-medium"
             {...props}>
             {children}
         </RouterLink>
