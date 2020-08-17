@@ -1,42 +1,11 @@
-import React, {forwardRef, Ref, FC, ReactNode} from 'react';
-import Button, {getSharedButtonClassNames} from './button';
-import cx from '../utils/cx';
+import React, {forwardRef, Ref, FC} from 'react';
+import Button from './button';
+import {ButtonProps} from './types';
 
-type Props = {
-    ref?: Ref<HTMLButtonElement>;
-    type?: 'button' | 'submit' | 'reset';
-    size?: 'xs' | 'sm' | 'md' | 'lg';
-    isDisabled?: boolean;
-    isLoading?: boolean;
-    leftIcon?: string;
-    rightIcon?: string;
-    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-    children: ReactNode;
-};
-
-export const getPrimaryButtonClassName = (props: Record<string, any>): string =>
-    cx(getSharedButtonClassNames(props), 'bg-teal-500 text-white', {
-        'hover:bg-teal-700': !props.isDisabled && !props.isLoading,
-    });
-
-const PrimaryButton: FC<Props> = forwardRef(
-    (props: Props, ref: Ref<HTMLButtonElement>) => {
-        const {children, ...others} = props;
-
-        return (
-            <Button
-                ref={ref}
-                className={getPrimaryButtonClassName(props)}
-                {...others}>
-                {children}
-            </Button>
-        );
+const PrimaryButton: FC<ButtonProps> = forwardRef(
+    (props: ButtonProps, ref: Ref<HTMLButtonElement>) => {
+        return <Button ref={ref} variant="primary" {...props} />;
     }
 );
-
-PrimaryButton.defaultProps = {
-    type: 'button',
-    size: 'md',
-};
 
 export default PrimaryButton;

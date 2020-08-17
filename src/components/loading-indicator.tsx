@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 
-type Size = 'xs' | 'sm' | 'md' | 'lg';
+type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
 type Props = {
     size?: Size;
@@ -15,6 +15,7 @@ const sizeToPxMap: SizeToPxMap = {
     sm: '0.8rem',
     md: '1rem',
     lg: '1.2rem',
+    xl: '1.5rem',
 };
 
 const LoadingIndicator: FC<Props> = ({size}: Props) => {

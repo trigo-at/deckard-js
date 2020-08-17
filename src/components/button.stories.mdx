@@ -6,7 +6,7 @@ import SecondaryButton from './secondary-button';
 import TertiaryButton from './tertiary-button';
 import ProviderDecorator from '../provider-decorator';
 
-<Meta title="Components/Button" component={PrimaryButton} decorators={[ProviderDecorator]} />
+<Meta title="Components/Button" component={Button} decorators={[ProviderDecorator]} />
 
 # Buttons
 
@@ -25,7 +25,7 @@ import ProviderDecorator from '../provider-decorator';
 
 ## Props
 
-<ArgsTable of={PrimaryButton} />
+<ArgsTable of={Button} />
 
 ## Example with isDisabled flag
 
@@ -80,23 +80,26 @@ import ProviderDecorator from '../provider-decorator';
 <Canvas>
   <Story name="button-example-size">
     <>
-      <Stack isInline spacing={4} shouldWrapChildren mb={8}>
-        <PrimaryButton size="lg">Primary lg</PrimaryButton>
-        <PrimaryButton size="md">Primary md</PrimaryButton>
-        <PrimaryButton size="sm">Primary sm</PrimaryButton>
+      <Stack isInline shouldWrapChildren mb={8}>
         <PrimaryButton size="xs">Primary xs</PrimaryButton>
+        <PrimaryButton size="sm">Primary sm</PrimaryButton>
+        <PrimaryButton size="md">Primary md</PrimaryButton>
+        <PrimaryButton size="lg">Primary lg</PrimaryButton>
+        <PrimaryButton size="xl">Primary xl</PrimaryButton>
       </Stack>
       <Stack isInline spacing={4} shouldWrapChildren mb={8}>
-        <SecondaryButton size="lg">Secondary lg</SecondaryButton>
-        <SecondaryButton size="md">Secondary md</SecondaryButton>
-        <SecondaryButton size="sm">Secondary sm</SecondaryButton>
         <SecondaryButton size="xs">Secondary xs</SecondaryButton>
+        <SecondaryButton size="sm">Secondary sm</SecondaryButton>
+        <SecondaryButton size="md">Secondary md</SecondaryButton>
+        <SecondaryButton size="lg">Secondary lg</SecondaryButton>
+        <SecondaryButton size="xl">Secondary xl</SecondaryButton>
       </Stack>
       <Stack isInline spacing={4} shouldWrapChildren>
-        <TertiaryButton size="lg">Tertiary lg</TertiaryButton>
-        <TertiaryButton size="md">Tertiary md</TertiaryButton>
-        <TertiaryButton size="sm">Tertiary sm</TertiaryButton>
         <TertiaryButton size="xs">Tertiary xs</TertiaryButton>
+        <TertiaryButton size="sm">Tertiary sm</TertiaryButton>
+        <TertiaryButton size="md">Tertiary md</TertiaryButton>
+        <TertiaryButton size="lg">Tertiary lg</TertiaryButton>
+        <TertiaryButton size="xl">Tertiary xl</TertiaryButton>
       </Stack>
     </>
   </Story>

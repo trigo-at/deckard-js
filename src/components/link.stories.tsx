@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable no-console */
 import React from 'react';
 import {Stack} from '@chakra-ui/core';
@@ -7,7 +8,7 @@ import TertiaryLink from './tertiary-link';
 import ProviderDecorator from '../provider-decorator';
 
 export const DefaultStory = () => (
-    <Stack isInline spacing={4} shouldWrapChildren>
+    <Stack isInline shouldWrapChildren>
         <PrimaryLink isExternal to="https://www.trigo.dev">
             Primary
         </PrimaryLink>

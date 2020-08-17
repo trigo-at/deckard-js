@@ -1,67 +1,40 @@
 /* eslint-disable react/button-has-type */
-import React, {forwardRef, ReactNode, Ref, FC} from 'react';
+import React, {forwardRef, Ref, FC} from 'react';
 import {Icon} from '@chakra-ui/core';
-import cx from '../utils/cx';
 import LoadingIndicator from './loading-indicator';
+import getButtonStyle from './get-button-style';
+import {VariantButtonProps} from './types';
 
 // this Component is currently not exported, it is only used within this repo
 // to serve as a base-component for primary-button / secondary-button and tertiary-button
 
-type Props = {
-    className: string;
-    // eslint-disable-next-line react/no-unused-prop-types
-    ref?: Ref<HTMLButtonElement>;
-    type?: 'button' | 'submit' | 'reset';
-    size?: 'xs' | 'sm' | 'md' | 'lg';
-    isDisabled?: boolean;
-    isLoading?: boolean;
-    leftIcon?: string;
-    rightIcon?: string;
-    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-    children: ReactNode;
-};
-
-export const getSharedButtonClassNames = (props: Record<string, any>): string =>
-    cx(
-        'inline-flex items-center justify-center',
-        'transition-all duration-200',
-        'px-4 font-semibold rounded-sm min-w-button shadow',
-        {
-            'h-6': props.size === 'xs',
-            'h-8': props.size === 'sm',
-            'h-10': props.size === 'md',
-            'h-12': props.size === 'lg',
-            'text-xs': props.size === 'xs',
-            'text-sm': props.size === 'sm',
-            'text-lg': props.size === 'lg',
-            'cursor-not-allowed': props.isDisabled,
-            'cursor-wait': props.isLoading,
-            'opacity-50': props.isDisabled || props.isLoading,
-            'focus:outline-none': props.isDisabled || props.isLoading,
-        }
-    );
-
-const Button: FC<Props> = forwardRef(
+const BaseButton: FC<VariantButtonProps> = forwardRef(
     (
         {
             className,
             type,
             size,
+            variant,
             isDisabled,
             isLoading,
             leftIcon,
             rightIcon,
             onClick,
             children,
-        }: Props,
+        }: VariantButtonProps,
         ref: Ref<HTMLButtonElement>
     ) => (
         <button
             type={type}
             ref={ref}
             aria-disabled={isDisabled || isLoading}
-            className={className}
-            style={{outlineColor: '#05a9f0'}}
+            className={getButtonStyle({
+                className,
+                size,
+                variant,
+                isDisabled,
+                isLoading,
+            })}
             onClick={isDisabled || isLoading ? undefined : onClick}
             aria-label={
                 isLoading && typeof children === 'string' ? children : undefined
@@ -83,9 +56,23 @@ const Button: FC<Props> = forwardRef(
     )
 );
 
+const Button: FC<VariantButtonProps> = forwardRef(
+    (props: VariantButtonProps, ref: Ref<HTMLButtonElement>) => {
+        if (['primary', 'secondary'].includes(props.variant)) {
+            return (
+                <span className="inline-flex rounded-md shadow-sm">
+                    <BaseButton ref={ref} {...props} />
+                </span>
+            );
+        }
+        return <BaseButton ref={ref} {...props} />;
+    }
+);
+
 Button.defaultProps = {
     type: 'button',
     size: 'md',
+    className: '',
 };
 
 export default Button;
