@@ -41,6 +41,7 @@ export {default as LoadingIndicator} from './indicators/loading-indicator';
 // Layout
 export {default as Layout} from './layout/layout';
 export {default as Sidebar} from './layout/sidebar';
+export {default as NavLink} from './layout/nav-link';
 export {default as NavMenu} from './layout/nav-menu';
 export {default as NavMenuItem} from './layout/nav-menu-item';
 export {default as Header} from './layout/header';
