@@ -15,7 +15,7 @@ const AppLayout = ({
     loading,
     error,
     header,
-    aside,
+    sidebar,
     children,
     accent,
     fixedAside,
@@ -27,70 +27,46 @@ const AppLayout = ({
         return <LoadingIndicator />;
     }
     return (
-        <Layout
-            fixedAside={fixedAside}
-            accent={accent}
-            logo={<Logo title={title} version={version} imgSrc={imgSrc} />}
-            header={header}
-            aside={aside}>
+        <Layout header={header} sidebar={sidebar}>
             <Router>{children}</Router>
         </Layout>
     );
 };
 
 AppLayout.propTypes = {
-    title: string,
-    version: string,
-    imgSrc: string,
     loading: bool,
     error: string,
     header: node,
-    aside: node,
+    sidebar: node,
     children: node,
-    accent: string,
-    fixedAside: bool,
 };
 
 AppLayout.defaultProps = {
-    version: undefined,
     loading: false,
-    imgSrc: undefined,
     error: undefined,
-    title: undefined,
     header: undefined,
-    aside: undefined,
+    sidebar: undefined,
     children: undefined,
-    accent: 'gray',
-    fixedAside: false,
 };
 
 const AppShell = ({
-    title,
-    version,
-    imgSrc,
     loading,
     error,
     header,
-    aside,
+    sidebar,
     messages,
     locale,
     children,
     accent,
-    fixedAside,
 }) => {
     return (
         <ThemeProvider>
             <IntlProvider locale={locale} messages={messages}>
                 <AppLayout
-                    accent={accent}
-                    title={title}
-                    version={version}
-                    imgSrc={imgSrc}
                     loading={loading}
                     error={error}
                     header={header}
-                    aside={aside}
-                    fixedAside={fixedAside}>
+                    sidebar={sidebar}>
                     {children}
                 </AppLayout>
             </IntlProvider>
@@ -99,33 +75,24 @@ const AppShell = ({
 };
 
 AppShell.propTypes = {
-    title: string,
-    version: string,
-    imgSrc: string,
     loading: bool,
     error: string,
     header: node,
-    aside: node,
+    sidebar: node,
     children: node,
     messages: object,
     locale: string,
     accent: string,
-    fixedAside: bool,
 };
 
 AppShell.defaultProps = {
-    version: undefined,
-    title: undefined,
-    imgSrc: undefined,
     loading: false,
     error: undefined,
     header: undefined,
-    aside: undefined,
+    sidebar: undefined,
     children: undefined,
     messages: {},
     locale: 'de',
-    accent: 'gray',
-    fixedAside: false,
 };
 
 export default AppShell;
