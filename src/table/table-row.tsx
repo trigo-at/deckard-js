@@ -5,9 +5,11 @@ type Props = {
     children: ReactNode;
 };
 
-const TableRow: FC<Props> = ({entryAnimation, children}: Props) => {
+const TableRow: FC<Props> = ({entryAnimation, children, ...props}: Props) => {
     return (
-        <tr className={entryAnimation ? 'animation--blink' : undefined}>
+        <tr
+            className={entryAnimation ? 'animation--blink' : undefined}
+            {...props}>
             {children}
         </tr>
     );

@@ -1,7 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 import React, {useState, useEffect, FC, ReactElement} from 'react';
 import {FormattedMessage} from 'react-intl';
-import Link from '../components/link';
+import TertiaryLink from '../components/tertiary-link';
 import Table from './table';
 import TableHeader from './table-header';
 import TableRow from './table-row';
@@ -34,13 +34,13 @@ const DataCell: FC<DataCellProps> = ({column}: DataCellProps) => {
     }
     if (column.link) {
         return (
-            <Link to={column.link} isExternal={column.isExternal}>
+            <TertiaryLink to={column.link} isExternal={column.isExternal}>
                 {column.format ? (
                     <FormattedMessage id={`${column.format}.${column.value}`} />
                 ) : (
                     column.value
                 )}
-            </Link>
+            </TertiaryLink>
         );
     }
     if (column.format) {

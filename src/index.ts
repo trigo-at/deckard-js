@@ -17,6 +17,8 @@ export {default as PrimaryLink} from './components/primary-link';
 export {default as SecondaryLink} from './components/secondary-link';
 export {default as TertiaryLink} from './components/tertiary-link';
 
+export {default as Badge} from './components/badge';
+
 // Form fields
 export {default as CheckboxField} from './form-fields/checkbox-field';
 export {default as CheckboxGroupField} from './form-fields/checkbox-group-field';
