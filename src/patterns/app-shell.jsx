@@ -4,7 +4,6 @@ import {Router} from '@reach/router';
 import {IntlProvider} from 'react-intl';
 import ThemeProvider from '../theme-provider';
 import Layout from '../layout/layout';
-import Logo from '../layout/logo';
 import ErrorIndicator from '../indicators/error-indicator';
 import LoadingIndicator from '../indicators/loading-indicator';
 
