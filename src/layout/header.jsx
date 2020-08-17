@@ -8,11 +8,11 @@ const Header = ({userName, onSearch, onLogout, children, isLoading}) => {
     return (
         <div className="relative z-10 flex-shrink-0 flex h-16 bg-white shadow">
             <div className="flex-1 px-4 flex justify-between">
-                {onSearch && (
-                    <div className="flex-1 flex">
+                <div className="flex-1 flex">
+                    {onSearch && (
                         <SearchBox isLoading={isLoading} onSearch={onSearch} />
-                    </div>
-                )}
+                    )}
+                </div>
                 <div className="ml-4 flex items-center md:ml-6">
                     <UserMenu userName={userName} onLogout={onLogout} />
                 </div>

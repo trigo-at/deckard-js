@@ -5,7 +5,7 @@ import {Box} from '@chakra-ui/core';
 const Sidebar = ({title, version, logo, children}) => (
     <div className="flex flex-col flex-grow border-r border-gray-200 pt-5 pb-4 bg-white overflow-y-auto">
         <div className="flex items-center flex-shrink-0 px-4">
-            <img className="h-8 w-auto" src={logo} alt="logo" />
+            {logo && <img className="h-8 w-auto" src={logo} alt="logo" />}
             <div className="ml-3">
                 <div className="text-lg font-normal leading-6">{title}</div>
                 <div className="text-xs text-gray-400 font-normal">
