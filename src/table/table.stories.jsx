@@ -12,38 +12,38 @@ import Badge from '../components/badge';
 import ProviderDecorator from '../provider-decorator';
 
 export const DefaultStory = () => (
-    <div className="max-w-full">
-        <Table>
+    <div>
+        <Table fixed>
             <TableHead>
                 <TableRow>
-                    <TableHeaderCell>Name</TableHeaderCell>
-                    <TableHeaderCell>Title</TableHeaderCell>
-                    <TableHeaderCell>Status</TableHeaderCell>
-                    <TableHeaderCell>Role</TableHeaderCell>
-                    <TableHeaderCell />
+                    <TableHeaderCell twelfthPart={4}>Name</TableHeaderCell>
+                    <TableHeaderCell twelfthPart={4}>Title</TableHeaderCell>
+                    <TableHeaderCell twelfthPart={1}>Status</TableHeaderCell>
+                    <TableHeaderCell twelfthPart={1}>Role</TableHeaderCell>
+                    <TableHeaderCell twelfthPart={2} />
                 </TableRow>
             </TableHead>
             <TableBody>
                 <TableRow tripedType="even">
-                    <TableCell twelfthPart={4}>
+                    <TableCell>
                         <CellContent>Jane Cooper</CellContent>
                         <SecondaryCellContent>
                             jane.cooper@example.com
                         </SecondaryCellContent>
                     </TableCell>
-                    <TableCell twelfthPart={4}>
+                    <TableCell>
                         <CellContent>Regional Paradigm Technician</CellContent>
                         <SecondaryCellContent>
                             Optimization
                         </SecondaryCellContent>
                     </TableCell>
-                    <TableCell twelfthPart={1}>
+                    <TableCell>
                         <Badge variant="green">Active</Badge>
                     </TableCell>
-                    <TableCell twelfthPart={1}>
+                    <TableCell>
                         <CellContent>Admin</CellContent>
                     </TableCell>
-                    <TableCell twelfthPart={2}>
+                    <TableCell>
                         <TableLink isExternal to="https://www.trigo.dev">
                             Edit
                         </TableLink>
