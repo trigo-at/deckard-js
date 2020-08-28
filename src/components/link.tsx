@@ -4,9 +4,6 @@ import {Link as RouterLink} from '@reach/router';
 import getButtonStyle from './get-button-style';
 import {VariantLinkProps} from './types';
 
-// this Component is currently not exported, it is only used within this repo
-// to serve as a base-component for primary-button / secondary-button and tertiary-button
-
 const BaseLink: FC<VariantLinkProps> = forwardRef(
     (
         {
