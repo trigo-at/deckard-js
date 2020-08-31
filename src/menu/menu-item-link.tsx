@@ -23,6 +23,15 @@ type Props = {
 const onMouseDown = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) =>
     e.nativeEvent.stopImmediatePropagation();
 
+// by default a HTMLAnchorElement is only triggered via the Enter key. In this context we will also trigger it with the Space key.
+// So all MenuItem and  MenuItemLink behave the same way.
+const onKeyDown = (e: React.KeyboardEvent<HTMLAnchorElement>) => {
+    if (e.keyCode === 32) {
+        e.preventDefault();
+        (e.target as HTMLAnchorElement).click();
+    }
+};
+
 const MenuItemLink: FC<Props> = forwardRef(
     ({to, isExternal, isDisabled, children}: Props, ref: Ref<any>) => {
         const {closeMenu} = useContext(MenuContext);
@@ -51,6 +60,7 @@ const MenuItemLink: FC<Props> = forwardRef(
                 href={isDisabled ? undefined : to}
                 onClick={onClick}
                 onMouseDown={onMouseDown}
+                onKeyDown={onKeyDown}
                 className={className}>
                 {children}
             </a>
@@ -63,6 +73,7 @@ const MenuItemLink: FC<Props> = forwardRef(
                 tabIndex={isDisabled ? 0 : undefined}
                 onClick={onClick}
                 onMouseDown={onMouseDown}
+                onKeyDown={onKeyDown}
                 className={className}>
                 {children}
             </RouterLink>

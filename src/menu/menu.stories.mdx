@@ -12,6 +12,19 @@ import ProviderDecorator from '../provider-decorator';
 
 # Menu
 
+The Menu Component and its descendants can be used whenever you have a lot of actions and to less space for it. It has 2 methods to handle actions:
+
+- `<MenuItem onClick={() => doItNow()} />`
+- `<MenuItemLink isExternal? />`
+
+It is fully operable via keyboard and fully accessible to screen readers. We are handling disabled buttons and links with the `aria-disabled` html attribute rather then the `disabled` html attribute. This is because if you use `disabled` on a html element, it will completely dissapear for a user who uses a screen reader. With the attribute `aria-disabled="true"` it will still be focusable, but it will be announced as disabled. We use this pattern also for all sorts of Button and Link Components.
+
+Keyboard Navigation:
+
+- `SPACE OR ENTER when MenuButton has focus` trigger MenuButton open/closed state
+- `TAB` move focus to next element
+- `SHIFT + TAB` move focus to previous element
+- `SPACE OR ENTER when MenuItem or MenuItemLink has focus` trigger MenuItem or MenuItemLink Element
 
 ## Example
 
@@ -204,11 +217,11 @@ import ProviderDecorator from '../provider-decorator';
       <Menu>
             <MenuButton rightIcon="chevron-down">Show me all the options</MenuButton>
             <MenuList>
-                <div class="px-4 py-3">
-                    <p class="text-sm leading-5">
+                <div className="px-4 py-3">
+                    <p className="text-sm leading-5">
                         Signed in as
                     </p>
-                    <p class="text-sm leading-5 font-medium text-gray-900 truncate">
+                    <p className="text-sm leading-5 font-medium text-gray-900 truncate">
                         tom@example.com
                     </p>
                 </div>

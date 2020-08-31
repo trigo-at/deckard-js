@@ -10,6 +10,7 @@ import ProviderDecorator from '../provider-decorator';
 
 # Buttons
 
+Note: We are handling disabled buttons with the `aria-disabled` html attribute rather then the `disabled` html attribute. This is because if you use `disabled` on a html element, it will completely dissapear for a user who uses a screen reader. With the attribute `aria-disabled="true"` it will still be focusable, but it will be announced as disabled. We use this pattern also for all sorts of Link an MenuItem Components.
 
 ## Example
 
