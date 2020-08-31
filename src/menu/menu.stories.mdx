@@ -280,3 +280,21 @@ Keyboard Navigation:
     </div>
   </Story>
 </Canvas>
+
+## Example with disabled MenuButton
+
+<Canvas>
+  <Story name="menu-example-disabled-menu-button">
+    <div className="flex justify-center space-y-4 h-60 mx-12">
+      <Menu>
+            <MenuButton rightIcon="chevron-down" isDisabled>Show me all the options</MenuButton>
+            <MenuList>
+                <MenuItem>
+                    <Icon icon="home" className="w-5 h-5 inline-block mr-3" />
+                    Home
+                </MenuItem>
+            </MenuList>
+        </Menu>
+    </div>
+  </Story>
+</Canvas>
