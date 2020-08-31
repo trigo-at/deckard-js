@@ -23,6 +23,22 @@ export const DefaultStory = () => (
 
 DefaultStory.storyName = 'default';
 
+export const Disabled = () => (
+    <Stack isInline shouldWrapChildren>
+        <PrimaryLink isExternal to="https://www.trigo.dev" isDisabled>
+            Primary
+        </PrimaryLink>
+        <SecondaryLink isExternal to="https://www.trigo.dev" isDisabled>
+            Secondary
+        </SecondaryLink>
+        <TertiaryLink isExternal to="https://www.trigo.dev" isDisabled>
+            Tertiary
+        </TertiaryLink>
+    </Stack>
+);
+
+Disabled.storyName = 'disabled';
+
 export default {
     title: 'Components/Link',
     component: PrimaryLink,

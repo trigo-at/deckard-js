@@ -21,6 +21,7 @@ const BaseButton: FC<VariantButtonProps> = forwardRef(
             rightIcon,
             onClick,
             children,
+            ...others
         }: VariantButtonProps,
         ref: Ref<HTMLButtonElement>
     ) => (
@@ -38,7 +39,8 @@ const BaseButton: FC<VariantButtonProps> = forwardRef(
             onClick={isDisabled || isLoading ? undefined : onClick}
             aria-label={
                 isLoading && typeof children === 'string' ? children : undefined
-            }>
+            }
+            {...others}>
             {isLoading ? (
                 <LoadingIndicator size={size} />
             ) : (

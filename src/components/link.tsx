@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, {forwardRef, Ref, FC} from 'react';
 import {Icon} from '@chakra-ui/core';
 import {Link as RouterLink} from '@reach/router';
@@ -25,7 +26,8 @@ const BaseLink: FC<VariantLinkProps> = forwardRef(
                 rel="noopener noreferrer"
                 ref={ref}
                 aria-disabled={isDisabled}
-                href={to}
+                tabIndex={isDisabled ? 0 : undefined}
+                href={isDisabled ? undefined : to}
                 className={getButtonStyle({
                     className,
                     size,
@@ -46,6 +48,8 @@ const BaseLink: FC<VariantLinkProps> = forwardRef(
             <RouterLink
                 to={to}
                 ref={ref}
+                aria-disabled={isDisabled}
+                tabIndex={isDisabled ? 0 : undefined}
                 className={getButtonStyle({
                     className,
                     size,

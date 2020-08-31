@@ -1,6 +1,15 @@
-import React, {forwardRef, Ref, FC, ReactNode, useContext} from 'react';
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import React, {
+    forwardRef,
+    Ref,
+    FC,
+    ReactNode,
+    useContext,
+    useCallback,
+} from 'react';
 import {Link as RouterLink} from '@reach/router';
 import MenuContext from './menu-context';
+import cx from '../utils/cx';
 
 type Props = {
     to: string;
@@ -18,25 +27,43 @@ const MenuItemLink: FC<Props> = forwardRef(
     ({to, isExternal, isDisabled, children}: Props, ref: Ref<any>) => {
         const {closeMenu} = useContext(MenuContext);
 
+        const onClick = useCallback(() => {
+            if (!isDisabled) closeMenu();
+        }, [closeMenu, isDisabled]);
+
+        const className = cx(
+            'block w-full text-left px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900',
+            {
+                'cursor-not-allowed': isDisabled,
+                'opacity-50': isDisabled,
+                'focus:outline-none': isDisabled,
+            }
+        );
+
         return isExternal ? (
             <a
                 target="_blank"
                 rel="noopener noreferrer"
                 ref={ref}
+                role="menuitem"
                 aria-disabled={isDisabled}
-                href={to}
-                onClick={closeMenu}
+                tabIndex={isDisabled ? 0 : undefined}
+                href={isDisabled ? undefined : to}
+                onClick={onClick}
                 onMouseDown={onMouseDown}
-                className="block w-full text-left px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
+                className={className}>
                 {children}
             </a>
         ) : (
             <RouterLink
                 to={to}
                 ref={ref}
-                onClick={closeMenu}
+                role="menuitem"
+                aria-disabled={isDisabled}
+                tabIndex={isDisabled ? 0 : undefined}
+                onClick={onClick}
                 onMouseDown={onMouseDown}
-                className="block w-full text-left px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
+                className={className}>
                 {children}
             </RouterLink>
         );

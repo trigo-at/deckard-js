@@ -6,7 +6,7 @@ import MenuContext from './menu-context';
 
 const MenuButton: FC<ButtonProps> = ({onClick, ...others}: ButtonProps) => {
     const ref = useRef<HTMLButtonElement>(null);
-    const {closeMenu, toggleMenu} = useContext(MenuContext);
+    const {isOpen, closeMenu, toggleMenu} = useContext(MenuContext);
     useClickOutside(ref, closeMenu);
 
     const customOnClick = useCallback(
@@ -23,6 +23,7 @@ const MenuButton: FC<ButtonProps> = ({onClick, ...others}: ButtonProps) => {
             variant="tertiary"
             {...others}
             onClick={customOnClick}
+            aria-expanded={isOpen ? 'true' : 'false'}
         />
     );
 };
