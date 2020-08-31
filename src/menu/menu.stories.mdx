@@ -1,0 +1,269 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import Menu from './menu';
+import MenuButton from './menu-button';
+import MenuList from './menu-list';
+import MenuItem from './menu-item';
+import MenuItemLink from './menu-item-link';
+import MenuDivider from './menu-divider';
+import Icon from '../components/icon';
+import ProviderDecorator from '../provider-decorator';
+
+<Meta title="Components/Menu" component={Menu} decorators={[ProviderDecorator]} />
+
+# Menu
+
+
+## Example
+
+<Canvas>
+  <Story name="menu-example">
+    <div className="flex justify-center space-y-4 h-48 mx-12">
+      <Menu>
+            <MenuButton rightIcon="chevron-down">Show me all the options</MenuButton>
+            <MenuList>
+                <MenuItem>
+                    MenuItem 1
+                </MenuItem>
+                <MenuItem>
+                    MenuItem 2
+                </MenuItem>
+                <MenuItemLink
+                    isExternal
+                    to="https://github.com/trigo-at/design-system">
+                    MenuItemLink external
+                </MenuItemLink>
+                <MenuItemLink
+                    to="/">
+                    MenuItemLink internal
+                </MenuItemLink>
+            </MenuList>
+        </Menu>
+    </div>
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable of={Menu} />
+
+## Example with primary MenuButton
+
+<Canvas>
+  <Story name="menu-example-primary">
+    <div className="flex justify-center space-y-4 h-48 mx-12">
+      <Menu>
+            <MenuButton rightIcon="chevron-down" variant="primary">Show me all the options</MenuButton>
+            <MenuList>
+                <MenuItem>
+                    MenuItem 1
+                </MenuItem>
+                <MenuItem>
+                    MenuItem 2
+                </MenuItem>
+                <MenuItemLink
+                    isExternal
+                    to="https://github.com/trigo-at/design-system">
+                    MenuItemLink external
+                </MenuItemLink>
+                <MenuItemLink
+                    to="/">
+                    MenuItemLink internal
+                </MenuItemLink>
+            </MenuList>
+        </Menu>
+    </div>
+  </Story>
+</Canvas>
+
+## Example with secondary MenuButton
+
+<Canvas>
+  <Story name="menu-example-secondary">
+    <div className="flex justify-center space-y-4 h-48 mx-12">
+      <Menu>
+            <MenuButton rightIcon="chevron-down" variant="secondary">Show me all the options</MenuButton>
+            <MenuList>
+                <MenuItem>
+                    MenuItem 1
+                </MenuItem>
+                <MenuItem>
+                    MenuItem 2
+                </MenuItem>
+                <MenuItemLink
+                    isExternal
+                    to="https://github.com/trigo-at/design-system">
+                    MenuItemLink external
+                </MenuItemLink>
+                <MenuItemLink
+                    to="/">
+                    MenuItemLink internal
+                </MenuItemLink>
+            </MenuList>
+        </Menu>
+    </div>
+  </Story>
+</Canvas>
+
+## Example with icon-only MenuButton
+
+<Canvas>
+  <Story name="menu-example-icon-only">
+    <div className="flex justify-center space-y-4 h-48 mx-12">
+      <Menu>
+            <MenuButton variant="secondary">
+                <Icon icon="dots-horizontal" />
+            </MenuButton>
+            <MenuList>
+                <MenuItem>
+                    MenuItem 1
+                </MenuItem>
+                <MenuItem>
+                    MenuItem 2
+                </MenuItem>
+                <MenuItemLink
+                    isExternal
+                    to="https://github.com/trigo-at/design-system">
+                    MenuItemLink external
+                </MenuItemLink>
+                <MenuItemLink
+                    to="/">
+                    MenuItemLink internal
+                </MenuItemLink>
+            </MenuList>
+        </Menu>
+    </div>
+  </Story>
+</Canvas>
+
+## Example with isDisabled flag
+
+<Canvas>
+  <Story name="menu-example-disabled">
+    <div className="flex justify-center space-y-4 h-48 mx-12">
+      <Menu>
+            <MenuButton rightIcon="chevron-down">Show me all the options</MenuButton>
+            <MenuList>
+                <MenuItem isDisabled>
+                    MenuItem 1
+                </MenuItem>
+                <MenuItem isDisabled>
+                    MenuItem 2
+                </MenuItem>
+                <MenuItemLink
+                    isExternal
+                    isDisabled
+                    to="https://github.com/trigo-at/design-system">
+                    MenuItemLink external
+                </MenuItemLink>
+                <MenuItemLink
+                    isDisabled
+                    to="/">
+                    MenuItemLink internal
+                </MenuItemLink>
+            </MenuList>
+        </Menu>
+    </div>
+  </Story>
+</Canvas>
+
+## Example with MenuDivider
+
+<Canvas>
+  <Story name="menu-example-divider">
+    <div className="flex justify-center space-y-4 h-48 mx-12">
+      <Menu>
+            <MenuButton rightIcon="chevron-down">Show me all the options</MenuButton>
+            <MenuList>
+                <MenuItem>
+                    MenuItem 1
+                </MenuItem>
+                <MenuItem>
+                    MenuItem 2
+                </MenuItem>
+                <MenuDivider />
+                <MenuItemLink
+                    isExternal
+                    to="https://github.com/trigo-at/design-system">
+                    MenuItemLink external
+                </MenuItemLink>
+                <MenuItemLink
+                    to="/">
+                    MenuItemLink internal
+                </MenuItemLink>
+            </MenuList>
+        </Menu>
+    </div>
+  </Story>
+</Canvas>
+
+## Example with custom Header
+
+<Canvas>
+  <Story name="menu-example-custom-header">
+    <div className="flex justify-center space-y-4 h-60 mx-12">
+      <Menu>
+            <MenuButton rightIcon="chevron-down">Show me all the options</MenuButton>
+            <MenuList>
+                <div class="px-4 py-3">
+                    <p class="text-sm leading-5">
+                        Signed in as
+                    </p>
+                    <p class="text-sm leading-5 font-medium text-gray-900 truncate">
+                        tom@example.com
+                    </p>
+                </div>
+                <MenuDivider />
+                <MenuItem>
+                    MenuItem 1
+                </MenuItem>
+                <MenuItem>
+                    MenuItem 2
+                </MenuItem>
+                <MenuItemLink
+                    isExternal
+                    to="https://github.com/trigo-at/design-system">
+                    MenuItemLink external
+                </MenuItemLink>
+                <MenuItemLink
+                    to="/">
+                    MenuItemLink internal
+                </MenuItemLink>
+            </MenuList>
+        </Menu>
+    </div>
+  </Story>
+</Canvas>
+
+## Example with icons
+
+<Canvas>
+  <Story name="menu-example-icons">
+    <div className="flex justify-center space-y-4 h-60 mx-12">
+      <Menu>
+            <MenuButton rightIcon="chevron-down">Show me all the options</MenuButton>
+            <MenuList>
+                <MenuItem>
+                    <Icon icon="home" className="w-5 h-5 inline-block mr-3" />
+                    Home
+                </MenuItem>
+                <MenuItem>
+                    <Icon icon="search" className="w-5 h-5 inline-block mr-3" />
+                    Search
+                </MenuItem>
+                <MenuDivider />
+                <MenuItemLink
+                    isExternal
+                    to="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf">
+                    <Icon icon="download" className="w-5 h-5 inline-block mr-3" />
+                    Download
+                </MenuItemLink>
+                <MenuItemLink
+                    to="/">
+                    <Icon icon="database" className="w-5 h-5 inline-block mr-3" />
+                    Database
+                </MenuItemLink>
+            </MenuList>
+        </Menu>
+    </div>
+  </Story>
+</Canvas>
