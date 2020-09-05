@@ -3,6 +3,9 @@ const tailwindcssui = require('@tailwindcss/ui');
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
+    future: {
+        removeDeprecatedGapUtilities: true,
+    },
     purge: {
         content: [
             './src/**/*.html',
