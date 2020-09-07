@@ -9,7 +9,7 @@ const MenuButton: FC<ButtonProps> = ({onClick, ...others}: ButtonProps) => {
     const {isOpen, closeMenu, toggleMenu} = useContext(MenuContext);
     useClickOutside(ref, closeMenu);
 
-    const customOnClick = useCallback(
+    const handleOnClick = useCallback(
         (event: React.MouseEvent<HTMLButtonElement>) => {
             if (onClick) onClick(event);
             toggleMenu();
@@ -22,7 +22,7 @@ const MenuButton: FC<ButtonProps> = ({onClick, ...others}: ButtonProps) => {
             ref={ref}
             variant="tertiary"
             {...others}
-            onClick={customOnClick}
+            onClick={handleOnClick}
             aria-expanded={isOpen ? 'true' : 'false'}
         />
     );

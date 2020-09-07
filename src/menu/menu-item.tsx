@@ -24,7 +24,7 @@ const MenuItem: FC<Props> = forwardRef(
     (props: Props, ref: Ref<HTMLButtonElement>) => {
         const {closeMenu} = useContext(MenuContext);
 
-        const onClick = useCallback(
+        const handleOnClick = useCallback(
             (event: React.MouseEvent<HTMLButtonElement>) => {
                 if (props.onClick) props.onClick(event);
                 if (!props.isDisabled) closeMenu();
@@ -32,7 +32,7 @@ const MenuItem: FC<Props> = forwardRef(
             [props.onClick, props.isDisabled, closeMenu]
         );
 
-        const className = cx(
+        const classNames = cx(
             'block w-full text-left px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900',
             {
                 'cursor-not-allowed': props.isDisabled,
@@ -47,8 +47,8 @@ const MenuItem: FC<Props> = forwardRef(
                 aria-disabled={props.isDisabled}
                 type="button"
                 role="menuitem"
-                className={className}
-                onClick={onClick}
+                className={classNames}
+                onClick={handleOnClick}
                 onMouseDown={onMouseDown}>
                 {props.children}
             </button>
