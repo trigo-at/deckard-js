@@ -1,0 +1,300 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import Menu from './menu';
+import MenuButton from './menu-button';
+import MenuList from './menu-list';
+import MenuItem from './menu-item';
+import MenuItemLink from './menu-item-link';
+import MenuDivider from './menu-divider';
+import Icon from '../components/icon';
+import ProviderDecorator from '../provider-decorator';
+
+<Meta title="Components/Menu" component={Menu} decorators={[ProviderDecorator]} />
+
+# Menu
+
+The Menu Component and its descendants can be used whenever you have a lot of actions and to less space for it. It has 2 methods to handle actions:
+
+- `<MenuItem onClick={() => doItNow()} />`
+- `<MenuItemLink isExternal? />`
+
+It is fully operable via keyboard and fully accessible to screen readers. We are handling disabled buttons and links with the `aria-disabled` html attribute rather then the `disabled` html attribute. This is because if you use `disabled` on a html element, it will completely dissapear for a user who uses a screen reader. With the attribute `aria-disabled="true"` it will still be focusable, but it will be announced as disabled. We use this pattern also for all sorts of Button and Link Components.
+
+Keyboard Navigation:
+
+- `SPACE OR ENTER when MenuButton has focus` trigger MenuButton open/closed state
+- `TAB` move focus to next element
+- `SHIFT + TAB` move focus to previous element
+- `SPACE OR ENTER when MenuItem or MenuItemLink has focus` trigger MenuItem or MenuItemLink Element
+
+## Example
+
+<Canvas>
+  <Story name="menu-example">
+    <div className="flex justify-center space-y-4 h-60 mx-12">
+      <Menu>
+            <MenuButton rightIcon="chevron-down">Show me all the options</MenuButton>
+            <MenuList>
+                <MenuItem>
+                    MenuItem 1
+                </MenuItem>
+                <MenuItem>
+                    MenuItem 2
+                </MenuItem>
+                <MenuItemLink
+                    isExternal
+                    to="https://github.com/trigo-at/design-system">
+                    MenuItemLink external
+                </MenuItemLink>
+                <MenuItemLink
+                    to="/">
+                    MenuItemLink internal
+                </MenuItemLink>
+            </MenuList>
+        </Menu>
+    </div>
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable of={Menu} />
+
+## Example with primary MenuButton
+
+<Canvas>
+  <Story name="menu-example-primary">
+    <div className="flex justify-center space-y-4 h-60 mx-12">
+      <Menu>
+            <MenuButton rightIcon="chevron-down" variant="primary">Show me all the options</MenuButton>
+            <MenuList>
+                <MenuItem>
+                    MenuItem 1
+                </MenuItem>
+                <MenuItem>
+                    MenuItem 2
+                </MenuItem>
+                <MenuItemLink
+                    isExternal
+                    to="https://github.com/trigo-at/design-system">
+                    MenuItemLink external
+                </MenuItemLink>
+                <MenuItemLink
+                    to="/">
+                    MenuItemLink internal
+                </MenuItemLink>
+            </MenuList>
+        </Menu>
+    </div>
+  </Story>
+</Canvas>
+
+## Example with secondary MenuButton
+
+<Canvas>
+  <Story name="menu-example-secondary">
+    <div className="flex justify-center space-y-4 h-60 mx-12">
+      <Menu>
+            <MenuButton rightIcon="chevron-down" variant="secondary">Show me all the options</MenuButton>
+            <MenuList>
+                <MenuItem>
+                    MenuItem 1
+                </MenuItem>
+                <MenuItem>
+                    MenuItem 2
+                </MenuItem>
+                <MenuItemLink
+                    isExternal
+                    to="https://github.com/trigo-at/design-system">
+                    MenuItemLink external
+                </MenuItemLink>
+                <MenuItemLink
+                    to="/">
+                    MenuItemLink internal
+                </MenuItemLink>
+            </MenuList>
+        </Menu>
+    </div>
+  </Story>
+</Canvas>
+
+## Example with icon-only MenuButton
+
+<Canvas>
+  <Story name="menu-example-icon-only">
+    <div className="flex justify-center space-y-4 h-60 mx-12">
+      <Menu>
+            <MenuButton variant="secondary">
+                <Icon icon="dots-horizontal" />
+            </MenuButton>
+            <MenuList>
+                <MenuItem>
+                    MenuItem 1
+                </MenuItem>
+                <MenuItem>
+                    MenuItem 2
+                </MenuItem>
+                <MenuItemLink
+                    isExternal
+                    to="https://github.com/trigo-at/design-system">
+                    MenuItemLink external
+                </MenuItemLink>
+                <MenuItemLink
+                    to="/">
+                    MenuItemLink internal
+                </MenuItemLink>
+            </MenuList>
+        </Menu>
+    </div>
+  </Story>
+</Canvas>
+
+## Example with isDisabled flag
+
+<Canvas>
+  <Story name="menu-example-disabled">
+    <div className="flex justify-center space-y-4 h-60 mx-12">
+      <Menu>
+            <MenuButton rightIcon="chevron-down">Show me all the options</MenuButton>
+            <MenuList>
+                <MenuItem isDisabled>
+                    MenuItem 1
+                </MenuItem>
+                <MenuItem isDisabled>
+                    MenuItem 2
+                </MenuItem>
+                <MenuItemLink
+                    isExternal
+                    isDisabled
+                    to="https://github.com/trigo-at/design-system">
+                    MenuItemLink external
+                </MenuItemLink>
+                <MenuItemLink
+                    isDisabled
+                    to="/">
+                    MenuItemLink internal
+                </MenuItemLink>
+            </MenuList>
+        </Menu>
+    </div>
+  </Story>
+</Canvas>
+
+## Example with MenuDivider
+
+<Canvas>
+  <Story name="menu-example-divider">
+    <div className="flex justify-center space-y-4 h-60 mx-12">
+      <Menu>
+            <MenuButton rightIcon="chevron-down">Show me all the options</MenuButton>
+            <MenuList>
+                <MenuItem>
+                    MenuItem 1
+                </MenuItem>
+                <MenuItem>
+                    MenuItem 2
+                </MenuItem>
+                <MenuDivider />
+                <MenuItemLink
+                    isExternal
+                    to="https://github.com/trigo-at/design-system">
+                    MenuItemLink external
+                </MenuItemLink>
+                <MenuItemLink
+                    to="/">
+                    MenuItemLink internal
+                </MenuItemLink>
+            </MenuList>
+        </Menu>
+    </div>
+  </Story>
+</Canvas>
+
+## Example with custom Header
+
+<Canvas>
+  <Story name="menu-example-custom-header">
+    <div className="flex justify-center space-y-4 h-60 mx-12">
+      <Menu>
+            <MenuButton rightIcon="chevron-down">Show me all the options</MenuButton>
+            <MenuList>
+                <div className="px-4 py-3">
+                    <p className="text-sm leading-5">
+                        Signed in as
+                    </p>
+                    <p className="text-sm leading-5 font-medium text-gray-900 truncate">
+                        tom@example.com
+                    </p>
+                </div>
+                <MenuDivider />
+                <MenuItem>
+                    MenuItem 1
+                </MenuItem>
+                <MenuItem>
+                    MenuItem 2
+                </MenuItem>
+                <MenuItemLink
+                    isExternal
+                    to="https://github.com/trigo-at/design-system">
+                    MenuItemLink external
+                </MenuItemLink>
+                <MenuItemLink
+                    to="/">
+                    MenuItemLink internal
+                </MenuItemLink>
+            </MenuList>
+        </Menu>
+    </div>
+  </Story>
+</Canvas>
+
+## Example with icons
+
+<Canvas>
+  <Story name="menu-example-icons">
+    <div className="flex justify-center space-y-4 h-60 mx-12">
+      <Menu>
+            <MenuButton rightIcon="chevron-down">Show me all the options</MenuButton>
+            <MenuList>
+                <MenuItem>
+                    <Icon icon="home" className="w-5 h-5 inline-block mr-3" />
+                    Home
+                </MenuItem>
+                <MenuItem>
+                    <Icon icon="search" className="w-5 h-5 inline-block mr-3" />
+                    Search
+                </MenuItem>
+                <MenuDivider />
+                <MenuItemLink
+                    isExternal
+                    to="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf">
+                    <Icon icon="download" className="w-5 h-5 inline-block mr-3" />
+                    Download
+                </MenuItemLink>
+                <MenuItemLink
+                    to="/">
+                    <Icon icon="database" className="w-5 h-5 inline-block mr-3" />
+                    Database
+                </MenuItemLink>
+            </MenuList>
+        </Menu>
+    </div>
+  </Story>
+</Canvas>
+
+## Example with disabled MenuButton
+
+<Canvas>
+  <Story name="menu-example-disabled-menu-button">
+    <div className="flex justify-center space-y-4 h-60 mx-12">
+      <Menu>
+            <MenuButton rightIcon="chevron-down" isDisabled>Show me all the options</MenuButton>
+            <MenuList>
+                <MenuItem>
+                    <Icon icon="home" className="w-5 h-5 inline-block mr-3" />
+                    Home
+                </MenuItem>
+            </MenuList>
+        </Menu>
+    </div>
+  </Story>
+</Canvas>
