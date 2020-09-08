@@ -1,12 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, {
-    forwardRef,
-    Ref,
-    FC,
-    ReactNode,
-    useContext,
-    useCallback,
-} from 'react';
+import React, {forwardRef, Ref, FC, ReactNode, useContext} from 'react';
 import {Link as RouterLink} from '@reach/router';
 import MenuContext from './menu-context';
 import cx from '../utils/cx';
@@ -36,9 +29,9 @@ const MenuItemLink: FC<Props> = forwardRef(
     ({to, isExternal, isDisabled, children}: Props, ref: Ref<any>) => {
         const {closeMenu} = useContext(MenuContext);
 
-        const handleOnClick = useCallback(() => {
+        const handleOnClick = () => {
             if (!isDisabled) closeMenu();
-        }, [closeMenu, isDisabled]);
+        };
 
         const classNames = cx(
             'block w-full text-left px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900',

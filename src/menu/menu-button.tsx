@@ -1,4 +1,4 @@
-import React, {FC, useContext, useCallback, useRef} from 'react';
+import React, {FC, useContext, useRef} from 'react';
 import useClickOutside from '../use-click-outside';
 import Button from '../components/button';
 import {ButtonProps} from '../components/types';
@@ -9,13 +9,10 @@ const MenuButton: FC<ButtonProps> = ({onClick, ...others}: ButtonProps) => {
     const {isOpen, closeMenu, toggleMenu} = useContext(MenuContext);
     useClickOutside(ref, closeMenu);
 
-    const handleOnClick = useCallback(
-        (event: React.MouseEvent<HTMLButtonElement>) => {
-            if (onClick) onClick(event);
-            toggleMenu();
-        },
-        [onClick, closeMenu]
-    );
+    const handleOnClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+        if (onClick) onClick(event);
+        toggleMenu();
+    };
 
     return (
         <Button
