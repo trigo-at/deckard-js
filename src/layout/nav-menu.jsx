@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-import {string, node} from 'prop-types';
+import {string, node, bool} from 'prop-types';
 import {Link} from '@reach/router';
 import Icon from '../components/icon';
 import cx from '../utils/cx';
 
-const NavMenu = ({icon, header, children}) => {
-    const [collapsed, setCollapsed] = useState(true);
+const NavMenu = ({icon, header, children, initiallyCollapsed}) => {
+    const [collapsed, setCollapsed] = useState(initiallyCollapsed);
 
     return (
         <div>
@@ -33,6 +33,11 @@ const NavMenu = ({icon, header, children}) => {
 
 NavMenu.propTypes = {
     children: node.isRequired,
+    initiallyCollapsed: bool,
+};
+
+NavMenu.defaultProps = {
+    initiallyCollapsed: true,
 };
 
 export default NavMenu;
