@@ -71,10 +71,10 @@ const MenuItemLink: FC<Props> = forwardRef(
                 role="menuitem"
                 aria-disabled={isDisabled}
                 tabIndex={isDisabled ? 0 : undefined}
-                onClick={onClick}
+                onClick={handleOnClick}
                 onMouseDown={onMouseDown}
                 onKeyDown={onKeyDown}
-                className={className}>
+                className={classNames}>
                 {children}
             </RouterLink>
         );
