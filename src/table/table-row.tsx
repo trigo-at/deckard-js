@@ -3,12 +3,14 @@ import cx from '../utils/cx';
 
 type Props = {
     entryAnimation?: boolean;
+    isActive?: boolean;
     stripedType?: 'odd' | 'even';
     children: ReactNode;
 };
 
 const TableRow: FC<Props> = ({
     stripedType,
+    isActive,
     entryAnimation,
     children,
     ...props
@@ -19,6 +21,7 @@ const TableRow: FC<Props> = ({
                 'animation--blink': entryAnimation,
                 'bg-white': stripedType === 'odd',
                 'bg-gray-50': stripedType === 'even',
+                'bg-green-100': isActive,
             })}
             {...props}>
             {children}
@@ -27,6 +30,7 @@ const TableRow: FC<Props> = ({
 };
 
 TableRow.defaultProps = {
+    isActive: false,
     stripedType: 'odd',
 };
 
