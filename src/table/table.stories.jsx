@@ -24,7 +24,7 @@ export const DefaultStory = () => (
                 </TableRow>
             </TableHead>
             <TableBody>
-                <TableRow tripedType="even">
+                <TableRow stripedType="even">
                     <TableCell>
                         <CellContent>Jane Cooper</CellContent>
                         <SecondaryCellContent>
