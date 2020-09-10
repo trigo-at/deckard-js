@@ -28,13 +28,17 @@ const FormSection = ({
                         )}
                     </Box>
                 )}
-                <Grid
-                    gridGap={6}
-                    alignItems="flex-start"
-                    gridTemplateColumns="repeat(3, 1fr)"
-                    gridTemplateAreas={gridTemplateAreas}>
-                    {children}
-                </Grid>
+                {gridTemplateAreas ? (
+                    <Grid
+                        gridGap={6}
+                        alignItems="flex-start"
+                        gridTemplateColumns="repeat(3, 1fr)"
+                        gridTemplateAreas={gridTemplateAreas}>
+                        {children}
+                    </Grid>
+                ) : (
+                    <Box>{children}</Box>
+                )}
             </Box>
         </HideOptionalContext.Provider>
     );
