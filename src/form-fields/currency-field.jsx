@@ -23,8 +23,16 @@ const CurrencyField = ({
     isRequired,
     isDisabled,
     config,
+    label,
+    formattedName,
+    formattedPrefix,
     ...props
 }) => {
+    if (fieldName) {
+        console.warn(
+            'The property "fieldName" is deprecated. Use "formattedName" instead. "fieldName" will be removed in future versions.'
+        );
+    }
     const {input, meta} = useField(name, config);
     const isInvalid =
         (!!meta.error && meta.touched) ||
@@ -38,7 +46,13 @@ const CurrencyField = ({
                 pr={0}
                 justifyContent="space-between"
                 alignItems="flex-end">
-                <FormattedMessage id={`field.${fieldName || name}`} />
+                {label || (
+                    <FormattedMessage
+                        id={`${formattedPrefix}.${
+                            formattedName || fieldName || name
+                        }`}
+                    />
+                )}
                 {!isRequired && <Optional />}
             </FormLabel>
             <NumberInput
@@ -70,6 +84,9 @@ CurrencyField.propTypes = {
     isDisabled: bool,
     helperText: node,
     config: object,
+    label: string,
+    formattedName: string,
+    formattedPrefix: string,
 };
 
 CurrencyField.defaultProps = {
@@ -79,6 +96,9 @@ CurrencyField.defaultProps = {
     isRequired: false,
     isDisabled: false,
     config: undefined,
+    label: undefined,
+    formattedName: undefined,
+    formattedPrefix: 'field',
 };
 
 export default CurrencyField;
