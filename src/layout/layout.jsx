@@ -3,6 +3,7 @@ import React from 'react';
 import {node, string, bool} from 'prop-types';
 import {Grid, Box, Flex} from '@chakra-ui/core';
 import {Global, css} from '@emotion/core';
+import cx from '../utils/cx';
 
 const Layout = ({header, sidebar, children}) => {
     return (
@@ -16,7 +17,10 @@ const Layout = ({header, sidebar, children}) => {
                 <main
                     className="flex-1 relative z-0 overflow-y-auto focus:outline-none"
                     tabIndex="0">
-                    <div className="pt-2 pb-6 md:py-6">
+                    <div
+                        className={cx('pb-6', {
+                            'pt-2 md:py-6': !!header,
+                        })}>
                         <div className="mx-auto px-4 sm:px-6 md:px-8">
                             {children}
                         </div>

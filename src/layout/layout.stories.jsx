@@ -11,7 +11,7 @@ import NavSecondaryMenu from './nav-secondary-menu';
 import NavSecondaryMenuItem from './nav-secondary-menu-item';
 import PageSection from '../patterns/page-section';
 import {FormWithPageSection} from '../patterns/form-section.stories';
-import logo from './trigo-logo.svg';
+import logo from './sunrocks-logo.png';
 import ProviderDecorator from '../provider-decorator';
 
 export const DefaultStory = () => (
@@ -23,9 +23,16 @@ export const DefaultStory = () => (
             />
         }
         sidebar={
-            <Sidebar title="trigo Design System" version="v1.0.0" logo={logo}>
-                <NavLink to="/" icon="home">
+            <Sidebar
+                title="trigo Design System"
+                version="v1.0.0"
+                logo={logo}
+                userName="Max Mustermann">
+                <NavLink to="/iframe.html" icon="home">
                     Dashboard
+                </NavLink>
+                <NavLink to="/" icon="home">
+                    Dashboard 2
                 </NavLink>
                 <NavMenu header="Abwicklung" icon="add">
                     <NavMenuItem to="/new-person">Kunde*in anlegen</NavMenuItem>

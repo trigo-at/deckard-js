@@ -8,9 +8,9 @@ const NavSecondaryMenu = ({icon, header, children}) => {
     const [collapsed, setCollapsed] = useState(true);
 
     return (
-        <div className="mt-8">
+        <div className="pt-6">
             <h3
-                className="px-3 text-xs leading-4 font-semibold text-gray-500 uppercase tracking-wider"
+                className="px-3 py-2 text-xs leading-4 font-semibold text-white uppercase tracking-wider"
                 id="secondary-nav-headline">
                 {header}
             </h3>

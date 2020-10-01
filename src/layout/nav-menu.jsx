@@ -12,10 +12,10 @@ const NavMenu = ({icon, header, children, initiallyCollapsed}) => {
             <button
                 type="button"
                 onClick={() => setCollapsed(!collapsed)}
-                className="mt-1 group w-full flex items-center pl-2 pr-1 py-2 text-sm leading-5 font-medium rounded-md bg-white text-gray-600 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition ease-in-out duration-150">
+                className="w-full group flex items-center px-2 py-2 text-sm leading-5 font-medium rounded-md text-gray-300 hover:text-white hover:bg-gray-700 focus:text-white focus:outline-none focus:bg-gray-700 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150">
                 <Icon
                     icon={icon}
-                    className="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-600 group-focus:text-gray-600 transition ease-in-out duration-150"
+                    className="mr-4 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"
                 />
                 {header}
                 <svg
