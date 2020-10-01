@@ -18,8 +18,8 @@ const Layout = ({header, sidebar, children}) => {
                     className="flex-1 relative z-0 overflow-y-auto focus:outline-none"
                     tabIndex="0">
                     <div
-                        className={cx('pb-6', {
-                            'pt-2 md:py-6': !!header,
+                        className={cx('pb-6 pt-2 ', {
+                            'md:py-6': !!header,
                         })}>
                         <div className="mx-auto px-4 sm:px-6 md:px-8">
                             {children}
