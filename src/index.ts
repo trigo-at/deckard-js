@@ -17,14 +17,6 @@ export {default as PrimaryLink} from './components/primary-link';
 export {default as SecondaryLink} from './components/secondary-link';
 export {default as TertiaryLink} from './components/tertiary-link';
 
-// Menu
-export {default as Menu} from './menu/menu';
-export {default as MenuButton} from './menu/menu-button';
-export {default as MenuDivider} from './menu/menu-divider';
-export {default as MenuItem} from './menu/menu-item';
-export {default as MenuItemLink} from './menu/menu-item-link';
-export {default as MenuList} from './menu/menu-list';
-
 export {default as Badge} from './components/badge';
 
 // Form fields
