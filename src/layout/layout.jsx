@@ -3,31 +3,37 @@ import React from 'react';
 import {node, string, bool} from 'prop-types';
 import {Grid, Box, Flex} from '@chakra-ui/core';
 import {Global, css} from '@emotion/core';
-import cx from '../utils/cx';
 
 const Layout = ({header, sidebar, children}) => {
     return (
-        <div className="h-screen flex overflow-hidden bg-gray-100">
-            <div className="flex flex-shrink-0">
-                <div className="flex flex-col w-64">{sidebar}</div>
-            </div>
-            <div className="flex flex-col w-0 flex-1 overflow-hidden">
+        <Flex bg="gray.100" overflow="hidden" height="100vh">
+            <Flex flexShrink={0}>
+                <Flex width={64} flexDirection="column">
+                    {sidebar}
+                </Flex>
+            </Flex>
+            <Flex
+                flexDirection="column"
+                flex="1 1 0%"
+                overflow="hidden"
+                width={0}>
                 {header}
 
-                <main
-                    className="flex-1 relative z-0 overflow-y-auto focus:outline-none"
+                <Flex
+                    as="main"
+                    flex="1 1 0%"
+                    position="relative"
+                    overflowY="auto"
+                    zIndex={0}
                     tabIndex="0">
-                    <div
-                        className={cx('pb-6 pt-2 ', {
-                            'md:py-6': !!header,
-                        })}>
-                        <div className="mx-auto px-4 sm:px-6 md:px-8">
+                    <Box pb={6} pt={2} py={[0, header ? 6 : 0]}>
+                        <Box mx="auto" px={[6, 8]}>
                             {children}
-                        </div>
-                    </div>
-                </main>
-            </div>
-        </div>
+                        </Box>
+                    </Box>
+                </Flex>
+            </Flex>
+        </Flex>
     );
 };
 
