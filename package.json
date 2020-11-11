@@ -100,18 +100,18 @@
     "typescript": "^4.0.3"
   },
   "peerDependencies": {
-    "prop-types": "^15",
-    "react": "^16",
-    "final-form": "^4",
-    "final-form-arrays": "^3",
-    "react-final-form": "^6",
-    "react-final-form-arrays": "^3",
-    "react-intl": "^5",
-    "@reach/router": "^1",
     "@chakra-ui/core": "^0.8",
     "@emotion/core": "^10",
+    "@reach/router": "^1",
+    "core-js": "^3",
     "date-fns": "^2",
-    "core-js": "^3"
+    "final-form": "^4",
+    "final-form-arrays": "^3",
+    "prop-types": "^15",
+    "react": "^16",
+    "react-final-form": "^6",
+    "react-final-form-arrays": "^3",
+    "react-intl": "^5"
   },
   "jest": {
     "testMatch": [
