@@ -6,18 +6,24 @@ import UserMenu from './user-menu';
 
 const Header = ({userName, onSearch, onLogout, children, isLoading}) => {
     return (
-        <div className="relative z-10 flex-shrink-0 flex h-16 bg-white shadow">
-            <div className="flex-1 px-4 flex justify-between">
-                <div className="flex-1 flex">
+        <Flex
+            flexShrink={0}
+            bg="white"
+            shadow="sm"
+            height={16}
+            position="relative"
+            zIndex="docked">
+            <Flex flex="1 1 0%" px={4} justifyContent="space-between">
+                <Flex flex="1 1 0%">
                     {onSearch && (
                         <SearchBox isLoading={isLoading} onSearch={onSearch} />
                     )}
-                </div>
-                <div className="ml-4 flex items-center md:ml-6">
+                </Flex>
+                <Flex alignItems="center" ml={[4, 6]}>
                     <UserMenu userName={userName} onLogout={onLogout} />
-                </div>
-            </div>
-        </div>
+                </Flex>
+            </Flex>
+        </Flex>
     );
 };
 
