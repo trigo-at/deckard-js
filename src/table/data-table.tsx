@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 /* eslint-disable react/no-array-index-key */
 import React, {useState, useEffect, FC, ReactElement} from 'react';
 import {FormattedMessage} from 'react-intl';

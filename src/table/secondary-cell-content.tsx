@@ -1,11 +1,17 @@
+/* eslint-disable no-use-before-define */
 import React, {ReactNode, FC} from 'react';
+import {Box} from '@chakra-ui/core';
 
 type Props = {
     children: ReactNode;
 };
 
 const SecondaryCellContent: FC<Props> = ({children}: Props) => {
-    return <div className="text-sm leading-5 text-gray-500">{children}</div>;
+    return (
+        <Box fontSize="sm" lineHeight="shorter" color="gray.500">
+            {children}
+        </Box>
+    );
 };
 
 export default SecondaryCellContent;

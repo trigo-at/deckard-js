@@ -1,4 +1,6 @@
+/* eslint-disable no-use-before-define */
 import React, {ReactNode, FC} from 'react';
+import {Flex} from '@chakra-ui/core';
 
 type Props = {
     children: ReactNode;
@@ -7,7 +9,7 @@ type Props = {
 
 const Table: FC<Props> = ({children, fixed, ...props}: Props) => {
     return (
-        <div className="flex flex-col">
+        <Flex flexDirection="column">
             <div className="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
                 <div className="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
                     <table
@@ -19,7 +21,7 @@ const Table: FC<Props> = ({children, fixed, ...props}: Props) => {
                     </table>
                 </div>
             </div>
-        </div>
+        </Flex>
     );
 };
 

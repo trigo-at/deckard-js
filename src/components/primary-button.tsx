@@ -1,11 +1,18 @@
-import React, {forwardRef, Ref, FC} from 'react';
-import Button from './button';
-import {ButtonProps} from './types';
+import React, {forwardRef} from 'react';
+import {Button} from '@chakra-ui/core';
 
-const PrimaryButton: FC<ButtonProps> = forwardRef(
-    (props: ButtonProps, ref: Ref<HTMLButtonElement>) => {
-        return <Button ref={ref} variant="primary" {...props} />;
-    }
-);
+const PrimaryButton = forwardRef((props, ref) => {
+    return (
+        <Button
+            ref={ref}
+            variantColor="teal"
+            variant="solid"
+            shadow="sm"
+            {...props}
+        />
+    );
+});
+
+PrimaryButton.propTypes = {};
 
 export default PrimaryButton;

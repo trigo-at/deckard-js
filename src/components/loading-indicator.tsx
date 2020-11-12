@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 import React, {FC} from 'react';
 
 type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl';

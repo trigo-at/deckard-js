@@ -1,6 +1,7 @@
 import React, {Fragment, ReactElement} from 'react';
 import {FormattedMessage} from 'react-intl';
-import Link from '../components/link';
+import {Link} from '@chakra-ui/core';
+import {Link as ReachLink} from '@reach/router';
 
 type DataEntry = {
     field: string;
@@ -25,7 +26,7 @@ const DataEntry: React.FC<DataEntryProps> = ({entry}: DataEntryProps) => {
     }
     if (entry.link) {
         return (
-            <Link to={entry.link} isExternal={entry.isExternal}>
+            <Link as={ReachLink} to={entry.link} isExternal={entry.isExternal}>
                 {entry.format ? (
                     <FormattedMessage id={`${entry.format}.${entry.value}`} />
                 ) : (

@@ -1,10 +1,10 @@
-import React, {forwardRef, Ref, FC} from 'react';
-import Button from './button';
-import {ButtonProps} from './types';
+/* eslint-disable no-use-before-define */
+import React, {forwardRef, Ref} from 'react';
+import {Button, ButtonProps} from '@chakra-ui/core';
 
-const TertiaryButton: FC<ButtonProps> = forwardRef(
+const TertiaryButton = forwardRef(
     (props: ButtonProps, ref: Ref<HTMLButtonElement>) => {
-        return <Button ref={ref} variant="tertiary" {...props} />;
+        return <Button ref={ref} variant="ghost" {...props} />;
     }
 );
 

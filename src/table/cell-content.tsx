@@ -1,4 +1,6 @@
+/* eslint-disable no-use-before-define */
 import React, {ReactNode, FC} from 'react';
+import {Box} from '@chakra-ui/core';
 
 type Props = {
     children: ReactNode;
@@ -6,9 +8,13 @@ type Props = {
 
 const CellContent: FC<Props> = ({children}: Props) => {
     return (
-        <div className="text-sm leading-5 font-medium text-gray-900">
+        <Box
+            fontSize="sm"
+            lineHeight="shorter"
+            fontWeight="medium"
+            color="gray.900">
             {children}
-        </div>
+        </Box>
     );
 };
 
