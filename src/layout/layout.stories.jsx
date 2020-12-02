@@ -27,6 +27,7 @@ export const DefaultStory = () => (
                 title="trigo Design System"
                 version="v1.0.0"
                 logo={logo}
+                footerAction={<Button>feedback</Button>}
                 userName="Max Mustermann">
                 <NavLink to="/iframe.html" icon="home">
                     Dashboard
