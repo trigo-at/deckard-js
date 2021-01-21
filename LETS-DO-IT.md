@@ -14,6 +14,7 @@ Wir haben den Versuch unternommen tailwind in das design-system zu bringen, aber
     - Mitgliederportal
 - Das DS hat keine oder schlechte typescript Unterstuetzung
 - Die Dokumentation der "Core" Komponenten von Chakra ist aktuell nur via Referenz auf die Chakra Dokumentation gegeben.
+- Das DS liefert auch die Translation, Form und Routing Libraries mit
 
 ## Soll Situation
 
@@ -22,7 +23,8 @@ Wir haben den Versuch unternommen tailwind in das design-system zu bringen, aber
 - Die Anwendungen die das DS verwenden, sind so upgedated, das sie mit einer Version ohne tailwind utitlity classes funktionieren.
 - Das Theme (Color, Paddings, Fonts) soll von tailwind uebernommen werden. Ziel soll sein, das Sunrocks sich visuell nicht veraendert. Weil dort werden die tailwind DS tokens schon an vielen Stellen verwendet.
 - Das DS verwendet typescript, und unterstuetzt den Developer aktiv mit Intellisense und Fehlermeldungen bei falscher Benutzung.
-- Das DS soll auch fuer die "Core" Komponenten von Chakra einen Startingpoint in der Dokumentation anbieten, mit grober Erklaerung und Verlinkung zu Chakra fuer die Details.  
+- Das DS soll auch fuer die "Core" Komponenten von Chakra einen Startingpoint in der Dokumentation anbieten, mit grober Erklaerung und Verlinkung zu Chakra fuer die Details.
+- Das DS behaelt die Translation, Form und Routing Libraries
 
 ## Vorgehen
 
