@@ -249,7 +249,6 @@ export default {
         ...chakraTheme.colors,
         ...colors,
         primary: colors.indigo,
-        secondary: colors.pink,
     },
     icons: {
         ...chakraTheme.icons,

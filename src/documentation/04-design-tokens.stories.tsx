@@ -62,14 +62,6 @@ export const PrimaryColor = () => (
 
 PrimaryColor.storyName = 'PrimaryColor';
 
-export const SecondaryColor = () => (
-    <ThemeProvider>
-        <ColorGroup heading="Pink" colorKey="secondary" />
-    </ThemeProvider>
-);
-
-SecondaryColor.storyName = 'SecondaryColor';
-
 export const AllColors = () => (
     <ThemeProvider>
         <Stack spacing={6} shouldWrapChildren>
