@@ -23,7 +23,8 @@
         "react/jsx-filename-extension": [1, { "extensions": [".jsx", ".tsx"] }],
         "react/require-default-props": 0,
         // "react/no-unused-prop-types": 0,
-        "react/jsx-props-no-spreading": 0
+        "react/jsx-props-no-spreading": 0,
+        "arrow-body-style": "off"
     },
     "overrides": [
         {
