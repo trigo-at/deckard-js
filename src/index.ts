@@ -1,6 +1,6 @@
-import './index.css';
+// import './index.css';
 
-export * from '@chakra-ui/core';
+export * from '@chakra-ui/react';
 export {Link as RouterLink} from '@reach/router';
 export {FormattedMessage, useIntl} from 'react-intl';
 export {default as ThemeProvider} from './theme-provider';

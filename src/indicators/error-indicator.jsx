@@ -1,7 +1,7 @@
 import React from 'react';
 import {string} from 'prop-types';
 import {FormattedMessage} from 'react-intl';
-import {Alert, AlertIcon, AlertTitle, AlertDescription} from '@chakra-ui/core';
+import {Alert, AlertIcon, AlertTitle, AlertDescription} from '@chakra-ui/react';
 
 const ErrorIndicator = ({error, description}) => {
     return (

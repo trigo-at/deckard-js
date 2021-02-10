@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import React from 'react';
-import {Stack, Button} from '@chakra-ui/core';
+import {Stack, Button} from '@chakra-ui/react';
 import Layout from './layout';
 import Header from './header';
 import Sidebar from './sidebar';

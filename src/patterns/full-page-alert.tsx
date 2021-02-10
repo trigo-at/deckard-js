@@ -1,6 +1,6 @@
 import React, {SFC} from 'react';
 import {FormattedMessage} from 'react-intl';
-import {Icon} from '@chakra-ui/core';
+import {Icon} from '@chakra-ui/react';
 import {TranslationMessage} from '../types';
 import Link from '../components/link';
 

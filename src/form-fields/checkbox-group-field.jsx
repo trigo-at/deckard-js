@@ -8,7 +8,7 @@ import {
     CheckboxGroup,
     Checkbox,
     FormHelperText,
-} from '@chakra-ui/core';
+} from '@chakra-ui/react';
 import {FormattedMessage} from 'react-intl';
 import FieldError from './field-error';
 

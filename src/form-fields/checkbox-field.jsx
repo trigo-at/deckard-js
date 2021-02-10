@@ -1,7 +1,7 @@
 import React, {forwardRef} from 'react';
 import {string, node, object} from 'prop-types';
 import {useField} from 'react-final-form';
-import {FormControl, Checkbox, FormHelperText} from '@chakra-ui/core';
+import {FormControl, Checkbox, FormHelperText} from '@chakra-ui/react';
 import {FormattedMessage} from 'react-intl';
 import FieldError from './field-error';
 

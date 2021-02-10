@@ -3,8 +3,7 @@ import logo from './trigo-logo.png';
 
 export default create({
     base: 'light',
-
-    brandTitle: 'trigo Design System',
+    brandTitle: 'TRIGO Design System',
     brandUrl: 'https://www.trigo.dev',
     brandImage: logo,
 });

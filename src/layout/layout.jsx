@@ -1,8 +1,7 @@
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import React from 'react';
 import {node, string, bool} from 'prop-types';
-import {Grid, Box, Flex} from '@chakra-ui/core';
-import {Global, css} from '@emotion/core';
+import {Grid, Box, Flex} from '@chakra-ui/react';
 import cx from '../utils/cx';
 
 const Layout = ({header, sidebar, children}) => {

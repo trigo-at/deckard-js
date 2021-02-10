@@ -1,5 +1,5 @@
 import React from 'react';
-import {theme as chakraTheme} from '@chakra-ui/core';
+import {extendTheme} from '@chakra-ui/react';
 
 const customIcons = {
     home: {
@@ -238,20 +238,17 @@ const colors = {
     },
 };
 
-export default {
-    ...chakraTheme,
+export default extendTheme({
     fonts: {
         body: 'Inter',
         heading: 'Inter',
         mono: 'Menlo, monospace',
     },
     colors: {
-        ...chakraTheme.colors,
         ...colors,
         primary: colors.indigo,
     },
     icons: {
-        ...chakraTheme.icons,
         ...customIcons,
     },
-};
+});

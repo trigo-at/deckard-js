@@ -1,6 +1,6 @@
 import React from 'react';
 import {string, node, bool, object} from 'prop-types';
-import {Box, Grid} from '@chakra-ui/core';
+import {Box, Grid} from '@chakra-ui/react';
 import SectionHeader from './section-header';
 import SectionDescription from './section-description';
 import HideOptionalContext from '../form-fields/hide-optional-context';

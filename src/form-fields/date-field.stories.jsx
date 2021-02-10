@@ -2,7 +2,7 @@
 import React from 'react';
 import {Form} from 'react-final-form';
 import {parseISO, isValid} from 'date-fns';
-import {Button} from '@chakra-ui/core';
+import {Button} from '@chakra-ui/react';
 import DateField from './date-field';
 import ProviderDecorator from '../provider-decorator';
 

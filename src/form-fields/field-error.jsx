@@ -1,6 +1,6 @@
 import React from 'react';
 import {bool, object} from 'prop-types';
-import {FormErrorMessage} from '@chakra-ui/core';
+import {FormErrorMessage} from '@chakra-ui/react';
 import {FormattedMessage} from 'react-intl';
 
 const FieldError = ({isInvalid, meta}) => {

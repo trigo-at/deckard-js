@@ -1,7 +1,6 @@
-import babel from 'rollup-plugin-babel';
-import resolve from 'rollup-plugin-node-resolve';
-import json from 'rollup-plugin-json';
-import postcss from 'rollup-plugin-postcss';
+import {babel} from '@rollup/plugin-babel';
+import {nodeResolve} from '@rollup/plugin-node-resolve';
+import json from '@rollup/plugin-json';
 import pkg from './package.json';
 
 const extensions = ['.mjs', '.js', '.jsx', '.ts', '.tsx'];
@@ -16,8 +15,7 @@ export default {
         'react',
         'react-dom',
         'prop-types',
-        '@chakra/core',
-        'object-assign',
+        '@chakra/react',
         '@reach/router',
         'react-intl',
         'final-form',
@@ -27,18 +25,11 @@ export default {
         'react-intl',
         'hoist-non-react-statics',
         '@babel/runtime/helpers/inheritsLoose',
-        'color',
-        'react-focus-lock/dist/cjs',
-        'body-scroll-lock',
-        'react-animate-height',
         '@babel/runtime/helpers/defineProperty',
         '@babel/runtime/helpers/taggedTemplateLiteralLoose',
         '@babel/runtime/helpers/objectWithoutPropertiesLoose',
         '@babel/runtime/helpers/extends',
-        'exenv',
-        'react-spring/renderprops.cjs',
-        'date-fns',
-        'copy-to-clipboard',
+        'date-fns/parseISO',
         'core-js/modules/es.array.iterator',
         'core-js/modules/es.symbol.description',
         'core-js/modules/web.dom-collections.iterator',
@@ -48,8 +39,9 @@ export default {
         babel({
             extensions,
             exclude: 'node_modules/**',
+            babelHelpers: 'bundled',
         }),
-        resolve({
+        nodeResolve({
             extensions,
             modulesOnly: true,
         }),
@@ -66,6 +58,5 @@ export default {
             // defaults to '\t'
             indent: '  ',
         }),
-        postcss(),
     ],
 };

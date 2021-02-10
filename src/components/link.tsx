@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, {forwardRef, Ref, FC} from 'react';
-import {Icon} from '@chakra-ui/core';
+import {Icon} from '@chakra-ui/react';
 import {Link as RouterLink} from '@reach/router';
 import getButtonStyle from './get-button-style';
 import {VariantLinkProps} from './types';

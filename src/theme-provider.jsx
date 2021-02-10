@@ -1,13 +1,12 @@
 import React from 'react';
 import {node} from 'prop-types';
-import {ThemeProvider as ChakraThemeProvider, CSSReset} from '@chakra-ui/core';
-import {Global, css} from '@emotion/core';
+import {ChakraProvider} from '@chakra-ui/react';
+import {Global, css} from '@emotion/react';
 import defaultTheme from './default-theme';
 
 const ThemeProvider = ({children}) => {
     return (
-        <ChakraThemeProvider theme={defaultTheme}>
-            <CSSReset />
+        <ChakraProvider resetCSS theme={defaultTheme}>
             <Global
                 styles={css`
                     @import url('https://rsms.me/inter/inter.css');
@@ -22,7 +21,7 @@ const ThemeProvider = ({children}) => {
                 `}
             />
             {children}
-        </ChakraThemeProvider>
+        </ChakraProvider>
     );
 };
 

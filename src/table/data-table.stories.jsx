@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import React, {useState} from 'react';
 import Chance from 'chance';
-import {Stack} from '@chakra-ui/core';
+import {Stack} from '@chakra-ui/react';
 import DataTable from './data-table';
 import ViewSection from '../patterns/view-section';
 import TertiaryButton from '../components/tertiary-button';

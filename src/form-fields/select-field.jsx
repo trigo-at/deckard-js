@@ -7,7 +7,7 @@ import {
     FormHelperText,
     Text,
     Select,
-} from '@chakra-ui/core';
+} from '@chakra-ui/react';
 import {FormattedMessage, useIntl} from 'react-intl';
 import FieldError from './field-error';
 import Optional from './optional';

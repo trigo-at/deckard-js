@@ -1,6 +1,6 @@
 import React from 'react';
 import {node, string, func} from 'prop-types';
-import {Box} from '@chakra-ui/core';
+import {Box} from '@chakra-ui/react';
 import {FormattedMessage} from 'react-intl';
 
 const Sidebar = ({

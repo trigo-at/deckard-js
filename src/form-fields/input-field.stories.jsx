@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import React from 'react';
 import {Form} from 'react-final-form';
-import {Button} from '@chakra-ui/core';
+import {Button} from '@chakra-ui/react';
 import InputField from './input-field';
 import ProviderDecorator from '../provider-decorator';
 

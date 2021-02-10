@@ -11,7 +11,7 @@ import {
     PopoverBody,
     PopoverFooter,
     Stack,
-} from '@chakra-ui/core';
+} from '@chakra-ui/react';
 import PrimaryButton from '../components/primary-button';
 import TertiaryButton from '../components/tertiary-button';
 
@@ -22,7 +22,7 @@ const ConfirmButton = ({
     closeMessageId,
     headerMessageId,
     questionMessageId,
-    variantColor,
+    colorScheme,
     ...props
 }) => {
     const initialFocusRef = useRef();
@@ -34,7 +34,7 @@ const ConfirmButton = ({
             {({onClose}) => (
                 <>
                     <PopoverTrigger>
-                        <PrimaryButton variantColor={variantColor} {...props}>
+                        <PrimaryButton colorScheme={colorScheme} {...props}>
                             <FormattedMessage id={messageId} />
                         </PrimaryButton>
                     </PopoverTrigger>
@@ -50,7 +50,7 @@ const ConfirmButton = ({
                         <PopoverFooter>
                             <Stack spacing={2} isInline>
                                 <PrimaryButton
-                                    variantColor={variantColor}
+                                    colorScheme={colorScheme}
                                     onClick={() => {
                                         onConfirm();
                                         onClose();
@@ -78,7 +78,7 @@ ConfirmButton.propTypes = {
     closeMessageId: string,
     headerMessageId: string,
     questionMessageId: string,
-    variantColor: string,
+    colorScheme: string,
 };
 
 ConfirmButton.defaultProps = {
@@ -86,7 +86,7 @@ ConfirmButton.defaultProps = {
     closeMessageId: 'common.close',
     headerMessageId: 'common.confirm-header',
     questionMessageId: 'common.confirm-question',
-    variantColor: 'teal',
+    colorScheme: 'teal',
 };
 
 export default ConfirmButton;

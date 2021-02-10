@@ -9,7 +9,7 @@ npm install @trigo/design-system
 ## Contributing
 
 If you'd like to contribute to the design system, we'd love to have your help.
-If you work at trigo, please join the #design-system Slack channel and let us know what you'd like to work on.
+If you work at trigo, please join the #squad-marketing-sales Slack channel and let us know what you'd like to work on.
 
 For all contributors, please be sure to read the [Contributing](CONTRIBUTING.md) doc.
 
@@ -44,7 +44,3 @@ We hope to accomplish these goals by:
 [site]: https://design-system.trigo.dev/
 
 [MIT License](LICENSE.md)
-
-## Breaking Changes
-
-- `PrimaryButton` / `SecondaryButton` / `TertiaryButton` now cannot handle styled-system props anymore. So if they are used within a Stack, make sure that you set the `shouldWrapChildren` prop on the Stack Component

@@ -1,6 +1,6 @@
 import React from 'react';
 import {string, object} from 'prop-types';
-import {Text} from '@chakra-ui/core';
+import {Text} from '@chakra-ui/react';
 import {FormattedMessage} from 'react-intl';
 
 const SectionDescription = ({description, values, ...props}) => {

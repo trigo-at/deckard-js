@@ -2,7 +2,7 @@
 import React, {useState, useEffect} from 'react';
 import {Form} from 'react-final-form';
 import Chance from 'chance';
-import {Button, Box} from '@chakra-ui/core';
+import {Button, Box} from '@chakra-ui/react';
 import InlineSearchField from './inline-search-field';
 import ProviderDecorator from '../provider-decorator';
 

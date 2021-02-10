@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable import/prefer-default-export */
 import React from 'react';
-import {Box, Heading, Stack} from '@chakra-ui/core';
+import {Box, Heading, Stack} from '@chakra-ui/react';
 import ThemeProvider from '../theme-provider';
 import theme from '../default-theme';
 

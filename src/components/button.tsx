@@ -1,6 +1,6 @@
 /* eslint-disable react/button-has-type */
 import React, {forwardRef, Ref, FC} from 'react';
-import {Icon} from '@chakra-ui/core';
+import {Icon} from '@chakra-ui/react';
 import LoadingIndicator from './loading-indicator';
 import getButtonStyle from './get-button-style';
 import {VariantButtonProps} from './types';

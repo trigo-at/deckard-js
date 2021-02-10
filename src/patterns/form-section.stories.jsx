@@ -3,7 +3,7 @@
 import React from 'react';
 import {Form} from 'react-final-form';
 import {action} from '@storybook/addon-actions';
-import {Box, List, ListItem} from '@chakra-ui/core';
+import {Box, List, ListItem} from '@chakra-ui/react';
 import LinkTo from '@storybook/addon-links/dist/react';
 import FormDivider from './form-divider';
 import FormSection from './form-section';

@@ -1,6 +1,6 @@
 import React from 'react';
 import {string, func, node, bool} from 'prop-types';
-import {Flex, Box} from '@chakra-ui/core';
+import {Flex, Box} from '@chakra-ui/react';
 import SearchBox from './search-box';
 import UserMenu from './user-menu';
 

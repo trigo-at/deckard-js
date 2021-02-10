@@ -1,5 +1,3 @@
-import '../src/index.css';
-
-const headers = ['Documentation', 'Patterns', 'Components', 'Experimental'];
+const headers = ['Documentation', 'Patterns', 'Application UI', 'Components', 'Experimental'];
 
 export const parameters = {options: {storySort: {order: headers}}};

@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import React from 'react';
 import {Form} from 'react-final-form';
-import {Button} from '@chakra-ui/core';
+import {Button} from '@chakra-ui/react';
 import CheckboxField from './checkbox-field';
 import ProviderDecorator from '../provider-decorator';
 
@@ -22,7 +22,7 @@ export const CheckboxFieldStory = () => (
                     id="string"
                     name="checkboxField1"
                     value="stringOrNumber"
-                    variantColor="blue"
+                    colorScheme="blue"
                     size="md"
                     onBlur={() => {
                         console.log('onBlur');
@@ -53,7 +53,7 @@ export const CheckboxFieldStory2 = () => (
                     id="string"
                     name="checkboxField1"
                     value="stringOrNumber"
-                    variantColor="blue"
+                    colorScheme="blue"
                     size="md"
                     onBlur={() => {
                         console.log('onBlur');
@@ -81,7 +81,7 @@ export const CheckboxFieldStory3 = () => (
                 <CheckboxField name="a" />
                 <CheckboxField name="b" />
                 <CheckboxField name="c" />
-                <Button mt="1em" size="md" variantColor="teal" type="submit">
+                <Button mt="1em" size="md" colorScheme="teal" type="submit">
                     submit
                 </Button>
             </form>

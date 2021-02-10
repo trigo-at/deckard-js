@@ -1,7 +1,7 @@
 import React from 'react';
 import {string, node, bool, object} from 'prop-types';
 import {useField} from 'react-final-form';
-import {FormControl, FormLabel, Input, FormHelperText} from '@chakra-ui/core';
+import {FormControl, FormLabel, Input, FormHelperText} from '@chakra-ui/react';
 import {FormattedMessage} from 'react-intl';
 import FieldError from './field-error';
 import Optional from './optional';
