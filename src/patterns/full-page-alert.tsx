@@ -1,8 +1,8 @@
-import React, {SFC} from 'react';
+import React, {FC} from 'react';
 import {FormattedMessage} from 'react-intl';
-import {Icon} from '@chakra-ui/react';
+import {Icon, Link} from '@chakra-ui/react';
 import {TranslationMessage} from '../types';
-import Link from '../components/link';
+// import Link from '../components/link';
 
 type Props = {
     status: 'success' | 'error' | 'warning' | 'info';
@@ -31,13 +31,13 @@ const STATUSES = {
     },
 };
 
-const FullPageAlert: SFC<Props> = ({
+const FullPageAlert: FC<Props> = ({
     status,
     title,
     description,
     to,
     action,
-}: Props): React.ReactElement => {
+}: Props) => {
     return (
         <>
             <div

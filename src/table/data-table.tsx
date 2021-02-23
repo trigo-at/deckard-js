@@ -1,109 +1,70 @@
-/* eslint-disable react/no-array-index-key */
-import React, {useState, useEffect, FC, ReactElement} from 'react';
-import {FormattedMessage} from 'react-intl';
-import TableLink from './table-link';
+/* eslint-disable no-nested-ternary */
+import React, {useMemo, FC} from 'react';
+import {Thead, Tbody, Tr, Th, Td, chakra} from '@chakra-ui/react';
+import {useTable, useSortBy, Column} from 'react-table';
+import SortDescending from '../icons/sort-descending';
+import SortAscending from '../icons/sort-ascending';
 import Table from './table';
-import TableHead from './table-head';
-import TableHeaderCell from './table-header-cell';
-import TableBody from './table-body';
-import TableRow from './table-row';
-import TableCell from './table-cell';
-import CellContent from './cell-content';
 
-type Column = {
-    value?: any;
-    link?: string;
-    isExternal?: boolean;
-    format?: string;
-    Component?: React.FC<any>;
-    render?: (value: string) => ReactElement;
+export type DataTableProps = {
+    columns: Array<Column>;
+    data: Array<any>;
 };
 
-type DataCellProps = {
-    column: Column;
-};
+export const DataTable: FC<DataTableProps> = ({columns, data}) => {
+    const memoizedData = useMemo(() => data, [data]);
+    const memoizedColumns = useMemo(() => columns, [columns]);
 
-const DataCell: FC<DataCellProps> = ({column}: DataCellProps) => {
-    if (column.render) {
-        return column.render(column.value);
-    }
-    if (column.Component) {
-        return (
-            <CellContent>
-                <column.Component>{column.value}</column.Component>
-            </CellContent>
-        );
-    }
-    if (column.link) {
-        return (
-            <TableLink to={column.link} isExternal={column.isExternal}>
-                {column.format ? (
-                    <FormattedMessage id={`${column.format}.${column.value}`} />
-                ) : (
-                    column.value
-                )}
-            </TableLink>
-        );
-    }
-    if (column.format) {
-        return (
-            <CellContent>
-                <FormattedMessage id={`${column.format}.${column.value}`} />
-            </CellContent>
-        );
-    }
-    return <CellContent>{column.value}</CellContent>;
-};
-
-type DataTableProps = {
-    animateNewRow?: boolean;
-    columns: Array<string>;
-    items: Array<{
-        id: string;
-        columns: Column[];
-    }>;
-};
-
-const DataTable: FC<DataTableProps> = ({
-    columns,
-    items,
-    animateNewRow,
-}: DataTableProps) => {
-    const [initialIds, setInitialIds] = useState<Array<string>>([]);
-
-    useEffect(() => {
-        if (Array.isArray(items)) setInitialIds(items.map((item) => item.id));
-    }, []);
+    const {
+        getTableProps,
+        getTableBodyProps,
+        headerGroups,
+        rows,
+        prepareRow,
+    } = useTable({columns: memoizedColumns, data: memoizedData}, useSortBy);
 
     return (
-        <Table>
-            <TableHead>
-                <TableRow>
-                    {columns.map((column) => (
-                        <TableHeaderCell key={column}>
-                            <FormattedMessage id={`field.${column}`} />
-                        </TableHeaderCell>
-                    ))}
-                </TableRow>
-            </TableHead>
-            <TableBody>
-                {items.map((item, idx) => (
-                    <TableRow
-                        key={item.id}
-                        stripedType={(idx + 1) % 2 === 0 ? 'even' : 'odd'}
-                        entryAnimation={
-                            initialIds.length && !initialIds.includes(item.id)
-                                ? animateNewRow
-                                : false
-                        }>
-                        {item.columns.map((column, colIdx) => (
-                            <TableCell key={colIdx}>
-                                <DataCell column={column} />
-                            </TableCell>
+        <Table {...getTableProps()}>
+            <Thead>
+                {headerGroups.map((headerGroup) => (
+                    <Tr {...headerGroup.getHeaderGroupProps()}>
+                        {headerGroup.headers.map((column) => (
+                            <Th
+                                {...column.getHeaderProps(
+                                    column.getSortByToggleProps()
+                                )}
+                                isNumeric={column.isNumeric}>
+                                {column.render('Header')}
+                                <chakra.span pl="4">
+                                    {column.isSorted ? (
+                                        column.isSortedDesc ? (
+                                            <SortDescending aria-label="sorted descending" />
+                                        ) : (
+                                            <SortAscending aria-label="sorted ascending" />
+                                        )
+                                    ) : null}
+                                </chakra.span>
+                            </Th>
                         ))}
-                    </TableRow>
+                    </Tr>
                 ))}
-            </TableBody>
+            </Thead>
+            <Tbody {...getTableBodyProps()}>
+                {rows.map((row) => {
+                    prepareRow(row);
+                    return (
+                        <Tr {...row.getRowProps()}>
+                            {row.cells.map((cell) => (
+                                <Td
+                                    {...cell.getCellProps()}
+                                    isNumeric={cell.column.isNumeric}>
+                                    {cell.render('Cell')}
+                                </Td>
+                            ))}
+                        </Tr>
+                    );
+                })}
+            </Tbody>
         </Table>
     );
 };

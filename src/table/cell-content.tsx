@@ -1,14 +1,11 @@
-import React, {ReactNode, FC} from 'react';
+import React, {FC} from 'react';
+import {Text, TextProps} from '@chakra-ui/react';
 
-type Props = {
-    children: ReactNode;
-};
-
-const CellContent: FC<Props> = ({children}: Props) => {
+const CellContent: FC<TextProps> = ({children, ...props}) => {
     return (
-        <div className="text-sm leading-5 font-medium text-gray-900">
+        <Text fontSize="sm" fontWeight="medium" color="gray.900" {...props}>
             {children}
-        </div>
+        </Text>
     );
 };
 

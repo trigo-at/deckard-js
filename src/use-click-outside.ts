@@ -18,5 +18,5 @@ export default <ElementRef extends Ref<HTMLElement>>(
 
         document.addEventListener('mousedown', handler);
         return () => document.removeEventListener('mousedown', handler);
-    }, [ref]);
+    }, [ref, onClickOutside]);
 };

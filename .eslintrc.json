@@ -1,9 +1,7 @@
 {
     "extends": [
         "trigo/react-typescript",
-        "prettier",
-        "prettier/react",
-        "prettier/@typescript-eslint"
+        "prettier"
     ],
     "plugins": [
         "prettier"
@@ -24,7 +22,13 @@
         "react/require-default-props": 0,
         // "react/no-unused-prop-types": 0,
         "react/jsx-props-no-spreading": 0,
-        "arrow-body-style": "off"
+        "arrow-body-style": "off",
+        "import/no-named-as-default-member": 0,
+        "import/named": 0,
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": ["error"],
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": ["error"]
     },
     "overrides": [
         {

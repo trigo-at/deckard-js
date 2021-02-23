@@ -6,8 +6,8 @@
                 "corejs": 3
             }
         ],
-        "@babel/react",
-        "@babel/typescript"
+        "@babel/preset-react",
+        "@babel/preset-typescript"
 	],
 	"plugins": [
 		"@babel/proposal-object-rest-spread",

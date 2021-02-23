@@ -1,9 +1,9 @@
 import {create} from '@storybook/theming';
-import logo from './trigo-logo.png';
+import logo from './TRIGO-logo-human-rgb.png';
 
 export default create({
     base: 'light',
     brandTitle: 'TRIGO Design System',
-    brandUrl: 'https://www.trigo.dev',
+    brandUrl: 'https://trigo.at',
     brandImage: logo,
 });

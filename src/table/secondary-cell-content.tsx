@@ -1,11 +1,12 @@
-import React, {ReactNode, FC} from 'react';
+import React, {FC} from 'react';
+import {Text, TextProps} from '@chakra-ui/react';
 
-type Props = {
-    children: ReactNode;
-};
-
-const SecondaryCellContent: FC<Props> = ({children}: Props) => {
-    return <div className="text-sm leading-5 text-gray-500">{children}</div>;
+const SecondaryCellContent: FC<TextProps> = ({children, ...props}) => {
+    return (
+        <Text fontSize="sm" fontWeight="medium" color="gray.500" {...props}>
+            {children}
+        </Text>
+    );
 };
 
 export default SecondaryCellContent;

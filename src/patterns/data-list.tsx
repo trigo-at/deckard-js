@@ -1,8 +1,8 @@
 import React, {Fragment, ReactElement} from 'react';
 import {FormattedMessage} from 'react-intl';
-import Link from '../components/link';
+import {Link} from '@chakra-ui/react';
 
-type DataEntry = {
+type DataEntryType = {
     field: string;
     value?: any;
     format?: string;
@@ -13,7 +13,7 @@ type DataEntry = {
 };
 
 type DataEntryProps = {
-    entry: DataEntry;
+    entry: DataEntryType;
 };
 
 const DataEntry: React.FC<DataEntryProps> = ({entry}: DataEntryProps) => {
@@ -45,7 +45,7 @@ const DataEntry: React.FC<DataEntryProps> = ({entry}: DataEntryProps) => {
 };
 
 type DataListProps = {
-    values: Array<DataEntry>;
+    values: Array<DataEntryType>;
 };
 
 const DataList: React.FC<DataListProps> = ({values}: DataListProps) => {
