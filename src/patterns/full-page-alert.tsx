@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import {FormattedMessage} from 'react-intl';
 import {Icon, Link} from '@chakra-ui/react';
 import {TranslationMessage} from '../types';
-// import Link from '../components/link';
+// import Link from '../buttons/link';
 
 type Props = {
     status: 'success' | 'error' | 'warning' | 'info';

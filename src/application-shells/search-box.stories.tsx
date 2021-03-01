@@ -9,7 +9,7 @@ export const SearchBoxStory = () => (
 
 SearchBoxStory.storyName = 'default';
 export const SearchBoxStory2 = () => (
-    <SearchBox onSearch={(searchterm) => console.log(searchterm)} loading />
+    <SearchBox onSearch={(searchterm) => console.log(searchterm)} />
 );
 
 SearchBoxStory2.storyName = 'loading';

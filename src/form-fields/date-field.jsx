@@ -23,7 +23,7 @@ const DateField = ({
     isDisabled,
     config,
     emptyValue,
-    ...props
+    onChange,
 }) => {
     const {input, meta} = useField(name, config);
 
@@ -49,10 +49,10 @@ const DateField = ({
             : [year, padString(month), padString(day)].join('-');
 
         input.onChange(inputValue);
-        if (props.onChange) {
-            props.onChange(inputValue);
+        if (onChange) {
+            onChange(inputValue);
         }
-    }, [year, month, day]);
+    }, [year, month, day, emptyValue, input, onChange]);
 
     const isInvalid =
         (!!meta.error && meta.touched) ||

@@ -1,11 +1,14 @@
 import React, {FC, ReactNode, useRef} from 'react';
-import {useDisclosure} from '@chakra-ui/react';
-import {PageContainer} from './page-container';
-import {ContentContainer} from './content-container';
-import {Main} from './main';
+import {useDisclosure, Flex} from '@chakra-ui/react';
+import PageContainer from './page-container';
+import ContentContainer from './content-container';
+import Main from './main';
 import OffCanvasMenu from './off-canvas-menu';
 import OffCanvasMenuButton from './off-canvas-menu-button';
-import {StaticSidebarForDesktop} from './static-sidebar-for-desktop';
+import HeaderOffCanvasMenuButton from './header-off-canvas-menu-button';
+import StaticSidebarForDesktop from './static-sidebar-for-desktop';
+import Header from './header';
+import SearchBox from './search-box';
 
 export type PageProps = {
     /**
@@ -16,6 +19,12 @@ export type PageProps = {
      * Container für Sidebar (z.B. LightSidebar)
      */
     sidebar?: ReactNode;
+    /**
+     * Wenn eine Funktion übergeben wird, wird ein Header mit einer Suchbox
+     * angezeigt die auf STRG + SHIFT + F als globalen Shortcut reagiert und
+     * bei Eingabe die Funktion aufruft
+     */
+    onSearch?: (searchTerm) => void;
 };
 
 /**
@@ -24,6 +33,7 @@ export type PageProps = {
 export const Page: FC<PageProps> = ({
     children = undefined,
     sidebar = undefined,
+    onSearch = undefined,
 }) => {
     const {isOpen, onOpen, onClose} = useDisclosure();
     const btnRef = useRef(null);
@@ -41,7 +51,24 @@ export const Page: FC<PageProps> = ({
                 </>
             )}
             <ContentContainer>
-                <OffCanvasMenuButton ref={btnRef} onClick={onOpen} />
+                {sidebar && !onSearch && (
+                    <OffCanvasMenuButton ref={btnRef} onClick={onOpen} />
+                )}
+                {onSearch && (
+                    <Header>
+                        {sidebar && (
+                            <HeaderOffCanvasMenuButton
+                                ref={btnRef}
+                                onClick={onOpen}
+                            />
+                        )}
+                        <Flex flex="1" px={4} justifyContent="space-between">
+                            <Flex flex="1">
+                                <SearchBox onSearch={onSearch} />
+                            </Flex>
+                        </Flex>
+                    </Header>
+                )}
                 <Main>{children}</Main>
             </ContentContainer>
         </PageContainer>

@@ -11,7 +11,7 @@ import InputField from '../form-fields/input-field';
 import SelectField from '../form-fields/select-field';
 import DateField from '../form-fields/date-field';
 import PageSection from './page-section';
-import PrimaryButton from '../components/primary-button';
+import PrimaryButton from '../buttons/primary-button';
 import {InlineCode} from '../../.storybook/code';
 import ProviderDecorator from '../provider-decorator';
 

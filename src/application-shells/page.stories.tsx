@@ -1,7 +1,8 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable import/no-unresolved */
 import React from 'react';
 import {Meta, Story} from '@storybook/react/types-6-0';
-import {Box, Heading} from '@chakra-ui/react';
+import {Box} from '@chakra-ui/react';
 import {Page, PageProps} from './page';
 import ProviderDecorator from '../provider-decorator';
 import LightSidebar from '../sidebar/light-sidebar';
@@ -15,6 +16,9 @@ import OutlineInbox from '../icons/outline-inbox';
 import OutlineChartBar from '../icons/outline-chart-bar';
 import Profile from '../sidebar/profile';
 import SecondaryNavItem from '../sidebar/secondary-nav-item';
+import PageHeader from '../patterns/page-header';
+import PrimaryButton from '../buttons/primary-button';
+import SecondaryButton from '../buttons/secondary-button';
 // @ts-ignore
 import logo from '../../.storybook/TRIGO-logo-human-rgb.png';
 // @ts-ignore
@@ -102,9 +106,15 @@ const Template: Story<PageProps> = (args) => (
             </LightSidebar>
         }>
         <Box mx="auto" px={[4, 6, 8]} maxW="6xl">
-            <Heading as="h1" size="2xl" fontWeight="semibold" color="gray.900">
-                Dashboard
-            </Heading>
+            <PageHeader
+                heading="Dashboard"
+                actions={
+                    <>
+                        <SecondaryButton>Edit</SecondaryButton>
+                        <PrimaryButton>Publish</PrimaryButton>
+                    </>
+                }
+            />
         </Box>
         <Box mx="auto" px={[4, 6, 8]} maxW="6xl">
             <Box py={4}>
@@ -122,3 +132,9 @@ const Template: Story<PageProps> = (args) => (
 
 export const BaseStory = Template.bind({});
 BaseStory.storyName = 'Mit Light Sidebar';
+
+export const SearchHeaderStory = Template.bind({});
+SearchHeaderStory.args = {
+    onSearch: (searchTerm) => console.log(searchTerm),
+};
+SearchHeaderStory.storyName = 'Mit Search';

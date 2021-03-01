@@ -12,8 +12,8 @@ import {
     PopoverFooter,
     Stack,
 } from '@chakra-ui/react';
-import PrimaryButton from '../components/primary-button';
-import TertiaryButton from '../components/tertiary-button';
+import PrimaryButton from '../buttons/primary-button';
+import TertiaryButton from '../buttons/tertiary-button';
 
 const ConfirmButton = ({
     messageId,
