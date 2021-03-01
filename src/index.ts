@@ -18,6 +18,12 @@ export {default as PrimaryButton} from './buttons/primary-button';
 export {default as SecondaryButton} from './buttons/secondary-button';
 export {default as TertiaryButton} from './buttons/tertiary-button';
 
+// Data Display
+
+export {default as Card} from './data-display/card';
+export {default as DescriptionList} from './data-display/description-list';
+export {default as DescriptionListItem} from './data-display/description-list-item';
+
 // Form fields
 export {default as CheckboxField} from './form-fields/checkbox-field';
 export {default as CheckboxGroupField} from './form-fields/checkbox-group-field';
@@ -53,10 +59,9 @@ export {default as ResponsePageSuccess} from './pages/response-page-success';
 
 // Patterns
 export {default as DataList} from './patterns/data-list';
-export {default as ViewSection} from './patterns/view-section';
-export {default as FormSection} from './patterns/form-section';
-export {default as FormDivider} from './patterns/form-divider';
-export {default as MetaViewSection} from './patterns/meta-view-section';
+// export {default as FormSection} from './patterns/form-section';
+// export {default as FormDivider} from './patterns/form-divider';
+// export {default as MetaViewSection} from './patterns/meta-view-section';
 export {default as ConfirmButton} from './patterns/confirm-button';
 export {default as FullPageAlert} from './patterns/full-page-alert';
 
