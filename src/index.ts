@@ -33,6 +33,11 @@ export {default as NumberField} from './form-fields/number-field';
 export {default as FieldError} from './form-fields/field-error';
 export {default as InlineSearchField} from './form-fields/inline-search-field';
 
+// Headings
+
+export {default as PageHeader} from './headings/page-header';
+export {default as SectionHeader} from './headings/section-header';
+
 // Icons
 export {default as AddIcon} from './icons/add-icon';
 export {default as DatabaseIcon} from './icons/database-icon';
@@ -48,7 +53,6 @@ export {default as ResponsePageSuccess} from './pages/response-page-success';
 
 // Patterns
 export {default as DataList} from './patterns/data-list';
-export {default as PageSection} from './patterns/page-section';
 export {default as ViewSection} from './patterns/view-section';
 export {default as FormSection} from './patterns/form-section';
 export {default as FormDivider} from './patterns/form-divider';

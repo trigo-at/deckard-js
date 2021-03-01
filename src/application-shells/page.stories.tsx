@@ -16,7 +16,7 @@ import OutlineInbox from '../icons/outline-inbox';
 import OutlineChartBar from '../icons/outline-chart-bar';
 import Profile from '../sidebar/profile';
 import SecondaryNavItem from '../sidebar/secondary-nav-item';
-import PageHeader from '../patterns/page-header';
+import PageHeader from '../headings/page-header';
 import PrimaryButton from '../buttons/primary-button';
 import SecondaryButton from '../buttons/secondary-button';
 // @ts-ignore
