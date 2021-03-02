@@ -39,6 +39,7 @@ export {default as FieldError} from './form-fields/field-error';
 export {default as InlineSearchField} from './form-fields/inline-search-field';
 
 // Headings
+export {default as CardHeader} from './headings/card-header';
 export {default as PageHeader} from './headings/page-header';
 export {default as PageHeaderMetaItem} from './headings/page-header-meta-item';
 export {default as SectionHeader} from './headings/section-header';

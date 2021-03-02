@@ -12,7 +12,7 @@ export const PageHeader: FC<PageHeaderProps> = ({heading, meta, actions}) => {
         <Box
             mt={2}
             display={{md: 'flex'}}
-            alignItems={{md: 'center'}}
+            alignItems={{md: meta ? 'flex-start' : 'center'}}
             justifyContent={{md: 'space-between'}}>
             <Box flex={1} minWidth={0}>
                 <Heading
