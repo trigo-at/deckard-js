@@ -70,7 +70,7 @@ export {default as ConfirmButton} from './patterns/confirm-button';
 export {default as FullPageAlert} from './patterns/full-page-alert';
 
 // Sidebar
-export {default as LightSidebar} from './sidebar/light-sidebar';
+export {default as Sidebar} from './sidebar/sidebar';
 export {default as Profile} from './sidebar/profile';
 export {default as Logo} from './sidebar/logo';
 export {default as NavItem} from './sidebar/nav-item';

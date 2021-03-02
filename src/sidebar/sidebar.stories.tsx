@@ -1,7 +1,8 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable import/no-unresolved */
 import React from 'react';
 import {Meta, Story} from '@storybook/react/types-6-0';
-import {LightSidebar, LightSidebarProps} from './light-sidebar';
+import {Sidebar, SidebarProps} from './sidebar';
 import ProviderDecorator from '../provider-decorator';
 import Logo from './logo';
 import NavItem from './nav-item';
@@ -22,15 +23,15 @@ import StaticSidebarForDesktopProps from '../application-shells/static-sidebar-f
 import PageContainer from '../application-shells/page-container';
 
 export default {
-    title: 'Navigation/Light Sidebar',
-    component: LightSidebar,
+    title: 'Navigation/Sidebar',
+    component: Sidebar,
     decorators: [ProviderDecorator],
 } as Meta;
 
-const Template: Story<LightSidebarProps> = (args) => (
+const Template: Story<SidebarProps> = (args) => (
     <PageContainer>
         <StaticSidebarForDesktopProps>
-            <LightSidebar
+            <Sidebar
                 footer={
                     <Profile
                         href="https://trigo.at"
@@ -100,7 +101,7 @@ const Template: Story<LightSidebarProps> = (args) => (
                         Reports
                     </NavItem>
                 </>
-            </LightSidebar>
+            </Sidebar>
         </StaticSidebarForDesktopProps>
     </PageContainer>
 );

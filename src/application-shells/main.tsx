@@ -14,7 +14,7 @@ export const Main: FC<MainProps> = ({children}) => {
             zIndex="0"
             overflowY="auto"
             _focus={{outline: 'none'}}>
-            <Box py={6}>{children}</Box>
+            {children}
         </Box>
     );
 };

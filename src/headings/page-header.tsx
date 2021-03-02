@@ -11,9 +11,13 @@ export const PageHeader: FC<PageHeaderProps> = ({heading, meta, actions}) => {
     return (
         <Box
             mt={2}
+            px={{base: 4, sm: 6, lg: 8}}
+            py={4}
             display={{md: 'flex'}}
             alignItems={{md: meta ? 'flex-start' : 'center'}}
-            justifyContent={{md: 'space-between'}}>
+            justifyContent={{md: 'space-between'}}
+            borderBottom="1px"
+            borderColor="gray.200">
             <Box flex={1} minWidth={0}>
                 <Heading
                     as="h1"
@@ -35,9 +39,7 @@ export const PageHeader: FC<PageHeaderProps> = ({heading, meta, actions}) => {
 
             {actions && (
                 <Box mt={[4, 4, 0]} ml={{md: 4}} flexShrink={0}>
-                    <ButtonGroup size="sm" spacing="3">
-                        {actions}
-                    </ButtonGroup>
+                    <ButtonGroup spacing="3">{actions}</ButtonGroup>
                 </Box>
             )}
         </Box>

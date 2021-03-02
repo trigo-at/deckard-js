@@ -46,7 +46,8 @@ export const NavItem: FC<NavItemProps> = forwardRef(
                 ref={ref}
                 display="flex"
                 alignItems="center"
-                bg={isActive ? 'gray.100' : undefined}
+                bg={isActive ? 'gray.200' : undefined}
+                color={isActive ? 'gray.900' : 'gray.600'}
                 px={2}
                 py={2}
                 fontSize="sm"
@@ -54,18 +55,17 @@ export const NavItem: FC<NavItemProps> = forwardRef(
                 rounded="md"
                 isExternal={isExternal}
                 href={href}
-                color={isActive ? 'gray.900' : 'gray.600'}
                 role="group"
                 _hover={{
-                    color: 'gray.900',
-                    bg: isActive ? 'gray.100' : 'gray.50',
+                    color: isActive ? undefined : 'gray.900',
+                    bg: isActive ? undefined : 'gray.50',
                 }}>
                 {navItemIcon}
                 {children}
                 {badge && (
                     <Box
                         as="span"
-                        bg={isActive ? 'gray.200' : 'gray.100'}
+                        bg={isActive ? 'gray.100' : 'gray.200'}
                         _groupHover={isActive ? undefined : {bg: 'gray.200'}}
                         ml="auto"
                         display="inline-block"

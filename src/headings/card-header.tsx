@@ -34,14 +34,16 @@ export const CardHeader: FC<CardHeaderProps> = ({
                         color="gray.900">
                         {heading}
                     </Heading>
-                    <Text
-                        mt={1}
-                        fontSize="sm"
-                        color="gray.500"
-                        overflow="hidden"
-                        textOverflow="ellipsis">
-                        {description}
-                    </Text>
+                    {description && (
+                        <Text
+                            mt={1}
+                            fontSize="sm"
+                            color="gray.500"
+                            overflow="hidden"
+                            textOverflow="ellipsis">
+                            {description}
+                        </Text>
+                    )}
                 </Box>
 
                 {actions && (

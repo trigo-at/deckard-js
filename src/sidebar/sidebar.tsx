@@ -6,7 +6,7 @@ import Nav from './nav';
 import NavItems from './nav-items';
 import SecondaryNavHeading from './secondary-nav-heading';
 
-export type LightSidebarProps = {
+export type SidebarProps = {
     /**
      * Liste an NavItem
      */
@@ -32,7 +32,7 @@ export type LightSidebarProps = {
 /**
  * Sidebar mit Icons, Badges, sekundärer Navigation und Profile Bereich
  */
-export const LightSidebar: FC<LightSidebarProps> = ({
+export const Sidebar: FC<SidebarProps> = ({
     children = undefined,
     footer = undefined,
     logo = undefined,
@@ -46,7 +46,7 @@ export const LightSidebar: FC<LightSidebarProps> = ({
             flex={1}
             borderRight="1px"
             borderColor="gray.200"
-            backgroundColor="white">
+            backgroundColor="gray.100">
             <NavContainer>
                 {logo}
                 <Nav>
@@ -75,4 +75,4 @@ export const LightSidebar: FC<LightSidebarProps> = ({
     );
 };
 
-export default LightSidebar;
+export default Sidebar;

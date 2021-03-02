@@ -9,7 +9,7 @@ export const PageContainer: FC<PageContainerProps> = ({
     children = undefined,
 }) => {
     return (
-        <Flex h="screen" overflow="hidden" bg="gray.100">
+        <Flex h="screen" overflow="hidden" bg="white">
             {children}
         </Flex>
     );

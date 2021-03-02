@@ -5,7 +5,7 @@ import {Meta, Story} from '@storybook/react/types-6-0';
 import {Box} from '@chakra-ui/react';
 import {Page, PageProps} from './page';
 import ProviderDecorator from '../provider-decorator';
-import LightSidebar from '../sidebar/light-sidebar';
+import Sidebar from '../sidebar/sidebar';
 import Logo from '../sidebar/logo';
 import NavItem from '../sidebar/nav-item';
 import OutlineHome from '../icons/outline-home';
@@ -34,7 +34,7 @@ const Template: Story<PageProps> = (args) => (
     <Page
         {...args}
         sidebar={
-            <LightSidebar
+            <Sidebar
                 footer={
                     <Profile
                         href="https://trigo.at"
@@ -65,14 +65,14 @@ const Template: Story<PageProps> = (args) => (
                     <NavItem
                         href="https://trigo.at"
                         isExternal
-                        icon={<OutlineHome />}
-                        isActive>
+                        icon={<OutlineHome />}>
                         Dashboard
                     </NavItem>
                     <NavItem
                         icon={<OutlineUsers />}
                         href="https://trigo.at"
                         badge="3"
+                        isActive
                         isExternal>
                         Team
                     </NavItem>
@@ -103,20 +103,18 @@ const Template: Story<PageProps> = (args) => (
                         Reports
                     </NavItem>
                 </>
-            </LightSidebar>
+            </Sidebar>
         }>
-        <Box mx="auto" px={[4, 6, 8]} maxW="6xl">
-            <PageHeader
-                heading="Dashboard"
-                actions={
-                    <>
-                        <SecondaryButton>Edit</SecondaryButton>
-                        <PrimaryButton>Publish</PrimaryButton>
-                    </>
-                }
-            />
-        </Box>
-        <Box mx="auto" px={[4, 6, 8]} maxW="6xl">
+        <PageHeader
+            heading="Dashboard"
+            actions={
+                <>
+                    <SecondaryButton>Edit</SecondaryButton>
+                    <PrimaryButton>Publish</PrimaryButton>
+                </>
+            }
+        />
+        <Box px={{base: 4, sm: 6, lg: 8}} py={4} h="full">
             <Box py={4}>
                 <Box
                     border="4px"
