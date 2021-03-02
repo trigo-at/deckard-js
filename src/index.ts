@@ -77,7 +77,7 @@ export {default as NavItem} from './sidebar/nav-item';
 export {default as SecondaryNavItem} from './sidebar/secondary-nav-item';
 
 // table
-export {default as Table} from './table/table';
+// export {default as Table} from './table/table';
 export {default as CellContent} from './table/cell-content';
 export {default as SecondaryCellContent} from './table/secondary-cell-content';
 export {default as DataTable} from './table/data-table';

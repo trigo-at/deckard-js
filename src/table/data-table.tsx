@@ -1,10 +1,9 @@
 /* eslint-disable no-nested-ternary */
 import React, {useMemo, FC} from 'react';
-import {Thead, Tbody, Tr, Th, Td, chakra} from '@chakra-ui/react';
+import {Thead, Tbody, Tr, Th, Td, chakra, Table} from '@chakra-ui/react';
 import {useTable, useSortBy, Column} from 'react-table';
 import SortDescending from '../icons/sort-descending';
 import SortAscending from '../icons/sort-ascending';
-import Table from './table';
 
 export type DataTableProps = {
     columns: Array<Column>;
@@ -24,7 +23,11 @@ export const DataTable: FC<DataTableProps> = ({columns, data}) => {
     } = useTable({columns: memoizedColumns, data: memoizedData}, useSortBy);
 
     return (
-        <Table {...getTableProps()}>
+        <Table
+            variant="striped"
+            colorScheme="gray"
+            size="sm"
+            {...getTableProps()}>
             <Thead>
                 {headerGroups.map((headerGroup) => (
                     <Tr {...headerGroup.getHeaderGroupProps()}>
