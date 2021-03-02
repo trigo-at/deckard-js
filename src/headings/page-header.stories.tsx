@@ -6,6 +6,8 @@ import {PageHeader, PageHeaderProps} from './page-header';
 import ProviderDecorator from '../provider-decorator';
 import PrimaryButton from '../buttons/primary-button';
 import SecondaryButton from '../buttons/secondary-button';
+import CalendarIcon from '../icons/calendar-icon';
+import PageHeaderMetaItem from './page-header-meta-item';
 
 export default {
     title: 'Headings/PageHeader',
@@ -30,3 +32,19 @@ ActionsStory.args = {
     ),
 };
 ActionsStory.storyName = 'Actions';
+
+export const MetaStory = Template.bind({});
+MetaStory.args = {
+    actions: (
+        <>
+            <SecondaryButton>Edit</SecondaryButton>
+            <PrimaryButton>Publish</PrimaryButton>
+        </>
+    ),
+    meta: (
+        <PageHeaderMetaItem icon={<CalendarIcon />}>
+            Full-time
+        </PageHeaderMetaItem>
+    ),
+};
+MetaStory.storyName = 'MetaStory';

@@ -19,7 +19,6 @@ export {default as SecondaryButton} from './buttons/secondary-button';
 export {default as TertiaryButton} from './buttons/tertiary-button';
 
 // Data Display
-
 export {default as Card} from './data-display/card';
 export {default as DescriptionList} from './data-display/description-list';
 export {default as DescriptionListItem} from './data-display/description-list-item';
@@ -40,14 +39,16 @@ export {default as FieldError} from './form-fields/field-error';
 export {default as InlineSearchField} from './form-fields/inline-search-field';
 
 // Headings
-
 export {default as PageHeader} from './headings/page-header';
+export {default as PageHeaderMetaItem} from './headings/page-header-meta-item';
 export {default as SectionHeader} from './headings/section-header';
 
 // Icons
 export {default as AddIcon} from './icons/add-icon';
+export {default as CalendarIcon} from './icons/calendar-icon';
 export {default as DatabaseIcon} from './icons/database-icon';
 export {default as DotsHorizontalIcon} from './icons/dots-horizontal-icon';
+export {default as LocationMarkerIcon} from './icons/location-marker-icon';
 export {default as SortDescending} from './icons/sort-descending';
 export {default as SortAscending} from './icons/sort-ascending';
 
