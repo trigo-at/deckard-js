@@ -1,5 +1,5 @@
 import React, {FC, ReactNode} from 'react';
-import {Box, Flex, Heading, Stack, ButtonGroup} from '@chakra-ui/react';
+import {Box, Heading, Stack, ButtonGroup} from '@chakra-ui/react';
 
 export type PageHeaderProps = {
     heading?: string;
@@ -24,12 +24,12 @@ export const PageHeader: FC<PageHeaderProps> = ({heading, meta, actions}) => {
                     {heading}
                 </Heading>
                 {meta && (
-                    <Flex
-                        mt={{base: 1, sm: 0}}
-                        flexDirection={{base: 'column', sm: 'row'}}
-                        flexWrap={{sm: 'wrap'}}>
-                        <Stack spacing={{sm: 6}}>{meta}</Stack>
-                    </Flex>
+                    <Stack
+                        direction={{base: 'column', sm: 'row'}}
+                        mt={2}
+                        spacing={{base: 3, sm: 6}}>
+                        {meta}
+                    </Stack>
                 )}
             </Box>
 

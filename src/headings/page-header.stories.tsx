@@ -6,6 +6,7 @@ import {PageHeader, PageHeaderProps} from './page-header';
 import ProviderDecorator from '../provider-decorator';
 import PrimaryButton from '../buttons/primary-button';
 import SecondaryButton from '../buttons/secondary-button';
+import LocationMarkerIcon from '../icons/location-marker-icon';
 import CalendarIcon from '../icons/calendar-icon';
 import PageHeaderMetaItem from './page-header-meta-item';
 
@@ -42,9 +43,14 @@ MetaStory.args = {
         </>
     ),
     meta: (
-        <PageHeaderMetaItem icon={<CalendarIcon />}>
-            Full-time
-        </PageHeaderMetaItem>
+        <>
+            <PageHeaderMetaItem icon={<LocationMarkerIcon />}>
+                Heiligenstädter Straße 28/3, 1190 Wien
+            </PageHeaderMetaItem>
+            <PageHeaderMetaItem icon={<CalendarIcon />}>
+                Full-time
+            </PageHeaderMetaItem>
+        </>
     ),
 };
-MetaStory.storyName = 'MetaStory';
+MetaStory.storyName = 'Meta';
