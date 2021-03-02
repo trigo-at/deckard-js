@@ -8,9 +8,14 @@ export type CardProps = {
     children?: ReactNode;
 };
 
-export const Card: FC<CardProps> = ({heading, children, footer}) => {
+export const Card: FC<CardProps> = ({heading, children, footer, ...props}) => {
     return (
-        <Box bg="white" shadow="base" overflow="hidden" rounded={{sm: 'lg'}}>
+        <Box
+            bg="white"
+            shadow="base"
+            overflow="hidden"
+            rounded={{sm: 'lg'}}
+            {...props}>
             {heading}
             <Box px={{base: 4, sm: 6}} py={5}>
                 {children}

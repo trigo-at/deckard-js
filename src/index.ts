@@ -48,6 +48,8 @@ export {default as SectionHeader} from './headings/section-header';
 export {default as AddIcon} from './icons/add-icon';
 export {default as DatabaseIcon} from './icons/database-icon';
 export {default as DotsHorizontalIcon} from './icons/dots-horizontal-icon';
+export {default as SortDescending} from './icons/sort-descending';
+export {default as SortAscending} from './icons/sort-ascending';
 
 // Inidcators
 export {default as ErrorIndicator} from './indicators/error-indicator';
