@@ -10,7 +10,7 @@ export const OffCanvasMenuButton = forwardRef<
     'button'
 >(({onClick}, ref) => {
     return (
-        <Box display={{base: 'block', md: 'hidden'}} pl={[1, 3]} pt={[1, 3]}>
+        <Box display={{base: 'block', lg: 'none'}} pl={[1, 3]} pt={[1, 3]}>
             <Button
                 ref={ref}
                 type="button"

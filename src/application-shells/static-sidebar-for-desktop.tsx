@@ -9,7 +9,7 @@ export const StaticSidebarForDesktop: FC<StaticSidebarForDesktopProps> = ({
     children,
 }) => {
     return (
-        <Box display={{base: 'none', md: 'flex'}} flexShrink={{md: 0}}>
+        <Box display={{base: 'none', lg: 'flex'}} flexShrink={{md: 0}}>
             <Flex flexDirection="column" w={64}>
                 {children}
             </Flex>
