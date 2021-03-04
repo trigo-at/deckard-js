@@ -1,5 +1,5 @@
 import React, {FC, ReactNode} from 'react';
-import {Box, Heading, Text, Flex} from '@chakra-ui/react';
+import {Box, Heading, Text} from '@chakra-ui/react';
 
 export type CardHeaderProps = {
     heading?: string;
@@ -19,12 +19,12 @@ export const CardHeader: FC<CardHeaderProps> = ({
             py={5}
             borderBottom="1px"
             borderColor="gray.200">
-            <Flex
+            <Box
                 ml="-1rem"
                 mt="-1rem"
-                justifyContent="space-between"
-                alignItems="center"
-                flexWrap={{base: 'wrap', sm: 'nowrap'}}>
+                display={{sm: 'flex'}}
+                alignItems={{sm: 'center'}}
+                justifyContent={{sm: 'space-between'}}>
                 <Box ml={4} mt={4}>
                     <Heading
                         as="h3"
@@ -51,7 +51,7 @@ export const CardHeader: FC<CardHeaderProps> = ({
                         {actions}
                     </Box>
                 )}
-            </Flex>
+            </Box>
         </Box>
     );
 };

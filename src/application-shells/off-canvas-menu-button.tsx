@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, VisuallyHidden, Button, forwardRef} from '@chakra-ui/react';
+import {Box, VisuallyHidden, Button, forwardRef, Icon} from '@chakra-ui/react';
 
 export type OffCanvasMenuButtonProps = {
     onClick: React.MouseEventHandler<HTMLButtonElement>;
@@ -10,7 +10,7 @@ export const OffCanvasMenuButton = forwardRef<
     'button'
 >(({onClick}, ref) => {
     return (
-        <Box display={['block', 'block', 'none']} pl={[1, 3]} pt={[1, 3]}>
+        <Box display={{base: 'block', md: 'hidden'}} pl={[1, 3]} pt={[1, 3]}>
             <Button
                 ref={ref}
                 type="button"
@@ -27,7 +27,7 @@ export const OffCanvasMenuButton = forwardRef<
                 _focus={{outline: 'none', boxShadow: 'ring2'}}
                 onClick={onClick}>
                 <VisuallyHidden>Open sidebar</VisuallyHidden>
-                <svg
+                <Icon
                     h={6}
                     w={6}
                     xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +41,7 @@ export const OffCanvasMenuButton = forwardRef<
                         strokeWidth="2"
                         d="M4 6h16M4 12h16M4 18h16"
                     />
-                </svg>
+                </Icon>
             </Button>
         </Box>
     );
