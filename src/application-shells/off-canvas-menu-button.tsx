@@ -21,6 +21,7 @@ export const OffCanvasMenuButton = forwardRef<
                 display="inline-flex"
                 alignItems="center"
                 justifyContent="center"
+                bg="white"
                 rounded="md"
                 color="gray.500"
                 _hover={{color: 'gray.900'}}
