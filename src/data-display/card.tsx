@@ -18,15 +18,15 @@ export const Card: FC<CardProps> = ({heading, children, footer, ...props}) => {
             rounded={{sm: 'lg'}}
             {...props}>
             {heading}
-            {children && (
-                <Flex
-                    flexDirection="column"
-                    flexGrow={1}
-                    px={{base: 4, sm: 6}}
-                    py={5}>
-                    {children}
-                </Flex>
-            )}
+
+            <Flex flexDirection="column" flexGrow={1}>
+                {children && (
+                    <Box px={{base: 4, sm: 6}} py={5}>
+                        {children}
+                    </Box>
+                )}
+            </Flex>
+
             {footer && (
                 <Box
                     px={{base: 4, sm: 6}}
