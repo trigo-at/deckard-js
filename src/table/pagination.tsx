@@ -53,7 +53,7 @@ export const Pagination: FC<PaginationProps> = ({
                 />
             </ButtonGroup>
             <span>
-                Seite: {pageIndex} von {pageCount - 1}
+                Seite: {pageIndex} von {pageCount}
             </span>
         </HStack>
     );
