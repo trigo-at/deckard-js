@@ -12,6 +12,7 @@ export {default as useDebounce} from './use-debounce';
 
 // Page
 export {Page} from './application-shells/page';
+export {CardContainer} from './application-shells/card-container';
 
 // buttons
 export {default as PrimaryButton} from './buttons/primary-button';
