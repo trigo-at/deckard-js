@@ -47,6 +47,10 @@ export {default as SectionHeader} from './headings/section-header';
 // Icons
 export {default as AddIcon} from './icons/add-icon';
 export {default as CalendarIcon} from './icons/calendar-icon';
+export {default as ChevronDoubleLeftIcon} from './icons/chevron-double-left-icon';
+export {default as ChevronLeftIcon} from './icons/chevron-left-icon';
+export {default as ChevronDoubleRightIcon} from './icons/chevron-double-right-icon';
+export {default as ChevronRightIcon} from './icons/chevron-right-icon';
 export {default as DatabaseIcon} from './icons/database-icon';
 export {default as DotsHorizontalIcon} from './icons/dots-horizontal-icon';
 export {default as LocationMarkerIcon} from './icons/location-marker-icon';
@@ -81,3 +85,4 @@ export {default as SecondaryNavItem} from './sidebar/secondary-nav-item';
 export {default as CellContent} from './table/cell-content';
 export {default as SecondaryCellContent} from './table/secondary-cell-content';
 export {default as DataTable} from './table/data-table';
+export {default as Pagination} from './table/pagination';
