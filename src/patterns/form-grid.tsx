@@ -3,7 +3,7 @@ import {Box, Grid, GridProps} from '@chakra-ui/react';
 import HideOptionalContext from '../form-fields/hide-optional-context';
 
 export type FormGridProps = {
-    gridTemplateAreas: Element || string;
+    gridTemplateAreas: string;
     children: ReactNode;
     hideOptionalIndicator?: boolean;
 } & GridProps;
