@@ -72,7 +72,7 @@ export {default as DataList} from './patterns/data-list';
 export {default as FormGrid} from './patterns/form-grid';
 // export {default as FormSection} from './patterns/form-section';
 // export {default as FormDivider} from './patterns/form-divider';
-// export {default as MetaViewSection} from './patterns/meta-view-section';
+export {default as MetaViewSection} from './patterns/meta-view-section';
 export {default as ConfirmButton} from './patterns/confirm-button';
 export {default as FullPageAlert} from './patterns/full-page-alert';
 

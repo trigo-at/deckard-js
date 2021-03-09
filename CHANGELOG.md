@@ -1,5 +1,9 @@
 # Changelog
 
+## 14.7.0
+
+- MetaViewSection wieder hinzugefügt
+
 ## 14.6.1
 
 - CardContainer umbenannt in ContentContainer damit klarer ist das es nicht nur für Cards gedacht ist
