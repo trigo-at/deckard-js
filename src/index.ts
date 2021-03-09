@@ -57,6 +57,7 @@ export {default as DotsHorizontalIcon} from './icons/dots-horizontal-icon';
 export {default as LocationMarkerIcon} from './icons/location-marker-icon';
 export {default as SortDescending} from './icons/sort-descending';
 export {default as SortAscending} from './icons/sort-ascending';
+export {default as TrashIcon} from './icons/trash-icon';
 
 // Inidcators
 export {default as ErrorIndicator} from './indicators/error-indicator';
