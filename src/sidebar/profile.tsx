@@ -30,13 +30,27 @@ export type ProfileProps = {
      * Fallback onClick, wenn nicht via Router navigiert wird
      */
     onClick?: React.MouseEventHandler<HTMLAnchorElement>;
+    /**
+     * angezeigter Text im Link
+     */
+    linkText?: string;
 };
 
 /**
  * Profile Abschnitt des Sidebars
  */
 export const Profile: FC<ProfileProps> = forwardRef(
-    ({href, onClick, isExternal, avatar, username}, ref) => {
+    (
+        {
+            href,
+            onClick,
+            isExternal,
+            avatar,
+            username,
+            linkText = 'View profile',
+        },
+        ref
+    ) => {
         return (
             <LinkBox
                 flexShrink={0}
@@ -79,7 +93,7 @@ export const Profile: FC<ProfileProps> = forwardRef(
                                 fontWeight="medium"
                                 color="gray.500"
                                 _groupHover={{color: 'gray.700'}}>
-                                View profile
+                                {linkText}
                             </Text>
                         </LinkOverlay>
                     </Box>
