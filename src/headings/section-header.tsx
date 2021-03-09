@@ -2,8 +2,8 @@ import React, {FC, ReactNode} from 'react';
 import {Box, Heading, Text, ButtonGroup, Flex} from '@chakra-ui/react';
 
 export type SectionHeaderProps = {
-    heading?: string;
-    description?: string;
+    heading?: ReactNode | string;
+    description?: ReactNode | string;
     actions?: ReactNode;
 };
 

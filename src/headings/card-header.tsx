@@ -2,8 +2,8 @@ import React, {FC, ReactNode} from 'react';
 import {Box, Heading, Text} from '@chakra-ui/react';
 
 export type CardHeaderProps = {
-    heading?: string;
-    description?: string;
+    heading?: ReactNode | string;
+    description?: ReactNode | string;
     actions?: ReactNode;
 };
 

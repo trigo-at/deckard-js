@@ -2,8 +2,8 @@ import React, {FC, ReactNode} from 'react';
 import {Box, Heading, Stack, ButtonGroup} from '@chakra-ui/react';
 
 export type PageHeaderProps = {
-    heading?: string;
-    meta?: ReactNode;
+    heading?: ReactNode | string;
+    meta?: ReactNode | string;
     actions?: ReactNode;
 };
 

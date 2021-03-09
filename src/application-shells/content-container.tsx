@@ -1,15 +1,25 @@
 import React, {FC, ReactNode} from 'react';
-import {Flex} from '@chakra-ui/react';
+import {Box, BoxProps} from '@chakra-ui/react';
 
 export type ContentContainerProps = {
     children: ReactNode;
-};
+} & BoxProps;
 
-export const ContentContainer: FC<ContentContainerProps> = ({children}) => {
+/**
+ * Container für DetailViews mit Cards damit diese sich vom Hintergrund abheben.
+ */
+export const ContentContainer: FC<ContentContainerProps> = ({
+    children,
+    ...props
+}) => {
     return (
-        <Flex flexDirection="column" w="0" flex="1" overflow="hidden">
+        <Box
+            bg="gray.50"
+            minHeight="full"
+            px={{base: 4, sm: 6, lg: 8}}
+            {...props}>
             {children}
-        </Flex>
+        </Box>
     );
 };
 

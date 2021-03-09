@@ -1,7 +1,6 @@
 import React, {FC, ReactNode, useRef} from 'react';
 import {useDisclosure, Flex} from '@chakra-ui/react';
 import PageContainer from './page-container';
-import ContentContainer from './content-container';
 import Main from './main';
 import OffCanvasMenu from './off-canvas-menu';
 import OffCanvasMenuButton from './off-canvas-menu-button';
@@ -50,7 +49,7 @@ export const Page: FC<PageProps> = ({
                     <StaticSidebarForDesktop>{sidebar}</StaticSidebarForDesktop>
                 </>
             )}
-            <ContentContainer>
+            <Flex flexDirection="column" w="0" flex="1" overflow="hidden">
                 {sidebar && !onSearch && (
                     <OffCanvasMenuButton ref={btnRef} onClick={onOpen} />
                 )}
@@ -70,7 +69,7 @@ export const Page: FC<PageProps> = ({
                     </Header>
                 )}
                 <Main>{children}</Main>
-            </ContentContainer>
+            </Flex>
         </PageContainer>
     );
 };

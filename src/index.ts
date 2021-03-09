@@ -12,7 +12,7 @@ export {default as useDebounce} from './use-debounce';
 
 // Page
 export {Page} from './application-shells/page';
-export {CardContainer} from './application-shells/card-container';
+export {ContentContainer} from './application-shells/content-container';
 
 // buttons
 export {default as PrimaryButton} from './buttons/primary-button';
@@ -69,6 +69,7 @@ export {default as ResponsePageSuccess} from './pages/response-page-success';
 
 // Patterns
 export {default as DataList} from './patterns/data-list';
+export {default as FormGrid} from './patterns/form-grid';
 // export {default as FormSection} from './patterns/form-section';
 // export {default as FormDivider} from './patterns/form-divider';
 // export {default as MetaViewSection} from './patterns/meta-view-section';
