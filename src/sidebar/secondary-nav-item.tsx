@@ -13,14 +13,14 @@ export type SecondaryNavItemProps = {
     /**
      * Der Link (kann z.B. auch von next/link kommen)
      */
-    href: string;
+    href?: string;
 };
 
 /**
  * Element der sekundaren Navigation in der Sidebar
  */
 export const SecondaryNavItem: FC<SecondaryNavItemProps> = forwardRef(
-    ({children, href, isExternal}, ref) => {
+    ({children, href, isExternal, ...props}, ref) => {
         return (
             <Link
                 ref={ref}
@@ -38,7 +38,8 @@ export const SecondaryNavItem: FC<SecondaryNavItemProps> = forwardRef(
                 _hover={{
                     color: 'gray.900',
                     bg: 'gray.50',
-                }}>
+                }}
+                {...props}>
                 <Box
                     as="span"
                     overflow="hidden"

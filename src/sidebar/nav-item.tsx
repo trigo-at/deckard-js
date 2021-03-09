@@ -17,7 +17,7 @@ export type NavItemProps = {
     /**
      * Der Link (kann z.B. auch von next/link kommen)
      */
-    href: string;
+    href?: string;
     /**
      * Das Icon ds NavItem
      */
@@ -32,7 +32,7 @@ export type NavItemProps = {
  * Element der primären Navigation in der Sidebar
  */
 export const NavItem: FC<NavItemProps> = forwardRef(
-    ({children, href, isExternal, isActive, icon, badge}, ref) => {
+    ({children, href, isExternal, isActive, icon, badge, ...props}, ref) => {
         const navItemIcon = React.cloneElement(icon, {
             color: isActive ? 'gray.500' : 'gray.400',
             mr: 3,
@@ -59,7 +59,8 @@ export const NavItem: FC<NavItemProps> = forwardRef(
                 _hover={{
                     color: isActive ? undefined : 'gray.900',
                     bg: isActive ? undefined : 'gray.50',
-                }}>
+                }}
+                {...props}>
                 {navItemIcon}
                 {children}
                 {badge && (
