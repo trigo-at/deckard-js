@@ -1,12 +1,24 @@
 import React from 'react';
-import {string, node, bool, object} from 'prop-types';
 import {useField} from 'react-final-form';
 import {FormControl, FormLabel, Input, FormHelperText} from '@chakra-ui/react';
 import {FormattedMessage} from 'react-intl';
 import FieldError from './field-error';
 import Optional from './optional';
 
-const InputField = ({
+export type InputFieldProps = {
+    name: string;
+    gridArea?: string;
+    fieldName?: string;
+    isRequired?: boolean;
+    helperText?: string;
+    type?: string;
+    config?: any;
+    label?: string;
+    formattedName?: string;
+    formattedPrefix?: string;
+};
+
+export const InputField = ({
     name,
     gridArea,
     fieldName,
@@ -18,7 +30,7 @@ const InputField = ({
     formattedName,
     formattedPrefix,
     ...props
-}) => {
+}: InputFieldProps) => {
     if (fieldName) {
         console.warn(
             'The property "fieldName" is deprecated. Use "formattedName" instead. "fieldName" will be removed in future versions.'
@@ -68,28 +80,9 @@ const InputField = ({
     );
 };
 
-InputField.propTypes = {
-    name: string.isRequired,
-    gridArea: string,
-    fieldName: string,
-    isRequired: bool,
-    helperText: node,
-    type: string,
-    config: object,
-    label: string,
-    formattedName: string,
-    formattedPrefix: string,
-};
-
 InputField.defaultProps = {
-    helperText: undefined,
-    gridArea: undefined,
-    fieldName: undefined,
     isRequired: false,
     type: 'text',
-    config: undefined,
-    label: undefined,
-    formattedName: undefined,
     formattedPrefix: 'field',
 };
 
