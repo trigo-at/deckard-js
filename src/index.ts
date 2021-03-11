@@ -48,17 +48,21 @@ export {default as SectionHeader} from './headings/section-header';
 // Icons
 export {default as AddIcon} from './icons/add-icon';
 export {default as CalendarIcon} from './icons/calendar-icon';
+export {default as CheckCircleIcon} from './icons/check-circle-icon';
 export {default as ChevronDoubleLeftIcon} from './icons/chevron-double-left-icon';
 export {default as ChevronLeftIcon} from './icons/chevron-left-icon';
 export {default as ChevronDoubleRightIcon} from './icons/chevron-double-right-icon';
 export {default as ChevronRightIcon} from './icons/chevron-right-icon';
 export {default as DatabaseIcon} from './icons/database-icon';
 export {default as DotsHorizontalIcon} from './icons/dots-horizontal-icon';
+export {default as ExclamationCircleIcon} from './icons/exclamation-circle-icon';
 export {default as LocationMarkerIcon} from './icons/location-marker-icon';
+export {default as QuestionMarkCircleIcon} from './icons/question-mark-circle-icon';
 export {default as SaveIcon} from './icons/save-icon';
 export {default as SortDescending} from './icons/sort-descending';
 export {default as SortAscending} from './icons/sort-ascending';
 export {default as TrashIcon} from './icons/trash-icon';
+export {default as XCircleIcon} from './icons/x-circle-icon';
 
 // Inidcators
 export {default as ErrorIndicator} from './indicators/error-indicator';

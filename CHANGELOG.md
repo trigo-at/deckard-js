@@ -1,5 +1,9 @@
 # Changelog
 
+## 14.11.0
+
+- CheckCircleIcon, ExclamationCircleIcon, QuestionMarkCircleIcon und XCircleIcon hinzugefügt.
+
 ## 14.10.0
 
 - SaveIcon hinzugefügt
