@@ -1,5 +1,9 @@
 # Changelog
 
+## 14.10.0
+
+- SaveIcon hinzugefügt
+
 ## 14.9.0
 
 - Pagination zur Referenzimplementierung der DataTable hinzugefügt.
