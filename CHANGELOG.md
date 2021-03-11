@@ -1,5 +1,9 @@
 # Changelog
 
+## 14.8.0
+
+- Pagination zur Referenzimplementierung der DataTable hinzugefügt.
+
 ## 14.7.1
 
 - Anzeige der aktuellen Seite in der Pagination Komponenten ist jetzt korrekt.
