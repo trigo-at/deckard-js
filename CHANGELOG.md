@@ -1,5 +1,9 @@
 # Changelog
 
+## 14.11.1
+
+- Layout fixes für SecondaryNavItem und den Sidebar Container.
+
 ## 14.11.0
 
 - CheckCircleIcon, ExclamationCircleIcon, QuestionMarkCircleIcon und XCircleIcon hinzugefügt.

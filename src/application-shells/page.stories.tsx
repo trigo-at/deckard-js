@@ -57,6 +57,9 @@ const Template: Story<PageProps> = (args) => (
                             Customer migration guides
                         </SecondaryNavItem>
                         <SecondaryNavItem href="https://trigo.at" isExternal>
+                            Customer migration guides Customer migration guides
+                        </SecondaryNavItem>
+                        <SecondaryNavItem href="https://trigo.at" isExternal>
                             Profit sharing program
                         </SecondaryNavItem>
                     </>

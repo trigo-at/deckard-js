@@ -41,7 +41,7 @@ export const SecondaryNavItem: FC<SecondaryNavItemProps> = forwardRef(
                 }}
                 {...props}>
                 <Box
-                    as="span"
+                    w="full"
                     overflow="hidden"
                     textOverflow="hidden"
                     whiteSpace="nowrap">
