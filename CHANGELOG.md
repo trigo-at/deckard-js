@@ -1,6 +1,6 @@
 # Changelog
 
-## 14.8.0
+## 14.9.0
 
 - Pagination zur Referenzimplementierung der DataTable hinzugefügt.
 
