@@ -55,6 +55,7 @@ export {default as ChevronRightIcon} from './icons/chevron-right-icon';
 export {default as DatabaseIcon} from './icons/database-icon';
 export {default as DotsHorizontalIcon} from './icons/dots-horizontal-icon';
 export {default as LocationMarkerIcon} from './icons/location-marker-icon';
+export {default as SaveIcon} from './icons/save-icon';
 export {default as SortDescending} from './icons/sort-descending';
 export {default as SortAscending} from './icons/sort-ascending';
 export {default as TrashIcon} from './icons/trash-icon';
