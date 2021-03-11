@@ -11,6 +11,7 @@ import {FormGrid, FormGridProps} from './form-grid';
 import InputField from '../form-fields/input-field';
 import SelectField from '../form-fields/select-field';
 import DateField from '../form-fields/date-field';
+import CheckboxGroupField from '../form-fields/checkbox-group-field';
 import PrimaryButton from '../buttons/primary-button';
 import {InlineCode} from '../../.storybook/code';
 import ProviderDecorator from '../provider-decorator';
@@ -30,7 +31,8 @@ const validate = (values) => {
 
 const gridTemplateAreas1 = `
 'name name name'
-'customerNumber customerNumber .'`;
+'customerNumber customerNumber .'
+'titles titles .'`;
 
 const gridTemplateAreas2 = `
 'birthday birthday .'
@@ -97,6 +99,19 @@ export const SimpleFormGrid: Story<FormGridProps> = (args) => (
                                 name="customerNumber"
                                 type="number"
                                 helperText="A customer number looks like this: 373687324"
+                            />
+                            <CheckboxGroupField
+                                fieldName="string" // headerText
+                                name="titles" // have to match with initialValues property name
+                                isRequired
+                                options={[
+                                    'Diplom-Ingenieur / Diplom-Ingenieurin DI or Dipl.-Ing.',
+                                    'Diplom-Tierarzt / Diplom-Tierärztin Mag. med. vet.',
+                                    'Doktor / Doktorin der gesamten Heilkunde Dr. med. univ.',
+                                    'Doktor / Doktorin der Zahnheilkunde Dr. med. dent.',
+                                    'Magister / Magistra der Naturwissenschaften Mag. rer. nat.',
+                                    'Magister / Magistra der Philosophie Mag. phil.',
+                                ]}
                             />
                         </FormGrid>
                     </Card>
