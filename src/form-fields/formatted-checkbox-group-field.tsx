@@ -1,8 +1,11 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
-import CheckboxGroupField from './checkbox-group-field';
+import {
+    CheckboxGroupField,
+    CheckboxGroupFieldProps,
+} from './checkbox-group-field';
 
-const FormattedCheckboxGroupField = (props) => {
+export const FormattedCheckboxGroupField = (props: CheckboxGroupFieldProps) => {
     return (
         <CheckboxGroupField
             {...props}
@@ -11,10 +14,6 @@ const FormattedCheckboxGroupField = (props) => {
             )}
         />
     );
-};
-
-FormattedCheckboxGroupField.propTypes = {
-    ...CheckboxGroupField.propTypes,
 };
 
 FormattedCheckboxGroupField.defaultProps = {

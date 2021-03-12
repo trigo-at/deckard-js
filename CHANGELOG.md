@@ -1,5 +1,9 @@
 # Changelog
 
+## 14.11.2
+
+- (Formatted)CheckBoxGroupField und RadioGroupField zeigen die Optionen jetzt in einem Grid an. 
+
 ## 14.11.1
 
 - Layout fixes für SecondaryNavItem und den Sidebar Container.

@@ -1,14 +1,25 @@
 /* eslint-disable no-console */
 import React from 'react';
+import {Meta, Story} from '@storybook/react/types-6-0';
 import {Form} from 'react-final-form';
 import {Button} from '@chakra-ui/react';
-import CheckboxGroupField from './checkbox-group-field';
-import FormattedCheckboxGroupField from './formatted-checkbox-group-field';
+import {
+    CheckboxGroupField,
+    CheckboxGroupFieldProps,
+} from './checkbox-group-field';
+import {FormattedCheckboxGroupField} from './formatted-checkbox-group-field';
 import ProviderDecorator from '../provider-decorator';
+
+export default {
+    title: 'Components/CheckboxGroupField',
+    component: CheckboxGroupField,
+    decorators: [ProviderDecorator],
+} as Meta;
 
 const validate = (values) => {
     const errors = {};
-    if (!values.titles) {
+    if (!values.titles || !values.titles.length) {
+        // @ts-ignore
         errors.titles = 'validation.required';
     }
     return errors;
@@ -16,7 +27,9 @@ const validate = (values) => {
 
 const onSubmit = (values) => console.log(values);
 
-export const CheckboxGroupFieldStory = () => (
+export const CheckboxGroupFieldStory: Story<CheckboxGroupFieldProps> = (
+    args
+) => (
     <Form
         initialValues={{
             titles: [
@@ -29,9 +42,9 @@ export const CheckboxGroupFieldStory = () => (
         {({handleSubmit}) => (
             <form onSubmit={handleSubmit}>
                 <CheckboxGroupField
+                    {...args}
                     fieldName="string" // headerText
                     name="titles" // have to match with initialValues property name
-                    isRequired
                     options={[
                         'Diplom-Ingenieur / Diplom-Ingenieurin DI or Dipl.-Ing.',
                         'Diplom-Tierarzt / Diplom-Tierärztin Mag. med. vet.',
@@ -49,7 +62,9 @@ export const CheckboxGroupFieldStory = () => (
 
 CheckboxGroupFieldStory.storyName = 'default';
 
-export const CheckboxGroupFieldStory2 = () => (
+export const CheckboxGroupFieldStory2: Story<CheckboxGroupFieldProps> = (
+    args
+) => (
     <Form
         initialValues={{
             titles: [
@@ -62,10 +77,10 @@ export const CheckboxGroupFieldStory2 = () => (
         {({handleSubmit}) => (
             <form onSubmit={handleSubmit}>
                 <CheckboxGroupField
+                    {...args}
                     helperText="customHelperText"
                     fieldName="string"
                     name="titles"
-                    isRequired
                     options={['Magister / Magistra der Philosophie Mag. phil.']}
                 />
                 <Button mt="1em" type="submit">
@@ -78,7 +93,9 @@ export const CheckboxGroupFieldStory2 = () => (
 
 CheckboxGroupFieldStory2.storyName = 'withHelperText';
 
-export const FormattedCheckboxGroupFieldStory = () => (
+export const FormattedCheckboxGroupFieldStory: Story<CheckboxGroupFieldProps> = (
+    args
+) => (
     <Form
         initialValues={{
             titles: ['translation1'],
@@ -88,6 +105,7 @@ export const FormattedCheckboxGroupFieldStory = () => (
         {({handleSubmit}) => (
             <form onSubmit={handleSubmit}>
                 <FormattedCheckboxGroupField
+                    {...args}
                     helperText="customHelperText"
                     fieldName="string"
                     name="titles"
@@ -103,9 +121,3 @@ export const FormattedCheckboxGroupFieldStory = () => (
 );
 
 FormattedCheckboxGroupFieldStory.storyName = 'formatted';
-
-export default {
-    title: 'Components/CheckboxGroupField',
-    component: CheckboxGroupField,
-    decorators: [ProviderDecorator],
-};

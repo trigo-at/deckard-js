@@ -7,6 +7,7 @@ import {
     RadioGroup,
     Radio,
     FormHelperText,
+    Grid,
 } from '@chakra-ui/react';
 import {FormattedMessage} from 'react-intl';
 import FieldError from './field-error';
@@ -34,11 +35,19 @@ const RadioGroupField = ({
                 <FormattedMessage id={`field.${fieldName || name}`} />
             </FormLabel>
             <RadioGroup {...input} {...props} id={name}>
-                {options.map((option) => (
-                    <Radio key={option} value={option}>
-                        {renderOption({option, fieldName, name})}
-                    </Radio>
-                ))}
+                <Grid
+                    gap={4}
+                    templateColumns={{
+                        base: 'repeat(1, 1fr)',
+                        sm: 'repeat(2, 1fr)',
+                        md: 'repeat(3, 1fr)',
+                    }}>
+                    {options.map((option) => (
+                        <Radio key={option} value={option}>
+                            {renderOption({option, fieldName, name})}
+                        </Radio>
+                    ))}
+                </Grid>
             </RadioGroup>
             {helperText && (
                 <FormHelperText>
