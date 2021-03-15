@@ -95,3 +95,4 @@ export {default as CellContent} from './table/cell-content';
 export {default as SecondaryCellContent} from './table/secondary-cell-content';
 export {default as DataTable} from './table/data-table';
 export {default as Pagination} from './table/pagination';
+export {default as GlobalFilterInput} from './table/global-filter-input';
