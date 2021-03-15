@@ -56,6 +56,7 @@ export {default as ChevronRightIcon} from './icons/chevron-right-icon';
 export {default as DatabaseIcon} from './icons/database-icon';
 export {default as DotsHorizontalIcon} from './icons/dots-horizontal-icon';
 export {default as ExclamationCircleIcon} from './icons/exclamation-circle-icon';
+export {default as FilterIcon} from './icons/filter-icon';
 export {default as LocationMarkerIcon} from './icons/location-marker-icon';
 export {default as QuestionMarkCircleIcon} from './icons/question-mark-circle-icon';
 export {default as SaveIcon} from './icons/save-icon';

@@ -1,5 +1,9 @@
 # Changelog
 
+## 14.12.0
+
+- Globalen Filter zur DataTable Referenzimplementierung hinzugefügt.
+
 ## 14.11.2
 
 - (Formatted)CheckBoxGroupField und RadioGroupField zeigen die Optionen jetzt in einem Grid an. 
