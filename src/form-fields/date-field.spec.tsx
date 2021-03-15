@@ -14,7 +14,9 @@ const renderInputMultiSelect = ({initialValues = {}, ...props}) =>
             <Form
                 initialValues={initialValues}
                 subscription={{values: true}}
-                onSubmit={() => {}}>
+                onSubmit={() => {
+                    console.log('submit');
+                }}>
                 {({handleSubmit}) => (
                     <form onSubmit={handleSubmit}>
                         <DateField name="date" {...props} />

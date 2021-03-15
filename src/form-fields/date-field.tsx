@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import {string, node, bool, func, object, any} from 'prop-types';
 import {useField} from 'react-final-form';
 import {
     FormControl,
@@ -14,7 +13,19 @@ import Optional from './optional';
 
 const padString = (value) => `0${value}`.slice(-2);
 
-const DateField = ({
+export type DateFieldProps = {
+    name: string;
+    gridArea?: string;
+    fieldName?: string;
+    isRequired?: boolean;
+    isDisabled?: boolean;
+    helperText?: string;
+    onChange?: (value: any) => void;
+    config?: any;
+    emptyValue?: any;
+};
+
+export const DateField = ({
     name,
     gridArea,
     fieldName,
@@ -24,7 +35,7 @@ const DateField = ({
     config,
     emptyValue,
     onChange,
-}) => {
+}: DateFieldProps) => {
     const {input, meta} = useField(name, config);
 
     const {value, onBlur} = input;
@@ -121,18 +132,6 @@ const DateField = ({
             <FieldError isInvalid={isInvalid} meta={meta} />
         </FormControl>
     );
-};
-
-DateField.propTypes = {
-    name: string.isRequired,
-    gridArea: string,
-    fieldName: string,
-    isRequired: bool,
-    isDisabled: bool,
-    helperText: node,
-    onChange: func,
-    config: object,
-    emptyValue: any,
 };
 
 DateField.defaultProps = {

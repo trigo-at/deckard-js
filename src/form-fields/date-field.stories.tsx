@@ -1,21 +1,30 @@
 /* eslint-disable no-console */
 import React from 'react';
+import {Meta, Story} from '@storybook/react/types-6-0';
 import {Form} from 'react-final-form';
 import {parseISO, isValid} from 'date-fns';
 import {Button} from '@chakra-ui/react';
-import DateField from './date-field';
+import {DateField, DateFieldProps} from './date-field';
 import ProviderDecorator from '../provider-decorator';
+
+export default {
+    title: 'Form Controls/DateField',
+    component: DateField,
+    decorators: [ProviderDecorator],
+} as Meta;
 
 const validate = (values) => {
     const errors = {};
     if (!isValid(parseISO(values.date))) {
+        // @ts-ignore
         errors.date = 'validation.invalid';
     }
+    return errors;
 };
 
 const onSubmit = (values) => console.log(values);
 
-export const DateFieldStory = () => (
+const Template: Story<DateFieldProps> = (args) => (
     <Form
         initialValues={{
             dateWithValue: '2000-01-01',
@@ -30,6 +39,7 @@ export const DateFieldStory = () => (
                     onChange={(value) => console.log(value)}
                 />
                 <DateField
+                    {...args}
                     name="dateEnabled"
                     onChange={(value) => console.log(value)}
                 />
@@ -43,31 +53,6 @@ export const DateFieldStory = () => (
     </Form>
 );
 
-DateFieldStory.storyName = 'default';
-export const DateFieldStory2 = () => (
-    <Form
-        name="dateField"
-        fieldName="testFieldName" // ??
-        helperText={{}} // ??
-        initialValues={{date: '2002-12-28'}}
-        validate={validate}
-        onSubmit={onSubmit}>
-        {({handleSubmit, form}) => (
-            <form onSubmit={handleSubmit}>
-                <DateField name="date" />
-                <Button type="button" onClick={() => form.reset({})}>
-                    reset
-                </Button>
-                <Button type="submit">submit</Button>
-            </form>
-        )}
-    </Form>
-);
-
-DateFieldStory2.storyName = 'with-initial-value';
-
-export default {
-    title: 'Components/DateField',
-    component: DateField,
-    decorators: [ProviderDecorator],
-};
+export const BaseStory = Template.bind({});
+BaseStory.args = {};
+BaseStory.storyName = 'base';
