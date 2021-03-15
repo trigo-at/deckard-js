@@ -1,5 +1,9 @@
 # Changelog
 
+## 14.12.1
+
+- GlobalFilterInput wird auch exportiert.
+
 ## 14.12.0
 
 - Globalen Filter zur DataTable Referenzimplementierung hinzugefügt.
