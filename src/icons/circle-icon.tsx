@@ -14,7 +14,7 @@ export const CircleIcon = forwardRef((props, ref) => {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d="M 15 13 m 0 13 a 9 9 0 1 1 0 -18 a 9 9 0 0 1 0 18 z"
+                d="M 15 10 m 6 2 a 9 9 0 1 1 -18 0 a 9 9 0 0 1 18 0 z"
             />
         </Icon>
     );
