@@ -1,6 +1,10 @@
 # Changelog
 
-## 14.3.0
+## 14.14.0
+
+- Page unterstützt jetzt ein "aside" Property um ca 1/3 des rechten Bereiches anderweitig zu nutzen.
+
+## 14.13.0
 
 - ChevronUpIcon und ChevronDownIcon hinzugefügt.
 

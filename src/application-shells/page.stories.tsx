@@ -117,7 +117,7 @@ const Template: Story<PageProps> = (args) => (
                 </>
             }
         />
-        <Box px={{base: 4, sm: 6, lg: 8}} py={4} h="full">
+        <Box px={{base: 4, sm: 6, lg: 8}} py={4}>
             <Box py={4}>
                 <Box
                     border="4px"
@@ -139,3 +139,9 @@ SearchHeaderStory.args = {
     onSearch: (searchTerm) => console.log(searchTerm),
 };
 SearchHeaderStory.storyName = 'Mit Search';
+
+export const AsideStory = Template.bind({});
+AsideStory.args = {
+    aside: () => <Box>some aside</Box>,
+};
+AsideStory.storyName = 'Mit Aside';

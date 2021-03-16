@@ -1,11 +1,11 @@
-import React, {FC, ReactNode} from 'react';
+import React, {ReactNode} from 'react';
 import {Box} from '@chakra-ui/react';
 
 export type MainProps = {
     children: ReactNode;
 };
 
-export const Main: FC<MainProps> = ({children}) => {
+export const Main = ({children}: MainProps) => {
     return (
         <Box
             as="main"

@@ -1,7 +1,8 @@
-import React, {FC, ReactNode, useRef} from 'react';
+import React, {ReactNode, useRef} from 'react';
 import {useDisclosure, Flex} from '@chakra-ui/react';
 import PageContainer from './page-container';
 import Main from './main';
+import Aside from './aside';
 import OffCanvasMenu from './off-canvas-menu';
 import OffCanvasMenuButton from './off-canvas-menu-button';
 import HeaderOffCanvasMenuButton from './header-off-canvas-menu-button';
@@ -14,6 +15,10 @@ export type PageProps = {
      * Content Bereich der Anwendung
      */
     children: ReactNode;
+    /**
+     * Secondary Content Bereich (Aside)
+     */
+    aside?: ReactNode;
     /**
      * Container für Sidebar (z.B. LightSidebar)
      */
@@ -29,11 +34,7 @@ export type PageProps = {
 /**
  * Page Component als Container für Content und Sidebar. Kümmert sich auch um ein mobile Menu.
  */
-export const Page: FC<PageProps> = ({
-    children = undefined,
-    sidebar = undefined,
-    onSearch = undefined,
-}) => {
+export const Page = ({aside, children, sidebar, onSearch}: PageProps) => {
     const {isOpen, onOpen, onClose} = useDisclosure();
     const btnRef = useRef(null);
     return (
@@ -68,7 +69,17 @@ export const Page: FC<PageProps> = ({
                         </Flex>
                     </Header>
                 )}
-                <Main>{children}</Main>
+                {!aside && <Main>{children}</Main>}
+                {aside && (
+                    <Flex
+                        flex="1"
+                        position="relative"
+                        zIndex="0"
+                        overflow="hidden">
+                        <Main>{children}</Main>
+                        <Aside>{aside}</Aside>
+                    </Flex>
+                )}
             </Flex>
         </PageContainer>
     );
