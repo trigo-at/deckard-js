@@ -1,5 +1,9 @@
 # Changelog
 
+## 14.15.0
+
+- CircleIcon hinzugefügt.
+
 ## 14.14.0
 
 - Page unterstützt jetzt ein "aside" Property um ca 1/3 des rechten Bereiches anderweitig zu nutzen.

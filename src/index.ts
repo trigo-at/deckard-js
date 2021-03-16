@@ -48,6 +48,7 @@ export {default as SectionHeader} from './headings/section-header';
 // Icons
 export {default as AddIcon} from './icons/add-icon';
 export {default as CalendarIcon} from './icons/calendar-icon';
+export {default as CircleIcon} from './icons/circle-icon';
 export {default as CheckCircleIcon} from './icons/check-circle-icon';
 export {default as ChevronDoubleLeftIcon} from './icons/chevron-double-left-icon';
 export {default as ChevronDownIcon} from './icons/chevron-down-icon';
