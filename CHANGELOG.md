@@ -1,5 +1,9 @@
 # Changelog
 
+## 14.3.0
+
+- ChevronUpIcon und ChevronDownIcon hinzugefügt.
+
 ## 14.12.1
 
 - GlobalFilterInput wird auch exportiert.
