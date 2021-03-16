@@ -1,5 +1,9 @@
 # Changelog
 
+## 14.15.1
+
+- CircleIcon ist jetzt hübscher.
+
 ## 14.15.0
 
 - CircleIcon hinzugefügt.
