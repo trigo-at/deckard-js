@@ -19,10 +19,6 @@ import SecondaryNavItem from '../sidebar/secondary-nav-item';
 import PageHeader from '../headings/page-header';
 import PrimaryButton from '../buttons/primary-button';
 import SecondaryButton from '../buttons/secondary-button';
-// @ts-ignore
-import logo from '../../.storybook/TRIGO-logo-human-rgb.png';
-// @ts-ignore
-import avatar from '../../.storybook/TRIGO-logo-humanface-rgb.png';
 
 export default {
     title: 'Application Shells/Page',
@@ -40,10 +36,10 @@ const Template: Story<PageProps> = (args) => (
                         href="https://trigo.at"
                         isExternal
                         username="Maxima Musterfrau"
-                        avatar={avatar}
+                        avatar="/img/TRIGO-logo-humanface-rgb.png"
                     />
                 }
-                logo={<Logo src={logo} />}
+                logo={<Logo src="/img/TRIGO-logo-human-rgb.png" />}
                 secondaryNavHeading="Projects"
                 secondaryNavItems={
                     <>

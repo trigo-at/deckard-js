@@ -14,10 +14,6 @@ import OutlineInbox from '../icons/outline-inbox';
 import OutlineChartBar from '../icons/outline-chart-bar';
 import Profile from './profile';
 import SecondaryNavItem from './secondary-nav-item';
-// @ts-ignore
-import logo from '../../.storybook/TRIGO-logo-human-rgb.png';
-// @ts-ignore
-import avatar from '../../.storybook/TRIGO-logo-humanface-rgb.png';
 
 import StaticSidebarForDesktopProps from '../application-shells/static-sidebar-for-desktop';
 import PageContainer from '../application-shells/page-container';
@@ -37,10 +33,10 @@ const Template: Story<SidebarProps> = (args) => (
                         href="https://trigo.at"
                         isExternal
                         username="Maxima Musterfrau"
-                        avatar={avatar}
+                        avatar="/img/TRIGO-logo-humanface-rgb.png"
                     />
                 }
-                logo={<Logo src={logo} />}
+                logo={<Logo src="/img/TRIGO-logo-human-rgb.png" />}
                 secondaryNavHeading="Projects"
                 secondaryNavItems={
                     <>

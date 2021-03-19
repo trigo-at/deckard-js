@@ -4,8 +4,6 @@ import {Meta, Story} from '@storybook/react/types-6-0';
 import {Box} from '@chakra-ui/react';
 import {Profile, ProfileProps} from './profile';
 import ProviderDecorator from '../provider-decorator';
-// @ts-ignore
-import avatar from '../../.storybook/TRIGO-logo-humanface-rgb.png';
 
 export default {
     title: 'Navigation/Profile',
@@ -20,7 +18,7 @@ const Template: Story<ProfileProps> = (args) => (
             href="https://trigo.at"
             isExternal
             username="Maxima Musterfrau"
-            avatar={avatar}
+            avatar="/img/TRIGO-logo-humanface-rgb.png"
         />
     </Box>
 );
