@@ -19,7 +19,7 @@
     "watch": "rollup -c -w",
     "lint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
     "storybook": "start-storybook -s ./public -p 6006",
-    "build-storybook": "build-storybook -s public -c .storybook -o docs --docs",
+    "build-storybook": "build-storybook -s ./public -c .storybook -o docs --docs",
     "prepublishOnly": "rm -rf ./dist && npm run build"
   },
   "lint-staged": {
