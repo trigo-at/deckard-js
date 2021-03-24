@@ -1,5 +1,9 @@
 # Changelog
 
+## 14.17.0
+
+- PencilAltIcon hinzugefügt.
+
 ## 14.15.1
 
 - CircleIcon ist jetzt hübscher.

@@ -61,6 +61,7 @@ export {default as DotsHorizontalIcon} from './icons/dots-horizontal-icon';
 export {default as ExclamationCircleIcon} from './icons/exclamation-circle-icon';
 export {default as FilterIcon} from './icons/filter-icon';
 export {default as LocationMarkerIcon} from './icons/location-marker-icon';
+export {default as PencilAltIcon} from './icons/pencil-alt-icon';
 export {default as QuestionMarkCircleIcon} from './icons/question-mark-circle-icon';
 export {default as SaveIcon} from './icons/save-icon';
 export {default as SortDescending} from './icons/sort-descending';
