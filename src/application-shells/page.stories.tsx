@@ -32,7 +32,8 @@ export default {
 const Template: Story<PageProps> = (args) => (
     <Page
         {...args}
-        logo={<Logo src="/img/TRIGO-logo-human-rgb.png" />}
+        logo={<Logo src="/img/TRIGO-logo-humanface-rgb.png" />}
+        appName="SunRocks Center"
         headerActions={
             <>
                 <Button

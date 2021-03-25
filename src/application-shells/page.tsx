@@ -6,6 +6,7 @@ import {
     ButtonGroup,
     Grid,
     Box,
+    Text,
 } from '@chakra-ui/react';
 import PageContainer from './page-container';
 import Main from './main';
@@ -50,6 +51,10 @@ export type PageProps = {
      * Container für Sidebar (z.B. LightSidebar)
      */
     displayVariant: DisplayVariant;
+    /**
+     * Name der Anwendung zur Anzeige im Header
+     */
+    appName?: string;
 };
 
 const templateColumnsFactory = (
@@ -72,6 +77,7 @@ export const Page = ({
     onSearch,
     displayVariant = 'default',
     headerActions,
+    appName,
 }: PageProps) => {
     const {isOpen, onOpen, onClose} = useDisclosure();
     const btnRef = useRef(null);
@@ -113,9 +119,21 @@ export const Page = ({
                                 onClick={onOpen}
                             />
                         )}
-                        <Box ml={displayVariant === 'default' ? 4 : 0}>
-                            {logo}
-                        </Box>
+                        {logo && (
+                            <Box ml={displayVariant === 'default' ? 4 : 0}>
+                                {logo}
+                            </Box>
+                        )}
+                        {appName && (
+                            <Text
+                                ml={2}
+                                fontSize="xl"
+                                fontWeight="semibold"
+                                letterSpacing="wide"
+                                textTransform="uppercase">
+                                {appName}
+                            </Text>
+                        )}
                     </Flex>
                     <Flex alignItems="center" mt={{base: 2, md: 0}}>
                         {onSearch && <SearchBox onSearch={onSearch} />}

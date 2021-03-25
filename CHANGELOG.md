@@ -1,5 +1,9 @@
 # Changelog
 
+## 15.1.0
+
+- Optionaler Text im Header zur Anzeige des Anwendungsnamens zur Page Componente hinzugefügt.
+
 ## 15.0.0
 
 - Die Page Component unterstützt jetzt 2 Varianten der Anzeite. Mit fixem Sidebar und mit einem Off-Canvas Sidebar.
