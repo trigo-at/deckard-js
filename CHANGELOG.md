@@ -1,5 +1,12 @@
 # Changelog
 
+## 15.0.0
+
+- Die Page Component unterstützt jetzt 2 Varianten der Anzeite. Mit fixem Sidebar und mit einem Off-Canvas Sidebar.
+- Die Page Component hat jetzt einen fixen Header der Platz für Actions bietet.
+- Im Modus Off-Canvas unterstütz die Page Component einen globalen Shortcut (derzeit CTRL+m)
+- BellIcon, ClipboardListIcon, MenuIcon und UserCircleIcon hinzugefügt.
+
 ## 14.17.0
 
 - PencilAltIcon hinzugefügt.

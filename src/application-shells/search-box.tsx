@@ -2,11 +2,11 @@
 import React, {FC, useRef, useCallback} from 'react';
 import {Form, Field} from 'react-final-form';
 import {
-    Flex,
     VisuallyHidden,
     InputGroup,
     InputLeftElement,
     Input,
+    Box,
 } from '@chakra-ui/react';
 import SearchIcon from '../icons/search-icon';
 import useEventListener from '../use-event-listener';
@@ -36,14 +36,13 @@ export const SearchBox: FC<SearchBoxProps> = ({onSearch}) => {
         }
     };
 
-    // Add event listener using our hook
     useEventListener('keydown', handleGlobalKeyDown);
     return (
         <Form
             initialValues={{searchTerm: ''}}
             onSubmit={onSubmit}
             render={({handleSubmit}) => (
-                <Flex as="form" onSubmit={handleSubmit} w="full">
+                <Box as="form" onSubmit={handleSubmit}>
                     <Field name="searchTerm">
                         {({input}) => (
                             <>
@@ -53,34 +52,24 @@ export const SearchBox: FC<SearchBoxProps> = ({onSearch}) => {
                                     className="sr-only">
                                     Suchen
                                 </VisuallyHidden>
-                                <InputGroup color="gray.400" w="full">
-                                    <InputLeftElement
-                                        pointerEvents="none"
-                                        h="full">
-                                        <SearchIcon color="gray.300" />
+                                <InputGroup>
+                                    <InputLeftElement>
+                                        <SearchIcon />
                                     </InputLeftElement>
                                     <Input
+                                        bg="white"
                                         {...input}
-                                        h="full"
+                                        display="block"
                                         placeholder="Suchen"
                                         ref={searchInput}
                                         id="search_field"
                                         type="search"
-                                        color="gray.900"
-                                        _placeholder={{color: 'gray.500'}}
-                                        fontSize={{sm: 'sm'}}
-                                        border="none"
-                                        _focus={{
-                                            border: 'none',
-                                            outline: 'none',
-                                            _placeholder: {color: 'gray.400'},
-                                        }}
                                     />
                                 </InputGroup>
                             </>
                         )}
                     </Field>
-                </Flex>
+                </Box>
             )}
         />
     );

@@ -2,7 +2,7 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
 import {Meta, Story} from '@storybook/react/types-6-0';
-import {Box} from '@chakra-ui/react';
+import {Box, Button, IconButton} from '@chakra-ui/react';
 import {Page, PageProps} from './page';
 import ProviderDecorator from '../provider-decorator';
 import Sidebar from '../sidebar/sidebar';
@@ -19,6 +19,9 @@ import SecondaryNavItem from '../sidebar/secondary-nav-item';
 import PageHeader from '../headings/page-header';
 import PrimaryButton from '../buttons/primary-button';
 import SecondaryButton from '../buttons/secondary-button';
+import UserCircleIcon from '../icons/user-circle-icon';
+import ClipboardListIcon from '../icons/clipboard-list-icon';
+import BellIcon from '../icons/bell-icon';
 
 export default {
     title: 'Application Shells/Page',
@@ -29,6 +32,24 @@ export default {
 const Template: Story<PageProps> = (args) => (
     <Page
         {...args}
+        logo={<Logo src="/img/TRIGO-logo-human-rgb.png" />}
+        headerActions={
+            <>
+                <Button
+                    aria-label="open todos"
+                    leftIcon={<ClipboardListIcon fontSize="xl" />}>
+                    Meine Aufgaben
+                </Button>
+                <IconButton
+                    aria-label="open notifications"
+                    icon={<BellIcon fontSize="xl" />}
+                />
+                <IconButton
+                    aria-label="open profile"
+                    icon={<UserCircleIcon fontSize="xl" />}
+                />
+            </>
+        }
         sidebar={
             <Sidebar
                 footer={
@@ -128,16 +149,22 @@ const Template: Story<PageProps> = (args) => (
 );
 
 export const BaseStory = Template.bind({});
-BaseStory.storyName = 'Mit Light Sidebar';
+BaseStory.storyName = 'Base';
+
+export const FixedSidebarStory = Template.bind({});
+FixedSidebarStory.args = {
+    displayVariant: 'with-fixed-sidebar',
+};
+FixedSidebarStory.storyName = 'with fixed sidebar';
 
 export const SearchHeaderStory = Template.bind({});
 SearchHeaderStory.args = {
     onSearch: (searchTerm) => console.log(searchTerm),
 };
-SearchHeaderStory.storyName = 'Mit Search';
+SearchHeaderStory.storyName = 'Search';
 
 export const AsideStory = Template.bind({});
 AsideStory.args = {
     aside: () => <Box>some aside</Box>,
 };
-AsideStory.storyName = 'Mit Aside';
+AsideStory.storyName = 'Aside';

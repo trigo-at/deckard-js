@@ -47,8 +47,10 @@ export {default as SectionHeader} from './headings/section-header';
 
 // Icons
 export {default as AddIcon} from './icons/add-icon';
+export {default as BellIcon} from './icons/bell-icon';
 export {default as CalendarIcon} from './icons/calendar-icon';
 export {default as CircleIcon} from './icons/circle-icon';
+export {default as ClipboardListIcon} from './icons/clipboard-list-icon';
 export {default as CheckCircleIcon} from './icons/check-circle-icon';
 export {default as ChevronDoubleLeftIcon} from './icons/chevron-double-left-icon';
 export {default as ChevronDownIcon} from './icons/chevron-down-icon';
@@ -61,12 +63,14 @@ export {default as DotsHorizontalIcon} from './icons/dots-horizontal-icon';
 export {default as ExclamationCircleIcon} from './icons/exclamation-circle-icon';
 export {default as FilterIcon} from './icons/filter-icon';
 export {default as LocationMarkerIcon} from './icons/location-marker-icon';
+export {default as MenuIcon} from './icons/menu-icon';
 export {default as PencilAltIcon} from './icons/pencil-alt-icon';
 export {default as QuestionMarkCircleIcon} from './icons/question-mark-circle-icon';
 export {default as SaveIcon} from './icons/save-icon';
 export {default as SortDescending} from './icons/sort-descending';
 export {default as SortAscending} from './icons/sort-ascending';
 export {default as TrashIcon} from './icons/trash-icon';
+export {default as UserCircleIcon} from './icons/user-circle-icon';
 export {default as XCircleIcon} from './icons/x-circle-icon';
 
 // Inidcators

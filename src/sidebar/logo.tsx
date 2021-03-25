@@ -13,8 +13,8 @@ export type LogoProps = {
  */
 export const Logo: FC<LogoProps> = ({src = undefined}) => {
     return (
-        <Flex alignItems="center" flexShrink={0} px={4}>
-            <Image h={8} w="auto" src={src} />
+        <Flex alignItems="center" flexShrink={0}>
+            <Image h={8} src={src} />
         </Flex>
     );
 };

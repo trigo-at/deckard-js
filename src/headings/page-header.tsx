@@ -10,14 +10,11 @@ export type PageHeaderProps = {
 export const PageHeader: FC<PageHeaderProps> = ({heading, meta, actions}) => {
     return (
         <Box
-            mt={2}
             px={{base: 4, sm: 6, lg: 8}}
             py={4}
             display={{md: 'flex'}}
             alignItems={{md: meta ? 'flex-start' : 'center'}}
-            justifyContent={{md: 'space-between'}}
-            borderBottom="1px"
-            borderColor="gray.200">
+            justifyContent={{md: 'space-between'}}>
             <Box flex={1} minWidth={0}>
                 <Heading
                     as="h1"

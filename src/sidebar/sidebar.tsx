@@ -1,5 +1,5 @@
 import React, {FC, ReactNode} from 'react';
-import {Flex} from '@chakra-ui/react';
+import {Flex, Box} from '@chakra-ui/react';
 import NavContainer from './nav-container';
 import NavFooter from './nav-footer';
 import Nav from './nav';
@@ -27,6 +27,10 @@ export type SidebarProps = {
      * Liste an SecondaryNavItem
      */
     secondaryNavItems?: ReactNode;
+    /**
+     * Anzeigemodus
+     */
+    displayVariant?: 'off-canvas' | 'compact';
 };
 
 /**
@@ -38,17 +42,22 @@ export const Sidebar: FC<SidebarProps> = ({
     logo = undefined,
     secondaryNavHeading = undefined,
     secondaryNavItems = undefined,
+    displayVariant = 'off-canvas',
 }) => {
     return (
         <Flex
             flexDirection="column"
-            h={0}
+            h="full"
             flex={1}
             borderRight="1px"
             borderColor="gray.200"
             backgroundColor="gray.100">
             <NavContainer>
-                {logo}
+                {displayVariant === 'off-canvas' && (
+                    <Box pb={5} px={4}>
+                        {logo}
+                    </Box>
+                )}
                 <Nav>
                     <NavItems>{children}</NavItems>
 

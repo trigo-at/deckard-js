@@ -8,12 +8,16 @@ export type HeaderProps = {
 export const Header: FC<HeaderProps> = ({children}) => {
     return (
         <Flex
+            as="nav"
             position="relative"
+            flexWrap={{base: 'wrap', md: 'nowrap'}}
+            alignItems="center"
+            justifyContent="space-between"
             zIndex="10"
-            flexShrink={0}
-            bg="white"
-            h={14}
-            shadow="base">
+            px={{base: 4, sm: 6, lg: 8}}
+            py={4}
+            borderBottom="1px"
+            borderColor="gray.200">
             {children}
         </Flex>
     );
