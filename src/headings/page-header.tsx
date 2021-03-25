@@ -9,36 +9,39 @@ export type PageHeaderProps = {
 
 export const PageHeader: FC<PageHeaderProps> = ({heading, meta, actions}) => {
     return (
-        <Box
-            px={{base: 4, sm: 6, lg: 8}}
-            py={4}
-            display={{md: 'flex'}}
-            alignItems={{md: meta ? 'flex-start' : 'center'}}
-            justifyContent={{md: 'space-between'}}>
-            <Box flex={1} minWidth={0}>
-                <Heading
-                    as="h1"
-                    fontSize="2xl"
-                    fontWeight="bold"
-                    lineHeight={7}
-                    color="gray.900">
-                    {heading}
-                </Heading>
-                {meta && (
-                    <Stack
-                        direction={{base: 'column', sm: 'row'}}
-                        mt={2}
-                        spacing={{base: 3, sm: 6}}>
-                        {meta}
-                    </Stack>
+        <Box bg="gray.800">
+            <Box
+                px={{base: 4, sm: 6, lg: 8}}
+                py={4}
+                display={{md: 'flex'}}
+                alignItems={{md: 'center'}}
+                justifyContent={{md: 'space-between'}}>
+                <Box flex={1} minWidth={0}>
+                    <Heading
+                        as="h1"
+                        fontSize="2xl"
+                        fontWeight="bold"
+                        letterSpacing="wider"
+                        lineHeight={7}
+                        color="white">
+                        {heading}
+                    </Heading>
+                    {meta && (
+                        <Stack
+                            direction={{base: 'column', sm: 'row'}}
+                            mt={1}
+                            spacing={{base: 2, sm: 4}}>
+                            {meta}
+                        </Stack>
+                    )}
+                </Box>
+
+                {actions && (
+                    <Box mt={[4, 4, 0]} ml={{md: 4}} flexShrink={0}>
+                        <ButtonGroup spacing="3">{actions}</ButtonGroup>
+                    </Box>
                 )}
             </Box>
-
-            {actions && (
-                <Box mt={[4, 4, 0]} ml={{md: 4}} flexShrink={0}>
-                    <ButtonGroup spacing="3">{actions}</ButtonGroup>
-                </Box>
-            )}
         </Box>
     );
 };

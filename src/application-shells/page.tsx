@@ -54,7 +54,7 @@ export type PageProps = {
     /**
      * Name der Anwendung zur Anzeige im Header
      */
-    appName?: string;
+    appName?: ReactNode;
 };
 
 const templateColumnsFactory = (

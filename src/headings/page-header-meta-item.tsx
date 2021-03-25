@@ -15,10 +15,10 @@ export const PageHeaderMetaItem: FC<PageHeaderMetaItemProps> = ({
         mr: 1.5,
         h: 5,
         w: 5,
-        color: 'gray.400',
+        color: 'gray.500',
     });
     return (
-        <Flex alignItems="center" fontSize="sm" color="gray.500">
+        <Flex alignItems="center" fontSize="sm" color="gray.300">
             {metaIcon}
             {children}
         </Flex>

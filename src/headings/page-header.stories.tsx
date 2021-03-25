@@ -6,6 +6,7 @@ import {PageHeader, PageHeaderProps} from './page-header';
 import ProviderDecorator from '../provider-decorator';
 import PrimaryButton from '../buttons/primary-button';
 import SecondaryButton from '../buttons/secondary-button';
+import TertiaryButton from '../buttons/tertiary-button';
 import LocationMarkerIcon from '../icons/location-marker-icon';
 import CalendarIcon from '../icons/calendar-icon';
 import PageHeaderMetaItem from './page-header-meta-item';
@@ -38,6 +39,7 @@ export const MetaStory = Template.bind({});
 MetaStory.args = {
     actions: (
         <>
+            <TertiaryButton>Publish</TertiaryButton>
             <SecondaryButton>Edit</SecondaryButton>
             <PrimaryButton>Publish</PrimaryButton>
         </>
