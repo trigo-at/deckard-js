@@ -1,6 +1,6 @@
 import {useRef, useEffect} from 'react';
 
-const useEventListener = (eventName, handler, element = window) => {
+const useEventListener = (eventName, handler) => {
     // Create a ref that stores handler
     const savedHandler = useRef();
 
@@ -16,22 +16,25 @@ const useEventListener = (eventName, handler, element = window) => {
         () => {
             // Make sure element supports addEventListener
             // On
-            const isSupported = element && element.addEventListener;
+            const isSupported =
+                typeof window !== 'undefined' &&
+                window &&
+                window.addEventListener;
             if (!isSupported) return;
 
             // Create event listener that calls handler function stored in ref
             const eventListener = (event) => savedHandler.current(event);
 
             // Add event listener
-            element.addEventListener(eventName, eventListener);
+            window.addEventListener(eventName, eventListener);
 
             // Remove event listener on cleanup
             // eslint-disable-next-line consistent-return
             return () => {
-                element.removeEventListener(eventName, eventListener);
+                window.removeEventListener(eventName, eventListener);
             };
         },
-        [eventName, element] // Re-run if eventName or element changes
+        [eventName] // Re-run if eventName or element changes
     );
 };
 
