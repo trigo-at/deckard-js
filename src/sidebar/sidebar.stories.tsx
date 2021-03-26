@@ -15,8 +15,6 @@ import OutlineChartBar from '../icons/outline-chart-bar';
 import Profile from './profile';
 import SecondaryNavItem from './secondary-nav-item';
 
-import PageContainer from '../application-shells/page-container';
-
 export default {
     title: 'Navigation/Sidebar',
     component: Sidebar,
@@ -24,79 +22,77 @@ export default {
 } as Meta;
 
 const Template: Story<SidebarProps> = (args) => (
-    <PageContainer>
-        <Sidebar
-            footer={
-                <Profile
-                    href="https://trigo.at"
-                    isExternal
-                    username="Maxima Musterfrau"
-                    avatar="/img/TRIGO-logo-humanface-rgb.png"
-                />
-            }
-            logo={<Logo src="/img/TRIGO-logo-human-rgb.png" />}
-            secondaryNavHeading="Projects"
-            secondaryNavItems={
-                <>
-                    <SecondaryNavItem href="https://trigo.at" isExternal>
-                        Website redesign
-                    </SecondaryNavItem>
-                    <SecondaryNavItem href="https://trigo.at" isExternal>
-                        GraphQL API
-                    </SecondaryNavItem>
-                    <SecondaryNavItem href="https://trigo.at" isExternal>
-                        Customer migration guides
-                    </SecondaryNavItem>
-                    <SecondaryNavItem href="https://trigo.at" isExternal>
-                        Profit sharing program
-                    </SecondaryNavItem>
-                </>
-            }
-            {...args}>
+    <Sidebar
+        footer={
+            <Profile
+                href="https://trigo.at"
+                isExternal
+                username="Maxima Musterfrau"
+                avatar="/img/TRIGO-logo-humanface-rgb.png"
+            />
+        }
+        logo={<Logo src="/img/TRIGO-logo-human-rgb.png" />}
+        secondaryNavHeading="Projects"
+        secondaryNavItems={
             <>
-                <NavItem
-                    href="https://trigo.at"
-                    isExternal
-                    icon={<OutlineHome />}
-                    isActive>
-                    Dashboard
-                </NavItem>
-                <NavItem
-                    icon={<OutlineUsers />}
-                    href="https://trigo.at"
-                    badge="3"
-                    isExternal>
-                    Team
-                </NavItem>
-                <NavItem
-                    icon={<OutlineFolder />}
-                    href="https://trigo.at"
-                    badge="4"
-                    isExternal>
-                    Projects
-                </NavItem>
-                <NavItem
-                    icon={<OutlineCalendar />}
-                    href="https://trigo.at"
-                    isExternal>
-                    Calendar
-                </NavItem>
-                <NavItem
-                    icon={<OutlineInbox />}
-                    href="https://trigo.at"
-                    badge="12"
-                    isExternal>
-                    Documents
-                </NavItem>
-                <NavItem
-                    icon={<OutlineChartBar />}
-                    href="https://trigo.at"
-                    isExternal>
-                    Reports
-                </NavItem>
+                <SecondaryNavItem href="https://trigo.at" isExternal>
+                    Website redesign
+                </SecondaryNavItem>
+                <SecondaryNavItem href="https://trigo.at" isExternal>
+                    GraphQL API
+                </SecondaryNavItem>
+                <SecondaryNavItem href="https://trigo.at" isExternal>
+                    Customer migration guides
+                </SecondaryNavItem>
+                <SecondaryNavItem href="https://trigo.at" isExternal>
+                    Profit sharing program
+                </SecondaryNavItem>
             </>
-        </Sidebar>
-    </PageContainer>
+        }
+        {...args}>
+        <>
+            <NavItem
+                href="https://trigo.at"
+                isExternal
+                icon={<OutlineHome />}
+                isActive>
+                Dashboard
+            </NavItem>
+            <NavItem
+                icon={<OutlineUsers />}
+                href="https://trigo.at"
+                badge="3"
+                isExternal>
+                Team
+            </NavItem>
+            <NavItem
+                icon={<OutlineFolder />}
+                href="https://trigo.at"
+                badge="4"
+                isExternal>
+                Projects
+            </NavItem>
+            <NavItem
+                icon={<OutlineCalendar />}
+                href="https://trigo.at"
+                isExternal>
+                Calendar
+            </NavItem>
+            <NavItem
+                icon={<OutlineInbox />}
+                href="https://trigo.at"
+                badge="12"
+                isExternal>
+                Documents
+            </NavItem>
+            <NavItem
+                icon={<OutlineChartBar />}
+                href="https://trigo.at"
+                isExternal>
+                Reports
+            </NavItem>
+        </>
+    </Sidebar>
 );
 
 export const BaseStory = Template.bind({});

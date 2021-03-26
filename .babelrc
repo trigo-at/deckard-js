@@ -12,15 +12,5 @@
 	"plugins": [
 		"@babel/proposal-object-rest-spread",
         "@emotion"
-    ],
-    "env": {
-		"production": {
-			"plugins": [
-				["transform-react-remove-prop-types", {
-					"mode": "remove",
-					"removeImport": true
-				  }]
-			]
-		}
-	}
+    ]
 }

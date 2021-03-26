@@ -8,7 +8,6 @@ import {
     Box,
     Text,
 } from '@chakra-ui/react';
-import PageContainer from './page-container';
 import Main from './main';
 import Aside from './aside';
 import OffCanvasMenu from './off-canvas-menu';
@@ -98,7 +97,7 @@ export const Page = ({
     useEventListener('keydown', handleGlobalKeyDown);
 
     return (
-        <PageContainer>
+        <Box>
             {sidebar && (
                 <OffCanvasMenu
                     finalFocusRef={btnRef}
@@ -108,58 +107,56 @@ export const Page = ({
                 </OffCanvasMenu>
             )}
 
-            <Flex flexDirection="column" w="0" flex="1" overflow="hidden">
-                <Header>
-                    <Flex alignItems="center">
-                        {displayVariant === 'default' && sidebar && (
-                            <IconButton
-                                aria-label="open sidebar"
-                                icon={<MenuIcon fontSize="xl" />}
-                                ref={btnRef}
-                                onClick={onOpen}
-                            />
-                        )}
-                        {logo && (
-                            <Box ml={displayVariant === 'default' ? 4 : 0}>
-                                {logo}
-                            </Box>
-                        )}
-                        {appName && (
-                            <Text
-                                ml={2}
-                                fontSize="xl"
-                                fontWeight="semibold"
-                                letterSpacing="wide"
-                                textTransform="uppercase">
-                                {appName}
-                            </Text>
-                        )}
-                    </Flex>
-                    <Flex alignItems="center" mt={{base: 2, md: 0}}>
-                        {onSearch && <SearchBox onSearch={onSearch} />}
-                        {headerActions && (
-                            <ButtonGroup ml={onSearch ? 4 : 0}>
-                                {headerActions}
-                            </ButtonGroup>
-                        )}
-                    </Flex>
-                </Header>
-                <Grid
-                    templateColumns={templateColumnsFactory(
-                        displayVariant,
-                        !!aside
+            <Header>
+                <Flex alignItems="center">
+                    {displayVariant === 'default' && sidebar && (
+                        <IconButton
+                            aria-label="open sidebar"
+                            icon={<MenuIcon fontSize="xl" />}
+                            ref={btnRef}
+                            onClick={onOpen}
+                        />
                     )}
-                    h="full">
-                    {displayVariant === 'with-fixed-sidebar' &&
-                        sidebar &&
-                        React.cloneElement(sidebar, {
-                            displayVariant: 'compact',
-                        })}
-                    <Main>{children}</Main>
-                    {aside && <Aside>{aside}</Aside>}
-                </Grid>
-            </Flex>
-        </PageContainer>
+                    {logo && (
+                        <Box ml={displayVariant === 'default' ? 4 : 0}>
+                            {logo}
+                        </Box>
+                    )}
+                    {appName && (
+                        <Text
+                            ml={2}
+                            fontSize="xl"
+                            fontWeight="semibold"
+                            letterSpacing="wide"
+                            textTransform="uppercase">
+                            {appName}
+                        </Text>
+                    )}
+                </Flex>
+                <Flex alignItems="center" mt={{base: 2, md: 0}}>
+                    {onSearch && <SearchBox onSearch={onSearch} />}
+                    {headerActions && (
+                        <ButtonGroup ml={onSearch ? 4 : 0}>
+                            {headerActions}
+                        </ButtonGroup>
+                    )}
+                </Flex>
+            </Header>
+            <Grid
+                templateColumns={templateColumnsFactory(
+                    displayVariant,
+                    !!aside
+                )}
+                h="full">
+                {displayVariant === 'with-fixed-sidebar' &&
+                    sidebar &&
+                    React.cloneElement(sidebar, {
+                        displayVariant: 'compact',
+                    })}
+                <Main>{children}</Main>
+                {aside && <Aside>{aside}</Aside>}
+            </Grid>
+        </Box>
     );
 };
 
