@@ -5,7 +5,7 @@ import {Meta, Story} from '@storybook/react/types-6-0';
 import {Form} from 'react-final-form';
 import {action} from '@storybook/addon-actions';
 import {Box, List, ListItem, Stack} from '@chakra-ui/react';
-import LinkTo from '@storybook/addon-links';
+import {LinkTo} from '@storybook/addon-links';
 import {FormattedMessage} from 'react-intl';
 import {FormGrid, FormGridProps} from './form-grid';
 import InputField from '../form-fields/input-field';
