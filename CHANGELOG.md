@@ -1,5 +1,9 @@
 # Changelog
 
+## 15.2.2
+
+- Page nimmt wieder die gesamte Höhe ein.
+
 ## 15.2.1
 
 - chakra-ui aktualisiert

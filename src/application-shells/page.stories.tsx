@@ -135,14 +135,14 @@ const Template: Story<PageProps> = (args) => (
                 </>
             }
         />
-        <Box px={{base: 4, sm: 6, lg: 8}} py={4}>
-            <Box py={4}>
+        <Box h="full" bg="gray.50" px={{base: 4, sm: 6, lg: 8}} py={4}>
+            <Box h="full" py={4}>
                 <Box
                     border="4px"
                     borderStyle="dashed"
                     borderColor="gray.200"
                     rounded="lg"
-                    h="96"
+                    h="3000px"
                 />
             </Box>
         </Box>

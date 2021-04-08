@@ -8,7 +8,6 @@ import {
     Box,
     Text,
 } from '@chakra-ui/react';
-import Main from './main';
 import Aside from './aside';
 import OffCanvasMenu from './off-canvas-menu';
 import Header from './header';
@@ -97,7 +96,7 @@ export const Page = ({
     useEventListener('keydown', handleGlobalKeyDown);
 
     return (
-        <Box>
+        <Flex h="screen" overflow="hidden" flexDirection="column">
             {sidebar && (
                 <OffCanvasMenu
                     finalFocusRef={btnRef}
@@ -143,20 +142,21 @@ export const Page = ({
                 </Flex>
             </Header>
             <Grid
+                h="full"
+                overflow="auto"
                 templateColumns={templateColumnsFactory(
                     displayVariant,
                     !!aside
-                )}
-                h="full">
+                )}>
                 {displayVariant === 'with-fixed-sidebar' &&
                     sidebar &&
                     React.cloneElement(sidebar, {
                         displayVariant: 'compact',
                     })}
-                <Main>{children}</Main>
+                <Box as="main">{children}</Box>
                 {aside && <Aside>{aside}</Aside>}
             </Grid>
-        </Box>
+        </Flex>
     );
 };
 
