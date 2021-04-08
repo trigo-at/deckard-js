@@ -40,6 +40,7 @@ export default {
         'core-js/modules/es.symbol.description.js',
         'core-js/modules/web.dom-collections.iterator.js',
         'core-js/modules/web.url.js',
+        'core-js/modules/es.string.trim.js',
     ],
     plugins: [
         babel({
