@@ -1,5 +1,11 @@
 # Changelog
 
+## 15.2.1
+
+- chakra-ui aktualisiert
+- TableContainer zur Referenzimplementierung der DataTable hinzugefügt (vertical scrolling)
+- Storybook aktualisiert und gefixt
+
 ## 15.1.0
 
 - Optionaler Text im Header zur Anzeige des Anwendungsnamens zur Page Componente hinzugefügt.
