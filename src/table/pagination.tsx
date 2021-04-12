@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {ButtonGroup, IconButton, HStack} from '@chakra-ui/react';
+import {ButtonGroup, IconButton, HStack, Text} from '@chakra-ui/react';
 import ChevronDoubleLeftIcon from '../icons/chevron-double-left-icon';
 import ChevronLeftIcon from '../icons/chevron-left-icon';
 import ChevronDoubleRightIcon from '../icons/chevron-double-right-icon';
@@ -52,9 +52,9 @@ export const Pagination: FC<PaginationProps> = ({
                     icon={<ChevronDoubleRightIcon />}
                 />
             </ButtonGroup>
-            <span>
+            <Text>
                 Seite: {pageIndex + 1} von {pageCount}
-            </span>
+            </Text>
         </HStack>
     );
 };
