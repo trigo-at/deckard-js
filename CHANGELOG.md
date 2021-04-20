@@ -1,5 +1,9 @@
 # Changelog
 
+## 15.4.0
+
+- InformationCircleIcon hinzugefügt.
+
 ## 15.3.0
 
 - pageHeader Property zur Page hinzugefügt. Ermöglicht einen Page Header der nicht weggescrollt werden kann.
