@@ -169,3 +169,127 @@ AsideStory.args = {
     aside: () => <Box>some aside</Box>,
 };
 AsideStory.storyName = 'Aside';
+
+export const FixedPageHeader: Story<PageProps> = (args) => (
+    <Page
+        {...args}
+        logo={<Logo src="/img/TRIGO-logo-humanface-rgb.png" />}
+        appName="SunRocks Center"
+        headerActions={
+            <>
+                <Button
+                    aria-label="open todos"
+                    leftIcon={<ClipboardListIcon fontSize="xl" />}>
+                    Meine Aufgaben
+                </Button>
+                <IconButton
+                    aria-label="open notifications"
+                    icon={<BellIcon fontSize="xl" />}
+                />
+                <IconButton
+                    aria-label="open profile"
+                    icon={<UserCircleIcon fontSize="xl" />}
+                />
+            </>
+        }
+        pageHeader={
+            <PageHeader
+                heading="Dashboard"
+                actions={
+                    <>
+                        <SecondaryButton>Edit</SecondaryButton>
+                        <PrimaryButton>Publish</PrimaryButton>
+                    </>
+                }
+            />
+        }
+        sidebar={
+            <Sidebar
+                footer={
+                    <Profile
+                        href="https://trigo.at"
+                        isExternal
+                        username="Maxima Musterfrau"
+                        avatar="/img/TRIGO-logo-humanface-rgb.png"
+                    />
+                }
+                logo={<Logo src="/img/TRIGO-logo-human-rgb.png" />}
+                secondaryNavHeading="Projects"
+                secondaryNavItems={
+                    <>
+                        <SecondaryNavItem href="https://trigo.at" isExternal>
+                            Website redesign
+                        </SecondaryNavItem>
+                        <SecondaryNavItem href="https://trigo.at" isExternal>
+                            GraphQL API
+                        </SecondaryNavItem>
+                        <SecondaryNavItem href="https://trigo.at" isExternal>
+                            Customer migration guides
+                        </SecondaryNavItem>
+                        <SecondaryNavItem href="https://trigo.at" isExternal>
+                            Customer migration guides Customer migration guides
+                        </SecondaryNavItem>
+                        <SecondaryNavItem href="https://trigo.at" isExternal>
+                            Profit sharing program
+                        </SecondaryNavItem>
+                    </>
+                }>
+                <>
+                    <NavItem
+                        href="https://trigo.at"
+                        isExternal
+                        icon={<OutlineHome />}>
+                        Dashboard
+                    </NavItem>
+                    <NavItem
+                        icon={<OutlineUsers />}
+                        href="https://trigo.at"
+                        badge="3"
+                        isActive
+                        isExternal>
+                        Team
+                    </NavItem>
+                    <NavItem
+                        icon={<OutlineFolder />}
+                        href="https://trigo.at"
+                        badge="4"
+                        isExternal>
+                        Projects
+                    </NavItem>
+                    <NavItem
+                        icon={<OutlineCalendar />}
+                        href="https://trigo.at"
+                        isExternal>
+                        Calendar
+                    </NavItem>
+                    <NavItem
+                        icon={<OutlineInbox />}
+                        href="https://trigo.at"
+                        badge="12"
+                        isExternal>
+                        Documents
+                    </NavItem>
+                    <NavItem
+                        icon={<OutlineChartBar />}
+                        href="https://trigo.at"
+                        isExternal>
+                        Reports
+                    </NavItem>
+                </>
+            </Sidebar>
+        }>
+        <Box h="full" bg="gray.50" px={{base: 4, sm: 6, lg: 8}} py={4}>
+            <Box h="full" py={4}>
+                <Box
+                    border="4px"
+                    borderStyle="dashed"
+                    borderColor="gray.200"
+                    rounded="lg"
+                    h="3000px"
+                />
+            </Box>
+        </Box>
+    </Page>
+);
+
+FixedPageHeader.storyName = 'fixed pageHeader';

@@ -40,6 +40,10 @@ export type PageProps = {
      */
     sidebar?: ReactElement<any>;
     /**
+     * Container für fixed PageHeader
+     */
+    pageHeader?: ReactElement<any>;
+    /**
      * Wenn eine Funktion übergeben wird, wird ein Header mit einer Suchbox
      * angezeigt die auf STRG + SHIFT + F als globalen Shortcut reagiert und
      * bei Eingabe die Funktion aufruft
@@ -71,6 +75,7 @@ export const Page = ({
     aside,
     children,
     sidebar,
+    pageHeader,
     logo,
     onSearch,
     displayVariant = 'default',
@@ -141,6 +146,7 @@ export const Page = ({
                     )}
                 </Flex>
             </Header>
+            {pageHeader}
             <Grid
                 h="full"
                 overflow="auto"
