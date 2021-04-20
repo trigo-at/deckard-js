@@ -1,6 +1,6 @@
 # Changelog
 
-## 16.0.0
+## 15.3.0
 
 - pageHeader Property zur Page hinzugefügt. Ermöglicht einen Page Header der nicht weggescrollt werden kann.
 
