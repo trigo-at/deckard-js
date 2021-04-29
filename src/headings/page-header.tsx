@@ -9,7 +9,7 @@ export type PageHeaderProps = {
 
 export const PageHeader: FC<PageHeaderProps> = ({heading, meta, actions}) => {
     return (
-        <Box bg="gray.800">
+        <Box bg="white">
             <Box
                 px={{base: 4, sm: 6, lg: 8}}
                 py={4}
@@ -23,7 +23,7 @@ export const PageHeader: FC<PageHeaderProps> = ({heading, meta, actions}) => {
                         fontWeight="bold"
                         letterSpacing="wider"
                         lineHeight={7}
-                        color="white">
+                        color="gray.900">
                         {heading}
                     </Heading>
                     {meta && (

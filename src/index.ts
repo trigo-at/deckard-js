@@ -73,6 +73,7 @@ export {default as TrashIcon} from './icons/trash-icon';
 export {default as UserCircleIcon} from './icons/user-circle-icon';
 export {default as XCircleIcon} from './icons/x-circle-icon';
 export {default as InformationCircleIcon} from './icons/information-circle-icon';
+export {default as DocumentTextIcon} from './icons/document-text-icon';
 
 // Inidcators
 export {default as ErrorIndicator} from './indicators/error-indicator';

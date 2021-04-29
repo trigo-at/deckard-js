@@ -1,5 +1,9 @@
 # Changelog
 
+## 15.5.0
+
+- DocumentTextIcon hinzugefügt.
+
 ## 15.4.0
 
 - InformationCircleIcon hinzugefügt.
