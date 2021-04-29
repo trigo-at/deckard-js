@@ -1,6 +1,6 @@
 # Changelog
 
-## 15.5.0
+## 15.6.0
 
 - DocumentTextIcon hinzugefügt.
 

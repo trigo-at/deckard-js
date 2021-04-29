@@ -25,6 +25,7 @@ export const GlobalFilterInput = ({
                 <FilterIcon />
             </InputLeftAddon>
             <Input
+                bg="white"
                 maxW={80}
                 value={value || ''}
                 onChange={(e) => {
