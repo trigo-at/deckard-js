@@ -1,6 +1,6 @@
 # Changelog
 
-## 15.6.1
+## 15.6.2
 
 - Kontrast der Page Header Meta Items ist jetzt besser.
 
