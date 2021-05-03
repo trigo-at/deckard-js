@@ -29,7 +29,10 @@ const NumberField = ({
         (!!meta.error && meta.touched) ||
         (!!meta.submitError && !meta.dirtySinceLastSubmit && !meta.submitting);
     return (
-        <FormControl gridArea={gridArea || name} isInvalid={isInvalid}>
+        <FormControl
+            gridArea={gridArea || name}
+            isInvalid={isInvalid}
+            id={input.name}>
             <FormLabel
                 fontSize="sm"
                 htmlFor={name}

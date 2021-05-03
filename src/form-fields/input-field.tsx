@@ -10,6 +10,8 @@ export type InputFieldProps = {
     gridArea?: string;
     fieldName?: string;
     isRequired?: boolean;
+    isDisabled?: boolean;
+    isReadOnly?: boolean;
     helperText?: string;
     type?: string;
     config?: any;
@@ -23,12 +25,14 @@ export const InputField = ({
     gridArea,
     fieldName,
     helperText,
-    isRequired,
-    type,
+    isRequired = false,
+    isDisabled = false,
+    isReadOnly = false,
+    type = 'text',
     config,
     label,
     formattedName,
-    formattedPrefix,
+    formattedPrefix = 'field',
     ...props
 }: InputFieldProps) => {
     if (fieldName) {
@@ -41,7 +45,12 @@ export const InputField = ({
         (!!meta.error && meta.touched) ||
         (!!meta.submitError && !meta.dirtySinceLastSubmit && !meta.submitting);
     return (
-        <FormControl gridArea={gridArea || name} isInvalid={isInvalid}>
+        <FormControl
+            gridArea={gridArea || name}
+            isInvalid={isInvalid}
+            isDisabled={isDisabled}
+            isReadOnly={isReadOnly}
+            id={input.name}>
             <FormLabel
                 fontSize="sm"
                 htmlFor={name}
@@ -60,7 +69,6 @@ export const InputField = ({
             </FormLabel>
             <Input
                 {...input}
-                id={input.name}
                 type={type || 'text'}
                 value={type === 'file' ? undefined : input.value}
                 onChange={
@@ -78,12 +86,6 @@ export const InputField = ({
             <FieldError isInvalid={isInvalid} meta={meta} />
         </FormControl>
     );
-};
-
-InputField.defaultProps = {
-    isRequired: false,
-    type: 'text',
-    formattedPrefix: 'field',
 };
 
 export default InputField;

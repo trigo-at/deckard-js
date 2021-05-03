@@ -1,5 +1,9 @@
 # Changelog
 
+## 15.7.0
+
+- IDs werden bei den Inputs jetzt richtig gesetzt und damit auch die aria label.
+
 ## 15.6.2
 
 - Kontrast der Page Header Meta Items ist jetzt besser.

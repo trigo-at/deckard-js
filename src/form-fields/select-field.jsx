@@ -29,7 +29,10 @@ const SelectField = ({
         (!!meta.error && meta.touched) ||
         (!!meta.submitError && !meta.dirtySinceLastSubmit && !meta.submitting);
     return (
-        <FormControl gridArea={gridArea || name} isInvalid={isInvalid}>
+        <FormControl
+            gridArea={gridArea || name}
+            isInvalid={isInvalid}
+            id={input.name}>
             <FormLabel
                 fontSize="sm"
                 htmlFor={name}
@@ -40,7 +43,7 @@ const SelectField = ({
                 <FormattedMessage id={`field.${fieldName || name}`} />
                 {!isRequired && <Optional />}
             </FormLabel>
-            <Select {...input} {...props} id={input.name}>
+            <Select {...input} {...props}>
                 {hasPlaceholder && (
                     <Text as="option" value="">
                         {intl.formatMessage({id: `placeholder.${name}`})}

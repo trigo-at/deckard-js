@@ -12,7 +12,6 @@ const CheckboxField = forwardRef(
             gridArea,
             fieldName,
             helperText,
-            config,
             label,
             formattedName,
             formattedPrefix,
@@ -32,7 +31,10 @@ const CheckboxField = forwardRef(
                 !meta.dirtySinceLastSubmit &&
                 !meta.submitting);
         return (
-            <FormControl gridArea={gridArea || name} isInvalid={isInvalid}>
+            <FormControl
+                gridArea={gridArea || name}
+                isInvalid={isInvalid}
+                id={input.name}>
                 <Checkbox
                     {...input}
                     {...props}
