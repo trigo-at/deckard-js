@@ -1,5 +1,9 @@
 # Changelog
 
+## 15.7.1
+
+- id Attribute zum Profile Button hinzugefügt.
+
 ## 15.7.0
 
 - IDs werden bei den Inputs jetzt richtig gesetzt und damit auch die aria label.

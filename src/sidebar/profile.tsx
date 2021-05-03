@@ -86,7 +86,8 @@ export const Profile: FC<ProfileProps> = forwardRef(
                         <LinkOverlay
                             href={href}
                             isExternal={isExternal}
-                            onClick={onClick}>
+                            onClick={onClick}
+                            id="sidebar-profile-link">
                             <Text
                                 decoration="none"
                                 fontSize="xs"
