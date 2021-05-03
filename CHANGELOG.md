@@ -1,5 +1,9 @@
 # Changelog
 
+## 15.6.1
+
+- Kontrast der Page Header Meta Items ist jetzt besser.
+
 ## 15.6.0
 
 - DocumentTextIcon hinzugefügt.
