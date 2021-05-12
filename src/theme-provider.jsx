@@ -1,12 +1,12 @@
 import React from 'react';
-import {node} from 'prop-types';
+import {node, object} from 'prop-types';
 import {ChakraProvider} from '@chakra-ui/react';
 import {Global, css} from '@emotion/react';
 import defaultTheme from './default-theme';
 
-const ThemeProvider = ({children}) => {
+const ThemeProvider = ({children, theme}) => {
     return (
-        <ChakraProvider resetCSS theme={defaultTheme}>
+        <ChakraProvider resetCSS theme={theme || defaultTheme}>
             <Global
                 styles={css`
                     @import url('https://rsms.me/inter/inter.css');
@@ -27,6 +27,11 @@ const ThemeProvider = ({children}) => {
 
 ThemeProvider.propTypes = {
     children: node.isRequired,
+    theme: object,
+};
+
+ThemeProvider.defaultProps = {
+    theme: undefined,
 };
 
 export default ThemeProvider;
