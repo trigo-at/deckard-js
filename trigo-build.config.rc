@@ -1,0 +1,4 @@
+BUILD_TYPE=monorepo
+PROJECT=trigo-internal
+PUBLISH_CONFIG=main:prod;
+SKIP_TESTS=true
