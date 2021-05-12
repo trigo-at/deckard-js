@@ -1,0 +1,134 @@
+apiVersion: v1
+kind: Template
+metadata:
+  name: design-system
+objects:
+
+- apiVersion: v1
+  kind: DeploymentConfig
+  metadata:
+    labels:
+      app: design-system
+    name: design-system
+  spec:
+    replicas: 1
+    selector:
+      app: design-system
+      deploymentconfig: design-system
+    strategy:
+      activeDeadlineSeconds: 21600
+      resources: {}
+      rollingParams:
+        intervalSeconds: 1
+        maxSurge: 25%
+        maxUnavailable: 25%
+        timeoutSeconds: 600
+        updatePeriodSeconds: 1
+      type: Rolling
+    template:
+      metadata:
+        labels:
+          app: design-system
+          deploymentconfig: design-system
+      spec:
+        containers:
+        - image: ''
+          imagePullPolicy: Always
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            failureThreshold: 3
+            initialDelaySeconds: 10
+            # Allow sufficient amount of time (180 seconds = periodSeconds * failureThreshold)
+            # for the registered shutdown handlers to run to completion.
+            periodSeconds: 30
+            successThreshold: 1
+            # Setting a very low timeout value (e.g. 1 second) can cause false-positive
+            # checks and service interruption.
+            timeoutSeconds: 5
+          name: design-system
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            failureThreshold: 1
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            successThreshold: 1
+            timeoutSeconds: 5
+          resources:
+            limits:
+              memory: "1Gi"
+        restartPolicy: Always
+    triggers:
+    - type: ConfigChange
+    - imageChangeParams:
+        automatic: true
+        containerNames:
+        - design-system
+        from:
+          kind: ImageStreamTag
+          name: design-system:latest
+      type: ImageChange
+
+- apiVersion: v1
+  kind: Service
+  metadata:
+    labels:
+      app: design-system
+    name: design-system
+  spec:
+    ports:
+    - name: 8080-tcp
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+    selector:
+      deploymentconfig: design-system
+
+- apiVersion: route.openshift.io/v1
+  kind: Route
+  metadata:
+    name: "design-system.apps.ocp.trigo.cloud"
+    annotations:
+      kubernetes.io/tls-acme: "true"
+    labels:
+      app: "design-system"
+      name: "design-system.apps.ocp.trigo.cloud"
+  spec:
+    tls:
+      termination: edge
+      insecureEdgeTerminationPolicy: Redirect
+    host: "design-system.apps.ocp.trigo.cloud"
+    port:
+      targetPort: 8080-tcp
+    to:
+      kind: Service
+      name: "design-system"
+      weight: 100
+    wildcardPolicy: None
+
+- apiVersion: route.openshift.io/v1
+  kind: Route
+  metadata:
+    name: "design-system.trigo.dev"
+    annotations:
+      kubernetes.io/tls-acme: "true"
+    labels:
+      app: "design-system"
+      name: "design-system.trigo.dev"
+  spec:
+    tls:
+      termination: edge
+      insecureEdgeTerminationPolicy: Redirect
+    host: "design-system.trigo.dev"
+    port:
+      targetPort: 8080-tcp
+    to:
+      kind: Service
+      name: "design-system"
+      weight: 100
