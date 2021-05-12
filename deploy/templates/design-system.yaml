@@ -111,3 +111,24 @@ objects:
       name: "design-system"
       weight: 100
     wildcardPolicy: None
+
+- apiVersion: route.openshift.io/v1
+  kind: Route
+  metadata:
+    name: "design-system.trigo.dev"
+    annotations:
+      kubernetes.io/tls-acme: "true"
+    labels:
+      app: "design-system"
+      name: "design-system.trigo.dev"
+  spec:
+    tls:
+      termination: edge
+      insecureEdgeTerminationPolicy: Redirect
+    host: "design-system.trigo.dev"
+    port:
+      targetPort: 8080-tcp
+    to:
+      kind: Service
+      name: "design-system"
+      weight: 100
