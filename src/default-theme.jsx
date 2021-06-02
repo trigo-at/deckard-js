@@ -97,6 +97,10 @@ const colorSections = {
                 text: colors.gray[900],
                 background: colors.gray[200],
             },
+            hover: {
+                text: colors.gray[900],
+                background: colors.gray[50],
+            },
         },
         footer: {
             border: colors.gray[200],
@@ -117,6 +121,16 @@ const colorSections = {
             background: colors.white,
             border: colors.gray[900],
             description: colors.gray[500],
+        },
+    },
+    profile: {
+        username: {
+            default: 'gray.700',
+            hover: 'gray.900',
+        },
+        link: {
+            default: 'gray.500',
+            hover: 'gray.700',
         },
     },
 };

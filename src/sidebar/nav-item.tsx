@@ -65,8 +65,10 @@ export const NavItem: FC<NavItemProps> = forwardRef(
                 href={href}
                 role="group"
                 _hover={{
-                    color: isActive ? undefined : 'gray.900',
-                    bg: isActive ? undefined : 'gray.50',
+                    color: isActive ? undefined : 'sidebar.navItem.hover.text',
+                    bg: isActive
+                        ? undefined
+                        : 'sidebar.navItem.hover.background',
                 }}
                 {...props}>
                 {navItemIcon}
