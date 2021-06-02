@@ -76,9 +76,9 @@ export const Profile: FC<ProfileProps> = forwardRef(
                             <Text
                                 fontSize="sm"
                                 fontWeight="medium"
-                                color="gray.700"
+                                color="profile.username.default"
                                 _groupHover={{
-                                    color: 'gray.900',
+                                    color: 'profile.username.hover',
                                 }}>
                                 {username}
                             </Text>
@@ -92,8 +92,8 @@ export const Profile: FC<ProfileProps> = forwardRef(
                                 decoration="none"
                                 fontSize="xs"
                                 fontWeight="medium"
-                                color="gray.500"
-                                _groupHover={{color: 'gray.700'}}>
+                                color="profile.link.default"
+                                _groupHover={{color: 'profile.link.hover'}}>
                                 {linkText}
                             </Text>
                         </LinkOverlay>

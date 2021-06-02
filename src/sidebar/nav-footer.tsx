@@ -7,7 +7,11 @@ export type NavFooterProps = {
 
 export const NavFooter: FC<NavFooterProps> = ({children}) => {
     return (
-        <Flex flexShrink={0} borderTop="1px" borderColor="gray.200" p={4}>
+        <Flex
+            flexShrink={0}
+            borderTop="1px"
+            borderColor="sidebar.footer.border"
+            p={4}>
             {children}
         </Flex>
     );

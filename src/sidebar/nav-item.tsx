@@ -46,8 +46,16 @@ export const NavItem: FC<NavItemProps> = forwardRef(
                 ref={ref}
                 display="flex"
                 alignItems="center"
-                bg={isActive ? 'gray.200' : undefined}
-                color={isActive ? 'gray.900' : 'gray.600'}
+                bg={
+                    isActive
+                        ? 'sidebar.navItem.active.background'
+                        : 'sidebar.navItem.default.background'
+                }
+                color={
+                    isActive
+                        ? 'sidebar.navItem.active.text'
+                        : 'sidebar.navItem.default.text'
+                }
                 px={2}
                 py={2}
                 fontSize="sm"
@@ -57,8 +65,10 @@ export const NavItem: FC<NavItemProps> = forwardRef(
                 href={href}
                 role="group"
                 _hover={{
-                    color: isActive ? undefined : 'gray.900',
-                    bg: isActive ? undefined : 'gray.50',
+                    color: isActive ? undefined : 'sidebar.navItem.hover.text',
+                    bg: isActive
+                        ? undefined
+                        : 'sidebar.navItem.hover.background',
                 }}
                 {...props}>
                 {navItemIcon}

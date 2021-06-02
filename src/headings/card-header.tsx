@@ -14,7 +14,7 @@ export const CardHeader: FC<CardHeaderProps> = ({
 }) => {
     return (
         <Box
-            bg="white"
+            bg="header.card.background"
             px={{base: 4, sm: 6}}
             py={5}
             borderBottom="1px"
@@ -31,14 +31,14 @@ export const CardHeader: FC<CardHeaderProps> = ({
                         fontSize="lg"
                         fontWeight="medium"
                         lineHeight={6}
-                        color="gray.900">
+                        color="header.card.text">
                         {heading}
                     </Heading>
                     {description && (
                         <Text
                             mt={1}
                             fontSize="sm"
-                            color="gray.500"
+                            color="header.card.description"
                             overflow="hidden"
                             textOverflow="ellipsis">
                             {description}
