@@ -59,16 +59,65 @@ const colors = {
         900: '#14532D',
     },
     blue: {
-        50: '#F0F9FF',
-        100: '#E0F2FE',
-        200: '#BAE6FD',
-        300: '#7DD3FC',
-        400: '#38BDF8',
-        500: '#0EA5E9',
-        600: '#0284C7',
-        700: '#0369A1',
-        800: '#075985',
-        900: '#0C4A6E',
+        50: '#F0FDF4',
+        100: '#DCFCE7',
+        200: '#BBF7D0',
+        300: '#86EFAC',
+        400: '#4ADE80',
+        500: '#22C55E',
+        600: '#16A34A',
+        700: '#15803D',
+        800: '#166534',
+        900: '#14532D',
+    },
+    primary: {
+        50: '#F0FDF4',
+        100: '#DCFCE7',
+        200: '#BBF7D0',
+        300: '#86EFAC',
+        400: '#4ADE80',
+        500: '#22C55E',
+        600: '#16A34A',
+        700: '#15803D',
+        800: '#166534',
+        900: '#14532D',
+    },
+};
+
+const colorSections = {
+    sidebar: {
+        background: colors.gray[100],
+        border: colors.gray[200],
+        navItem: {
+            default: {
+                text: colors.gray[600],
+                background: 'inherit',
+            },
+            active: {
+                text: colors.gray[900],
+                background: colors.gray[200],
+            },
+        },
+        footer: {
+            border: colors.gray[200],
+        },
+    },
+    header: {
+        page: {
+            text: colors.gray[900],
+            background: colors.white,
+        },
+        card: {
+            text: colors.gray[900],
+            background: colors.white,
+            description: colors.gray[500],
+        },
+        section: {
+            text: colors.gray[900],
+            background: colors.white,
+            border: colors.gray[900],
+            description: colors.gray[500],
+        },
     },
 };
 
@@ -76,6 +125,7 @@ export default {
     ...extendTheme({
         colors: {
             ...colors,
+            ...colorSections,
             primary: colors.blue,
         },
         fonts: {

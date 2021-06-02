@@ -15,8 +15,9 @@ export const SectionHeader: FC<SectionHeaderProps> = ({
     return (
         <Box
             pb={5}
+            bg="header.section.background"
             borderBottom="1px"
-            borderColor="gray.200"
+            borderColor="header.section.border"
             display={{sm: 'flex'}}
             alignItems={{sm: 'center'}}
             justifyContent={{sm: 'space-between'}}>
@@ -26,14 +27,14 @@ export const SectionHeader: FC<SectionHeaderProps> = ({
                     fontSize="lg"
                     fontWeight="medium"
                     lineHeight={6}
-                    color="gray.900">
+                    color="header.section.text">
                     {heading}
                 </Heading>
                 {description && (
                     <Text
                         mt={1}
                         fontSize="sm"
-                        color="gray.500"
+                        color="header.section.description"
                         overflow="hidden"
                         textOverflow="ellipsis">
                         {description}

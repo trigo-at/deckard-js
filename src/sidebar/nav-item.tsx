@@ -46,8 +46,16 @@ export const NavItem: FC<NavItemProps> = forwardRef(
                 ref={ref}
                 display="flex"
                 alignItems="center"
-                bg={isActive ? 'gray.200' : undefined}
-                color={isActive ? 'gray.900' : 'gray.600'}
+                bg={
+                    isActive
+                        ? 'sidebar.navItem.active.background'
+                        : 'sidebar.navItem.default.background'
+                }
+                color={
+                    isActive
+                        ? 'sidebar.navItem.active.text'
+                        : 'sidebar.navItem.default.text'
+                }
                 px={2}
                 py={2}
                 fontSize="sm"

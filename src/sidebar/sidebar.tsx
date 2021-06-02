@@ -50,8 +50,8 @@ export const Sidebar: FC<SidebarProps> = ({
             h="full"
             flex={1}
             borderRight="1px"
-            borderColor="gray.200"
-            backgroundColor="gray.100">
+            borderColor="sidebar.border"
+            backgroundColor="sidebar.background">
             <NavContainer>
                 {displayVariant === 'off-canvas' && (
                     <Box pb={5} px={4}>
